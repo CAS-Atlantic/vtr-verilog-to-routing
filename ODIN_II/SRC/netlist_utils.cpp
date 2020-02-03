@@ -35,6 +35,9 @@
 
 extern global_args_t global_args;
 
+static npin_t* copy_npin(npin_t* copy_pin);
+npin_t** get_pin_back_pointer(npin_t* pin, direction_e direction);
+
 /*---------------------------------------------------------------------------------------------
  * (function: allocate_nnode)
  *-------------------------------------------------------------------------------------------*/
@@ -90,45 +93,228 @@ nnode_t* allocate_nnode() {
     return new_node;
 }
 
+void detach(npin_t* pin, direction_e direction) {
+    npin_t** pin_ref = get_pin_back_pointer(pin, direction);
+    if (pin_ref) {
+        *pin_ref = NULL;
+    }
+}
+
+void detach(nnode_t* to_free, direction_e direction) {
+    if (to_free) {
+        if (direction == UPWARD) {
+            for (int i = 0; i < to_free->num_input_pins; i += 1) {
+                npin_t* pin = to_free->input_pins[i];
+                if (pin) {
+                    to_free->input_pins[i] = NULL;
+                    if (pin->node == to_free) {
+                        pin->node = NULL;
+                        pin->pin_node_idx = -1;
+                    }
+                }
+            }
+        } else {
+            for (int i = 0; i < to_free->num_output_pins; i += 1) {
+                npin_t* pin = to_free->output_pins[i];
+                if (pin) {
+                    to_free->output_pins[i] = NULL;
+                    if (pin->node == to_free) {
+                        pin->node = NULL;
+                        pin->pin_node_idx = -1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+void detach(nnet_t* to_free, direction_e direction) {
+    if (to_free) {
+        if (direction == UPWARD) {
+            npin_t* pin = to_free->driver_pin;
+            if (pin) {
+                to_free->driver_pin = NULL;
+                if (pin->net == to_free) {
+                    pin->net = NULL;
+                    pin->pin_node_idx = -1;
+                }
+            }
+        } else {
+            for (int i = 0; i < to_free->num_fanout_pins; i += 1) {
+                npin_t* pin = to_free->fanout_pins[i];
+                if (pin) {
+                    to_free->fanout_pins[i] = NULL;
+                    if (pin->net == to_free) {
+                        pin->net = NULL;
+                        pin->pin_node_idx = -1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*---------------------------------------------------------------------------------------------
+ * (function: free_nnode_pins)
+ *-------------------------------------------------------------------------------------------*/
+void free_nnode_pins(nnode_t* to_free, direction_e direction) {
+    if (to_free) {
+        if (direction == UPWARD) {
+            for (int i = 0; i < to_free->num_output_pins; i++) {
+                npin_t* pin = to_free->output_pins[i];
+                if (pin) {
+                    to_free->output_pins[i] = NULL;
+                    detach(pin, DOWNWARD);
+                    free_npin(pin);
+                }
+            }
+            vtr::free(to_free->output_pins);
+            to_free->output_pins = NULL;
+        } else {
+            /* need to free node_data */
+            for (int i = 0; i < to_free->num_input_pins; i++) {
+                npin_t* pin = to_free->input_pins[i];
+                if (pin) {
+                    to_free->input_pins[i] = NULL;
+                    detach(pin, UPWARD);
+                    free_npin(pin);
+                }
+            }
+            vtr::free(to_free->input_pins);
+            to_free->input_pins = NULL;
+        }
+    }
+}
+
+/*---------------------------------------------------------------------------------------------
+ * (function: free_nnode_retain_pins)
+ *-------------------------------------------------------------------------------------------*/
+nnode_t* free_nnode_retain_all_content(nnode_t* to_free) {
+    if (to_free) {
+        /* now free the node */
+        vtr::free(to_free);
+        to_free = NULL;
+    }
+    return to_free;
+}
+
+/*---------------------------------------------------------------------------------------------
+ * (function: free_nnode_retain_pins)
+ *-------------------------------------------------------------------------------------------*/
+nnode_t* free_nnode_retain_pins(nnode_t* to_free) {
+    if (to_free) {
+        vtr::free(to_free->input_pins);
+        vtr::free(to_free->output_pins);
+        vtr::free(to_free->input_port_sizes);
+        vtr::free(to_free->output_port_sizes);
+        vtr::free(to_free->undriven_pins);
+        vtr::free(to_free->name);
+    }
+
+    return free_nnode_retain_all_content(to_free);
+}
+
 /*---------------------------------------------------------------------------------------------
  * (function: free_nnode)
  *-------------------------------------------------------------------------------------------*/
 nnode_t* free_nnode(nnode_t* to_free) {
-    if (to_free) {
-        /* need to free node_data */
+    free_nnode_pins(to_free, UPWARD);
+    free_nnode_pins(to_free, DOWNWARD);
+    return free_nnode_retain_pins(to_free);
+}
 
-        for (int i = 0; i < to_free->num_input_pins; i++) {
-            if (to_free->input_pins[i] && to_free->input_pins[i]->name) {
-                vtr::free(to_free->input_pins[i]->name);
-                to_free->input_pins[i]->name = NULL;
-            }
-            to_free->input_pins[i] = (npin_t*)vtr::free(to_free->input_pins[i]);
-        }
-
-        to_free->input_pins = (npin_t**)vtr::free(to_free->input_pins);
-
-        for (int i = 0; i < to_free->num_output_pins; i++) {
-            if (to_free->output_pins[i] && to_free->output_pins[i]->name) {
-                vtr::free(to_free->output_pins[i]->name);
-                to_free->output_pins[i]->name = NULL;
-            }
-            to_free->output_pins[i] = (npin_t*)vtr::free(to_free->output_pins[i]);
-        }
-
-        to_free->output_pins = (npin_t**)vtr::free(to_free->output_pins);
-
-        vtr::free(to_free->input_port_sizes);
-        vtr::free(to_free->output_port_sizes);
-        vtr::free(to_free->undriven_pins);
-
-        if (to_free->name) {
-            vtr::free(to_free->name);
-            to_free->name = NULL;
-        }
-
-        /* now free the node */
+/*-------------------------------------------------------------------------
+ * (function: duplicate_nnode )
+ * 	duplicate a node and all its content, create new pins and force 
+ * 	the pins to point to the new node
+ * 	this is usefull whit high level node to build new substructure 
+ * 	from high level logic block and be able to rip it out itteratively
+ * 	without changing the original I/O
+ *-----------------------------------------------------------------------*/
+nnode_t* duplicate_nnode(nnode_t* node) {
+    if (node == NULL) {
+        return NULL;
     }
-    return (nnode_t*)vtr::free(to_free);
+
+    nnode_t* new_node = (nnode_t*)my_malloc_struct(sizeof(nnode_t));
+
+    new_node->name = node->name;
+    new_node->type = node->type;
+    new_node->bit_width = node->bit_width;
+    new_node->related_ast_node = node->related_ast_node;
+    new_node->traverse_visited = node->traverse_visited;
+
+    new_node->input_pins = node->input_pins;
+    new_node->num_input_pins = node->num_input_pins;
+    new_node->output_pins = node->output_pins;
+    new_node->num_output_pins = node->num_output_pins;
+
+    new_node->input_port_sizes = node->input_port_sizes;
+    new_node->num_input_port_sizes = node->num_input_port_sizes;
+    new_node->output_port_sizes = node->output_port_sizes;
+    new_node->num_output_port_sizes = node->num_output_port_sizes;
+
+    new_node->node_data = node->node_data;
+    new_node->unique_node_data_id = node->unique_node_data_id;
+
+    new_node->forward_level = node->forward_level;
+    new_node->backward_level = node->backward_level;
+    new_node->sequential_level = node->sequential_level;
+    new_node->sequential_terminator = node->sequential_terminator;
+
+    new_node->internal_netlist = node->internal_netlist;
+
+    new_node->associated_function = node->associated_function;
+
+    new_node->simulate_block_cycle = node->simulate_block_cycle;
+
+    new_node->bit_map = node->bit_map;
+    new_node->bit_map_line_count = node->bit_map_line_count;
+
+    new_node->in_queue = node->in_queue;
+
+    new_node->undriven_pins = node->undriven_pins;
+    new_node->num_undriven_pins = node->num_undriven_pins;
+
+    new_node->ratio = node->ratio;
+    new_node->edge_type = node->edge_type;
+
+    new_node->has_initial_value = node->has_initial_value;
+    new_node->initial_value = node->initial_value;
+
+    new_node->generic_output = node->generic_output;
+
+    new_node->input_pins = (npin_t**)vtr::calloc(node->num_input_pins, sizeof(npin_t*));
+    for (int i = 0; i < node->num_input_pins; i += 1) {
+        new_node->input_pins[i] = copy_npin(node->input_pins[i]);
+        new_node->input_pins[i]->net = node->input_pins[i]->net;
+        new_node->input_pins[i]->pin_net_idx = node->input_pins[i]->pin_net_idx;
+        new_node->input_pins[i]->node = new_node;
+        new_node->input_pins[i]->pin_node_idx = i;
+
+        reattach(new_node->input_pins[i], UPWARD);
+    }
+
+    new_node->output_pins = (npin_t**)vtr::calloc(node->num_output_pins, sizeof(npin_t*));
+    for (int i = 0; i < node->num_output_pins; i += 1) {
+        new_node->output_pins[i] = copy_npin(node->output_pins[i]);
+        new_node->output_pins[i]->net = node->output_pins[i]->net;
+        new_node->output_pins[i]->pin_net_idx = node->output_pins[i]->pin_net_idx;
+        new_node->output_pins[i]->node = new_node;
+        new_node->output_pins[i]->pin_node_idx = i;
+
+        reattach(new_node->output_pins[i], DOWNWARD);
+    }
+
+    new_node->name = vtr::strdup(node->name);
+
+    new_node->input_port_sizes = (int*)vtr::malloc(new_node->num_input_port_sizes * sizeof(int));
+    memcpy(new_node->input_port_sizes, node->input_port_sizes, new_node->num_input_port_sizes * sizeof(int));
+
+    new_node->output_port_sizes = (int*)vtr::malloc(new_node->num_output_port_sizes * sizeof(int));
+    memcpy(new_node->output_port_sizes, node->output_port_sizes, new_node->num_output_port_sizes * sizeof(int));
+
+    return new_node;
 }
 
 /*-------------------------------------------------------------------------
@@ -218,14 +404,15 @@ npin_t* allocate_npin() {
  *-------------------------------------------------------------------------------------------*/
 npin_t* free_npin(npin_t* to_free) {
     if (to_free) {
-        if (to_free->name)
-            vtr::free(to_free->name);
+        detach(to_free, UPWARD);
+        detach(to_free, DOWNWARD);
 
-        to_free->name = NULL;
+        vtr::free(to_free->name);
 
-        /* now free the pin */
+        vtr::free(to_free);
+        to_free = NULL;
     }
-    return (npin_t*)vtr::free(to_free);
+    return to_free;
 }
 
 /*-------------------------------------------------------------------------
@@ -270,6 +457,70 @@ npin_t* copy_input_npin(npin_t* copy_pin) {
     return new_pin;
 }
 
+npin_t** get_pin_back_pointer(npin_t* pin, direction_e direction) {
+    npin_t** back_reference = NULL;
+    if (pin) {
+        // node -> net
+        if (pin->type == INPUT && direction == UPWARD
+            && pin->net && pin->net->fanout_pins) {
+            back_reference = &pin->net->fanout_pins[pin->pin_net_idx];
+        } else if (pin->type == OUTPUT && direction == DOWNWARD
+                   && pin->net) {
+            back_reference = &pin->net->driver_pin;
+        } else if (pin->type == OUTPUT && direction == UPWARD
+                   && pin->node && pin->node->input_pins) {
+            back_reference = &pin->node->input_pins[pin->pin_node_idx];
+        } else if (pin->type == INPUT && direction == DOWNWARD
+                   && pin->node && pin->node->output_pins) {
+            back_reference = &pin->node->output_pins[pin->pin_node_idx];
+        }
+    }
+    return back_reference;
+}
+
+void reattach(npin_t* pin, direction_e direction) {
+    if (pin) {
+        npin_t** back_ptr = get_pin_back_pointer(pin, direction);
+        if (back_ptr) {
+            *back_ptr = pin;
+        }
+    }
+}
+
+void reattach(signal_list_t* signals, direction_e direction) {
+    if (signals) {
+        for (int i = 0; i < signals->count; i += 1) {
+            reattach(signals->pins[i], direction);
+        }
+    }
+}
+
+void reattach(nnet_t* net, direction_e direction) {
+    if (net) {
+        if (direction == UPWARD) {
+            reattach(net->driver_pin, direction);
+        } else {
+            for (int i = 0; i < net->num_fanout_pins; i += 1) {
+                reattach(net->fanout_pins[i], direction);
+            }
+        }
+    }
+}
+
+void reattach(nnode_t* node, direction_e direction) {
+    if (node) {
+        if (direction == UPWARD) {
+            for (int i = 0; i < node->num_input_pins; i += 1) {
+                reattach(node->input_pins[i], direction);
+            }
+        } else {
+            for (int i = 0; i < node->num_output_pins; i += 1) {
+                reattach(node->output_pins[i], direction);
+            }
+        }
+    }
+}
+
 /*---------------------------------------------------------------------------------------------
  * (function: allocate_nnet)
  *-------------------------------------------------------------------------------------------*/
@@ -296,14 +547,17 @@ nnet_t* allocate_nnet() {
  *-------------------------------------------------------------------------------------------*/
 nnet_t* free_nnet(nnet_t* to_free) {
     if (to_free) {
-        to_free->fanout_pins = (npin_t**)vtr::free(to_free->fanout_pins);
+        detach(to_free, UPWARD);
+        detach(to_free, DOWNWARD);
 
-        if (to_free->name)
-            vtr::free(to_free->name);
+        vtr::free(to_free->fanout_pins);
+        vtr::free(to_free->name);
 
         /* now free the net */
+        vtr::free(to_free);
+        to_free = NULL;
     }
-    return (nnet_t*)vtr::free(to_free);
+    return to_free;
 }
 
 /*---------------------------------------------------------------------------
@@ -597,7 +851,7 @@ signal_list_t* combine_lists_without_freeing_originals(signal_list_t** signal_li
 signal_list_t* copy_input_signals(signal_list_t* signalsvar) {
     signal_list_t* duplicate_signals = init_signal_list();
     int i;
-    for (i = 0; i < signalsvar->count; i++) {
+    for (i = 0; signalsvar->pins && i < signalsvar->count; i++) {
         npin_t* pin = signalsvar->pins[i];
         pin = copy_input_npin(pin);
         add_pin_to_signal_list(duplicate_signals, pin);
@@ -608,11 +862,34 @@ signal_list_t* copy_input_signals(signal_list_t* signalsvar) {
 signal_list_t* copy_output_signals(signal_list_t* signalsvar) {
     signal_list_t* duplicate_signals = init_signal_list();
     int i;
-    for (i = 0; i < signalsvar->count; i++) {
+    for (i = 0; signalsvar->pins && i < signalsvar->count; i++) {
         npin_t* pin = signalsvar->pins[i];
-        add_pin_to_signal_list(duplicate_signals, copy_output_npin(pin));
+        pin = copy_output_npin(pin);
+        add_pin_to_signal_list(duplicate_signals, pin);
     }
     return duplicate_signals;
+}
+
+/*------------------------------------------- 
+ * This function creates a copy of a given input pin
+ *------------------------------------------*/
+signal_list_t* copy_input_signals(nnode_t* node) {
+    signal_list_t* to_return = init_signal_list();
+    for (int i = 0; node->input_pins && i < node->num_input_pins; i += 1) {
+        add_pin_to_signal_list(to_return, node->input_pins[i]);
+    }
+    return to_return;
+}
+
+/*------------------------------------------- 
+ * This function creates a copy of a given output pin
+ *------------------------------------------*/
+signal_list_t* copy_output_signals(nnode_t* node) {
+    signal_list_t* to_return = init_signal_list();
+    for (int i = 0; node->output_pins && i < node->num_output_pins; i += 1) {
+        add_pin_to_signal_list(to_return, node->output_pins[i]);
+    }
+    return to_return;
 }
 
 /*---------------------------------------------------------------------------------------------
@@ -665,6 +942,91 @@ signal_list_t* make_output_pins_for_existing_node(nnode_t* node, int width) {
     return return_list;
 }
 
+/*----------------------------------------------------------- 
+ * This function, recursively, deletes node, pin, net in a tree between an Input and Output lists
+ *----------------------------------------------------------*/
+void recursive_remove_subtree(signal_list_t* input_signals, signal_list_t* output_signals) {
+    for (int i = 0; i < output_signals->count; i += 1) {
+        // we go up until input signal match
+        output_signals->pins[i] = recursive_remove_subtree(input_signals, output_signals->pins[i], INPUT, UPWARD);
+    }
+
+    for (int i = 0; i < input_signals->count; i += 1) {
+        // we go down until output signal match
+        input_signals->pins[i] = recursive_remove_subtree(output_signals, input_signals->pins[i], OUTPUT, DOWNWARD);
+    }
+}
+
+npin_t* recursive_remove_subtree(signal_list_t* signals, npin_t* pin, ids signal_type, direction_e direction) {
+    if (pin) {
+        // look for a match in the list
+        // this is not optimal
+        bool delete_pin = true;
+        if (signal_type == pin->type) {
+            for (int i = 0; i < signals->count && delete_pin; i += 1) {
+                delete_pin = (pin != signals->pins[i]);
+            }
+        }
+
+        // net -> node
+        if (pin->type == INPUT) {
+            // unset the parent
+            pin->net = NULL;
+            pin->pin_net_idx = -1;
+
+            if (delete_pin) {
+                pin->node = recursive_remove_subtree(signals, pin->node, signal_type, direction);
+                pin = free_npin(pin);
+            }
+        }
+        // node -> net
+        else // OUTPUT
+        {
+            // unset the parent
+            pin->node = NULL;
+            pin->pin_node_idx = -1;
+
+            if (delete_pin) {
+                pin->net = recursive_remove_subtree(signals, pin->net, signal_type, direction);
+                pin = free_npin(pin);
+            }
+        }
+    }
+    return pin;
+}
+
+nnet_t* recursive_remove_subtree(signal_list_t* signals, nnet_t* net, ids signal_type, direction_e direction) {
+    if (net) {
+        if (direction == UPWARD) {
+            net->driver_pin = recursive_remove_subtree(signals, net->driver_pin, signal_type, direction);
+        } else {
+            for (int i = 0; i < net->num_fanout_pins; i += 1) {
+                net->fanout_pins[i] = recursive_remove_subtree(signals, net->fanout_pins[i], signal_type, direction);
+            }
+        }
+        net = free_nnet(net);
+    }
+    return net;
+}
+
+nnode_t* recursive_remove_subtree(signal_list_t* signals, nnode_t* node, ids signal_type, direction_e direction) {
+    if (node) {
+        if (direction == UPWARD) {
+            for (int i = 0; i < node->num_input_pins; i += 1) {
+                node->input_pins[i] = recursive_remove_subtree(signals, node->input_pins[i], signal_type, direction);
+            }
+        } else // DOWNWARD
+        {
+            for (int i = 0; i < node->num_output_pins; i += 1) {
+                node->output_pins[i] = recursive_remove_subtree(signals, node->output_pins[i], signal_type, direction);
+            }
+        }
+
+        node = free_nnode(node);
+    }
+    return node;
+}
+
 /*---------------------------------------------------------------------------------------------
  * (function: clean_signal_list_structure)
  *-------------------------------------------------------------------------------------------*/
@@ -678,7 +1040,8 @@ void free_signal_list(signal_list_t* list) {
 
 /*---------------------------------------------------------------------------
  * (function: hookup_input_pins_from_signal_list)
- * 	For each pin in this list hook it up to the inputs according to indexes and width
+ *   For each pin in this list hook it up to the inputs according to
+ *   indexes and width. Extra pins are tied to PAD for later resolution.
  *--------------------------------------------------------------------------*/
 void hookup_input_pins_from_signal_list(nnode_t* node, int n_start_idx, signal_list_t* input_list, int il_start_idx, int width, netlist_t* netlist) {
     int i;
@@ -688,35 +1051,12 @@ void hookup_input_pins_from_signal_list(nnode_t* node, int n_start_idx, signal_l
             oassert(input_list->count > (il_start_idx + i));
             npin_t* pin = input_list->pins[il_start_idx + i];
             add_input_pin_to_node(node, pin, n_start_idx + i);
-
-        } else {
-            /* pad with 0's */
-            add_input_pin_to_node(node, get_zero_pin(netlist), n_start_idx + i);
-
-            if (global_args.all_warnings)
-                warning_message(NETLIST_ERROR, -1, -1, "padding an input port with 0 for node %s\n", node->name);
-        }
-    }
-}
-
-/*---------------------------------------------------------------------------
- * (function: hookup_hb_input_pins_from_signal_list)
- *   For each pin in this list hook it up to the inputs according to
- *   indexes and width. Extra pins are tied to PAD for later resolution.
- *--------------------------------------------------------------------------*/
-void hookup_hb_input_pins_from_signal_list(nnode_t* node, int n_start_idx, signal_list_t* input_list, int il_start_idx, int width, netlist_t* netlist) {
-    int i;
-
-    for (i = 0; i < width; i++) {
-        if (il_start_idx + i < input_list->count) {
-            oassert(input_list->count > (il_start_idx + i));
-            add_input_pin_to_node(node, input_list->pins[il_start_idx + i], n_start_idx + i);
         } else {
             /* connect with "pad" signal for later resolution */
             add_input_pin_to_node(node, get_pad_pin(netlist), n_start_idx + i);
 
             if (global_args.all_warnings)
-                warning_message(NETLIST_ERROR, -1, -1, "padding an input port with HB_PAD for node %s\n", node->name);
+                warning_message(NETLIST_ERROR, -1, -1, "padding an input port with PAD for node %s\n", node->name);
         }
     }
 }
@@ -731,17 +1071,16 @@ void hookup_output_pins_from_signal_list(nnode_t* node, int n_start_idx, signal_
 
     for (i = 0; i < width; i++) {
         oassert(output_list->count > (ol_start_idx + i));
-
-        /* hook outpin to the node */
-        add_output_pin_to_node(node, output_list->pins[ol_start_idx + i], n_start_idx + i);
-
         if ((sc_spot_output = sc_lookup_string(output_nets_sc, output_list->pins[ol_start_idx + i]->name)) == -1) {
             /* this output pin does not have a net OR we couldn't find it */
             error_message(NETLIST_ERROR, -1, -1, "Net for driver (%s) doesn't exist for node %s\n", output_list->pins[ol_start_idx + i]->name, node->name);
-        }
+        } else {
+            /* hook the outpin into the net */
+            add_driver_pin_to_net(((nnet_t*)output_nets_sc->data[sc_spot_output]), output_list->pins[ol_start_idx + i]);
 
-        /* hook the outpin into the net */
-        add_driver_pin_to_net(((nnet_t*)output_nets_sc->data[sc_spot_output]), output_list->pins[ol_start_idx + i]);
+            /* hook outpin to the node */
+            add_output_pin_to_node(node, output_list->pins[ol_start_idx + i], n_start_idx + i);
+        }
     }
 }
 

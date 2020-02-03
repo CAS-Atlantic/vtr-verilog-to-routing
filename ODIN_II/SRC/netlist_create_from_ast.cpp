@@ -4358,7 +4358,7 @@ signal_list_t* create_dual_port_ram_block(ast_node_t* block, char* instance_name
             add_input_port_information(block_node, port_size);
 
             /* hookup the input pins */
-            hookup_hb_input_pins_from_signal_list(block_node, current_idx, in_list[i], 0, port_size, verilog_netlist);
+            hookup_input_pins_from_signal_list(block_node, current_idx, in_list[i], 0, port_size, verilog_netlist);
 
             /* Name any grounded ports in the block mapping */
             for (j = port_size; j < port_size; j++)
@@ -4543,7 +4543,7 @@ signal_list_t* create_single_port_ram_block(ast_node_t* block, char* instance_na
             add_input_port_information(block_node, port_size);
 
             /* hookup the input pins */
-            hookup_hb_input_pins_from_signal_list(block_node, current_idx, in_list[i], 0, port_size, verilog_netlist);
+            hookup_input_pins_from_signal_list(block_node, current_idx, in_list[i], 0, port_size, verilog_netlist);
 
             /* Name any grounded ports in the block mapping */
             for (j = port_size; j < port_size; j++)
@@ -4672,7 +4672,7 @@ signal_list_t* create_soft_single_port_ram_block(ast_node_t* block, char* instan
             add_input_port_information(block_node, port_size);
 
             // hookup the input pins
-            hookup_hb_input_pins_from_signal_list(block_node, current_idx, in_list[i], 0, port_size, verilog_netlist);
+            hookup_input_pins_from_signal_list(block_node, current_idx, in_list[i], 0, port_size, verilog_netlist);
 
             // Name any grounded ports in the block mapping
             for (j = port_size; j < port_size; j++)
@@ -4816,7 +4816,7 @@ signal_list_t* create_soft_dual_port_ram_block(ast_node_t* block, char* instance
             add_input_port_information(block_node, port_size);
 
             // hookup the input pins
-            hookup_hb_input_pins_from_signal_list(block_node, current_idx, in_list[i], 0, port_size, verilog_netlist);
+            hookup_input_pins_from_signal_list(block_node, current_idx, in_list[i], 0, port_size, verilog_netlist);
 
             // Name any grounded ports in the block mapping
             for (j = port_size; j < port_size; j++)
@@ -4919,10 +4919,10 @@ signal_list_t* create_hard_block(ast_node_t* block, char* instance_name_prefix, 
     t_model_ports* hb_ports = NULL;
     long i;
     int j, current_idx, current_out_idx;
-    int is_mult = 0;
+    bool is_mult = false;
     int mult_size = 0;
     int adder_size = 0;
-    int is_adder = 0;
+    bool is_adder = false;
 
     char* identifier = block->children[0]->types.identifier;
 
@@ -4954,9 +4954,9 @@ signal_list_t* create_hard_block(ast_node_t* block, char* instance_name_prefix, 
 
     /* memory's are a special case due to splitting */
     if (strcmp(hb_model->name, "multiply") == 0) {
-        is_mult = 1;
+        is_mult = true;
     } else if (strcmp(hb_model->name, "adder") == 0) {
-        is_adder = 1;
+        is_adder = true;
     }
 
     return_list = init_signal_list();
@@ -5023,14 +5023,14 @@ signal_list_t* create_hard_block(ast_node_t* block, char* instance_name_prefix, 
                 min_size = port_size;
 
             /* IF a multiplier - leave input size arbitrary with no padding */
-            if (is_mult == 1) {
+            if (is_mult) {
                 min_size = in_list[i]->count;
                 port_size = in_list[i]->count;
                 mult_size = mult_size + min_size;
             }
 
             /* IF a adder -*/
-            if (is_adder == 1) {
+            if (is_adder) {
                 min_size = in_list[i]->count;
                 port_size = in_list[i]->count;
                 if (min_size > adder_size) {
@@ -5047,7 +5047,7 @@ signal_list_t* create_hard_block(ast_node_t* block, char* instance_name_prefix, 
             add_input_port_information(block_node, port_size);
 
             /* hookup the input pins */
-            hookup_hb_input_pins_from_signal_list(block_node, current_idx, in_list[i], 0, port_size, verilog_netlist);
+            hookup_input_pins_from_signal_list(block_node, current_idx, in_list[i], 0, port_size, verilog_netlist);
 
             /* Name any grounded ports in the block mapping */
             for (j = min_size; j < port_size; j++)
@@ -5056,7 +5056,7 @@ signal_list_t* create_hard_block(ast_node_t* block, char* instance_name_prefix, 
         } else {
             /* IF a multiplier - need to process the output pins last!!! */
             /* Makes the assumption that a multiplier has only 1 output */
-            if (is_mult == 0 && is_adder == 0) {
+            if (!is_mult && !is_adder) {
                 allocate_more_output_pins(block_node, hb_ports->size);
                 add_output_port_information(block_node, hb_ports->size);
 
@@ -5103,7 +5103,7 @@ signal_list_t* create_hard_block(ast_node_t* block, char* instance_name_prefix, 
 
     /* IF a multiplier - need to process the output pins now */
     /* Size of the output is estimated to be size of the inputs added */
-    if (is_mult == 1) {
+    if (is_mult) {
         allocate_more_output_pins(block_node, mult_size);
         add_output_port_information(block_node, mult_size);
 
@@ -5148,7 +5148,7 @@ signal_list_t* create_hard_block(ast_node_t* block, char* instance_name_prefix, 
         current_out_idx += j;
     }
     /* IF a multiplier - need to process the output pins now */
-    else if (is_adder == 1) {
+    else if (is_adder) {
         /*adder_size is the size of sumout*/
         allocate_more_output_pins(block_node, adder_size + 1);
         add_output_port_information(block_node, adder_size + 1);
@@ -5206,10 +5206,10 @@ signal_list_t* create_hard_block(ast_node_t* block, char* instance_name_prefix, 
     vtr::free(in_list);
 
     /* Add multiplier to list for later splitting and optimizing */
-    if (is_mult == 1)
+    if (is_mult)
         mult_list = insert_in_vptr_list(mult_list, block_node);
     /* Add adder to list for later splitting and optimizing */
-    if (is_adder == 1)
+    if (is_adder)
         add_list = insert_in_vptr_list(add_list, block_node);
 
     return return_list;

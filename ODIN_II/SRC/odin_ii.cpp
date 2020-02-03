@@ -56,10 +56,13 @@
 
 #include "netlist_visualizer.h"
 #include "adders.h"
+#include "netlist_statistic.h"
 #include "subtractions.h"
 #include "vtr_util.h"
 #include "vtr_path.h"
 #include "vtr_memory.h"
+
+#include "registered_ga_items.h"
 
 #define DEFAULT_OUTPUT "."
 
@@ -92,6 +95,7 @@ static ODIN_ERROR_CODE synthesize_verilog() {
     find_hard_adders();
     //find_hard_adders_for_sub();
     register_hard_blocks();
+    register_ga();
 
     module_names_to_idx = sc_new_string_cache();
 
@@ -148,13 +152,26 @@ static ODIN_ERROR_CODE synthesize_verilog() {
     }
 
     //END ################# NETLIST OPTIMIZATION ############################
+    if (configuration.output_netlist_graphs)
+        graphVizOutputNetlist(configuration.debug_output_path, "pre_optimized", 1, verilog_netlist); /* Path is where we are */
+
+    compute_statistics(verilog_netlist, PARTIAL_MAP_TRAVERSE_VALUE);
 
     if (configuration.output_netlist_graphs)
         graphVizOutputNetlist(configuration.debug_output_path, "optimized", 1, verilog_netlist); /* Path is where we are */
 
     /* point where we convert netlist to FPGA or other hardware target compatible format */
-    printf("Performing Partial Map to target device\n");
+    printf("Performing Partial Map to target device");
+    if (configuration.ga_partial_map) {
+        printf("using Genetic Algortihm\n\titteration: %d\n\tgeneration size: %d\n\tmutation rate:%0.2lf\n",
+               configuration.generation_count,
+               configuration.generation_size,
+               configuration.mutation_rate);
+    }
+    printf("\n");
+
     partial_map_top(verilog_netlist);
+    GA_partial_map_top(verilog_netlist);
 
     /* Find any unused logic in the netlist and remove it */
     remove_unused_logic(verilog_netlist);
@@ -182,6 +199,7 @@ static ODIN_ERROR_CODE synthesize_verilog() {
     report_add_distribution();
     report_sub_distribution();
     deregister_hard_blocks();
+    deregister_ga();
 
     //cleanup netlist
     free_netlist(verilog_netlist);
@@ -405,6 +423,11 @@ void get_options(int argc, char** argv) {
         .help("Allow to overwrite the top level module that odin would use")
         .metavar("TOP_LEVEL_MODULE_NAME");
 
+    other_grp.add_argument(global_args.ga_partial_map, "--GA")
+        .help("Activate Genetic Algorithm during partial mapping")
+        .default_value("false")
+        .action(argparse::Action::STORE_TRUE);
+
     auto& rand_sim_grp = parser.add_argument_group("random simulation options");
 
     rand_sim_grp.add_argument(global_args.sim_num_test_vectors, "-g")
@@ -545,6 +568,10 @@ void get_options(int argc, char** argv) {
         configuration.output_ast_graphs = global_args.write_ast_as_dot;
     }
 
+    if (global_args.ga_partial_map.provenance() == argparse::Provenance::SPECIFIED) {
+        configuration.ga_partial_map = global_args.ga_partial_map;
+    }
+
     if (global_args.adder_cin_global.provenance() == argparse::Provenance::SPECIFIED) {
         configuration.adder_cin_global = global_args.adder_cin_global;
     }
@@ -565,11 +592,17 @@ void get_options(int argc, char** argv) {
 /*---------------------------------------------------------------------------
  * (function: set_default_options)
  *-------------------------------------------------------------------------*/
+
+
 void set_default_config() {
     /* Set up the global configuration. */
     configuration.output_type = std::string("blif");
     configuration.output_ast_graphs = 0;
     configuration.output_netlist_graphs = 0;
+    configuration.mutation_rate = 0.05;
+    configuration.generation_size = 10;
+    configuration.generation_count = 6;
+    configuration.ga_partial_map = false;
     configuration.print_parse_tokens = 0;
     configuration.output_preproc_source = 0; // TODO: unused
     configuration.debug_output_path = std::string(DEFAULT_OUTPUT);

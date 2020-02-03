@@ -15,6 +15,7 @@ struct config_t {
     bool output_netlist_graphs;    // switch that outputs netlist graphs per node for use with GraphViz tools
     bool print_parse_tokens;       // switch that controls whether or not each token is printed during parsing
     bool output_preproc_source;    // TODO: unused
+    bool ga_partial_map;           // enable genetic algorithm for adder configuration
 
     int min_hard_multiplier; // threshold from hard to soft logic
     int mult_padding;        // setting how multipliers are padded to fit fixed size
@@ -46,6 +47,11 @@ struct config_t {
     int soft_logic_memory_width_threshold;
 
     std::string arch_file; // Name of the FPGA architecture file
+
+    // for ga
+    double mutation_rate;
+    int generation_size;
+    int generation_count;
 };
 
 extern config_t configuration;

@@ -57,6 +57,11 @@
 
 /* unique numbers to mark the nodes as we DFS traverse the netlist */
 #define PARTIAL_MAP_TRAVERSE_VALUE 10
+
+#define PARTIAL_MAP_TRAVERSE_VALUE_GA_ADDERS 11
+#define TRAVERSE_VALUE_CP_S2E 12
+#define TRAVERSE_VALUE_CP_E2S 13
+
 #define OUTPUT_TRAVERSE_VALUE 12
 #define COUNT_NODES 14 /* NOTE that you can't call countnodes one after the other or the mark will be incorrect */
 #define COMBO_LOOP 15
@@ -98,7 +103,8 @@ struct global_args_t {
     argparse::ArgValue<bool> all_warnings;
     argparse::ArgValue<bool> show_help;
 
-    argparse::ArgValue<std::string> adder_def; //DEPRECATED
+    argparse::ArgValue<std::string> adder_def; // DEPRECATED
+    argparse::ArgValue<bool> ga_partial_map;   // enable ga_partial_map
 
     // defines if the first cin of an adder/subtractor is connected to a global gnd/vdd
     // or generated using a dummy adder with both inputs set to gnd/vdd
@@ -329,6 +335,18 @@ enum ids {
     ids_END
 };
 
+enum adder_type_e {
+    RCA,     // default, ripple carry adder
+    CSLA,    // carry select adder
+    BE_CSLA, // binary excess carry select adder
+    adder_type_END
+};
+
+enum direction_e {
+    UPWARD,
+    DOWNWARD,
+};
+
 struct typ {
     char* identifier;
     VNumber* vnumber = nullptr;
@@ -491,6 +509,19 @@ struct npin_t {
     bool is_implied; // This signal is implied.
 };
 
+struct metric_t {
+    size_t traversal_id;
+    double min_depth;
+    double max_depth;
+    double avg_depth;
+    double avg_width;
+};
+
+struct net_stat_t {
+    metric_t upward;
+    metric_t downward;
+};
+
 struct nnet_t {
     long unique_id;
     char* name; // name for the net
@@ -503,6 +534,10 @@ struct nnet_t {
 
     short unique_net_data_id;
     void* net_data;
+
+    short traverse_visited; // a way to mark if we've visited yet
+
+    net_stat_t stat;
 
     /////////////////////
     // For simulation
@@ -518,7 +553,7 @@ struct signal_list_t {
     long count;
 
     char is_memory;
-    char is_adder;
+    bool is_adder;
 };
 
 struct char_list_t {

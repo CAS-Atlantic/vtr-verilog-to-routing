@@ -26,9 +26,11 @@
 #ifndef PARTIAL_MAP_H
 #define PARTIAL_MAP_H
 
+#include "odin_types.h"
+
 // PROTOTYPES
 void partial_map_top(netlist_t* netlist);
-void instantiate_add_w_carry(nnode_t* node, short mark, netlist_t* netlist);
+void instantiate_add_w_carry(adder_type_e type, nnode_t* node, short mark, netlist_t* netlist);
 void instantiate_multi_port_mux(nnode_t* node, short mark, netlist_t* netlist);
 
 #endif
