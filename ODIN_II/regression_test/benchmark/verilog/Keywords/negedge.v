@@ -6,16 +6,17 @@ module simple_op(clk,res,q,clk_out);
     output q;
     reg qt;
 
-    always @(negedge clk)
-    if(~res)begin
+    always @(negedge clk) begin
+        if(~res)begin
         qt<=~qt;
-    end 
+        end 
 
-    else begin
+        else begin
         qt<=1;
-     end
+        end
 
-    assign q = qt;
-    assign clk_out = clk;
+        assign q = qt;
+        assign clk_out = clk;
+    end 
 
 endmodule

@@ -5,7 +5,7 @@ module simple_op(a,b,out);
     input 	    [`WIDTH-1:0] b;
     output      [`WIDTH-1:0] out;
 
-nand(out,a,b);
+or(out,a,b);
 endmodule 
 
 //Bug with odin having more than one bit

@@ -1,11 +1,11 @@
 
 module simple_op(out);
-    output  [`WIDTH-1:0]out;
-    wire    [`WIDTH-1:0]o;
+    output  out;
+    wire    o;
 
 genvar i;
 generate
-    for (i = 0; i < `WIDTH;i = i + 1) begin
+    for (i = 0; i < 1;i = i + 1) begin
       assign o[i] = 0;
     end
   endgenerate

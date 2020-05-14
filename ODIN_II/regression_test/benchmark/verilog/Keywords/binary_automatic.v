@@ -1,13 +1,13 @@
 
 module simple_op(a,b);
-  input [`WIDTH-1:0] a;
-  output[`WIDTH-1:0] b;
+  input  a;
+  output b;
  
  
   task automatic assgn;
-    input [`WIDTH-1:0] in;
-    output [`WIDTH-1:0] out;
-    assign out = in;
+        input   in;
+        output  out;
+        assign  out = in;
   endtask
  
   initial begin
