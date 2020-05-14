@@ -1,9 +1,9 @@
 //Case example 
 
-module simple_op(
-    input [2:0] a,b,c,
-          [1:0] sel,
-    output reg [2:0] out);
+module simple_op();
+    input [2:0] a,b,c;
+    input sel [1:0];
+    output reg [2:0] out;
 
 always @(a,b,c,sel) begin 
     case(sel)
