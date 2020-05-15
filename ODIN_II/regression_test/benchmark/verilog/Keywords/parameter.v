@@ -1,10 +1,9 @@
-module simple_op(a,b,c);
+module simple_op(a,c);
 parameter WIDTH = 8;
 
 input  [WIDTH-1:0] a ;
-input  [WIDTH-1:0] b ;
 output [WIDTH-1:0] c ;
 
-assign c = a + b;
+assign c = a;
 
 endmodule 

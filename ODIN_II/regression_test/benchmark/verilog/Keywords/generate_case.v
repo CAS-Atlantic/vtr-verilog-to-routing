@@ -1,22 +1,22 @@
-module simple_op(a,b,c);
-input a,b;
-output c;
 
-parameter en = 2'b00; 
+
+module simple_op(in1,in2,in3,in4,out);
+input [1:0] in1,in2,in3,in4;
+output [1:0] out;
 
 generate
-    case(en)
-        2'b00   : begin : u1
-                    and_1bit u1(a,b,c); 
+    case(`en)
+        2'b00   : begin
+                   assign out = in1; 
                   end 
-        2'b01   : begin : u2 
-                    or_1bit u2(a,b,c);
+        2'b01   : begin 
+                    assign out = in2; 
                   end 
-        2'b10   : begin : u3 
-                    nand_1bit u3(a,b,c);
+        2'b10   : begin 
+                    assign out = in3; 
                   end  
-        default : begin : u4
-                    nor_1bit u4(a,b,c);
+        default : begin 
+                    assign out = in4; 
                   end  
     endcase
 endgenerate 
@@ -24,34 +24,34 @@ endgenerate
 endmodule 
 
 
-module u1(a,b,c);
-input a,b;
-output c;
+// module u1(a,b,c);
+// input a,b;
+// output c;
 
-and(c,b,a);
+// and(c,b,a);
 
-endmodule 
+// endmodule 
 
-module u2(a,b,c);
-input a,b;
-output c;
+// module u2(a,b,c);
+// input a,b;
+// output c;
 
-or(c,b,a);
+// or(c,b,a);
 
-endmodule 
+// endmodule 
 
-module u3(a,b,c);
-input a,b;
-output c;
+// module u3(a,b,c);
+// input a,b;
+// output c;
 
-nand(c,b,a);
+// nand(c,b,a);
 
-endmodule 
+// endmodule 
 
-module u4(a,b,c);
-input a,b;
-output c;
+// module u4(a,b,c);
+// input a,b;
+// output c;
 
-nor(c,b,a);
+// nor(c,b,a);
 
-endmodule 
+// endmodule 
