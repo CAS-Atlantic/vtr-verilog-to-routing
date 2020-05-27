@@ -440,11 +440,6 @@ void get_options(int argc, char** argv) {
         .default_value("N/A")
         .metavar("N/A");
 
-    other_grp.add_argument(global_args.adder_cin_global, "--adder_cin_global")
-        .help("Defines if the first cin of an adder/subtractor is connected to a global gnd/vdd instead of a dummy adder generating a gnd/vdd.")
-        .default_value("false")
-        .action(argparse::Action::STORE_TRUE);
-
     other_grp.add_argument(global_args.top_level_module_name, "--top_module")
         .help("Allow to overwrite the top level module that odin would use")
         .metavar("TOP_LEVEL_MODULE_NAME");
@@ -590,10 +585,6 @@ void get_options(int argc, char** argv) {
         configuration.output_ast_graphs = global_args.write_ast_as_dot;
     }
 
-    if (global_args.adder_cin_global.provenance() == argparse::Provenance::SPECIFIED) {
-        configuration.adder_cin_global = global_args.adder_cin_global;
-    }
-
     if (global_args.print_parse_tokens.provenance() == argparse::Provenance::SPECIFIED) {
         configuration.print_parse_tokens = global_args.print_parse_tokens;
     }
@@ -629,8 +620,6 @@ void set_default_config() {
 
     configuration.split_memory_width = 0;
     configuration.split_memory_depth = 0;
-
-    configuration.adder_cin_global = false;
 
     /*
      * Soft logic cutoffs. If a memory or a memory resulting from a split
