@@ -32,6 +32,8 @@ HardSoftLogicMixer::HardSoftLogicMixer() {
     for (int i = 0; i < operation_list_END; i++) {
         if (i == MULTIPLY) {
             this->_opts[i] = new MultsOpt();
+        } else if (i == ADD) {
+            this->_opts[i] = new AddersOpt();
         } else {
             this->_opts[i] = new MixingOpt();
         }
@@ -70,5 +72,11 @@ void HardSoftLogicMixer::perform_optimizations(netlist_t* netlist) {
         _opts[MULTIPLY]->assign_weights(netlist, _nodes_by_opt[MULTIPLY]);
         _opts[MULTIPLY]->perform(netlist, _nodes_by_opt[MULTIPLY]);
         _opts[MULTIPLY]->instantiate_soft_logic(netlist, _nodes_by_opt[MULTIPLY]);
+    } else if (_opts[ADD]->enabled()) {
+        int blocks_needed = this->hard_blocks_needed(ADD);
+        _opts[ADD]->set_blocks_needed(blocks_needed);
+        _opts[ADD]->assign_weights(netlist, _nodes_by_opt[ADD]);
+        _opts[ADD]->perform(netlist, _nodes_by_opt[ADD]);
+        _opts[ADD]->instantiate_soft_logic(netlist, _nodes_by_opt[ADD]);
     }
 }

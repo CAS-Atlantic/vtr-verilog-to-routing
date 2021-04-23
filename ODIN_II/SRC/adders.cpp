@@ -1238,6 +1238,33 @@ static nnode_t* make_adder(operation_list funct, nnode_t* current_adder, nnode_t
     return new_funct;
 }
 
+/*--------------------------------------------------------------------------
+ * (function: instantiate_simple_soft_adder )
+ * 	This is simply a copy of instantiate_add_w_carry;
+ *	need to be worked out
+ *	to use a single copy to avoid code repetition.
+ *------------------------------------------------------------------------*/
+void instantiate_simple_soft_adder(nnode_t* node, short mark, netlist_t* netlist) {
+    // define locations in array when fetching pins
+    const int out = 0, input_a = 1, input_b = 2, pinout_count = 3;
+
+    oassert(node->num_input_pins > 0);
+
+    int* width = (int*)vtr::malloc(pinout_count * sizeof(int));
+
+    if (node->num_input_port_sizes == 2)
+        width[out] = node->output_port_sizes[0];
+    else
+        width[out] = node->num_output_pins;
+
+    width[input_a] = node->input_port_sizes[0];
+    width[input_b] = node->input_port_sizes[1];
+
+    instantiate_add_w_carry_block(width, node, mark, netlist, 0);
+
+    vtr::free(width);
+}
+
 void instantiate_add_w_carry_block(int* width, nnode_t* node, short mark, netlist_t* netlist, short subtraction) {
     nnode_t* previous_carry = (subtraction) ? netlist->vcc_node : netlist->gnd_node;
 
