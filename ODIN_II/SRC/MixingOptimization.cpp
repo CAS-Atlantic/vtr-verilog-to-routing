@@ -138,8 +138,8 @@ AddersOpt::AddersOpt(float ratio)
 }
 
 bool AddersOpt::hardenable(nnode_t* node) {
-    int adder_size = std::max<int>(node->input_port_sizes[0], node->input_port_sizes[1]);
-    return (hard_adders && (adder_size > min_add));
+    // Check if the size of this adder is greater than the hard vs soft logic threshold
+    return (hard_adders && node->bit_width >= min_threshold_adder);
 }
 
 void AddersOpt::assign_weights(netlist_t* netlist, std::vector<nnode_t*> nodes) {
@@ -261,7 +261,7 @@ void AddersOpt::partial_map_node(nnode_t* node, short traverse_value, netlist_t*
         mixer->note_candidate_node(node);
     } else if (mixer->hardenable(node)) {
         instantiate_hard_adder(node, traverse_value, netlist);
-    } else if (!hard_adders) {
+    } else {
         instantiate_simple_soft_adder(node, traverse_value, netlist);
     }
     this->cached_traverse_value = traverse_value;
