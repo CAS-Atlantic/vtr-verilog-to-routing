@@ -60,7 +60,7 @@ MultsOpt::MultsOpt(int _exact)
 MultsOpt::MultsOpt(float ratio)
     : MixingOpt(ratio, MULTIPLY) {
     if (ratio < 0.0 || ratio > 1.0) {
-        error_message(NETLIST, unknown_location, "Miltipliers mixing optimization is started with wrong ratio %f\n", ratio);
+        error_message(NETLIST, unknown_location, "Multipliers mixing optimization is started with wrong ratio %f\n", ratio);
         exit(0);
     }
 
