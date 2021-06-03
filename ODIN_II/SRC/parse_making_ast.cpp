@@ -185,6 +185,7 @@ void next_parsed_verilog_file(ast_node_t* file_items_list) {
     all_file_items_list = (ast_node_t**)vtr::realloc(all_file_items_list, sizeof(ast_node_t*) * (size_all_file_items_list + 1));
     all_file_items_list[size_all_file_items_list] = file_items_list;
     size_all_file_items_list++;
+    printf("Optimizing module by AST based optimizations Finished\n");
 }
 
 /*---------------------------------------------------------------------------------------------
@@ -668,8 +669,8 @@ ast_node_t* markAndProcessSymbolListWith(ids top_type, ids id, ast_node_t* symbo
                     break;
                 case WIRE:
                     /**
-                     * functions cannot have their wire initialized, 
-                     * TODO: should'nt this apply to all? 
+                     * functions cannot have their wire initialized,
+                     * TODO: should'nt this apply to all?
                      */
                     if (top_type == FUNCTION) {
                         if ((symbol_list->children[i]->num_children == 5 && symbol_list->children[i]->children[4] != NULL)
@@ -745,7 +746,7 @@ ast_node_t* newRangeRef(char* id, ast_node_t* expression1, ast_node_t* expressio
 
 /*---------------------------------------------------------------------------------------------
  * (function: newPartSelectRangeRef)
- * 
+ *
  * NB!! only support [msb:lsb], will always resolve to this syntax
  *-------------------------------------------------------------------------------------------*/
 ast_node_t* newMinusColonRangeRef(char* id, ast_node_t* expression1, ast_node_t* expression2, loc_t loc) {
@@ -773,7 +774,7 @@ ast_node_t* newMinusColonRangeRef(char* id, ast_node_t* expression1, ast_node_t*
 
 /*---------------------------------------------------------------------------------------------
  * (function: newPartSelectRangeRef)
- * 
+ *
  * NB!! only support [msb:lsb], will always resolve to this syntax
  *-------------------------------------------------------------------------------------------*/
 ast_node_t* newPlusColonRangeRef(char* id, ast_node_t* expression1, ast_node_t* expression2, loc_t loc) {
@@ -960,8 +961,6 @@ ast_node_t* newWhile(ast_node_t* compare_expression, ast_node_t* statement, loc_
     /* allocate child nodes to this node */
     allocate_children_to_node(new_node, {compare_expression, statement});
 
-    /* This needs to be removed once support is added */
-    error_message(AST, loc, "%s", "While statements are NOT supported");
     return new_node;
 }
 

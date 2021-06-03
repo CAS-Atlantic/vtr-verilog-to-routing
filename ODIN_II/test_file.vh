@@ -1,7 +1,7 @@
 `define WIDTH 3
 
 module simple_op(out);
-    
+
   output reg [`WIDTH-1:0] out;
 	integer i;
 
@@ -13,4 +13,4 @@ module simple_op(out);
     end
   end
 
-endmodule 
+endmodule

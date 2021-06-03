@@ -16,6 +16,105 @@
 /* This files header */
 #include "ast_loop_unroll.h"
 
+ast_node_t* unroll_while_loop(ast_node_t* node, ast_node_t* parent, int* num_unrolled, sc_hierarchy* local_ref, bool is_generate) {
+    oassert(node && node->type == WHILE);
+
+    ast_node_t* unrolled_while = resolve_while(node, local_ref);
+    oassert(unrolled_while != nullptr);
+
+    *num_unrolled = unrolled_while->num_children;
+
+    /* update parent */
+    int i;
+    int this_genblk = 0;
+    for (i = 0; i < parent->num_children; i++) {
+        if (node == parent->children[i]) {
+            int j;
+            for (j = i; j < (unrolled_while->num_children + i); j++) {
+                ast_node_t* child = unrolled_while->children[j - i];
+                add_child_to_node_at_index(parent, child, j);
+                unrolled_while->children[j - i] = NULL;
+
+                /* create scopes as necessary */
+                if (is_generate) {
+                    oassert(child->type == BLOCK);
+
+                    /*  generate blocks always have scopes; parent has access to named block
+                     * but not unnamed, and child always has access to parent */
+                    sc_hierarchy* child_hierarchy = init_sc_hierarchy();
+                    child->types.hierarchy = child_hierarchy;
+
+                    child_hierarchy->top_node = child;
+                    child_hierarchy->parent = local_ref;
+
+                    if (child->types.identifier != NULL) {
+                        local_ref->block_children = (sc_hierarchy**)vtr::realloc(local_ref->block_children, sizeof(sc_hierarchy*) * (local_ref->num_block_children + 1));
+                        local_ref->block_children[local_ref->num_block_children] = child_hierarchy;
+                        local_ref->num_block_children++;
+
+                        /* add an array reference to this label */
+                        std::string new_id(child->types.identifier);
+                        new_id = new_id + "[" + std::to_string(j - i) + "]";
+                        vtr::free(child->types.identifier);
+                        child->types.identifier = vtr::strdup(new_id.c_str());
+
+                        child_hierarchy->scope_id = node->types.identifier;
+                        child_hierarchy->instance_name_prefix = make_full_ref_name(local_ref->instance_name_prefix, NULL, child->types.identifier, NULL, -1);
+                    } else {
+                        /* create a unique scope id/instance name prefix for internal use */
+                        this_genblk = local_ref->num_unnamed_genblks + 1;
+                        std::string new_scope_id("genblk");
+                        new_scope_id = new_scope_id + std::to_string(this_genblk) + "[" + std::to_string(j - i) + "]";
+                        child_hierarchy->scope_id = vtr::strdup(new_scope_id.c_str());
+                        child_hierarchy->instance_name_prefix = make_full_ref_name(local_ref->instance_name_prefix, NULL, child_hierarchy->scope_id, NULL, -1);
+                    }
+
+                    /* string caches */
+                    create_param_table_for_scope(child, child_hierarchy);
+                    create_symbol_table_for_scope(child, child_hierarchy);
+                } else if (child->type == BLOCK && child->types.identifier != NULL) {
+                    /* only create scope if child is named block */
+                    sc_hierarchy* child_hierarchy = init_sc_hierarchy();
+                    child->types.hierarchy = child_hierarchy;
+
+                    child_hierarchy->top_node = child;
+                    child_hierarchy->parent = local_ref;
+
+                    local_ref->block_children = (sc_hierarchy**)vtr::realloc(local_ref->block_children, sizeof(sc_hierarchy*) * (local_ref->num_block_children + 1));
+                    local_ref->block_children[local_ref->num_block_children] = child_hierarchy;
+                    local_ref->num_block_children++;
+
+                    /* add an array reference to this label */
+                    std::string new_id(child->types.identifier);
+                    new_id = new_id + "[" + std::to_string(j - i) + "]";
+                    vtr::free(child->types.identifier);
+                    child->types.identifier = vtr::strdup(new_id.c_str());
+
+                    child_hierarchy->scope_id = node->types.identifier;
+                    child_hierarchy->instance_name_prefix = make_full_ref_name(local_ref->instance_name_prefix, NULL, child->types.identifier, NULL, -1);
+
+                    /* string caches */
+                    create_param_table_for_scope(child, child_hierarchy);
+                    create_symbol_table_for_scope(child, child_hierarchy);
+                }
+            }
+
+            oassert(j == (unrolled_while->num_children + i) && parent->children[j] == node);
+            remove_child_from_node_at_index(parent, j);
+
+            break;
+        }
+    }
+
+    if (this_genblk > 0) {
+        local_ref->num_unnamed_genblks++;
+    }
+
+    free_whole_tree(unrolled_while);
+    return parent->children[i];
+
+}
+
 ast_node_t* unroll_for_loop(ast_node_t* node, ast_node_t* parent, int* num_unrolled, sc_hierarchy* local_ref, bool is_generate) {
     oassert(node && node->type == FOR);
 
@@ -39,7 +138,7 @@ ast_node_t* unroll_for_loop(ast_node_t* node, ast_node_t* parent, int* num_unrol
                 if (is_generate) {
                     oassert(child->type == BLOCK);
 
-                    /*  generate blocks always have scopes; parent has access to named block 
+                    /*  generate blocks always have scopes; parent has access to named block
                      * but not unnamed, and child always has access to parent */
                     sc_hierarchy* child_hierarchy = init_sc_hierarchy();
                     child->types.hierarchy = child_hierarchy;
@@ -114,6 +213,102 @@ ast_node_t* unroll_for_loop(ast_node_t* node, ast_node_t* parent, int* num_unrol
     return parent->children[i];
 }
 
+// Look for update node from the while loop body
+ast_node_t* find_while_update_node(ast_node_t* node) {
+    ast_node_t* update_node = nullptr;
+    ast_node_t* body = node->children[1];
+    ast_node_t* pre = node->children[0];
+    ast_node_t* copy = ast_node_deep_copy(body);
+
+    for (long i = 0; i < copy->num_children; i++) {
+        ast_node_t* child = copy->children[i];
+        if (strcmp(child->types.identifier, pre->children[0]->types.identifier)) {
+            update_node = ast_node_copy(child);
+            child = free_whole_tree(child);
+            copy->children[3] = update_node;
+        }
+    }
+
+    return copy;
+}
+
+/*
+ *  (function: resolve_while)
+ */
+
+ast_node_t* resolve_while(ast_node_t* node, sc_hierarchy* local_ref) {
+    oassert(is_while_node(node));
+    oassert(node != nullptr);
+    ast_node_t* body_parent = nullptr;
+    ast_node_t* node_copy = ast_node_deep_copy(node);
+    ast_node_t* pre_cond = nullptr;
+
+    const char* identifier = node_copy->children[0]->children[0]->types.identifier;
+    bool found = false;
+
+    STRING_CACHE* local_symbol_table_sc = local_ref->local_symbol_table_sc;
+    STRING_CACHE* local_param_table_sc = local_ref->local_param_table_sc;
+
+    if (local_symbol_table_sc != NULL) {
+        long sc_spot = sc_lookup_string(local_symbol_table_sc, identifier);
+        if (sc_spot != -1) {
+            pre_cond = ast_node_deep_copy((ast_node_t*)local_symbol_table_sc->data[sc_spot]);
+            found = true;
+        }
+
+        if (!found) {
+            if ((sc_spot = sc_lookup_string(local_param_table_sc, identifier)) != -1) {
+                pre_cond = (ast_node_t*)local_param_table_sc->data[sc_spot];
+                found = true;
+            }
+        }
+    }
+
+    node_copy->children[2] = pre_cond;
+    node_copy->children[3] = find_while_update_node(node_copy);
+
+
+    ast_node_t* cond = node_copy->children[0];
+    ast_node_t* body = node_copy->children[1];
+    ast_node_t* pre = node_copy->children[2];
+    ast_node_t* post = node_copy->children[3];
+
+    ast_node_t* value = 0;
+    if (resolve_pre_condition(pre, &value)) {
+        error_message(AST, pre->loc, "%s", "Unsupported pre-condition node in while loop");
+    }
+
+    int error_code = 0;
+    condition_function cond_func = resolve_condition(cond, pre->children[0], &error_code);
+    if (error_code) {
+        error_message(AST, cond->loc, "%s", "Unsupported condition node in while loop");
+    }
+
+    post_condition_function post_func = resolve_post_condition(post, pre->children[0], &error_code);
+    if (error_code) {
+        error_message(AST, post->loc, "%s", "Unsupported post-condition node in for loop");
+    }
+
+    bool dup_body = cond_func(value->types.vnumber->get_value());
+    while (dup_body) {
+        ast_node_t* new_body = dup_and_fill_body(body, pre, &value, &error_code);
+        if (error_code) {
+            error_message(AST, pre->loc, "%s", "Unsupported pre-condition node in while loop");
+        }
+
+        VNumber* temp_vnum = value->types.vnumber;
+        value->types.vnumber = new VNumber(post_func(temp_vnum->get_value()));
+        delete temp_vnum;
+
+        body_parent = body_parent ? newList_entry(body_parent, new_body) : newList(BLOCK, new_body, new_body->loc);
+
+        dup_body = cond_func(value->types.vnumber->get_value());
+    }
+
+    free_whole_tree(value);
+    return body_parent;
+}
+
 /*
  *  (function: resolve_for)
  */
@@ -166,7 +361,7 @@ ast_node_t* resolve_for(ast_node_t* node) {
 /*
  *  (function: resolve_pre_condition)
  *  return 0 if the first value of the variable set
- *  in the pre condition of a `for` node has been put in location 
+ *  in the pre condition of a `for` node has been put in location
  *  pointed to by the number pointer.
  *
  *  return a non-zero number on failure.
@@ -188,9 +383,9 @@ int resolve_pre_condition(ast_node_t* node, ast_node_t** number_node) {
     return 0;
 }
 
-/** IMPORTANT: as support for more complex continue conditions is added, update this function. 
+/** IMPORTANT: as support for more complex continue conditions is added, update this function.
  *  (function: is_unsupported_condition)
- *  returns true if, given the supplied symbol, the node can be simplifed 
+ *  returns true if, given the supplied symbol, the node can be simplifed
  *  to true or false if the symbol is replaced with some value.
  */
 bool is_unsupported_condition(ast_node_t* node, ast_node_t* symbol) {
@@ -281,7 +476,7 @@ condition_function resolve_condition(ast_node_t* node, ast_node_t* symbol, int* 
     };
 }
 
-/* IMPORTANT: as support for more complex post conditions is added, update this function. 
+/* IMPORTANT: as support for more complex post conditions is added, update this function.
  * (function: is_unsupported_post)
  * returns true if the post condition blocking assignment is more complex than
  * can currently be unrolled statically
@@ -293,7 +488,7 @@ bool is_unsupported_post(ast_node_t* node, ast_node_t* symbol) {
 post_condition_function resolve_binary_operation(ast_node_t* node) {
     if (node->type == NUMBERS) {
         return [=](long value) {
-            /* 
+            /*
              * this lambda triggers a warning for unused variable unless
              * we use value to generate a 0
              */
@@ -332,8 +527,8 @@ post_condition_function resolve_binary_operation(ast_node_t* node) {
 post_condition_function resolve_post_condition(ast_node_t* assignment, ast_node_t* symbol, int* error_code) {
     /* Add new for loop support here. Keep current work in the TODO
      * Given iteration t, and VAR[t] is the value of VAR at iteration t,
-     * VAR[0] is init, EXPRESSION_OF_VAR[t] is the value of the post 
-     * expression evaluated at iteration t, and VAR[t+1] is the 
+     * VAR[0] is init, EXPRESSION_OF_VAR[t] is the value of the post
+     * expression evaluated at iteration t, and VAR[t+1] is the
      * value of VAR after the current iteration:
      *     Currently supporting:
      *         for(...; ...; VAR = VAR {+, -, *, /} NUM) ...

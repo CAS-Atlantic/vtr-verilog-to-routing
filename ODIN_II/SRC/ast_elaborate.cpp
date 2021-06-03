@@ -163,6 +163,8 @@ ast_node_t* find_top_module(ast_t* ast) {
     std::string desired_module("");
     bool found_desired_module = true;
 
+    printf("top check 1 ...");
+
     if (global_args.top_level_module_name.provenance() == argparse::Provenance::SPECIFIED) {
         found_desired_module = false;
         desired_module = global_args.top_level_module_name;
@@ -189,7 +191,7 @@ ast_node_t* find_top_module(ast_t* ast) {
                     break;
                 } else if (!(ast->top_modules[i]->types.module.is_instantiated)) {
                     /**
-                     * Check to see if the module is a hard block 
+                     * Check to see if the module is a hard block
                      * a hard block is never the top level!
                      */
                     long sc_spot;
@@ -337,6 +339,62 @@ ast_node_t* build_hierarchy(ast_node_t* node, ast_node_t* parent, int index, sc_
                             break;
                         }
                     }
+                }
+                break;
+            }
+            case WHILE: {
+                if (data->pass == 1 && is_generate_region) {
+                    // parameters haven't been resolved yet; don't elaborate until the second pass
+                    data->generate.generate_constructs = (ast_node_t**)vtr::realloc(data->generate.generate_constructs, sizeof(ast_node_t*) * (data->generate.num_generate_constructs + 1));
+                    data->generate.generate_constructs[data->generate.num_generate_constructs] = node;
+
+                    data->generate.generate_parents = (ast_node_t**)vtr::realloc(data->generate.generate_parents, sizeof(ast_node_t*) * (data->generate.num_generate_constructs + 1));
+                    data->generate.generate_parents[data->generate.num_generate_constructs] = parent;
+
+                    data->generate.generate_indexes = (int*)vtr::realloc(data->generate.generate_indexes, sizeof(int) * (data->generate.num_generate_constructs + 1));
+                    data->generate.generate_indexes[data->generate.num_generate_constructs] = index;
+
+                    data->generate.sc_hierarchies = (sc_hierarchy**)vtr::realloc(data->generate.sc_hierarchies, sizeof(sc_hierarchy*) * (data->generate.num_generate_constructs + 1));
+                    data->generate.sc_hierarchies[data->generate.num_generate_constructs] = local_ref;
+
+                    data->generate.num_generate_constructs++;
+                    skip_children = true;
+
+                    break;
+                } else if (!(data->pass == 2)) {
+                    break;
+                }
+
+                oassert(child_skip_list);
+
+                // look ahead for parameters in loop conditions
+                node->children[0] = build_hierarchy(node->children[0], node, 0, local_ref, is_generate_region, true, data);
+
+                // update skip list
+                child_skip_list[0] = true;
+
+                // if this is a loop generate construct, verify constant expressions
+                if (is_generate_region) {
+                    ast_node_t* iterator = NULL;
+                    ast_node_t* compare_expression = node->children[0];
+
+                    char** genvar_list = NULL;
+                    verify_genvars(node, local_ref, &genvar_list, 0);
+                    if (genvar_list) vtr::free(genvar_list);
+
+                    iterator = resolve_hierarchical_name_reference(local_ref, compare_expression->children[0]->types.identifier);
+                    oassert(iterator != NULL);
+
+                    if (!(node_is_constant(compare_expression->children[1]))) {
+                        error_message(AST, node->loc,
+                                      "%s", "Loop generate construct conditions must be constant expressions");
+                    }
+                }
+
+                int num_unrolled = 0;
+                node = unroll_while_loop(node, parent, &num_unrolled, local_ref, is_generate_region);
+                for (int i = index; i < (num_unrolled + index); i++) {
+                    parent->children[i] = build_hierarchy(parent->children[i], parent, i, local_ref, is_generate_region, true, data);
                 }
                 break;
             }
@@ -701,7 +759,7 @@ ast_node_t* build_hierarchy(ast_node_t* node, ast_node_t* parent, int index, sc_
                     node->children[i] = new_child;
 
                     if (old_child != new_child) {
-                        /* recurse on this child again in case it can be further reduced 
+                        /* recurse on this child again in case it can be further reduced
                          * (e.g. resolved generate constructs) */
                         i--;
                     }
@@ -1117,10 +1175,10 @@ ast_node_t* build_hierarchy(ast_node_t* node, ast_node_t* parent, int index, sc_
 
 /* ---------------------------------------------------------------------------------------------------
  * (function: finalize_ast)
- * 
+ *
  * This function resolves all parameters, folds constant expressions that can be self-determined
  * (e.g. array/range refs, generate constructs), resolves module instances into module copies and hard
- * blocks (while updating their parameter tables with defparams), and adds symbols that it finds to 
+ * blocks (while updating their parameter tables with defparams), and adds symbols that it finds to
  * the symbol table.
  * Basic sanity checks also happen here that weren't caught during parsing, e.g. checking port
  * lists.
@@ -1249,6 +1307,37 @@ ast_node_t* finalize_ast(ast_node_t* node, ast_node_t* parent, sc_hierarchy* loc
                         node = newNode;
                     }
                 }
+                break;
+            }
+            case WHILE: {
+                oassert(child_skip_list);
+
+                // look ahead for parameters in loop conditions
+                node->children[0] = finalize_ast(node->children[0], node, local_ref, is_generate_region, true);
+
+                // update skip list
+                child_skip_list[0] = true;
+
+                // if this is a loop generate construct, verify constant expressions
+                if (is_generate_region) {
+                    ast_node_t* iterator = NULL;
+                    ast_node_t* compare_expression = node->children[0];
+
+                    char** genvar_list = NULL;
+                    verify_genvars(node, local_ref, &genvar_list, 0);
+                    if (genvar_list) vtr::free(genvar_list);
+
+                    iterator = resolve_hierarchical_name_reference(local_ref, compare_expression->children[0]->types.identifier);
+                    oassert(iterator != NULL);
+
+                    if (!(node_is_constant(compare_expression->children[1]))) {
+                        error_message(AST, node->loc,
+                                      "%s", "Loop generate construct conditions must be constant expressions");
+                    }
+                }
+
+                int num_unrolled = 0;
+                node = unroll_while_loop(node, parent, &num_unrolled, local_ref, is_generate_region);
                 break;
             }
             case FOR: {
@@ -1385,7 +1474,7 @@ ast_node_t* finalize_ast(ast_node_t* node, ast_node_t* parent, sc_hierarchy* loc
                     node->children[i] = new_child;
 
                     if (old_child != new_child) {
-                        /* recurse on this child again in case it can be further reduced 
+                        /* recurse on this child again in case it can be further reduced
                          * (e.g. resolved generate constructs) */
                         i--;
                     }
@@ -1703,7 +1792,7 @@ ast_node_t* finalize_ast(ast_node_t* node, ast_node_t* parent, sc_hierarchy* loc
                 }
 
                 if (!is_constant_ref) {
-                    /* note: indexed part-selects (-: and +:) should support non-constant base expressions, 
+                    /* note: indexed part-selects (-: and +:) should support non-constant base expressions,
                      * e.g. my_var[some_input+:3] = 4'b0101, but we don't support it right now... */
 
                     error_message(AST, node->loc,
@@ -1867,7 +1956,7 @@ ast_node_t* reduce_expressions(ast_node_t* node, sc_hierarchy* local_ref, long* 
                             sc_spot = sc_add_string(local_symbol_table_sc, node->types.identifier);
                             local_symbol_table_sc->data[sc_spot] = (void*)ast_node_deep_copy(var_declare);
                         } else {
-                            /* add the source identifier contents if the 
+                            /* add the source identifier contents if the
                              * local identifier has been already resolved */
                             if (var_declare->types.variable.initial_value)
                                 node->types.variable.initial_value = new VNumber((*var_declare->types.variable.initial_value));
@@ -2484,8 +2573,8 @@ ast_node_t* look_for_matching_hard_block(ast_node_t* node, char* hard_block_name
                 }
             }
         } else if (is_hb) {
-            /* number of ports match and ports were passed in by ordered list; 
-             * this is risky, but we will try to do some "smart" mapping to mark inputs and outputs 
+            /* number of ports match and ports were passed in by ordered list;
+             * this is risky, but we will try to do some "smart" mapping to mark inputs and outputs
              * by evaluating the port connections to determine the order */
 
             warning_message(AST, connect_list->loc,

@@ -199,12 +199,12 @@ void create_netlist(ast_t* ast) {
 /**
  *---------------------------------------------------------------------------------------------
  * (function: look_for_clocks)
- * 
+ *
  * @brief going through all FF nodes looking for the clock signals.
  * If they are not clock type, they should alter to one. Since BUF
  * nodes be removed in the partial mapping, the driver of the BUF
- * nodes should be considered as a clock node. 
- * 
+ * nodes should be considered as a clock node.
+ *
  * @param netlist pointer to the current netlist file
  *-------------------------------------------------------------------------------------------*/
 void look_for_clocks(netlist_t* netlist) {
@@ -1876,8 +1876,8 @@ void connect_module_instantiation_and_alias(short PASS, ast_node_t* module_insta
                         vtr::free(full_port_name);
 
                         if (has_resolved_with_circuitry) {
-                            /* 
-                             * The module port is unsed, however, it has been resolved with a circuitry. 
+                            /*
+                             * The module port is unsed, however, it has been resolved with a circuitry.
                              * So we need to allocate a net for connecting the driver port to the module port.
                              */
                             nnet_t* alias_net = allocate_nnet();
@@ -1885,8 +1885,8 @@ void connect_module_instantiation_and_alias(short PASS, ast_node_t* module_insta
                             sc_spot_input_old = sc_add_string(input_nets_sc, alias_name);
                             input_nets_sc->data[sc_spot_input_old] = (void*)alias_net;
                         } else {
-                            /* 
-                             * The module port is unsed and it has not been 
+                            /*
+                             * The module port is unsed and it has not been
                              * resolved with a circuitry, so we just skip it.
                              */
                             vtr::free(full_name);
@@ -1895,10 +1895,10 @@ void connect_module_instantiation_and_alias(short PASS, ast_node_t* module_insta
                         }
                     }
 
-                    /* 
+                    /*
                      * the intergration process of driver net and instance port net.
-                     * to check if instance port net needs to be joined with VCC or 
-                     * GND or a driver net that already existed or the driver net 
+                     * to check if instance port net needs to be joined with VCC or
+                     * GND or a driver net that already existed or the driver net
                      * has not even created yet so need to create one.
                      */
                     integrate_nets(alias_name, full_name, input_signal_net);
@@ -2204,8 +2204,8 @@ signal_list_t* connect_function_instantiation_and_alias(short PASS, ast_node_t* 
                     vtr::free(full_port_name);
 
                     if (has_resolved_with_circuitry) {
-                        /* 
-                         * The function port is unsed, however, it has been resolved with a circuitry. 
+                        /*
+                         * The function port is unsed, however, it has been resolved with a circuitry.
                          * So we need to allocate a net for connecting the driver port to the function port.
                          */
                         nnet_t* alias_net = allocate_nnet();
@@ -2213,8 +2213,8 @@ signal_list_t* connect_function_instantiation_and_alias(short PASS, ast_node_t* 
                         sc_spot_input_old = sc_add_string(input_nets_sc, alias_name);
                         input_nets_sc->data[sc_spot_input_old] = (void*)alias_net;
                     } else {
-                        /* 
-                         * The function port is unsed and it has not been 
+                        /*
+                         * The function port is unsed and it has not been
                          * resolved with a circuitry, so we just skip it.
                          */
                         vtr::free(full_name);
@@ -2223,10 +2223,10 @@ signal_list_t* connect_function_instantiation_and_alias(short PASS, ast_node_t* 
                     }
                 }
 
-                /* 
+                /*
                  * the intergration process of driver net and instance port net.
-                 * to check if instance port net needs to be joined with VCC or 
-                 * GND or a driver net that already existed or the driver net 
+                 * to check if instance port net needs to be joined with VCC or
+                 * GND or a driver net that already existed or the driver net
                  * has not even created yet so need to create one.
                  */
                 integrate_nets(alias_name, full_name, input_signal_net);
@@ -2541,8 +2541,8 @@ signal_list_t* connect_task_instantiation_and_alias(short PASS, ast_node_t* task
                     vtr::free(full_port_name);
 
                     if (has_resolved_with_circuitry) {
-                        /* 
-                         * The task port is unsed, however, it has been resolved with a circuitry. 
+                        /*
+                         * The task port is unsed, however, it has been resolved with a circuitry.
                          * So we need to allocate a net for connecting the driver port to the task port.
                          */
                         nnet_t* alias_net = allocate_nnet();
@@ -2550,8 +2550,8 @@ signal_list_t* connect_task_instantiation_and_alias(short PASS, ast_node_t* task
                         sc_spot_input_old = sc_add_string(input_nets_sc, alias_name);
                         input_nets_sc->data[sc_spot_input_old] = (void*)alias_net;
                     } else {
-                        /* 
-                         * The task port is unsed and it has not been 
+                        /*
+                         * The task port is unsed and it has not been
                          * resolved with a circuitry, so we just skip it.
                          */
                         vtr::free(full_name);
@@ -2560,10 +2560,10 @@ signal_list_t* connect_task_instantiation_and_alias(short PASS, ast_node_t* task
                     }
                 }
 
-                /* 
+                /*
                  * the intergration process of driver net and instance port net.
-                 * to check if instance port net needs to be joined with VCC or 
-                 * GND or a driver net that already existed or the driver net 
+                 * to check if instance port net needs to be joined with VCC or
+                 * GND or a driver net that already existed or the driver net
                  * has not even created yet so need to create one.
                  */
                 integrate_nets(alias_name, full_name, input_signal_net);
@@ -3646,9 +3646,9 @@ signal_list_t* create_operation_node(ast_node_t* op, signal_list_t** input_lists
             if (output_port_width > input_port_width)
                 input_port_width = output_port_width;
             /*
-             * This condition checks the output_port_width has been resolved in ast phase if it hasn't 
-             * that means there was no LHS operand size or in another word it was not a statement! 
-             * As a result, its value would set to the first RHS operand. 
+             * This condition checks the output_port_width has been resolved in ast phase if it hasn't
+             * that means there was no LHS operand size or in another word it was not a statement!
+             * As a result, its value would set to the first RHS operand.
              * e.x. array[(addr/4)*2] => (addr/4)*2 => output_port_width = addr_port_width
              */
             if (output_port_width == 0)

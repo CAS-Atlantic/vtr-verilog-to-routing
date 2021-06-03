@@ -15,6 +15,15 @@
 typedef std::function<bool(long)> condition_function;
 typedef std::function<long(long)> post_condition_function;
 
+ast_node_t* unroll_while_loop(ast_node_t* node, ast_node_t* parent, int* num_unrolled, sc_hierarchy* local_ref, bool is_generate);
+inline bool is_while_node(ast_node_t* node) {
+    return node && node->type == WHILE;
+}
+ast_node_t* resolve_while(ast_node_t* node, sc_hierarchy* local_ref);
+ast_node_t* find_while_update_node(ast_node_t* node) ;
+
+
+
 ast_node_t* unroll_for_loop(ast_node_t* node, ast_node_t* parent, int* num_unrolled, sc_hierarchy* local_ref, bool is_generate);
 
 inline bool is_for_node(ast_node_t* node) {
