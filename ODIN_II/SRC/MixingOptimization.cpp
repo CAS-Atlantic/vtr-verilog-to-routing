@@ -139,7 +139,7 @@ AddersOpt::AddersOpt(float ratio)
 
 bool AddersOpt::hardenable(nnode_t* node) {
     // Check if the size of this adder is greater than the hard vs soft logic threshold
-    return (hard_adders && node->bit_width >= min_threshold_adder);
+    return (hard_adders && (node->bit_width >= min_threshold_adder));
 }
 
 void AddersOpt::assign_weights(netlist_t* netlist, std::vector<nnode_t*> nodes) {
