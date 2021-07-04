@@ -42,6 +42,7 @@
 
 #include "scope_util.h"
 
+bool defparam_flag = false;
 //for module
 STRING_CACHE* modules_inputs_sc;
 STRING_CACHE* modules_outputs_sc;
@@ -1390,7 +1391,7 @@ ast_node_t* newGate(operation_list op_id, ast_node_t* gate_instance, loc_t loc) 
  *-------------------------------------------------------------------------------------------*/
 ast_node_t* newDefparamVarDeclare(char* symbol, ast_node_t* expression1, ast_node_t* expression2, ast_node_t* expression3, ast_node_t* expression4, ast_node_t* value, loc_t loc) {
     ast_node_t* symbol_node = newSymbolNode(symbol, loc);
-
+    defparam_flag = true;
     /* create a node for this array reference */
     ast_node_t* new_node = create_node_w_type(VAR_DECLARE, loc);
 
@@ -1465,8 +1466,8 @@ ast_node_t* newModule(char* module_name, ast_node_t* list_of_parameters, ast_nod
                || !strcmp(module_name, DUAL_PORT_RAM_string)) {
         error_message(AST, loc,
                       "Module name collides with hard block of the same name (%s)\n", module_name);
-    } else if (list_of_ports == NULL
-               || list_of_ports->num_children == 0) {
+    } else if ((list_of_ports == NULL
+               || list_of_ports->num_children == 0) && (defparam_flag==false)) {
         // this may change with hierarchy but for now we simply delete it
         warning_message(AST, loc,
                         "there are no ports for the module (%s)\n\tall logic will be dropped since it is not driving an output\n",
@@ -1481,7 +1482,7 @@ ast_node_t* newModule(char* module_name, ast_node_t* list_of_parameters, ast_nod
         ast_node_t* symbol_node = newSymbolNode(module_name, loc);
         /* mark all the ports symbols as ports */
         ast_node_t* port_declarations = resolve_ports(MODULE, list_of_ports);
-
+        defparam_flag=false;
         /* ports are expected to be in module items */
         if (port_declarations) {
             add_child_to_node_at_index(list_of_module_items, port_declarations, 0);

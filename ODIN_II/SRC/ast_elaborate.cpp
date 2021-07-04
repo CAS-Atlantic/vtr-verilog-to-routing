@@ -148,6 +148,12 @@ void verify_genvars(ast_node_t* node, sc_hierarchy* local_ref, char*** other_gen
 ast_node_t* look_for_matching_hard_block(ast_node_t* node, char* hard_block_name, sc_hierarchy* local_ref);
 ast_node_t* look_for_matching_soft_logic(ast_node_t* node, char* hard_block_name);
 
+ast_node_t* resolve_top_module_parameters2(ast_node_t* node, sc_hierarchy* top_sc_list);
+ast_node_t* resolve_top_parameters_defined_by_parameters2(ast_node_t* node, sc_hierarchy* top_sc_list, int count);
+
+#define RECURSIVE_LIMIT 256
+
+ast_t* my_ast;
 /*---------------------------------------------------------------------------------------------
  * (function: find_top_module)
  * 	Finds the top module based on that it is not called by anyone else
@@ -187,7 +193,7 @@ ast_node_t* find_top_module(ast_t* ast) {
                     found_desired_module = true;
                     number_of_top_modules = 1;
                     break;
-                } else if (!(ast->top_modules[i]->types.module.is_instantiated)) {
+                } else if (!(ast->top_modules[i]->types.module.is_instantiated) && ast->top_modules[i]->children[0]) {
                     /**
                      * Check to see if the module is a hard block 
                      * a hard block is never the top level!
@@ -204,7 +210,7 @@ ast_node_t* find_top_module(ast_t* ast) {
                         number_of_top_modules += 1;
                         top_entry = ast->top_modules[i];
                     }
-                }
+                } 
             }
         }
     }
