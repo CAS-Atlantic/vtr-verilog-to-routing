@@ -104,7 +104,7 @@ signal_list_t* create_output_pin(ast_node_t* var_declare, char* instance_name_pr
 signal_list_t* assignment_alias(ast_node_t* assignment, char* instance_name_prefix, sc_hierarchy* local_ref, long assignment_size);
 signal_list_t* create_operation_node(ast_node_t* op, signal_list_t** input_lists, int list_size, char* instance_name_prefix, long assignment_size);
 
-void terminate_continuous_assignment(ast_node_t* node, signal_list_t* assignment, char* instance_name_prefix);
+void terminate_continuous_assignment(ast_node_t* node, signal_list_t* assignment, char* instance_name_prefix, sc_hierarchy* local_ref);
 void terminate_registered_assignment(ast_node_t* always_node, signal_list_t* assignment, signal_list_t* potential_clocks, sc_hierarchy* local_ref);
 
 signal_list_t* create_case(ast_node_t* case_ast, char* instance_name_prefix, sc_hierarchy* local_ref, long assignment_size);
@@ -620,11 +620,11 @@ signal_list_t* netlist_expand_ast_of_module(ast_node_t** node_ref, char* instanc
                 //oassert(node->num_children == 1);
                 /* attach the drivers to the driver nets */
                 for (i = 0; i < node->num_children; i++) {
-                    terminate_continuous_assignment(node, children_signal_list[i], instance_name_prefix);
+                    terminate_continuous_assignment(node, children_signal_list[i], instance_name_prefix, local_ref);
                 }
                 break;
             case STATEMENT:
-                terminate_continuous_assignment(node, children_signal_list[0], instance_name_prefix);
+                terminate_continuous_assignment(node, children_signal_list[0], instance_name_prefix, local_ref);
                 break;
             case ALWAYS:
                 /* attach the drivers to the driver nets */
@@ -636,7 +636,7 @@ signal_list_t* netlist_expand_ast_of_module(ast_node_t** node_ref, char* instanc
                     }
                     case ASYNCHRONOUS_SENSITIVITY: {
                         /* idx 1 element since always has DELAY Control first */
-                        terminate_continuous_assignment(node, children_signal_list[1], instance_name_prefix);
+                        terminate_continuous_assignment(node, children_signal_list[1], instance_name_prefix, local_ref);
                         break;
                     }
                     default: {
@@ -3216,6 +3216,24 @@ void terminate_registered_assignment(ast_node_t* always_node, signal_list_t* ass
     int i, j;
     for (i = 0; i < assignment->count; i++) {
         npin_t* pin = assignment->pins[i];
+
+        /* For the check - Wire cannot be on left in always block */
+        STRING_CACHE* local_symbol_table_sc = local_ref->local_symbol_table_sc;
+        /* look for that element */
+        char* pin_name = get_pin_name(pin->name);
+        long sc_spot_wire = sc_lookup_string(local_symbol_table_sc, pin_name);
+        if (sc_spot_wire != -1) {
+            if (((ast_node_t*)local_symbol_table_sc->data[sc_spot_wire])->types.variable.is_wire) {
+                error_message(NETLIST, always_node->loc, "Wire %s cannot be on left in always block.\n", pin_name);
+            }
+        } else {
+            char* port_name = get_port_name(pin->name);
+            long sc_spot_wire_1 = sc_lookup_string(local_symbol_table_sc, port_name);
+            if (((ast_node_t*)local_symbol_table_sc->data[sc_spot_wire_1])->types.variable.is_wire) {
+                error_message(NETLIST, always_node->loc, "Wire %s cannot be on left in always block.\n", port_name);
+            }
+        }
+
         implicit_memory* memory = lookup_implicit_memory_input(pin->name);
         if (memory) {
             add_pin_to_signal_list(memory_inputs, pin);
@@ -3355,11 +3373,31 @@ void terminate_registered_assignment(ast_node_t* always_node, signal_list_t* ass
 /*---------------------------------------------------------------------------------------------
  * (function: terminate_continuous_assignment)
  *-------------------------------------------------------------------------------------------*/
-void terminate_continuous_assignment(ast_node_t* node, signal_list_t* assignment, char* instance_name_prefix) {
+void terminate_continuous_assignment(ast_node_t* node, signal_list_t* assignment, char* instance_name_prefix, sc_hierarchy* local_ref) {
     signal_list_t* memory_inputs = init_signal_list();
     int i;
     for (i = 0; i < assignment->count; i++) {
         npin_t* pin = assignment->pins[i];
+
+        /* For the check - Wire cannot be on left in always block */
+        if (node->type == ALWAYS) {
+            STRING_CACHE* local_symbol_table_sc = local_ref->local_symbol_table_sc;
+            /* look for that element */
+            char* pin_name = get_pin_name(pin->name);
+            long sc_spot_wire = sc_lookup_string(local_symbol_table_sc, pin_name);
+            if (sc_spot_wire != -1) {
+                if (((ast_node_t*)local_symbol_table_sc->data[sc_spot_wire])->types.variable.is_wire) {
+                    error_message(NETLIST, node->loc, "Wire %s cannot be on left in always block.\n", pin_name);
+                }
+            } else {
+                char* port_name = get_port_name(pin->name);
+                long sc_spot_wire_1 = sc_lookup_string(local_symbol_table_sc, port_name);
+                if (((ast_node_t*)local_symbol_table_sc->data[sc_spot_wire_1])->types.variable.is_wire) {
+                    error_message(NETLIST, node->loc, "Wire %s cannot be on left in always block.\n", port_name);
+                }
+            }
+        }
+
         implicit_memory* memory = lookup_implicit_memory_input(pin->name);
         if (memory) {
             add_pin_to_signal_list(memory_inputs, pin);
