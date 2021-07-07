@@ -258,6 +258,7 @@ def load_task_config(config_file):
     key_values["config_dir"] = config_dir
     key_values["task_name"] = Path(config_dir).parent.name
 
+    check_custom_odin_config(config_file, key_values)
     # Create the task config object
     return TaskConfig(**key_values)
 
@@ -288,6 +289,36 @@ def check_include_fields(config_file, key_values):
                 )
             )
 
+def check_custom_odin_config(config_file, key_values):
+
+    custom_cfg = False
+    if "-odin_xml" in key_values["script_params_common"]:
+        custom_cfg = True
+    
+    idx = 0
+    iter = 0 
+    for elem in key_values["script_params_common"]:
+        if elem == "-odin_xml":
+            idx = iter
+        iter = iter + 1
+    if len(key_values["script_params_common"]) <= idx+1 :
+        raise VtrError(
+        " Absolute path to custom odin xml config  file or name of file located next to task config  file should  follow '{key}' in config file {file}".format(
+        key="odin_xml", file=config_file))
+
+    if not key_values["script_params_common"][idx+1].endswith(".xml"):
+        raise VtrError(
+        " Absolute path to custom odin xml config  file or name of file located next to task config  file should  follow '{key}' in config file {file}".format(
+        key="odin_xml", file=config_file))
+    if PurePath(key_values["script_params_common"][idx+1]).is_absolute():
+        return True
+    else:
+        if PurePath(key_values["config_dir"]+str("/")+key_values["script_params_common"][idx+1]).is_absolute:
+            key_values["script_params_common"][idx+1]=str(key_values["config_dir"]+str("/")+key_values["script_params_common"][idx+1])
+        else:
+            raise VtrError(
+            " Absolute path to custom odin xml config  file or name of file located next to task config  file should  follow '{key}' in config file {file}".format(
+            key="odin_xml", file=config_file))
 
 def shorten_task_names(configs, common_task_prefix):
     """
