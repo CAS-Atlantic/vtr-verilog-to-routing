@@ -86,6 +86,15 @@ class MixingOpt {
     virtual void instantiate_soft_logic(netlist_t* netlist, std::vector<nnode_t*> nodes);
 
     /**
+     * @brief Instantiates an alternative (not on hard blocks)
+     * implementation for the operation
+     *
+     * @param netlist pointer to netlist
+     * @param nodes vector of hard adders
+     */
+    virtual void instantiate_hard_logic(netlist_t* netlist, std::vector<nnode_t*> nodes);
+
+    /**
      * @brief performs the optimization pass, varies between kinds.
      * If the implementation is not provided within the inherited class
      * will throw ODIN error
@@ -272,6 +281,14 @@ class AddersOpt : public MixingOpt {
      * @param nodes
      */
     virtual void instantiate_soft_logic(netlist_t* netlist, std::vector<nnode_t*> nodes);
+    /**
+     * @brief Instantiates an alternative (not on hard blocks)
+     * implementation for the operation
+     *
+     * @param netlist pointer to netlist
+     * @param nodes vector of hard adders
+     */
+    virtual void instantiate_hard_logic(netlist_t* netlist, std::vector<nnode_t*> nodes);
 
     /**
      * @brief performs the optimization pass, specifically for adders.
@@ -301,6 +318,20 @@ class AddersOpt : public MixingOpt {
      * @param nnode_t* pointer to the node
      */
     virtual bool hardenable(nnode_t*);
+
+    /**
+     * @brief check if the given add node is already processed to soft logic
+     *
+     * @param nnode_t* pointer to the node
+     */
+    virtual bool processed(nnode_t*);
+
+  protected:
+    /**
+     * @brief a routine that will multiply
+     * required blocks by the ratio
+     */
+    virtual void scale_counts();
 };
 
 #endif

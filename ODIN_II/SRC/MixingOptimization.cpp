@@ -24,6 +24,7 @@
 #include "MixingOptimization.hpp"
 
 #include <stdint.h> // INT_MAX
+#include <math.h>   // ceil
 #include <vector>
 
 #include "netlist_statistic.h"    // mixing_optimization_stats
@@ -31,6 +32,9 @@
 #include "odin_error.h"           // error_message
 #include "adders.h"               // hard_adders
 #include "HardSoftLogicMixer.hpp" // HardSoftLogicMixer
+#include "vtr_util.h"             // VTR utils
+
+using vtr::t_linked_vptr;
 
 void MixingOpt::scale_counts() {
     if (this->_blocks_count < 0 || this->_blocks_count == INT_MAX || this->_ratio < 0.0 || this->_ratio > 1.0) {
@@ -142,11 +146,34 @@ bool AddersOpt::hardenable(nnode_t* node) {
     return (hard_adders && (node->bit_width >= min_threshold_adder));
 }
 
+bool AddersOpt::processed(nnode_t* node) {
+    if (processed_adder_list == NULL)
+        return (false);
+
+    t_linked_vptr* temp = processed_adder_list;
+    nnode_t* add_node = static_cast<nnode_t*>(temp->data_vptr);
+
+    while (add_node != NULL) {
+        if (!strcmp(add_node->name, node->name) == 0)
+            return (true);
+    }
+
+    return (false);
+}
+
 void AddersOpt::assign_weights(netlist_t* netlist, std::vector<nnode_t*> nodes) {
     // compute weights for all noted nodes
     for (size_t i = 0; i < nodes.size(); i++) {
         mixing_optimization_stats(nodes[i], netlist);
     }
+}
+
+void AddersOpt::scale_counts() {
+    if (this->_blocks_count < 0 || this->_blocks_count == INT_MAX || this->_ratio < 0.0 || this->_ratio > 1.0) {
+        error_message(NETLIST, unknown_location, "The parameters for optimization kind:%i are configured incorrectly : count %i, ratio %f\n", this->_kind, this->_blocks_count, this->_ratio);
+        exit(0);
+    }
+    this->_blocks_count = std::ceil(this->_blocks_count * this->_ratio);
 }
 
 void AddersOpt::perform(netlist_t* netlist, std::vector<nnode_t*>& weighted_nodes) {
@@ -159,7 +186,9 @@ void AddersOpt::perform(netlist_t* netlist, std::vector<nnode_t*>& weighted_node
         for (size_t j = 0; j < nodes_count; j++) {
             // if found a new maximal cost that is higher than a current maximum AND is not restricted by input
             // params for minimal "hardenable" adder width
-            if (maximal_cost < weighted_nodes[j]->weight && this->hardenable(weighted_nodes[j])) {
+            if (weighted_nodes[j]
+                && maximal_cost < weighted_nodes[j]->weight
+                && this->hardenable(weighted_nodes[j])) {
                 maximal_cost = weighted_nodes[j]->weight;
                 index = j;
             }
@@ -174,14 +203,15 @@ void AddersOpt::perform(netlist_t* netlist, std::vector<nnode_t*>& weighted_node
         weighted_nodes[index]->weight = -1;
 
         if (hard_adders) {
-            instantiate_hard_adder(weighted_nodes[index], this->cached_traverse_value, netlist);
+            split_instantiate_hard_adder(weighted_nodes[index], this->cached_traverse_value, netlist);
+            weighted_nodes[index] = NULL;
         }
     }
 
     // From the end of the vector, remove all nodes that were implemented in hard logic. The remaining
     // nodes will be instantiated in soft_map_remaining_nodes
     for (int i = nodes_count - 1; i >= 0; i--) {
-        if (weighted_nodes[i]->weight == -1) {
+        if (weighted_nodes[i] == NULL) {
             weighted_nodes.erase(weighted_nodes.begin() + i);
         }
     }
@@ -208,9 +238,9 @@ void MultsOpt::set_blocks_needed(int new_count) {
     this->scale_counts();
 }
 
-void AddersOpt::set_blocks_needed(int new_count) {
+void AddersOpt::set_blocks_needed(int num_to_hard_blocks) {
     int availableHardBlocks = INT_MAX;
-    int hardBlocksNeeded = new_count;
+    int hardBlocksNeeded = num_to_hard_blocks;
     int hardBlocksCount = availableHardBlocks;
 
     if (hardBlocksCount > hardBlocksNeeded) {
@@ -226,6 +256,11 @@ void AddersOpt::set_blocks_needed(int new_count) {
 
 void MixingOpt::instantiate_soft_logic(netlist_t* /*netlist*/, std::vector<nnode_t*> /* nodes*/) {
     error_message(NETLIST, unknown_location, "Performing instantiate_soft_logic was called for optimization without method provided, for kind  %i\n", this->_kind);
+    exit(0);
+}
+
+void MixingOpt::instantiate_hard_logic(netlist_t* /*netlist*/, std::vector<nnode_t*> /* nodes*/) {
+    error_message(NETLIST, unknown_location, "Performing instantiate_hard_logic was called for optimization without method provided, for kind  %i\n", this->_kind);
     exit(0);
 }
 
@@ -257,10 +292,9 @@ void MultsOpt::instantiate_soft_logic(netlist_t* netlist, std::vector<nnode_t*> 
 }
 
 void AddersOpt::partial_map_node(nnode_t* node, short traverse_value, netlist_t* netlist, HardSoftLogicMixer* mixer) {
-    if (mixer->enabled(node) && mixer->hardenable(node)) {
+    // considering add nodes not in processed_adder_list as candidates
+    if (mixer->hardenable(node) && !this->processed(node)) {
         mixer->note_candidate_node(node);
-    } else if (mixer->hardenable(node)) {
-        instantiate_hard_adder(node, traverse_value, netlist);
     } else {
         instantiate_simple_soft_adder(node, traverse_value, netlist);
     }
@@ -275,5 +309,12 @@ void AddersOpt::instantiate_soft_logic(netlist_t* netlist, std::vector<nnode_t*>
     for (int i = size - 1; i >= 0; i--) {
         nodes[i] = free_nnode(nodes[i]);
         nodes.erase(nodes.begin() + i);
+    }
+}
+
+void AddersOpt::instantiate_hard_logic(netlist_t* netlist, std::vector<nnode_t*> nodes) {
+    unsigned int size = nodes.size();
+    for (unsigned int j = 0; j < size; j++) {
+        split_instantiate_hard_adder(nodes[j], this->cached_traverse_value, netlist);
     }
 }
