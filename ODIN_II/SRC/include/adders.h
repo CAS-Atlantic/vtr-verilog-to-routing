@@ -56,6 +56,7 @@ void init_add_distribution();
 void report_add_distribution();
 void declare_hard_adder(nnode_t* node);
 void instantiate_hard_adder(nnode_t* node, short mark, netlist_t* netlist);
+void split_instantiate_hard_adder(nnode_t* node, uintptr_t mark, netlist_t* netlist);
 void instantiate_simple_soft_adder(nnode_t* node, short mark, netlist_t* netlist);
 void find_hard_adders();
 void add_the_blackbox_for_adds(FILE* out);

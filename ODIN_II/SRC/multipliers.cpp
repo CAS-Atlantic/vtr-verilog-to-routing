@@ -310,7 +310,7 @@ void declare_hard_multiplier(nnode_t* node) {
 
     /* See if this size instance of multiplier exists? */
     if (hard_multipliers == NULL)
-        warning_message(NETLIST, node->loc, "%s\n", "Instantiating Mulitpliers where hard multipliers do not exist");
+        warning_message(NETLIST, node->loc, "%s\n", "Instantiating Multipliers where hard multipliers do not exist");
 
     tmp = (t_multiplier*)hard_multipliers->instances;
     width_a = node->input_port_sizes[0];
@@ -344,7 +344,7 @@ void declare_hard_multiplier(nnode_t* node) {
  *-------------------------------------------------------------------------*/
 void instantiate_hard_multiplier(nnode_t* node, short mark, netlist_t* /*netlist*/) {
     oassert(node
-            && "node is NULL to instanciate hard multiplier");
+            && "node is NULL to instantiate hard multiplier");
 
     declare_hard_multiplier(node);
 
