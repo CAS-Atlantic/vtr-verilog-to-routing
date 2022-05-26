@@ -49,4 +49,40 @@
         internal_path="libs/EXTERNAL/libcatch2"
         external_url="https://github.com/catchorg/Catch2.git"
         default_external_ref="devel"/>
+    <subtree
+        name="libsurelog"
+        internal_path="libs/EXTERNAL/libsurelog"
+        external_url="https://github.com/chipsalliance/Surelog.git"
+        default_external_ref="f96768e1fb6542c621c23804aa7323ed9a72c5c8"/>
+        <!-- Surelog internal subtrees -->
+        <subtree
+            name="libuhdm"
+            internal_path="libs/EXTERNAL/libsurelog/third_party/UHDM"
+            external_url="https://github.com/chipsalliance/UHDM.git"
+            default_external_ref="5f6cd7abfa5ab7646eb259928e925521bc68b3c8"/>
+        <subtree
+            name="libantlr4"
+            internal_path="libs/EXTERNAL/libsurelog/third_party/antlr4"
+            external_url="https://github.com/antlr/antlr4.git"
+            default_external_ref="79530984d41e1fa5ed081e9156de9bec6df591f5"/>
+        <subtree
+            name="libflatbuffers"
+            internal_path="libs/EXTERNAL/libsurelog/third_party/flatbuffers"
+            external_url="https://github.com/google/flatbuffers.git"
+            default_external_ref="74a25536be1d3242f52d98007a6a03934b675cbd"/>
+        <subtree
+            name="libgoogletest"
+            internal_path="libs/EXTERNAL/libsurelog/third_party/googletest"
+            external_url="https://github.com/google/googletest.git"
+            default_external_ref="8d51dc50eb7e7698427fed81b85edad0e032112e"/>
+    <subtree
+        name="libyosysf4pgaplugins"
+        internal_path="libs/EXTERNAL/libyosysf4pgaplugins"
+        external_url="https://github.com/chipsalliance/yosys-f4pga-plugins.git"
+        default_external_ref="14452cf84051fa53fa69c77a05dce7c331bb0338"/>
+    <subtree
+        name="libsv2v"
+        internal_path="libs/EXTERNAL/libsv2v"
+        external_url="https://github.com/zachjs/sv2v.git"
+        default_external_ref="9eceb5567352a030566553a59e3542ae150ad5d6"/>
 </subtrees>
