@@ -1,0 +1,129 @@
+[INF:CM0023] Creating log file ../../build/regression/TfCalls/slpp_unit/surelog.log.
+
+[INF:CM0020] Separate compilation-unit mode is on.
+
+[WRN:PA0205] top.v:1: No timescale set for "m1".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0303] top.v:1: Compile module "work@m1".
+
+[NTE:CP0309] top.v:1:29: Implicit port type (wire) for "out".
+
+[INF:EL0526] Design Elaboration...
+
+[NTE:EL0503] top.v:1: Top level module "work@m1".
+
+[NTE:EL0508] Nb Top level modules: 1.
+
+[NTE:EL0509] Max instance depth: 1.
+
+[NTE:EL0510] Nb instances: 1.
+
+[NTE:EL0511] Nb leaf instances: 0.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/TfCalls/slpp_unit/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/TfCalls/slpp_unit/surelog.uhdm.chk.html ...
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/TfCalls/slpp_unit/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (work@m1)
+|vpiName:work@m1
+|uhdmallModules:
+\_module: work@m1 (work@m1) top.v:1:1: , endln:5:10, parent:work@m1
+  |vpiFullName:work@m1
+  |vpiDefName:work@m1
+  |vpiNet:
+  \_logic_net: (work@m1.clk), line:1:17, endln:1:20, parent:work@m1
+    |vpiName:clk
+    |vpiFullName:work@m1.clk
+  |vpiNet:
+  \_logic_net: (work@m1.out), line:1:29, endln:1:32, parent:work@m1
+    |vpiName:out
+    |vpiFullName:work@m1.out
+  |vpiPort:
+  \_port: (clk), line:1:17, endln:1:20, parent:work@m1
+    |vpiName:clk
+    |vpiDirection:1
+    |vpiLowConn:
+    \_ref_obj: 
+      |vpiActual:
+      \_logic_net: (work@m1.clk), line:1:17, endln:1:20, parent:work@m1
+  |vpiPort:
+  \_port: (out), line:1:29, endln:1:32, parent:work@m1
+    |vpiName:out
+    |vpiDirection:2
+    |vpiLowConn:
+    \_ref_obj: 
+      |vpiActual:
+      \_logic_net: (work@m1.out), line:1:29, endln:1:32, parent:work@m1
+  |vpiProcess:
+  \_initial: , line:2:3, endln:4:6, parent:work@m1
+    |vpiStmt:
+    \_begin: (work@m1), line:2:11, endln:4:6
+      |vpiFullName:work@m1
+      |vpiStmt:
+      \_sys_func_call: ($display), line:3:5, endln:3:24, parent:work@m1
+        |vpiArgument:
+        \_constant: , line:3:14, endln:3:18, parent:$display
+          |vpiDecompile:%d
+          |vpiSize:2
+          |STRING:%d
+          |vpiConstType:6
+        |vpiArgument:
+        \_ref_obj: (work@m1.clk), line:3:20, endln:3:23, parent:$display
+          |vpiName:clk
+          |vpiFullName:work@m1.clk
+          |vpiActual:
+          \_logic_net: (work@m1.clk), line:1:17, endln:1:20, parent:work@m1
+            |vpiName:clk
+            |vpiFullName:work@m1.clk
+        |vpiName:$display
+|uhdmtopModules:
+\_module: work@m1 (work@m1) top.v:1:1: , endln:5:10
+  |vpiName:work@m1
+  |vpiDefName:work@m1
+  |vpiTop:1
+  |vpiNet:
+  \_logic_net: (work@m1.clk), line:1:17, endln:1:20, parent:work@m1
+  |vpiNet:
+  \_logic_net: (work@m1.out), line:1:29, endln:1:32, parent:work@m1
+    |vpiName:out
+    |vpiFullName:work@m1.out
+  |vpiTopModule:1
+  |vpiPort:
+  \_port: (clk), line:1:17, endln:1:20, parent:work@m1
+    |vpiName:clk
+    |vpiDirection:1
+    |vpiLowConn:
+    \_ref_obj: (work@m1.clk), line:1:17, endln:1:20
+      |vpiName:clk
+      |vpiFullName:work@m1.clk
+      |vpiActual:
+      \_logic_net: (work@m1.clk), line:1:17, endln:1:20, parent:work@m1
+  |vpiPort:
+  \_port: (out), line:1:29, endln:1:32, parent:work@m1
+    |vpiName:out
+    |vpiDirection:2
+    |vpiLowConn:
+    \_ref_obj: (work@m1.out), line:1:29, endln:1:32
+      |vpiName:out
+      |vpiFullName:work@m1.out
+      |vpiActual:
+      \_logic_net: (work@m1.out), line:1:29, endln:1:32, parent:work@m1
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 1
+[   NOTE] : 6
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/TfCalls/top.v | ${SURELOG_DIR}/build/regression/TfCalls/roundtrip/top_000.v | 1 | 5 | 
+

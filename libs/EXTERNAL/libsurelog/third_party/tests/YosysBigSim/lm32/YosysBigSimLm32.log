@@ -1,0 +1,208 @@
+[INF:CM0023] Creating log file ../../../../build/regression/YosysBigSimLm32/slpp_unit/surelog.log.
+
+[INF:CM0020] Separate compilation-unit mode is on.
+
+[WRN:PA0205] rtl/lm32_adder.v:56: No timescale set for "lm32_adder".
+
+[WRN:PA0205] rtl/lm32_addsub.v:55: No timescale set for "lm32_addsub".
+
+[WRN:PA0205] rtl/lm32_cpu.v:99: No timescale set for "lm32_cpu".
+
+[WRN:PA0205] rtl/lm32_dcache.v:80: No timescale set for "lm32_dcache".
+
+[WRN:PA0205] rtl/lm32_debug.v:69: No timescale set for "lm32_debug".
+
+[WRN:PA0205] rtl/lm32_decoder.v:113: No timescale set for "lm32_decoder".
+
+[WRN:PA0205] rtl/lm32_dp_ram.v:37: No timescale set for "lm32_dp_ram".
+
+[WRN:PA0205] rtl/lm32_dtlb.v:53: No timescale set for "lm32_dtlb".
+
+[WRN:PA0205] rtl/lm32_icache.v:86: No timescale set for "lm32_icache".
+
+[WRN:PA0205] rtl/lm32_instruction_unit.v:77: No timescale set for "lm32_instruction_unit".
+
+[WRN:PA0205] rtl/lm32_interrupt.v:56: No timescale set for "lm32_interrupt".
+
+[WRN:PA0205] rtl/lm32_itlb.v:55: No timescale set for "lm32_itlb".
+
+[WRN:PA0205] rtl/lm32_load_store_unit.v:69: No timescale set for "lm32_load_store_unit".
+
+[WRN:PA0205] rtl/lm32_logic_op.v:56: No timescale set for "lm32_logic_op".
+
+[WRN:PA0205] rtl/lm32_mc_arithmetic.v:64: No timescale set for "lm32_mc_arithmetic".
+
+[WRN:PA0205] rtl/lm32_multiplier.v:56: No timescale set for "lm32_multiplier".
+
+[WRN:PA0205] rtl/lm32_ram.v:61: No timescale set for "lm32_ram".
+
+[WRN:PA0205] rtl/lm32_shifter.v:56: No timescale set for "lm32_shifter".
+
+[WRN:PA0205] rtl/lm32_top.v:56: No timescale set for "lm32_top".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0303] rtl/lm32_adder.v:56: Compile module "work@lm32_adder".
+
+[INF:CP0303] rtl/lm32_addsub.v:55: Compile module "work@lm32_addsub".
+
+[INF:CP0303] rtl/lm32_cpu.v:99: Compile module "work@lm32_cpu".
+
+[INF:CP0303] rtl/lm32_dcache.v:80: Compile module "work@lm32_dcache".
+
+[INF:CP0303] rtl/lm32_debug.v:69: Compile module "work@lm32_debug".
+
+[INF:CP0303] rtl/lm32_decoder.v:113: Compile module "work@lm32_decoder".
+
+[INF:CP0303] rtl/lm32_dp_ram.v:37: Compile module "work@lm32_dp_ram".
+
+[INF:CP0303] rtl/lm32_dtlb.v:53: Compile module "work@lm32_dtlb".
+
+[INF:CP0303] rtl/lm32_icache.v:86: Compile module "work@lm32_icache".
+
+[INF:CP0303] rtl/lm32_instruction_unit.v:77: Compile module "work@lm32_instruction_unit".
+
+[INF:CP0303] rtl/lm32_interrupt.v:56: Compile module "work@lm32_interrupt".
+
+[INF:CP0303] rtl/lm32_itlb.v:55: Compile module "work@lm32_itlb".
+
+[INF:CP0303] rtl/lm32_load_store_unit.v:69: Compile module "work@lm32_load_store_unit".
+
+[INF:CP0303] rtl/lm32_logic_op.v:56: Compile module "work@lm32_logic_op".
+
+[INF:CP0303] rtl/lm32_mc_arithmetic.v:64: Compile module "work@lm32_mc_arithmetic".
+
+[INF:CP0303] rtl/lm32_multiplier.v:56: Compile module "work@lm32_multiplier".
+
+[INF:CP0303] rtl/lm32_ram.v:61: Compile module "work@lm32_ram".
+
+[INF:CP0303] rtl/lm32_shifter.v:56: Compile module "work@lm32_shifter".
+
+[INF:CP0303] rtl/lm32_top.v:56: Compile module "work@lm32_top".
+
+[INF:CP0303] sim/tb_lm32_system.v:34: Compile module "work@testbench".
+
+[INF:EL0526] Design Elaboration...
+
+[INF:CP0335] rtl/lm32_icache.v:230: Compile generate block "work@testbench.lm32.cpu.instruction_unit.icache.memories[0]".
+
+[INF:CP0335] rtl/lm32_icache.v:288: Compile generate block "work@testbench.lm32.cpu.instruction_unit.icache.match[0]".
+
+[INF:CP0335] rtl/lm32_icache.v:301: Compile generate block "work@testbench.lm32.cpu.instruction_unit.icache.inst_1".
+
+[INF:CP0335] rtl/lm32_icache.v:313: Compile generate block "work@testbench.lm32.cpu.instruction_unit.icache.genblk4".
+
+[INF:CP0335] rtl/lm32_icache.v:329: Compile generate block "work@testbench.lm32.cpu.instruction_unit.icache.genblk5".
+
+[INF:CP0335] rtl/lm32_icache.v:340: Compile generate block "work@testbench.lm32.cpu.instruction_unit.icache.we_1".
+
+[INF:CP0335] rtl/lm32_icache.v:483: Compile generate block "work@testbench.lm32.cpu.instruction_unit.icache.genblk8".
+
+[INF:CP0335] rtl/lm32_instruction_unit.v:606: Compile generate block "work@testbench.lm32.cpu.instruction_unit.genblk1".
+
+[INF:CP0335] rtl/lm32_dcache.v:219: Compile generate block "work@testbench.lm32.cpu.load_store_unit.dcache.memories[0]".
+
+[INF:CP0335] rtl/lm32_dcache.v:222: Compile generate block "work@testbench.lm32.cpu.load_store_unit.dcache.memories[0].data_memories".
+
+[INF:CP0335] rtl/lm32_dcache.v:306: Compile generate block "work@testbench.lm32.cpu.load_store_unit.dcache.match[0]".
+
+[INF:CP0335] rtl/lm32_dcache.v:314: Compile generate block "work@testbench.lm32.cpu.load_store_unit.dcache.data_1".
+
+[INF:CP0335] rtl/lm32_dcache.v:325: Compile generate block "work@testbench.lm32.cpu.load_store_unit.dcache.genblk4".
+
+[INF:CP0335] rtl/lm32_dcache.v:356: Compile generate block "work@testbench.lm32.cpu.load_store_unit.dcache.genblk5".
+
+[INF:CP0335] rtl/lm32_dcache.v:374: Compile generate block "work@testbench.lm32.cpu.load_store_unit.dcache.genblk6".
+
+[INF:CP0335] rtl/lm32_dcache.v:389: Compile generate block "work@testbench.lm32.cpu.load_store_unit.dcache.we_1".
+
+[INF:CP0335] rtl/lm32_dcache.v:506: Compile generate block "work@testbench.lm32.cpu.load_store_unit.dcache.genblk9".
+
+[INF:CP0335] rtl/lm32_load_store_unit.v:652: Compile generate block "work@testbench.lm32.cpu.load_store_unit.genblk1".
+
+[INF:CP0335] rtl/lm32_interrupt.v:178: Compile generate block "work@testbench.lm32.cpu.interrupt_unit.genblk1".
+
+[INF:CP0335] rtl/lm32_interrupt.v:229: Compile generate block "work@testbench.lm32.cpu.interrupt_unit.genblk2".
+
+[INF:CP0335] rtl/lm32_debug.v:192: Compile generate block "work@testbench.lm32.cpu.hw_debug.bp_comb[0]".
+
+[INF:CP0335] rtl/lm32_debug.v:192: Compile generate block "work@testbench.lm32.cpu.hw_debug.bp_comb[1]".
+
+[INF:CP0335] rtl/lm32_debug.v:192: Compile generate block "work@testbench.lm32.cpu.hw_debug.bp_comb[2]".
+
+[INF:CP0335] rtl/lm32_debug.v:192: Compile generate block "work@testbench.lm32.cpu.hw_debug.bp_comb[3]".
+
+[INF:CP0335] rtl/lm32_debug.v:199: Compile generate block "work@testbench.lm32.cpu.hw_debug.genblk2".
+
+[INF:CP0335] rtl/lm32_debug.v:213: Compile generate block "work@testbench.lm32.cpu.hw_debug.wp_comb[0]".
+
+[INF:CP0335] rtl/lm32_debug.v:213: Compile generate block "work@testbench.lm32.cpu.hw_debug.wp_comb[1]".
+
+[INF:CP0335] rtl/lm32_debug.v:213: Compile generate block "work@testbench.lm32.cpu.hw_debug.wp_comb[2]".
+
+[INF:CP0335] rtl/lm32_debug.v:213: Compile generate block "work@testbench.lm32.cpu.hw_debug.wp_comb[3]".
+
+[INF:CP0335] rtl/lm32_debug.v:219: Compile generate block "work@testbench.lm32.cpu.hw_debug.genblk4".
+
+[INF:CP0335] rtl/lm32_debug.v:242: Compile generate block "work@testbench.lm32.cpu.hw_debug.bp_seq[0]".
+
+[INF:CP0335] rtl/lm32_debug.v:242: Compile generate block "work@testbench.lm32.cpu.hw_debug.bp_seq[1]".
+
+[INF:CP0335] rtl/lm32_debug.v:242: Compile generate block "work@testbench.lm32.cpu.hw_debug.bp_seq[2]".
+
+[INF:CP0335] rtl/lm32_debug.v:242: Compile generate block "work@testbench.lm32.cpu.hw_debug.bp_seq[3]".
+
+[INF:CP0335] rtl/lm32_debug.v:265: Compile generate block "work@testbench.lm32.cpu.hw_debug.wp_seq[0]".
+
+[INF:CP0335] rtl/lm32_debug.v:265: Compile generate block "work@testbench.lm32.cpu.hw_debug.wp_seq[1]".
+
+[INF:CP0335] rtl/lm32_debug.v:265: Compile generate block "work@testbench.lm32.cpu.hw_debug.wp_seq[2]".
+
+[INF:CP0335] rtl/lm32_debug.v:265: Compile generate block "work@testbench.lm32.cpu.hw_debug.wp_seq[3]".
+
+[NTE:EL0503] rtl/lm32_dp_ram.v:37: Top level module "work@lm32_dp_ram".
+
+[NTE:EL0503] sim/tb_lm32_system.v:34: Top level module "work@testbench".
+
+[NTE:EL0504] Multiple top level modules in design.
+
+[NTE:EL0508] Nb Top level modules: 2.
+
+[NTE:EL0509] Max instance depth: 8.
+
+[NTE:EL0510] Nb instances: 27.
+
+[NTE:EL0511] Nb leaf instances: 10.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0708] Writing UHDM DB: ../../../../build/regression/YosysBigSimLm32/slpp_unit/surelog.uhdm ...
+
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 19
+[   NOTE] : 7
+
+
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_adder.v            | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_adder_000.v            | 40 | 135 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_addsub.v           | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_addsub_000.v           | 25 | 95 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_cpu.v              | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_cpu_000.v              | 2275 | 3123 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_dcache.v           | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_dcache_000.v           | 304 | 537 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_debug.v            | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_debug_000.v            | 177 | 365 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_decoder.v          | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_decoder_000.v          | 407 | 601 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_dp_ram.v           | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_dp_ram_000.v           | 62 | 145 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_dtlb.v             | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_dtlb_000.v             | 161 | 296 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_icache.v           | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_icache_000.v           | 287 | 516 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_instruction_unit.v | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_instruction_unit_000.v | 642 | 955 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_interrupt.v        | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_interrupt_000.v        | 220 | 388 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_itlb.v             | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_itlb_000.v             | 146 | 275 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_load_store_unit.v  | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_load_store_unit_000.v  | 547 | 895 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_logic_op.v         | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_logic_op_000.v         | 20 | 96 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_mc_arithmetic.v    | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_mc_arithmetic_000.v    | 174 | 309 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_multiplier.v       | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_multiplier_000.v       | 32 | 120 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_ram.v              | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_ram_000.v              | 57 | 138 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_shifter.v          | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_shifter_000.v          | 45 | 155 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/rtl/lm32_top.v              | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/lm32_top_000.v              | 217 | 353 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/YosysBigSim/lm32/sim/tb_lm32_system.v        | ${SURELOG_DIR}/build/regression/YosysBigSimLm32/roundtrip/tb_lm32_system_000.v        | 241 | 390 | 
+

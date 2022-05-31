@@ -1,0 +1,302 @@
+[INF:CM0023] Creating log file ../../build/regression/PpLppdr/slpp_all/surelog.log.
+
+LIB:  work
+FILE: dut.sv
+n<> u<0> t<Null_rule> p<86> s<85> l<16:1> el<1:18>
+n<> u<1> t<Module_keyword> p<5> s<2> l<16:1> el<16:7>
+n<top> u<2> t<StringConst> p<5> s<4> l<16:8> el<16:11>
+n<> u<3> t<Port> p<4> l<16:12> el<16:12>
+n<> u<4> t<List_of_ports> p<5> c<3> l<16:11> el<16:13>
+n<> u<5> t<Module_nonansi_header> p<83> c<1> s<82> l<16:1> el<16:14>
+n<> u<6> t<Lifetime_Automatic> p<76> s<75> l<18:8> el<18:17>
+n<set_refgen_en> u<7> t<StringConst> p<75> s<73> l<18:18> el<18:31>
+n<csr_read> u<8> t<StringConst> p<24> s<23> l<12:36> el<12:44>
+n<DDR_CMN_OFFSET> u<9> t<StringConst> p<10> l<12:45> el<12:59>
+n<> u<10> t<Primary_literal> p<11> c<9> l<12:45> el<12:59>
+n<> u<11> t<Primary> p<12> c<10> l<12:45> el<12:59>
+n<> u<12> t<Expression> p<23> c<11> s<17> l<12:45> el<12:59>
+n<32'h00000008> u<13> t<IntConst> p<14> l<12:60> el<12:72>
+n<> u<14> t<Primary_literal> p<15> c<13> l<12:60> el<12:72>
+n<> u<15> t<Primary> p<16> c<14> l<12:60> el<12:72>
+n<> u<16> t<Expression> p<17> c<15> l<12:60> el<12:72>
+n<> u<17> t<Argument> p<23> c<16> s<22> l<12:60> el<12:72>
+n<wdata> u<18> t<StringConst> p<19> l<12:74> el<12:79>
+n<> u<19> t<Primary_literal> p<20> c<18> l<12:74> el<12:79>
+n<> u<20> t<Primary> p<21> c<19> l<12:74> el<12:79>
+n<> u<21> t<Expression> p<22> c<20> l<12:74> el<12:79>
+n<> u<22> t<Argument> p<23> c<21> l<12:74> el<12:79>
+n<> u<23> t<List_of_arguments> p<24> c<12> l<12:45> el<12:79>
+n<> u<24> t<Subroutine_call> p<25> c<8> l<12:36> el<12:80>
+n<> u<25> t<Subroutine_call_statement> p<26> c<24> l<12:36> el<12:81>
+n<> u<26> t<Statement_item> p<27> c<25> l<12:36> el<12:81>
+n<> u<27> t<Statement> p<28> c<26> l<12:36> el<12:81>
+n<> u<28> t<Statement_or_null> p<70> c<27> s<47> l<12:36> el<12:81>
+n<wdata> u<29> t<StringConst> p<30> l<13:36> el<13:41>
+n<> u<30> t<Ps_or_hierarchical_identifier> p<37> c<29> s<36> l<13:36> el<13:41>
+n<9> u<31> t<IntConst> p<32> l<13:42> el<13:43>
+n<> u<32> t<Primary_literal> p<33> c<31> l<13:42> el<13:43>
+n<> u<33> t<Primary> p<34> c<32> l<13:42> el<13:43>
+n<> u<34> t<Expression> p<35> c<33> l<13:42> el<13:43>
+n<> u<35> t<Bit_select> p<36> c<34> l<13:41> el<13:46>
+n<> u<36> t<Select> p<37> c<35> l<13:41> el<13:46>
+n<> u<37> t<Variable_lvalue> p<43> c<30> s<38> l<13:36> el<13:46>
+n<> u<38> t<AssignOp_Assign> p<43> s<42> l<13:47> el<13:48>
+n<en> u<39> t<StringConst> p<40> l<13:49> el<13:51>
+n<> u<40> t<Primary_literal> p<41> c<39> l<13:49> el<13:51>
+n<> u<41> t<Primary> p<42> c<40> l<13:49> el<13:51>
+n<> u<42> t<Expression> p<43> c<41> l<13:49> el<13:51>
+n<> u<43> t<Operator_assignment> p<44> c<37> l<13:36> el<13:51>
+n<> u<44> t<Blocking_assignment> p<45> c<43> l<13:36> el<13:51>
+n<> u<45> t<Statement_item> p<46> c<44> l<13:36> el<13:52>
+n<> u<46> t<Statement> p<47> c<45> l<13:36> el<13:52>
+n<> u<47> t<Statement_or_null> p<70> c<46> s<68> l<13:36> el<13:52>
+n<csr_write> u<48> t<StringConst> p<64> s<63> l<14:36> el<14:45>
+n<DDR_CMN_OFFSET> u<49> t<StringConst> p<50> l<14:46> el<14:60>
+n<> u<50> t<Primary_literal> p<51> c<49> l<14:46> el<14:60>
+n<> u<51> t<Primary> p<52> c<50> l<14:46> el<14:60>
+n<> u<52> t<Expression> p<63> c<51> s<57> l<14:46> el<14:60>
+n<32'h00000008> u<53> t<IntConst> p<54> l<14:61> el<14:73>
+n<> u<54> t<Primary_literal> p<55> c<53> l<14:61> el<14:73>
+n<> u<55> t<Primary> p<56> c<54> l<14:61> el<14:73>
+n<> u<56> t<Expression> p<57> c<55> l<14:61> el<14:73>
+n<> u<57> t<Argument> p<63> c<56> s<62> l<14:61> el<14:73>
+n<wdata> u<58> t<StringConst> p<59> l<14:75> el<14:80>
+n<> u<59> t<Primary_literal> p<60> c<58> l<14:75> el<14:80>
+n<> u<60> t<Primary> p<61> c<59> l<14:75> el<14:80>
+n<> u<61> t<Expression> p<62> c<60> l<14:75> el<14:80>
+n<> u<62> t<Argument> p<63> c<61> l<14:75> el<14:80>
+n<> u<63> t<List_of_arguments> p<64> c<52> l<14:46> el<14:80>
+n<> u<64> t<Subroutine_call> p<65> c<48> l<14:36> el<14:81>
+n<> u<65> t<Subroutine_call_statement> p<66> c<64> l<14:36> el<20:2>
+n<> u<66> t<Statement_item> p<67> c<65> l<14:36> el<20:2>
+n<> u<67> t<Statement> p<68> c<66> l<14:36> el<20:2>
+n<> u<68> t<Statement_or_null> p<70> c<67> s<69> l<14:36> el<20:2>
+n<> u<69> t<End> p<70> l<21:5> el<21:8>
+n<> u<70> t<Seq_block> p<71> c<28> l<19:5> el<21:8>
+n<> u<71> t<Statement_item> p<72> c<70> l<19:5> el<21:8>
+n<> u<72> t<Statement> p<73> c<71> l<19:5> el<21:8>
+n<> u<73> t<Statement_or_null> p<75> c<72> s<74> l<19:5> el<21:8>
+n<> u<74> t<Endtask> p<75> l<22:1> el<22:8>
+n<> u<75> t<Task_body_declaration> p<76> c<7> l<18:18> el<22:8>
+n<> u<76> t<Task_declaration> p<77> c<6> l<18:3> el<22:8>
+n<> u<77> t<Package_or_generate_item_declaration> p<78> c<76> l<18:3> el<22:8>
+n<> u<78> t<Module_or_generate_item_declaration> p<79> c<77> l<18:3> el<22:8>
+n<> u<79> t<Module_common_item> p<80> c<78> l<18:3> el<22:8>
+n<> u<80> t<Module_or_generate_item> p<81> c<79> l<18:3> el<22:8>
+n<> u<81> t<Non_port_module_item> p<82> c<80> l<18:3> el<22:8>
+n<> u<82> t<Module_item> p<83> c<81> l<18:3> el<22:8>
+n<> u<83> t<Module_declaration> p<84> c<5> l<16:1> el<25:10>
+n<> u<84> t<Description> p<85> c<83> l<16:1> el<25:10>
+n<> u<85> t<Source_text> p<86> c<84> l<16:1> el<25:10>
+n<> u<86> t<Top_level_rule> l<16:1> el<26:1>
+[WRN:PA0205] dut.sv:16: No timescale set for "top".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0303] dut.sv:16: Compile module "work@top".
+
+[INF:EL0526] Design Elaboration...
+
+[NTE:EL0503] dut.sv:16: Top level module "work@top".
+
+[NTE:EL0508] Nb Top level modules: 1.
+
+[NTE:EL0509] Max instance depth: 1.
+
+[NTE:EL0510] Nb instances: 1.
+
+[NTE:EL0511] Nb leaf instances: 0.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0707] Elaborating UHDM...
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/PpLppdr/slpp_all/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/PpLppdr/slpp_all/surelog.uhdm.chk.html ...
+
+[ERR:UH0704] dut.sv:14: UHDM coverage pointing to empty source line.
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/PpLppdr/slpp_all/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (work@top)
+|vpiElaborated:1
+|vpiName:work@top
+|uhdmallModules:
+\_module: work@top (work@top) dut.sv:16:1: , endln:25:10, parent:work@top
+  |vpiFullName:work@top
+  |vpiDefName:work@top
+  |vpiTaskFunc:
+  \_task: (work@top.set_refgen_en), line:18:3, endln:22:8, parent:work@top
+    |vpiName:set_refgen_en
+    |vpiFullName:work@top.set_refgen_en
+    |vpiVisibility:1
+    |vpiAutomatic:1
+    |vpiStmt:
+    \_begin: (work@top.set_refgen_en), line:19:5, endln:21:8, parent:work@top.set_refgen_en
+      |vpiFullName:work@top.set_refgen_en
+      |vpiStmt:
+      \_func_call: (csr_read), line:12:36, endln:12:80, parent:work@top.set_refgen_en
+        |vpiArgument:
+        \_ref_obj: (work@top.set_refgen_en.DDR_CMN_OFFSET), line:12:45, endln:12:59, parent:csr_read
+          |vpiName:DDR_CMN_OFFSET
+          |vpiFullName:work@top.set_refgen_en.DDR_CMN_OFFSET
+          |vpiActual:
+          \_logic_net: (DDR_CMN_OFFSET)
+            |vpiName:DDR_CMN_OFFSET
+            |vpiNetType:1
+        |vpiArgument:
+        \_constant: , line:12:60, endln:12:72, parent:csr_read
+          |vpiDecompile:32'h00000008
+          |vpiSize:32
+          |HEX:00000008
+          |vpiConstType:5
+        |vpiArgument:
+        \_ref_obj: (work@top.set_refgen_en.wdata), line:12:74, endln:12:79, parent:csr_read
+          |vpiName:wdata
+          |vpiFullName:work@top.set_refgen_en.wdata
+          |vpiActual:
+          \_logic_net: (wdata)
+            |vpiName:wdata
+            |vpiNetType:1
+        |vpiName:csr_read
+      |vpiStmt:
+      \_assignment: , line:13:36, endln:13:51, parent:work@top.set_refgen_en
+        |vpiOpType:82
+        |vpiBlocking:1
+        |vpiRhs:
+        \_ref_obj: (work@top.set_refgen_en.en), line:13:49, endln:13:51, parent:work@top.set_refgen_en
+          |vpiName:en
+          |vpiFullName:work@top.set_refgen_en.en
+          |vpiActual:
+          \_logic_net: (en)
+            |vpiName:en
+            |vpiNetType:1
+        |vpiLhs:
+        \_bit_select: (work@top.set_refgen_en.wdata), line:13:36, endln:13:46, parent:work@top.set_refgen_en.wdata
+          |vpiParent:
+          \_ref_obj: (work@top.set_refgen_en.wdata)
+            |vpiName:wdata
+            |vpiFullName:work@top.set_refgen_en.wdata
+          |vpiName:wdata
+          |vpiFullName:work@top.set_refgen_en.wdata
+          |vpiIndex:
+          \_constant: , line:13:42, endln:13:43, parent:work@top.set_refgen_en.wdata
+            |vpiDecompile:9
+            |vpiSize:64
+            |UINT:9
+            |vpiConstType:9
+      |vpiStmt:
+      \_func_call: (csr_write), line:14:36, endln:14:81, parent:work@top.set_refgen_en
+        |vpiArgument:
+        \_ref_obj: (work@top.set_refgen_en.DDR_CMN_OFFSET), line:14:46, endln:14:60, parent:csr_write
+          |vpiName:DDR_CMN_OFFSET
+          |vpiFullName:work@top.set_refgen_en.DDR_CMN_OFFSET
+          |vpiActual:
+          \_logic_net: (DDR_CMN_OFFSET)
+        |vpiArgument:
+        \_constant: , line:14:61, endln:14:73, parent:csr_write
+          |vpiDecompile:32'h00000008
+          |vpiSize:32
+          |HEX:00000008
+          |vpiConstType:5
+        |vpiArgument:
+        \_ref_obj: (work@top.set_refgen_en.wdata), line:14:75, endln:14:80, parent:csr_write
+          |vpiName:wdata
+          |vpiFullName:work@top.set_refgen_en.wdata
+          |vpiActual:
+          \_logic_net: (wdata)
+        |vpiName:csr_write
+    |vpiInstance:
+    \_module: work@top (work@top) dut.sv:16:1: , endln:25:10, parent:work@top
+|uhdmtopModules:
+\_module: work@top (work@top) dut.sv:16:1: , endln:25:10
+  |vpiName:work@top
+  |vpiDefName:work@top
+  |vpiTop:1
+  |vpiTaskFunc:
+  \_task: (work@top.set_refgen_en), line:18:3, endln:22:8, parent:work@top
+    |vpiName:set_refgen_en
+    |vpiFullName:work@top.set_refgen_en
+    |vpiVisibility:1
+    |vpiAutomatic:1
+    |vpiStmt:
+    \_begin: (work@top.set_refgen_en), line:19:5, endln:21:8, parent:work@top.set_refgen_en
+      |vpiFullName:work@top.set_refgen_en
+      |vpiStmt:
+      \_func_call: (csr_read), line:12:36, endln:12:80, parent:work@top.set_refgen_en
+        |vpiArgument:
+        \_ref_obj: (work@top.set_refgen_en.DDR_CMN_OFFSET), line:12:45, endln:12:59, parent:csr_read
+          |vpiName:DDR_CMN_OFFSET
+          |vpiFullName:work@top.set_refgen_en.DDR_CMN_OFFSET
+          |vpiActual:
+          \_logic_net: (DDR_CMN_OFFSET)
+        |vpiArgument:
+        \_constant: , line:12:60, endln:12:72, parent:csr_read
+        |vpiArgument:
+        \_ref_obj: (work@top.set_refgen_en.wdata), line:12:74, endln:12:79, parent:csr_read
+          |vpiName:wdata
+          |vpiFullName:work@top.set_refgen_en.wdata
+          |vpiActual:
+          \_logic_net: (wdata)
+        |vpiName:csr_read
+      |vpiStmt:
+      \_assignment: , line:13:36, endln:13:51, parent:work@top.set_refgen_en
+        |vpiOpType:82
+        |vpiBlocking:1
+        |vpiRhs:
+        \_ref_obj: (work@top.set_refgen_en.en), line:13:49, endln:13:51
+          |vpiName:en
+          |vpiFullName:work@top.set_refgen_en.en
+          |vpiActual:
+          \_logic_net: (en)
+        |vpiLhs:
+        \_bit_select: (wdata), line:13:36, endln:13:46, parent:work@top.set_refgen_en.wdata
+          |vpiParent:
+          \_ref_obj: (work@top.set_refgen_en.wdata), parent:work@top.set_refgen_en.wdata
+            |vpiName:wdata
+            |vpiFullName:work@top.set_refgen_en.wdata
+            |vpiActual:
+            \_logic_net: (wdata)
+          |vpiName:wdata
+          |vpiIndex:
+          \_constant: , line:13:42, endln:13:43, parent:work@top.set_refgen_en.wdata
+      |vpiStmt:
+      \_func_call: (csr_write), line:14:36, endln:14:81, parent:work@top.set_refgen_en
+        |vpiArgument:
+        \_ref_obj: (work@top.set_refgen_en.DDR_CMN_OFFSET), line:14:46, endln:14:60, parent:csr_write
+          |vpiName:DDR_CMN_OFFSET
+          |vpiFullName:work@top.set_refgen_en.DDR_CMN_OFFSET
+          |vpiActual:
+          \_logic_net: (DDR_CMN_OFFSET)
+        |vpiArgument:
+        \_constant: , line:14:61, endln:14:73, parent:csr_write
+        |vpiArgument:
+        \_ref_obj: (work@top.set_refgen_en.wdata), line:14:75, endln:14:80, parent:csr_write
+          |vpiName:wdata
+          |vpiFullName:work@top.set_refgen_en.wdata
+          |vpiActual:
+          \_logic_net: (wdata)
+        |vpiName:csr_write
+    |vpiInstance:
+    \_module: work@top (work@top) dut.sv:16:1: , endln:25:10
+  |vpiNet:
+  \_logic_net: (DDR_CMN_OFFSET)
+  |vpiNet:
+  \_logic_net: (wdata)
+  |vpiNet:
+  \_logic_net: (en)
+  |vpiTopModule:1
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 1
+[WARNING] : 1
+[   NOTE] : 5
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/PpLppdr/dut.sv | ${SURELOG_DIR}/build/regression/PpLppdr/roundtrip/dut_000.sv | 12 | 25 | 
+

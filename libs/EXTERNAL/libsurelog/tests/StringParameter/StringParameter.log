@@ -1,0 +1,153 @@
+[INF:CM0023] Creating log file ../../build/regression/StringParameter/slpp_unit/surelog.log.
+
+[INF:CM0020] Separate compilation-unit mode is on.
+
+[WRN:PA0205] dut.sv:1: No timescale set for "top".
+
+[WRN:PA0205] dut.sv:8: No timescale set for "parameter_module".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0303] dut.sv:8: Compile module "work@parameter_module".
+
+[INF:CP0303] dut.sv:1: Compile module "work@top".
+
+[INF:EL0526] Design Elaboration...
+
+[NTE:EL0503] dut.sv:1: Top level module "work@top".
+
+[NTE:EL0508] Nb Top level modules: 1.
+
+[NTE:EL0509] Max instance depth: 2.
+
+[NTE:EL0510] Nb instances: 2.
+
+[NTE:EL0511] Nb leaf instances: 1.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0707] Elaborating UHDM...
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/StringParameter/slpp_unit/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/StringParameter/slpp_unit/surelog.uhdm.chk.html ...
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/StringParameter/slpp_unit/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (work@top)
+|vpiElaborated:1
+|vpiName:work@top
+|uhdmallModules:
+\_module: work@parameter_module (work@parameter_module) dut.sv:8:1: , endln:11:10, parent:work@top
+  |vpiFullName:work@parameter_module
+  |vpiParameter:
+  \_parameter: (work@parameter_module.FIRSTPARAMETER), line:9:11, endln:9:25, parent:work@parameter_module
+    |STRING:FIRSTVALUE
+    |vpiTypespec:
+    \_string_typespec: 
+    |vpiName:FIRSTPARAMETER
+    |vpiFullName:work@parameter_module.FIRSTPARAMETER
+  |vpiParameter:
+  \_parameter: (work@parameter_module.SECONDPARAMETER), line:10:11, endln:10:26, parent:work@parameter_module
+    |STRING:SECONDVALUE
+    |vpiTypespec:
+    \_string_typespec: 
+    |vpiName:SECONDPARAMETER
+    |vpiFullName:work@parameter_module.SECONDPARAMETER
+  |vpiParamAssign:
+  \_param_assign: , line:9:11, endln:9:40, parent:work@parameter_module
+    |vpiRhs:
+    \_constant: , line:9:28, endln:9:40
+      |vpiDecompile:FIRSTVALUE
+      |vpiSize:10
+      |STRING:FIRSTVALUE
+      |vpiTypespec:
+      \_string_typespec: 
+      |vpiConstType:6
+    |vpiLhs:
+    \_parameter: (work@parameter_module.FIRSTPARAMETER), line:9:11, endln:9:25, parent:work@parameter_module
+  |vpiParamAssign:
+  \_param_assign: , line:10:11, endln:10:42, parent:work@parameter_module
+    |vpiRhs:
+    \_constant: , line:10:29, endln:10:42
+      |vpiDecompile:SECONDVALUE
+      |vpiSize:11
+      |STRING:SECONDVALUE
+      |vpiTypespec:
+      \_string_typespec: 
+      |vpiConstType:6
+    |vpiLhs:
+    \_parameter: (work@parameter_module.SECONDPARAMETER), line:10:11, endln:10:26, parent:work@parameter_module
+  |vpiDefName:work@parameter_module
+|uhdmallModules:
+\_module: work@top (work@top) dut.sv:1:1: , endln:6:10, parent:work@top
+  |vpiFullName:work@top
+  |vpiDefName:work@top
+|uhdmtopModules:
+\_module: work@top (work@top) dut.sv:1:1: , endln:6:10
+  |vpiName:work@top
+  |vpiDefName:work@top
+  |vpiTop:1
+  |vpiTopModule:1
+  |vpiModule:
+  \_module: work@parameter_module (work@top.test_module) dut.sv:2:9: , endln:5:26, parent:work@top
+    |vpiName:test_module
+    |vpiFullName:work@top.test_module
+    |vpiParameter:
+    \_parameter: (work@top.test_module.FIRSTPARAMETER), line:9:11, endln:9:25, parent:work@top.test_module
+      |STRING:FIRSTVALUE
+      |vpiTypespec:
+      \_string_typespec: , parent:work@top.test_module.FIRSTPARAMETER
+      |vpiName:FIRSTPARAMETER
+      |vpiFullName:work@top.test_module.FIRSTPARAMETER
+    |vpiParameter:
+    \_parameter: (work@top.test_module.SECONDPARAMETER), line:10:11, endln:10:26, parent:work@top.test_module
+      |STRING:SECONDVALUE
+      |vpiTypespec:
+      \_string_typespec: , parent:work@top.test_module.SECONDPARAMETER
+      |vpiName:SECONDPARAMETER
+      |vpiFullName:work@top.test_module.SECONDPARAMETER
+    |vpiParamAssign:
+    \_param_assign: , line:9:11, endln:9:40, parent:work@top.test_module
+      |vpiOverriden:1
+      |vpiRhs:
+      \_constant: , line:9:28, endln:9:40
+        |vpiDecompile:TOPFIRSTVALUE
+        |vpiSize:13
+        |STRING:TOPFIRSTVALUE
+        |vpiTypespec:
+        \_string_typespec: 
+        |vpiConstType:6
+      |vpiLhs:
+      \_parameter: (work@top.test_module.FIRSTPARAMETER), line:9:11, endln:9:25, parent:work@top.test_module
+    |vpiParamAssign:
+    \_param_assign: , line:10:11, endln:10:42, parent:work@top.test_module
+      |vpiOverriden:1
+      |vpiRhs:
+      \_constant: , line:10:29, endln:10:42
+        |vpiDecompile:TOPSECONDVALUE
+        |vpiSize:14
+        |STRING:TOPSECONDVALUE
+        |vpiTypespec:
+        \_string_typespec: 
+        |vpiConstType:6
+      |vpiLhs:
+      \_parameter: (work@top.test_module.SECONDPARAMETER), line:10:11, endln:10:26, parent:work@top.test_module
+    |vpiDefName:work@parameter_module
+    |vpiDefFile:dut.sv
+    |vpiDefLineNo:8
+    |vpiInstance:
+    \_module: work@top (work@top) dut.sv:1:1: , endln:6:10
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 2
+[   NOTE] : 5
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/StringParameter/dut.sv | ${SURELOG_DIR}/build/regression/StringParameter/roundtrip/dut_000.sv | 6 | 11 | 
+

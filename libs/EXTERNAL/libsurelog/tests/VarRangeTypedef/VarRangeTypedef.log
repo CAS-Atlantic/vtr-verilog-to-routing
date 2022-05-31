@@ -1,0 +1,174 @@
+[INF:CM0023] Creating log file ../../build/regression/VarRangeTypedef/slpp_all/surelog.log.
+
+LIB:  work
+FILE: dut.sv
+n<> u<0> t<Null_rule> p<41> s<40> l<1:1> el<1:0>
+n<> u<1> t<Package> p<38> s<2> l<1:1> el<1:8>
+n<pkg> u<2> t<StringConst> p<38> s<18> l<1:9> el<1:12>
+n<> u<3> t<Struct_keyword> p<4> l<2:12> el<2:18>
+n<> u<4> t<Struct_union> p<13> c<3> s<5> l<2:12> el<2:18>
+n<> u<5> t<Packed_keyword> p<13> s<12> l<2:19> el<2:25>
+n<> u<6> t<IntVec_TypeLogic> p<7> l<3:7> el<3:12>
+n<> u<7> t<Data_type> p<8> c<6> l<3:7> el<3:12>
+n<> u<8> t<Data_type_or_void> p<12> c<7> s<11> l<3:7> el<3:12>
+n<x> u<9> t<StringConst> p<10> l<3:16> el<3:17>
+n<> u<10> t<Variable_decl_assignment> p<11> c<9> l<3:16> el<3:17>
+n<> u<11> t<List_of_variable_decl_assignments> p<12> c<10> l<3:16> el<3:17>
+n<> u<12> t<Struct_union_member> p<13> c<8> l<3:7> el<3:18>
+n<> u<13> t<Data_type> p<15> c<4> s<14> l<2:12> el<4:5>
+n<a> u<14> t<StringConst> p<15> l<4:6> el<4:7>
+n<> u<15> t<Type_declaration> p<16> c<13> l<2:4> el<4:8>
+n<> u<16> t<Data_declaration> p<17> c<15> l<2:4> el<4:8>
+n<> u<17> t<Package_or_generate_item_declaration> p<18> c<16> l<2:4> el<4:8>
+n<> u<18> t<Package_item> p<38> c<17> s<36> l<2:4> el<4:8>
+n<a> u<19> t<StringConst> p<20> l<5:12> el<5:13>
+n<> u<20> t<Data_type> p<33> c<19> s<21> l<5:12> el<5:13>
+n<b> u<21> t<StringConst> p<33> s<32> l<5:14> el<5:15>
+n<5> u<22> t<IntConst> p<23> l<5:16> el<5:17>
+n<> u<23> t<Primary_literal> p<24> c<22> l<5:16> el<5:17>
+n<> u<24> t<Constant_primary> p<25> c<23> l<5:16> el<5:17>
+n<> u<25> t<Constant_expression> p<30> c<24> s<29> l<5:16> el<5:17>
+n<0> u<26> t<IntConst> p<27> l<5:18> el<5:19>
+n<> u<27> t<Primary_literal> p<28> c<26> l<5:18> el<5:19>
+n<> u<28> t<Constant_primary> p<29> c<27> l<5:18> el<5:19>
+n<> u<29> t<Constant_expression> p<30> c<28> l<5:18> el<5:19>
+n<> u<30> t<Constant_range> p<31> c<25> l<5:16> el<5:19>
+n<> u<31> t<Unpacked_dimension> p<32> c<30> l<5:15> el<5:20>
+n<> u<32> t<Variable_dimension> p<33> c<31> l<5:15> el<5:20>
+n<> u<33> t<Type_declaration> p<34> c<20> l<5:4> el<5:21>
+n<> u<34> t<Data_declaration> p<35> c<33> l<5:4> el<5:21>
+n<> u<35> t<Package_or_generate_item_declaration> p<36> c<34> l<5:4> el<5:21>
+n<> u<36> t<Package_item> p<38> c<35> s<37> l<5:4> el<5:21>
+n<> u<37> t<Endpackage> p<38> l<6:1> el<6:11>
+n<> u<38> t<Package_declaration> p<39> c<1> l<1:1> el<6:11>
+n<> u<39> t<Description> p<40> c<38> l<1:1> el<6:11>
+n<> u<40> t<Source_text> p<41> c<39> l<1:1> el<6:11>
+n<> u<41> t<Top_level_rule> l<1:1> el<8:1>
+[WRN:PA0205] dut.sv:1: No timescale set for "pkg".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0301] dut.sv:1: Compile package "pkg".
+
+[INF:EL0526] Design Elaboration...
+
+[NTE:EL0508] Nb Top level modules: 0.
+
+[NTE:EL0509] Max instance depth: 0.
+
+[NTE:EL0510] Nb instances: 0.
+
+[NTE:EL0511] Nb leaf instances: 0.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0707] Elaborating UHDM...
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/VarRangeTypedef/slpp_all/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/VarRangeTypedef/slpp_all/surelog.uhdm.chk.html ...
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/VarRangeTypedef/slpp_all/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (unnamed)
+|vpiElaborated:1
+|vpiName:unnamed
+|uhdmallPackages:
+\_package: pkg (pkg::) dut.sv:1:1: , endln:6:11, parent:unnamed
+  |vpiName:pkg
+  |vpiFullName:pkg::
+  |vpiTypedef:
+  \_struct_typespec: (pkg::a), line:2:12, endln:2:18, parent:pkg::
+    |vpiName:pkg::a
+    |vpiInstance:
+    \_package: pkg (pkg::) dut.sv:1:1: , endln:6:11, parent:unnamed
+    |vpiPacked:1
+    |vpiTypespecMember:
+    \_typespec_member: (x), line:3:16, endln:3:17, parent:pkg::a
+      |vpiName:x
+      |vpiTypespec:
+      \_logic_typespec: , line:3:7, endln:3:12
+        |vpiInstance:
+        \_package: (pkg), file:
+      |vpiRefFile:dut.sv
+      |vpiRefLineNo:3
+      |vpiRefColumnNo:7
+      |vpiRefEndLineNo:3
+      |vpiRefEndColumnNo:12
+  |vpiDefName:pkg
+|uhdmtopPackages:
+\_package: pkg (pkg::) dut.sv:1:1: , endln:6:11, parent:unnamed
+  |vpiName:pkg
+  |vpiFullName:pkg::
+  |vpiTypedef:
+  \_struct_typespec: (pkg::a), line:2:12, endln:2:18, parent:pkg::
+    |vpiName:pkg::a
+    |vpiInstance:
+    \_package: pkg (pkg::) dut.sv:1:1: , endln:6:11, parent:unnamed
+    |vpiPacked:1
+    |vpiTypespecMember:
+    \_typespec_member: (x), line:3:16, endln:3:17, parent:pkg::a
+      |vpiName:x
+      |vpiTypespec:
+      \_logic_typespec: , line:3:7, endln:3:12
+        |vpiInstance:
+        \_package: pkg (pkg::) dut.sv:1:1: , endln:6:11, parent:unnamed
+      |vpiRefFile:dut.sv
+      |vpiRefLineNo:3
+      |vpiRefColumnNo:7
+      |vpiRefEndLineNo:3
+      |vpiRefEndColumnNo:12
+  |vpiTypedef:
+  \_array_typespec: (pkg::b), parent:pkg::
+    |vpiName:pkg::b
+    |vpiInstance:
+    \_package: pkg (pkg::) dut.sv:1:1: , endln:6:11, parent:unnamed
+    |vpiRange:
+    \_range: , line:5:16, endln:5:19
+      |vpiLeftRange:
+      \_constant: , line:5:16, endln:5:17
+        |vpiDecompile:5
+        |vpiSize:64
+        |UINT:5
+        |vpiConstType:9
+      |vpiRightRange:
+      \_constant: , line:5:18, endln:5:19
+        |vpiDecompile:0
+        |vpiSize:64
+        |UINT:0
+        |vpiConstType:9
+    |vpiElemTypespec:
+    \_struct_typespec: (pkg::a), line:2:12, endln:2:18
+      |vpiName:pkg::a
+      |vpiTypedefAlias:
+      \_struct_typespec: (pkg::a), line:2:12, endln:2:18, parent:pkg::
+      |vpiInstance:
+      \_package: pkg (pkg::) dut.sv:1:1: , endln:6:11, parent:unnamed
+      |vpiPacked:1
+      |vpiTypespecMember:
+      \_typespec_member: (x), line:3:16, endln:3:17, parent:pkg::a
+        |vpiName:x
+        |vpiTypespec:
+        \_logic_typespec: , line:3:7, endln:3:12, parent:x
+          |vpiInstance:
+          \_package: pkg (pkg::) dut.sv:1:1: , endln:6:11, parent:unnamed
+        |vpiRefFile:dut.sv
+        |vpiRefLineNo:3
+        |vpiRefColumnNo:7
+        |vpiRefEndLineNo:3
+        |vpiRefEndColumnNo:12
+  |vpiDefName:pkg
+  |vpiTop:1
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 1
+[   NOTE] : 4
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/VarRangeTypedef/dut.sv | ${SURELOG_DIR}/build/regression/VarRangeTypedef/roundtrip/dut_000.sv | 1 | 6 | 
+

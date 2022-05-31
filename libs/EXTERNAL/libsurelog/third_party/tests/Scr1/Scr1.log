@@ -1,0 +1,730 @@
+[INF:CM0023] Creating log file ../../../build/regression/Scr1/slpp_all/surelog.log.
+
+Scan libraries took t.ttts
+
+[INF:PP0122] Preprocessing source file "src/pipeline/scr1_pipe_hdu.sv".
+
+[NTE:PP0128] src/pipeline/scr1_pipe_hdu.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0123] Preprocessing include file "src/includes/scr1_arch_description.svh".
+
+[NTE:PP0128] src/includes/scr1_arch_description.svh:3: Non ASCII character detected, replaced by space.
+
+[WRN:PP0103] src/includes/scr1_arch_description.svh:57: Undefining an unknown macro "SCR1_RVE_EXT".
+
+[WRN:PP0103] src/includes/scr1_arch_description.svh:63: Undefining an unknown macro "SCR1_CLKCTRL_EN".
+
+[INF:PP0123] Preprocessing include file "src/includes/scr1_arch_types.svh".
+
+[NTE:PP0128] src/includes/scr1_arch_types.svh:3: Non ASCII character detected, replaced by space.
+
+[INF:PP0123] Preprocessing include file "src/includes/scr1_riscv_isa_decoding.svh".
+
+[NTE:PP0128] src/includes/scr1_riscv_isa_decoding.svh:3: Non ASCII character detected, replaced by space.
+
+[INF:PP0123] Preprocessing include file "src/includes/scr1_hdu.svh".
+
+[NTE:PP0128] src/includes/scr1_hdu.svh:3: Non ASCII character detected, replaced by space.
+
+[INF:PP0123] Preprocessing include file "src/includes/scr1_csr.svh".
+
+[NTE:PP0128] src/includes/scr1_csr.svh:3: Non ASCII character detected, replaced by space.
+
+[INF:PP0123] Preprocessing include file "src/includes/scr1_ipic.svh".
+
+[NTE:PP0128] src/includes/scr1_ipic.svh:3: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/pipeline/scr1_pipe_tdu.sv".
+
+[NTE:PP0128] src/pipeline/scr1_pipe_tdu.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0123] Preprocessing include file "src/includes/scr1_tdu.svh".
+
+[NTE:PP0128] src/includes/scr1_tdu.svh:3: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/pipeline/scr1_ipic.sv".
+
+[NTE:PP0128] src/pipeline/scr1_ipic.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/pipeline/scr1_pipe_csr.sv".
+
+[NTE:PP0128] src/pipeline/scr1_pipe_csr.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/pipeline/scr1_pipe_exu.sv".
+
+[NTE:PP0128] src/pipeline/scr1_pipe_exu.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0123] Preprocessing include file "src/includes/scr1_memif.svh".
+
+[NTE:PP0128] src/includes/scr1_memif.svh:3: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/pipeline/scr1_pipe_ialu.sv".
+
+[NTE:PP0128] src/pipeline/scr1_pipe_ialu.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0123] Preprocessing include file "src/includes/scr1_search_ms1.svh".
+
+[NTE:PP0128] src/includes/scr1_search_ms1.svh:3: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/pipeline/scr1_pipe_idu.sv".
+
+[NTE:PP0128] src/pipeline/scr1_pipe_idu.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/pipeline/scr1_pipe_ifu.sv".
+
+[NTE:PP0128] src/pipeline/scr1_pipe_ifu.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/pipeline/scr1_pipe_lsu.sv".
+
+[NTE:PP0128] src/pipeline/scr1_pipe_lsu.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/pipeline/scr1_pipe_mprf.sv".
+
+[NTE:PP0128] src/pipeline/scr1_pipe_mprf.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/pipeline/scr1_pipe_top.sv".
+
+[NTE:PP0128] src/pipeline/scr1_pipe_top.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/core/primitives/scr1_reset_cells.sv".
+
+[NTE:PP0128] src/core/primitives/scr1_reset_cells.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/core/primitives/scr1_cg.sv".
+
+[NTE:PP0128] src/core/primitives/scr1_cg.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/core/scr1_clk_ctrl.sv".
+
+[NTE:PP0128] src/core/scr1_clk_ctrl.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/core/scr1_tapc_shift_reg.sv".
+
+[NTE:PP0128] src/core/scr1_tapc_shift_reg.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/core/scr1_tapc.sv".
+
+[NTE:PP0128] src/core/scr1_tapc.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0123] Preprocessing include file "src/includes/scr1_tapc.svh".
+
+[NTE:PP0128] src/includes/scr1_tapc.svh:3: Non ASCII character detected, replaced by space.
+
+[INF:PP0123] Preprocessing include file "src/includes/scr1_dm.svh".
+
+[NTE:PP0128] src/includes/scr1_dm.svh:3: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/core/scr1_tapc_synchronizer.sv".
+
+[NTE:PP0128] src/core/scr1_tapc_synchronizer.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/core/scr1_core_top.sv".
+
+[NTE:PP0128] src/core/scr1_core_top.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/core/scr1_dm.sv".
+
+[NTE:PP0128] src/core/scr1_dm.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/core/scr1_dmi.sv".
+
+[NTE:PP0128] src/core/scr1_dmi.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/core/scr1_scu.sv".
+
+[NTE:PP0128] src/core/scr1_scu.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/top/scr1_dmem_router.sv".
+
+[NTE:PP0128] src/top/scr1_dmem_router.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/top/scr1_imem_router.sv".
+
+[NTE:PP0128] src/top/scr1_imem_router.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/top/scr1_dp_memory.sv".
+
+[NTE:PP0128] src/top/scr1_dp_memory.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/top/scr1_tcm.sv".
+
+[NTE:PP0128] src/top/scr1_tcm.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/top/scr1_timer.sv".
+
+[NTE:PP0128] src/top/scr1_timer.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/top/scr1_mem_axi.sv".
+
+[NTE:PP0128] src/top/scr1_mem_axi.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/top/scr1_top_axi.sv".
+
+[NTE:PP0128] src/top/scr1_top_axi.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/pipeline/scr1_tracelog.sv".
+
+[NTE:PP0128] src/pipeline/scr1_tracelog.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/tb/scr1_memory_tb_axi.sv".
+
+[NTE:PP0128] src/tb/scr1_memory_tb_axi.sv:1:32: Non ASCII character detected, replaced by space.
+
+[INF:PP0122] Preprocessing source file "src/tb/scr1_top_tb_axi.sv".
+
+[NTE:PP0128] src/tb/scr1_top_tb_axi.sv:1:32: Non ASCII character detected, replaced by space.
+
+Preprocessing took t.ttts
+
+Preprocessing took t.ttts
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_hdu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_tdu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_ipic.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_csr.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_exu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_ialu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_idu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_ifu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_lsu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_mprf.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_top.sv
+PP SSL Parsing: t.ttts src/core/primitives/scr1_reset_cells.sv
+PP SSL Parsing: t.ttts src/core/primitives/scr1_cg.sv
+PP SSL Parsing: t.ttts src/core/scr1_clk_ctrl.sv
+PP SSL Parsing: t.ttts src/core/scr1_tapc_shift_reg.sv
+PP SSL Parsing: t.ttts src/core/scr1_tapc.sv
+PP SSL Parsing: t.ttts src/core/scr1_tapc_synchronizer.sv
+PP SSL Parsing: t.ttts src/core/scr1_core_top.sv
+PP SSL Parsing: t.ttts src/core/scr1_dm.sv
+PP SSL Parsing: t.ttts src/core/scr1_dmi.sv
+PP SSL Parsing: t.ttts src/core/scr1_scu.sv
+PP SSL Parsing: t.ttts src/top/scr1_dmem_router.sv
+PP SSL Parsing: t.ttts src/top/scr1_imem_router.sv
+PP SSL Parsing: t.ttts src/top/scr1_dp_memory.sv
+PP SSL Parsing: t.ttts src/top/scr1_tcm.sv
+PP SSL Parsing: t.ttts src/top/scr1_timer.sv
+PP SSL Parsing: t.ttts src/top/scr1_mem_axi.sv
+PP SSL Parsing: t.ttts src/top/scr1_top_axi.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_tracelog.sv
+PP SSL Parsing: t.ttts src/tb/scr1_memory_tb_axi.sv
+PP SSL Parsing: t.ttts src/tb/scr1_top_tb_axi.sv
+
+[INF:PA0201] Parsing source file "src/pipeline/scr1_pipe_hdu.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/pipeline/scr1_pipe_tdu.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/pipeline/scr1_ipic.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/pipeline/scr1_pipe_csr.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/pipeline/scr1_pipe_exu.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/pipeline/scr1_pipe_ialu.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/pipeline/scr1_pipe_idu.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/pipeline/scr1_pipe_ifu.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/pipeline/scr1_pipe_lsu.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/pipeline/scr1_pipe_mprf.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/pipeline/scr1_pipe_top.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/core/primitives/scr1_reset_cells.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/core/primitives/scr1_cg.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/core/scr1_clk_ctrl.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/core/scr1_tapc_shift_reg.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/core/scr1_tapc.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/core/scr1_tapc_synchronizer.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/core/scr1_core_top.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/core/scr1_dm.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/core/scr1_dmi.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/core/scr1_scu.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/top/scr1_dmem_router.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/top/scr1_imem_router.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/top/scr1_dp_memory.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/top/scr1_tcm.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/top/scr1_timer.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/top/scr1_mem_axi.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/top/scr1_top_axi.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/pipeline/scr1_tracelog.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/tb/scr1_memory_tb_axi.sv".
+
+Cache saving: t.tttttts
+[INF:PA0201] Parsing source file "src/tb/scr1_top_tb_axi.sv".
+
+Cache saving: t.tttttts
+Parsing took t.ttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_hdu.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_tdu.sv
+Cache saving: t.tttttts
+LL  Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_ipic.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_csr.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_exu.sv
+Cache saving: t.tttttts
+LL  Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_ialu.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_idu.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_ifu.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_lsu.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_mprf.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_top.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/primitive_8561228728971000921/scr1_reset_cells.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/primitive_8561228728971000921/scr1_cg.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_clk_ctrl.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_tapc_shift_reg.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_tapc.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_tapc_synchronizer.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_core_top.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_dm.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_dmi.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_scu.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_dmem_router.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_imem_router.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_dp_memory.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_tcm.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_timer.sv
+Cache saving: t.tttttts
+LL  Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_mem_axi.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_top_axi.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_tracelog.sv
+Cache saving: t.tttttts
+LL  Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/t_663694864111261040/scr1_memory_tb_axi.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/t_663694864111261040/scr1_top_tb_axi.sv
+Cache saving: t.tttttts
+
+[WRN:PA0205] src/pipeline/scr1_pipe_hdu.sv:14: No timescale set for "scr1_pipe_hdu".
+
+[WRN:PA0205] src/pipeline/scr1_pipe_tdu.sv:12: No timescale set for "scr1_pipe_tdu".
+
+[WRN:PA0205] src/pipeline/scr1_ipic.sv:12: No timescale set for "scr1_ipic".
+
+[WRN:PA0205] src/pipeline/scr1_pipe_csr.sv:20: No timescale set for "scr1_pipe_csr".
+
+[WRN:PA0205] src/pipeline/scr1_pipe_exu.sv:20: No timescale set for "scr1_pipe_exu".
+
+[WRN:PA0205] src/pipeline/scr1_pipe_ialu.sv:11: No timescale set for "scr1_pipe_ialu".
+
+[WRN:PA0205] src/pipeline/scr1_pipe_idu.sv:11: No timescale set for "scr1_pipe_idu".
+
+[WRN:PA0205] src/pipeline/scr1_pipe_ifu.sv:12: No timescale set for "scr1_pipe_ifu".
+
+[WRN:PA0205] src/pipeline/scr1_pipe_lsu.sv:14: No timescale set for "scr1_pipe_lsu".
+
+[WRN:PA0205] src/pipeline/scr1_pipe_mprf.sv:9: No timescale set for "scr1_pipe_mprf".
+
+[WRN:PA0205] src/pipeline/scr1_pipe_top.sv:23: No timescale set for "scr1_pipe_top".
+
+[WRN:PA0205] src/core/primitives/scr1_reset_cells.sv:6: No timescale set for "scr1_reset_buf_cell".
+
+[WRN:PA0205] src/core/primitives/scr1_reset_cells.sv:44: No timescale set for "scr1_reset_sync_cell".
+
+[WRN:PA0205] src/core/primitives/scr1_reset_cells.sv:71: No timescale set for "scr1_reset_buf_qlfy_cell".
+
+[WRN:PA0205] src/core/primitives/scr1_reset_cells.sv:132: No timescale set for "scr1_reset_and2_cell".
+
+[WRN:PA0205] src/core/primitives/scr1_reset_cells.sv:144: No timescale set for "scr1_reset_and3_cell".
+
+[WRN:PA0205] src/core/primitives/scr1_reset_cells.sv:156: No timescale set for "scr1_reset_mux2_cell".
+
+[WRN:PA0205] src/core/scr1_tapc_shift_reg.sv:9: No timescale set for "scr1_tapc_shift_reg".
+
+[WRN:PA0205] src/core/scr1_tapc.sv:12: No timescale set for "scr1_tapc".
+
+[WRN:PA0205] src/core/scr1_tapc_synchronizer.sv:12: No timescale set for "scr1_tapc_synchronizer".
+
+[WRN:PA0205] src/core/scr1_core_top.sv:20: No timescale set for "scr1_core_top".
+
+[WRN:PA0205] src/core/scr1_dm.sv:12: No timescale set for "scr1_dm".
+
+[WRN:PA0205] src/core/scr1_dmi.sv:11: No timescale set for "scr1_dmi".
+
+[WRN:PA0205] src/core/scr1_scu.sv:10: No timescale set for "scr1_scu".
+
+[WRN:PA0205] src/top/scr1_dmem_router.sv:8: No timescale set for "scr1_dmem_router".
+
+[WRN:PA0205] src/top/scr1_imem_router.sv:8: No timescale set for "scr1_imem_router".
+
+[WRN:PA0205] src/top/scr1_dp_memory.sv:9: No timescale set for "scr1_dp_memory".
+
+[WRN:PA0205] src/top/scr1_tcm.sv:10: No timescale set for "scr1_tcm".
+
+[WRN:PA0205] src/top/scr1_timer.sv:9: No timescale set for "scr1_timer".
+
+[WRN:PA0205] src/top/scr1_mem_axi.sv:9: No timescale set for "scr1_mem_axi".
+
+[WRN:PA0205] src/top/scr1_top_axi.sv:16: No timescale set for "scr1_top_axi".
+
+[WRN:PA0205] src/pipeline/scr1_tracelog.sv:10: No timescale set for "scr1_tracelog".
+
+[WRN:PA0205] src/tb/scr1_memory_tb_axi.sv:8: No timescale set for "scr1_memory_tb_axi".
+
+[WRN:PA0205] src/tb/scr1_top_tb_axi.sv:11: No timescale set for "scr1_top_tb_axi".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0303] src/core/scr1_core_top.sv:20: Compile module "work@scr1_core_top".
+
+[INF:CP0303] src/core/scr1_dm.sv:12: Compile module "work@scr1_dm".
+
+[INF:CP0303] src/top/scr1_dmem_router.sv:8: Compile module "work@scr1_dmem_router".
+
+[INF:CP0303] src/core/scr1_dmi.sv:11: Compile module "work@scr1_dmi".
+
+[INF:CP0303] src/top/scr1_dp_memory.sv:9: Compile module "work@scr1_dp_memory".
+
+[INF:CP0303] src/top/scr1_imem_router.sv:8: Compile module "work@scr1_imem_router".
+
+[INF:CP0303] src/pipeline/scr1_ipic.sv:12: Compile module "work@scr1_ipic".
+
+[INF:CP0303] src/top/scr1_mem_axi.sv:9: Compile module "work@scr1_mem_axi".
+
+[INF:CP0303] src/tb/scr1_memory_tb_axi.sv:8: Compile module "work@scr1_memory_tb_axi".
+
+[INF:CP0303] src/pipeline/scr1_pipe_csr.sv:20: Compile module "work@scr1_pipe_csr".
+
+[INF:CP0303] src/pipeline/scr1_pipe_exu.sv:20: Compile module "work@scr1_pipe_exu".
+
+[INF:CP0303] src/pipeline/scr1_pipe_hdu.sv:14: Compile module "work@scr1_pipe_hdu".
+
+[INF:CP0303] src/pipeline/scr1_pipe_ialu.sv:11: Compile module "work@scr1_pipe_ialu".
+
+[INF:CP0303] src/pipeline/scr1_pipe_idu.sv:11: Compile module "work@scr1_pipe_idu".
+
+[INF:CP0303] src/pipeline/scr1_pipe_ifu.sv:12: Compile module "work@scr1_pipe_ifu".
+
+[INF:CP0303] src/pipeline/scr1_pipe_lsu.sv:14: Compile module "work@scr1_pipe_lsu".
+
+[INF:CP0303] src/pipeline/scr1_pipe_mprf.sv:9: Compile module "work@scr1_pipe_mprf".
+
+[INF:CP0303] src/pipeline/scr1_pipe_tdu.sv:12: Compile module "work@scr1_pipe_tdu".
+
+[INF:CP0303] src/pipeline/scr1_pipe_top.sv:23: Compile module "work@scr1_pipe_top".
+
+[INF:CP0303] src/core/primitives/scr1_reset_cells.sv:132: Compile module "work@scr1_reset_and2_cell".
+
+[INF:CP0303] src/core/primitives/scr1_reset_cells.sv:144: Compile module "work@scr1_reset_and3_cell".
+
+[INF:CP0303] src/core/primitives/scr1_reset_cells.sv:6: Compile module "work@scr1_reset_buf_cell".
+
+[INF:CP0303] src/core/primitives/scr1_reset_cells.sv:71: Compile module "work@scr1_reset_buf_qlfy_cell".
+
+[INF:CP0303] src/core/primitives/scr1_reset_cells.sv:156: Compile module "work@scr1_reset_mux2_cell".
+
+[INF:CP0303] src/core/primitives/scr1_reset_cells.sv:44: Compile module "work@scr1_reset_sync_cell".
+
+[INF:CP0303] src/core/scr1_scu.sv:10: Compile module "work@scr1_scu".
+
+[INF:CP0303] src/core/scr1_tapc.sv:12: Compile module "work@scr1_tapc".
+
+[INF:CP0303] src/core/scr1_tapc_shift_reg.sv:9: Compile module "work@scr1_tapc_shift_reg".
+
+[INF:CP0303] src/core/scr1_tapc_synchronizer.sv:12: Compile module "work@scr1_tapc_synchronizer".
+
+[INF:CP0303] src/top/scr1_tcm.sv:10: Compile module "work@scr1_tcm".
+
+[INF:CP0303] src/top/scr1_timer.sv:9: Compile module "work@scr1_timer".
+
+[INF:CP0303] src/top/scr1_top_axi.sv:16: Compile module "work@scr1_top_axi".
+
+[INF:CP0303] src/tb/scr1_top_tb_axi.sv:11: Compile module "work@scr1_top_tb_axi".
+
+[INF:CP0303] src/pipeline/scr1_tracelog.sv:10: Compile module "work@scr1_tracelog".
+
+Cache saving: t.tttttts
+[INF:CP0302] Compile class "work@mailbox".
+
+[INF:CP0302] Compile class "work@process".
+
+[INF:CP0302] Compile class "work@semaphore".
+
+Compilation took t.ttts
+
+[INF:EL0526] Design Elaboration...
+
+[INF:CP0335] src/core/scr1_scu.sv:316: Compile generate block "work@scr1_top_tb_axi.i_top.i_core_top.i_scu.gen_rst_inputs_sync".
+
+[INF:CP0335] src/core/scr1_core_top.sv:224: Compile generate block "work@scr1_top_tb_axi.i_top.i_core_top.gen_rst_inputs_sync".
+
+[INF:CP0335] src/pipeline/scr1_pipe_csr.sv:744: Compile generate block "work@scr1_top_tb_axi.i_top.i_core_top.i_pipe_top.i_pipe_csr.mtvec_base_ro_rw".
+
+[INF:CP0335] src/pipeline/scr1_pipe_hdu.sv:641: Compile generate block "work@scr1_top_tb_axi.i_top.i_core_top.i_pipe_top.i_pipe_hdu.genblk1".
+
+[INF:CP0335] src/core/scr1_tapc_shift_reg.sv:57: Compile generate block "work@scr1_top_tb_axi.i_top.i_core_top.i_tapc.i_bypass_reg.dr_shift_reg".
+
+[INF:CP0335] src/core/scr1_tapc_shift_reg.sv:37: Compile generate block "work@scr1_top_tb_axi.i_top.i_core_top.i_tapc.i_tap_idcode_reg.dr_shift_reg".
+
+[INF:CP0335] src/core/scr1_tapc_shift_reg.sv:37: Compile generate block "work@scr1_top_tb_axi.i_top.i_core_top.i_tapc.i_tap_dr_bld_id_reg.dr_shift_reg".
+
+[INF:CP0335] src/top/scr1_mem_axi.sv:301: Compile generate block "work@scr1_top_tb_axi.i_top.i_imem_axi.axi_resp_bp".
+
+[INF:CP0335] src/top/scr1_mem_axi.sv:301: Compile generate block "work@scr1_top_tb_axi.i_top.i_dmem_axi.axi_resp_bp".
+
+[INF:CP0335] src/tb/scr1_memory_tb_axi.sv:161: Compile generate block "work@scr1_top_tb_axi.i_memory_tb.rw_if[0]".
+
+[INF:CP0335] src/tb/scr1_memory_tb_axi.sv:292: Compile generate block "work@scr1_top_tb_axi.i_memory_tb.rw_if[0].SVA_TBMEM_X_WSTRB[0]".
+
+[INF:CP0335] src/tb/scr1_memory_tb_axi.sv:292: Compile generate block "work@scr1_top_tb_axi.i_memory_tb.rw_if[0].SVA_TBMEM_X_WSTRB[1]".
+
+[INF:CP0335] src/tb/scr1_memory_tb_axi.sv:292: Compile generate block "work@scr1_top_tb_axi.i_memory_tb.rw_if[0].SVA_TBMEM_X_WSTRB[2]".
+
+[INF:CP0335] src/tb/scr1_memory_tb_axi.sv:292: Compile generate block "work@scr1_top_tb_axi.i_memory_tb.rw_if[0].SVA_TBMEM_X_WSTRB[3]".
+
+[INF:CP0335] src/tb/scr1_memory_tb_axi.sv:161: Compile generate block "work@scr1_top_tb_axi.i_memory_tb.rw_if[1]".
+
+[INF:CP0335] src/tb/scr1_memory_tb_axi.sv:292: Compile generate block "work@scr1_top_tb_axi.i_memory_tb.rw_if[1].SVA_TBMEM_X_WSTRB[0]".
+
+[INF:CP0335] src/tb/scr1_memory_tb_axi.sv:292: Compile generate block "work@scr1_top_tb_axi.i_memory_tb.rw_if[1].SVA_TBMEM_X_WSTRB[1]".
+
+[INF:CP0335] src/tb/scr1_memory_tb_axi.sv:292: Compile generate block "work@scr1_top_tb_axi.i_memory_tb.rw_if[1].SVA_TBMEM_X_WSTRB[2]".
+
+[INF:CP0335] src/tb/scr1_memory_tb_axi.sv:292: Compile generate block "work@scr1_top_tb_axi.i_memory_tb.rw_if[1].SVA_TBMEM_X_WSTRB[3]".
+
+[NTE:EL0503] src/core/primitives/scr1_reset_cells.sv:144: Top level module "work@scr1_reset_and3_cell".
+
+[NTE:EL0503] src/core/primitives/scr1_reset_cells.sv:156: Top level module "work@scr1_reset_mux2_cell".
+
+[NTE:EL0503] src/pipeline/scr1_tracelog.sv:10: Top level module "work@scr1_tracelog".
+
+[NTE:EL0503] src/tb/scr1_top_tb_axi.sv:11: Top level module "work@scr1_top_tb_axi".
+
+[NTE:EL0504] Multiple top level modules in design.
+
+[NTE:EL0508] Nb Top level modules: 4.
+
+[NTE:EL0509] Max instance depth: 6.
+
+[NTE:EL0510] Nb instances: 42.
+
+[NTE:EL0511] Nb leaf instances: 3.
+
+Elaboration took t.ttts
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0708] Writing UHDM DB: ../../../build/regression/Scr1/slpp_all/surelog.uhdm ...
+
+==============
+PROFILE
+==============
+Scan libraries took t.ttts
+Preprocessing took t.ttts
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_hdu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_tdu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_ipic.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_csr.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_exu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_ialu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_idu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_ifu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_lsu.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_mprf.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_pipe_top.sv
+PP SSL Parsing: t.ttts src/core/primitives/scr1_reset_cells.sv
+PP SSL Parsing: t.ttts src/core/primitives/scr1_cg.sv
+PP SSL Parsing: t.ttts src/core/scr1_clk_ctrl.sv
+PP SSL Parsing: t.ttts src/core/scr1_tapc_shift_reg.sv
+PP SSL Parsing: t.ttts src/core/scr1_tapc.sv
+PP SSL Parsing: t.ttts src/core/scr1_tapc_synchronizer.sv
+PP SSL Parsing: t.ttts src/core/scr1_core_top.sv
+PP SSL Parsing: t.ttts src/core/scr1_dm.sv
+PP SSL Parsing: t.ttts src/core/scr1_dmi.sv
+PP SSL Parsing: t.ttts src/core/scr1_scu.sv
+PP SSL Parsing: t.ttts src/top/scr1_dmem_router.sv
+PP SSL Parsing: t.ttts src/top/scr1_imem_router.sv
+PP SSL Parsing: t.ttts src/top/scr1_dp_memory.sv
+PP SSL Parsing: t.ttts src/top/scr1_tcm.sv
+PP SSL Parsing: t.ttts src/top/scr1_timer.sv
+PP SSL Parsing: t.ttts src/top/scr1_mem_axi.sv
+PP SSL Parsing: t.ttts src/top/scr1_top_axi.sv
+PP SSL Parsing: t.ttts src/pipeline/scr1_tracelog.sv
+PP SSL Parsing: t.ttts src/tb/scr1_memory_tb_axi.sv
+PP SSL Parsing: t.ttts src/tb/scr1_top_tb_axi.sv
+Parsing took t.ttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_hdu.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_tdu.sv
+Cache saving: t.tttttts
+LL  Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_ipic.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_csr.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_exu.sv
+Cache saving: t.tttttts
+LL  Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_ialu.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_idu.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_ifu.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_lsu.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_mprf.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_pipe_top.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/primitive_8561228728971000921/scr1_reset_cells.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/primitive_8561228728971000921/scr1_cg.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_clk_ctrl.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_tapc_shift_reg.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_tapc.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_tapc_synchronizer.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_core_top.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_dm.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_dmi.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/cor_18226291797328563395/scr1_scu.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_dmem_router.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_imem_router.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_dp_memory.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_tcm.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_timer.sv
+Cache saving: t.tttttts
+LL  Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_mem_axi.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/to_15755388703285568698/scr1_top_axi.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/pipelin_3363590842101894623/scr1_tracelog.sv
+Cache saving: t.tttttts
+LL  Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/t_663694864111261040/scr1_memory_tb_axi.sv
+Cache saving: t.tttttts
+SLL Parsing: t.ttts ../../../build/regression/Scr1/slpp_all/work/t_663694864111261040/scr1_top_tb_axi.sv
+Cache saving: t.tttttts
+Compilation took t.ttts
+Elaboration took t.ttts
+Total time t.ttts
+==============
+
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 36
+[   NOTE] : 51
+
+
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/core/primitives/scr1_reset_cells.sv  | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_reset_cells_000.sv         | 65 | 166 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/core/scr1_core_top.sv                | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_core_top_000.sv            | 383 | 540 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/core/scr1_dm.sv                      | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_dm_000.sv                  | 351 | 1255 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/core/scr1_dmi.sv                     | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_dmi_000.sv                 | 64 | 160 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/core/scr1_scu.sv                     | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_scu_000.sv                 | 144 | 415 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/core/scr1_tapc.sv                    | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_tapc_000.sv                | 203 | 423 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/core/scr1_tapc_shift_reg.sv          | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_tapc_shift_reg_000.sv      | 50 | 112 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/core/scr1_tapc_synchronizer.sv       | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_tapc_synchronizer_000.sv   | 55 | 180 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/includes/scr1_arch_description.svh   | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_arch_description_000.svh   | 97 | 163 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/includes/scr1_arch_types.svh         | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_arch_types_000.svh         | 21 | 35 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/includes/scr1_csr.svh                | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_csr_000.svh                | 116 | 181 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/includes/scr1_dm.svh                 | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_dm_000.svh                 | 110 | 131 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/includes/scr1_hdu.svh                | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_hdu_000.svh                | 75 | 109 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/includes/scr1_ipic.svh               | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_ipic_000.svh               | 27 | 40 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/includes/scr1_riscv_isa_decoding.svh | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_riscv_isa_decoding_000.svh | 109 | 155 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/includes/scr1_search_ms1.svh         | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_search_ms1_000.svh         | 53 | 90 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/includes/scr1_tapc.svh               | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_tapc_000.svh               | 10 | 21 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/includes/scr1_tdu.svh                | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_tdu_000.svh                | 69 | 102 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/pipeline/scr1_ipic.sv                | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_ipic_000.sv                | 107 | 452 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/pipeline/scr1_pipe_csr.sv            | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_pipe_csr_000.sv            | 446 | 1010 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/pipeline/scr1_pipe_exu.sv            | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_pipe_exu_000.sv            | 432 | 814 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/pipeline/scr1_pipe_hdu.sv            | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_pipe_hdu_000.sv            | 300 | 893 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/pipeline/scr1_pipe_ialu.sv           | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_pipe_ialu_000.sv           | 301 | 602 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/pipeline/scr1_pipe_idu.sv            | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_pipe_idu_000.sv            | 446 | 864 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/pipeline/scr1_pipe_ifu.sv            | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_pipe_ifu_000.sv            | 247 | 625 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/pipeline/scr1_pipe_lsu.sv            | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_pipe_lsu_000.sv            | 124 | 303 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/pipeline/scr1_pipe_mprf.sv           | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_pipe_mprf_000.sv           | 41 | 83 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/pipeline/scr1_pipe_tdu.sv            | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_pipe_tdu_000.sv            | 234 | 477 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/pipeline/scr1_pipe_top.sv            | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_pipe_top_000.sv            | 560 | 746 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/pipeline/scr1_tracelog.sv            | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_tracelog_000.sv            | 215 | 422 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/tb/scr1_memory_tb_axi.sv             | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_memory_tb_axi_000.sv       | 185 | 348 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/tb/scr1_top_tb_axi.sv                | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_top_tb_axi_000.sv          | 412 | 611 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/top/scr1_dmem_router.sv              | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_dmem_router_000.sv         | 78 | 259 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/top/scr1_dp_memory.sv                | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_dp_memory_000.sv           | 52 | 102 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/top/scr1_imem_router.sv              | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_imem_router_000.sv         | 52 | 177 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/top/scr1_mem_axi.sv                  | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_mem_axi_000.sv             | 168 | 362 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/top/scr1_tcm.sv                      | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_tcm_000.sv                 | 60 | 129 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/top/scr1_timer.sv                    | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_timer_000.sv               | 74 | 271 | 
+[roundtrip]: ${SURELOG_DIR}/third_party/tests/Scr1/src/top/scr1_top_axi.sv                  | ${SURELOG_DIR}/build/regression/Scr1/roundtrip/scr1_top_axi_000.sv             | 496 | 652 | 
+

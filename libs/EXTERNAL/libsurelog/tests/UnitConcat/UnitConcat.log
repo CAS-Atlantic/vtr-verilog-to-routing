@@ -1,0 +1,110 @@
+[INF:CM0023] Creating log file ../../build/regression/UnitConcat/slpp_unit/surelog.log.
+
+[INF:CM0020] Separate compilation-unit mode is on.
+
+[WRN:PA0205] top.sv:1: No timescale set for "dut".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0303] top.sv:1: Compile module "work@dut".
+
+[INF:EL0526] Design Elaboration...
+
+[NTE:EL0503] top.sv:1: Top level module "work@dut".
+
+[NTE:EL0508] Nb Top level modules: 1.
+
+[NTE:EL0509] Max instance depth: 1.
+
+[NTE:EL0510] Nb instances: 1.
+
+[NTE:EL0511] Nb leaf instances: 1.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/UnitConcat/slpp_unit/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/UnitConcat/slpp_unit/surelog.uhdm.chk.html ...
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/UnitConcat/slpp_unit/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (work@dut)
+|vpiName:work@dut
+|uhdmallModules:
+\_module: work@dut (work@dut) top.sv:1:1: , endln:8:10, parent:work@dut
+  |vpiFullName:work@dut
+  |vpiDefName:work@dut
+  |vpiContAssign:
+  \_cont_assign: , line:3:10, endln:6:23, parent:work@dut
+    |vpiRhs:
+    \_ref_obj: (work@dut.irq), line:6:20, endln:6:23
+      |vpiName:irq
+      |vpiFullName:work@dut.irq
+      |vpiActual:
+      \_logic_net: (irq)
+        |vpiName:irq
+        |vpiNetType:1
+    |vpiLhs:
+    \_operation: , line:3:11, endln:3:24
+      |vpiOpType:33
+      |vpiOperand:
+      \_ref_obj: (work@dut.intr_classd_o), line:3:11, endln:3:24
+        |vpiName:intr_classd_o
+        |vpiFullName:work@dut.intr_classd_o
+        |vpiActual:
+        \_logic_net: (intr_classd_o)
+          |vpiName:intr_classd_o
+          |vpiNetType:1
+      |vpiOperand:
+      \_ref_obj: (work@dut.intr_classc_o), line:4:3, endln:4:16
+        |vpiName:intr_classc_o
+        |vpiFullName:work@dut.intr_classc_o
+        |vpiActual:
+        \_logic_net: (intr_classc_o)
+          |vpiName:intr_classc_o
+          |vpiNetType:1
+      |vpiOperand:
+      \_ref_obj: (work@dut.intr_classb_o), line:5:3, endln:5:16
+        |vpiName:intr_classb_o
+        |vpiFullName:work@dut.intr_classb_o
+        |vpiActual:
+        \_logic_net: (intr_classb_o)
+          |vpiName:intr_classb_o
+          |vpiNetType:1
+      |vpiOperand:
+      \_ref_obj: (work@dut.intr_classa_o), line:6:3, endln:6:16
+        |vpiName:intr_classa_o
+        |vpiFullName:work@dut.intr_classa_o
+        |vpiActual:
+        \_logic_net: (intr_classa_o)
+          |vpiName:intr_classa_o
+          |vpiNetType:1
+|uhdmtopModules:
+\_module: work@dut (work@dut) top.sv:1:1: , endln:8:10
+  |vpiName:work@dut
+  |vpiDefName:work@dut
+  |vpiTop:1
+  |vpiNet:
+  \_logic_net: (intr_classd_o)
+  |vpiNet:
+  \_logic_net: (intr_classc_o)
+  |vpiNet:
+  \_logic_net: (intr_classb_o)
+  |vpiNet:
+  \_logic_net: (intr_classa_o)
+  |vpiNet:
+  \_logic_net: (irq)
+  |vpiTopModule:1
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 1
+[   NOTE] : 5
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/UnitConcat/top.sv | ${SURELOG_DIR}/build/regression/UnitConcat/roundtrip/top_000.sv | 2 | 8 | 
+

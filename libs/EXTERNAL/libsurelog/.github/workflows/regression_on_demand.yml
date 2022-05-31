@@ -1,0 +1,190 @@
+name: 'regression_on_demand'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  linux-gcc:
+    name: ubuntu-linux-${{ matrix.mode }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      fail-fast: false
+      matrix:
+        mode:
+        - pygen
+        - tclgen
+
+    steps:
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update -qq
+        sudo apt install -y \
+          g++-9 \
+          tclsh \
+          default-jre \
+          cmake \
+          build-essential \
+          swig \
+          google-perftools \
+          libgoogle-perftools-dev \
+          uuid-dev \
+          lcov
+        sudo ln -sf /usr/bin/g++-9 /usr/bin/g++
+        sudo ln -sf /usr/bin/gcc-9 /usr/bin/gcc
+        sudo ln -sf /usr/bin/gcov-9 /usr/bin/gcov
+
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+        architecture: x64
+
+    - name: Setup Python Packages
+      run: pip3 install psutil
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        fetch-depth: 0
+
+    - name: Configure shell
+      run: |
+        echo 'CC=gcc-9' >> $GITHUB_ENV
+        echo 'CXX=g++-9' >> $GITHUB_ENV
+        echo 'PREFIX=/tmp/surelog-install' >> $GITHUB_ENV
+        echo 'ADDITIONAL_CMAKE_OPTIONS=-DPython3_ROOT_DIR=$pythonLocation' >> $GITHUB_ENV
+        echo 'PATH=/usr/lib/ccache:'"$pythonLocation""$PATH" >> $GITHUB_ENV
+
+        if [[ "${{ matrix.mode }}" = "pygen" ]] ; then
+          echo 'WITH_PYTHON_GENERATOR=ON' >> $GITHUB_ENV
+        else
+          echo 'WITH_PYTHON_GENERATOR=OFF' >> $GITHUB_ENV
+        fi
+
+    - name: Run Regression
+      run: |
+        env
+        which cmake && cmake --version
+        which make && make --version
+        which swig && swig -version
+        which java && java -version
+        which python && python --version
+        which ninja && ninja --version
+        which tclsh && echo 'puts [info patchlevel];exit 0' | tclsh
+        which $CC && $CC --version
+        which $CXX && $CXX --version
+
+        make pytest/regression || true
+        make regression
+
+    - name: Archive regression artifacts
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: surelog-linux-gcc-regression-${{ matrix.mode }}
+        path: |
+          ${{ github.workspace }}/build/test/
+          ${{ github.workspace }}/build/tests/
+          ${{ github.workspace }}/build/regression/**/*.log
+
+  windows-msvc:
+    name: windows-msvc-${{ matrix.mode }}
+    runs-on: windows-latest
+
+    defaults:
+      run:
+        shell: cmd
+    strategy:
+      fail-fast: false
+      matrix:
+        mode:
+        - pygen
+        - tclgen
+
+    steps:
+    - name: Install Core Dependencies
+      run: |
+        choco install -y make
+        choco install -y swig --side-by-side --version=3.0.12
+
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+        architecture: x64
+
+    - name: Setup Python Packages
+      run: pip3 install psutil
+
+    - name: Setup Java
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+        java-package: jre
+        architecture: x64
+
+    - run: git config --global core.autocrlf input
+      shell: bash
+
+    - name: Move Windows builds to C:\ drive
+      if: runner.os == 'Windows'
+      shell: cmd
+      run: |
+        mkdir C:\Surelog
+        cd /D C:\Surelog
+        rd /S /Q %GITHUB_WORKSPACE%
+        mklink /D %GITHUB_WORKSPACE% C:\Surelog
+
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        fetch-depth: 0
+
+    - name: Run Regression
+      run: |
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+
+        set CMAKE_GENERATOR=Ninja
+        set CC=cl
+        set CXX=cl
+        set NO_TCMALLOC=On
+        set PREFIX=%GITHUB_WORKSPACE%\install
+        set CPU_CORES=%NUMBER_OF_PROCESSORS%
+
+        set MAKE_DIR=C:\make\bin
+        set TCL_DIR=%PROGRAMFILES%\Git\mingw64\bin
+        set SWIG_DIR=%PROGRMDATA%\chocolatey\lib\swig\tools\install\swigwin-3.0.12
+        set ADDITIONAL_CMAKE_OPTIONS=-DPython3_ROOT_DIR=%pythonLocation%
+        set PATH=%pythonLocation%;%SWIG_DIR%;%JAVA_HOME%\bin;%MAKE_DIR%;%TCL_DIR%;%PATH%
+
+        if "${{ matrix.mode }}" == "pygen" (
+          set WITH_PYTHON_GENERATOR=ON
+        ) else (
+          set WITH_PYTHON_GENERATOR=OFF
+        )
+
+        set
+        where cmake && cmake --version
+        where make && make --version
+        where swig && swig -version
+        where java && java -version
+        where python && python --version
+        where ninja && ninja --version
+
+        make pytest/regression || true
+        make regression
+
+    - name: Archive regression artifacts
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: surelog-windows-msvc-regression-${{ matrix.mode }}
+        path: |
+          ${{ github.workspace }}/build/test/
+          ${{ github.workspace }}/build/tests/
+          ${{ github.workspace }}/build/regression/**/*.log

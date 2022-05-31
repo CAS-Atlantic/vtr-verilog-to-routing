@@ -1,0 +1,491 @@
+[INF:CM0023] Creating log file ../../build/regression/TaggedParam/slpp_all/surelog.log.
+
+LIB:  work
+FILE: dut.sv
+n<> u<0> t<Null_rule> p<121> s<120> l<1:1> el<1:0>
+n<> u<1> t<Package> p<28> s<2> l<1:1> el<1:8>
+n<fpnew_pkg> u<2> t<StringConst> p<28> s<26> l<1:9> el<1:18>
+n<> u<3> t<Struct_keyword> p<4> l<3:9> el<3:15>
+n<> u<4> t<Struct_union> p<21> c<3> s<5> l<3:9> el<3:15>
+n<> u<5> t<Packed_keyword> p<21> s<13> l<3:16> el<3:22>
+n<> u<6> t<IntegerAtomType_Int> p<8> s<7> l<4:5> el<4:8>
+n<> u<7> t<Signing_Unsigned> p<8> l<4:9> el<4:17>
+n<> u<8> t<Data_type> p<9> c<6> l<4:5> el<4:17>
+n<> u<9> t<Data_type_or_void> p<13> c<8> s<12> l<4:5> el<4:17>
+n<Width> u<10> t<StringConst> p<11> l<4:18> el<4:23>
+n<> u<11> t<Variable_decl_assignment> p<12> c<10> l<4:18> el<4:23>
+n<> u<12> t<List_of_variable_decl_assignments> p<13> c<11> l<4:18> el<4:23>
+n<> u<13> t<Struct_union_member> p<21> c<9> s<20> l<4:5> el<4:24>
+n<> u<14> t<IntVec_TypeLogic> p<15> l<5:5> el<5:10>
+n<> u<15> t<Data_type> p<16> c<14> l<5:5> el<5:10>
+n<> u<16> t<Data_type_or_void> p<20> c<15> s<19> l<5:5> el<5:10>
+n<EnableNanBox> u<17> t<StringConst> p<18> l<5:18> el<5:30>
+n<> u<18> t<Variable_decl_assignment> p<19> c<17> l<5:18> el<5:30>
+n<> u<19> t<List_of_variable_decl_assignments> p<20> c<18> l<5:18> el<5:30>
+n<> u<20> t<Struct_union_member> p<21> c<16> l<5:5> el<5:31>
+n<> u<21> t<Data_type> p<23> c<4> s<22> l<3:9> el<6:4>
+n<fpu_features_t> u<22> t<StringConst> p<23> l<6:5> el<6:19>
+n<> u<23> t<Type_declaration> p<24> c<21> l<3:1> el<6:20>
+n<> u<24> t<Data_declaration> p<25> c<23> l<3:1> el<6:20>
+n<> u<25> t<Package_or_generate_item_declaration> p<26> c<24> l<3:1> el<6:20>
+n<> u<26> t<Package_item> p<28> c<25> s<27> l<3:1> el<6:20>
+n<> u<27> t<Endpackage> p<28> l<8:1> el<8:11>
+n<> u<28> t<Package_declaration> p<29> c<1> l<1:1> el<8:11>
+n<> u<29> t<Description> p<120> c<28> s<57> l<1:1> el<8:11>
+n<> u<30> t<Module_keyword> p<55> s<31> l<10:2> el<10:8>
+n<fpnew_top> u<31> t<StringConst> p<55> s<52> l<10:9> el<10:18>
+n<fpnew_pkg> u<32> t<StringConst> p<33> l<12:13> el<12:22>
+n<> u<33> t<Class_type> p<34> c<32> l<12:13> el<12:22>
+n<> u<34> t<Class_scope> p<36> c<33> s<35> l<12:13> el<12:24>
+n<fpu_features_t> u<35> t<StringConst> p<36> l<12:24> el<12:38>
+n<> u<36> t<Data_type> p<37> c<34> l<12:13> el<12:38>
+n<> u<37> t<Data_type_or_implicit> p<50> c<36> s<49> l<12:13> el<12:38>
+n<Features> u<38> t<StringConst> p<48> s<47> l<12:45> el<12:53>
+n<fpnew_pkg> u<39> t<StringConst> p<40> l<12:62> el<12:71>
+n<> u<40> t<Package_scope> p<44> c<39> s<41> l<12:62> el<12:73>
+n<RV64D_Xsflt> u<41> t<StringConst> p<44> s<43> l<12:73> el<12:84>
+n<> u<42> t<Constant_bit_select> p<43> l<13:6> el<12:90>
+n<> u<43> t<Constant_select> p<44> c<42> l<13:6> el<12:90>
+n<> u<44> t<Constant_primary> p<45> c<40> l<12:62> el<12:84>
+n<> u<45> t<Constant_expression> p<46> c<44> l<12:62> el<12:84>
+n<> u<46> t<Constant_mintypmax_expression> p<47> c<45> l<12:62> el<12:84>
+n<> u<47> t<Constant_param_expression> p<48> c<46> l<12:62> el<12:84>
+n<> u<48> t<Param_assignment> p<49> c<38> l<12:45> el<12:84>
+n<> u<49> t<List_of_param_assignments> p<50> c<48> l<12:45> el<12:84>
+n<> u<50> t<Parameter_declaration> p<51> c<37> l<12:3> el<12:84>
+n<> u<51> t<Parameter_port_declaration> p<52> c<50> l<12:3> el<12:84>
+n<> u<52> t<Parameter_port_list> p<55> c<51> s<54> l<10:19> el<13:7>
+n<> u<53> t<Port> p<54> l<13:9> el<13:9>
+n<> u<54> t<List_of_ports> p<55> c<53> l<13:8> el<13:10>
+n<> u<55> t<Module_nonansi_header> p<56> c<30> l<10:2> el<13:11>
+n<> u<56> t<Module_declaration> p<57> c<55> l<10:2> el<14:11>
+n<> u<57> t<Description> p<120> c<56> s<119> l<10:2> el<14:11>
+n<> u<58> t<Module_keyword> p<62> s<59> l<16:1> el<16:7>
+n<fpu_wrap> u<59> t<StringConst> p<62> s<61> l<16:8> el<16:16>
+n<> u<60> t<Port> p<61> l<16:18> el<16:18>
+n<> u<61> t<List_of_ports> p<62> c<60> l<16:17> el<16:19>
+n<> u<62> t<Module_nonansi_header> p<118> c<58> s<97> l<16:1> el<16:20>
+n<fpnew_pkg> u<63> t<StringConst> p<64> l<18:12> el<18:21>
+n<> u<64> t<Class_type> p<65> c<63> l<18:12> el<18:21>
+n<> u<65> t<Class_scope> p<67> c<64> s<66> l<18:12> el<18:23>
+n<fpu_features_t> u<66> t<StringConst> p<67> l<18:23> el<18:37>
+n<> u<67> t<Data_type> p<68> c<65> l<18:12> el<18:37>
+n<> u<68> t<Data_type_or_implicit> p<91> c<67> s<90> l<18:12> el<18:37>
+n<FPU_FEATURES> u<69> t<StringConst> p<89> s<88> l<18:38> el<18:50>
+n<Width> u<70> t<StringConst> p<71> l<19:7> el<19:12>
+n<> u<71> t<Structure_pattern_key> p<82> c<70> s<75> l<19:7> el<19:12>
+n<64> u<72> t<IntConst> p<73> l<19:22> el<19:24>
+n<> u<73> t<Primary_literal> p<74> c<72> l<19:22> el<19:24>
+n<> u<74> t<Primary> p<75> c<73> l<19:22> el<19:24>
+n<> u<75> t<Expression> p<82> c<74> s<77> l<19:22> el<19:24>
+n<EnableNanBox> u<76> t<StringConst> p<77> l<20:7> el<20:19>
+n<> u<77> t<Structure_pattern_key> p<82> c<76> s<81> l<20:7> el<20:19>
+n<> u<78> t<Number_1Tickb1> p<79> l<20:22> el<20:26>
+n<> u<79> t<Primary_literal> p<80> c<78> l<20:22> el<20:26>
+n<> u<80> t<Primary> p<81> c<79> l<20:22> el<20:26>
+n<> u<81> t<Expression> p<82> c<80> l<20:22> el<20:26>
+n<> u<82> t<Assignment_pattern> p<83> c<71> l<18:53> el<21:6>
+n<> u<83> t<Assignment_pattern_expression> p<84> c<82> l<18:53> el<21:6>
+n<> u<84> t<Constant_assignment_pattern_expression> p<85> c<83> l<18:53> el<21:6>
+n<> u<85> t<Constant_primary> p<86> c<84> l<18:53> el<21:6>
+n<> u<86> t<Constant_expression> p<87> c<85> l<18:53> el<21:6>
+n<> u<87> t<Constant_mintypmax_expression> p<88> c<86> l<18:53> el<21:6>
+n<> u<88> t<Constant_param_expression> p<89> c<87> l<18:53> el<21:6>
+n<> u<89> t<Param_assignment> p<90> c<69> l<18:38> el<21:6>
+n<> u<90> t<List_of_param_assignments> p<91> c<89> l<18:38> el<21:6>
+n<> u<91> t<Local_parameter_declaration> p<92> c<68> l<18:1> el<21:6>
+n<> u<92> t<Package_or_generate_item_declaration> p<93> c<91> l<18:1> el<21:7>
+n<> u<93> t<Module_or_generate_item_declaration> p<94> c<92> l<18:1> el<21:7>
+n<> u<94> t<Module_common_item> p<95> c<93> l<18:1> el<21:7>
+n<> u<95> t<Module_or_generate_item> p<96> c<94> l<18:1> el<21:7>
+n<> u<96> t<Non_port_module_item> p<97> c<95> l<18:1> el<21:7>
+n<> u<97> t<Module_item> p<118> c<96> s<117> l<18:1> el<21:7>
+n<fpnew_top> u<98> t<StringConst> p<114> s<108> l<23:8> el<23:17>
+n<Features> u<99> t<StringConst> p<106> s<105> l<24:8> el<24:16>
+n<FPU_FEATURES> u<100> t<StringConst> p<101> l<24:25> el<24:37>
+n<> u<101> t<Primary_literal> p<102> c<100> l<24:25> el<24:37>
+n<> u<102> t<Primary> p<103> c<101> l<24:25> el<24:37>
+n<> u<103> t<Expression> p<104> c<102> l<24:25> el<24:37>
+n<> u<104> t<Mintypmax_expression> p<105> c<103> l<24:25> el<24:37>
+n<> u<105> t<Param_expression> p<106> c<104> l<24:25> el<24:37>
+n<> u<106> t<Named_parameter_assignment> p<107> c<99> l<24:7> el<24:52>
+n<> u<107> t<List_of_parameter_assignments> p<108> c<106> l<24:7> el<24:52>
+n<> u<108> t<Parameter_value_assignment> p<114> c<107> s<113> l<23:18> el<25:7>
+n<i_fpnew_bulk> u<109> t<StringConst> p<110> l<25:8> el<25:20>
+n<> u<110> t<Name_of_instance> p<113> c<109> s<112> l<25:8> el<25:20>
+n<> u<111> t<Ordered_port_connection> p<112> l<25:22> el<25:22>
+n<> u<112> t<List_of_port_connections> p<113> c<111> l<25:22> el<25:22>
+n<> u<113> t<Hierarchical_instance> p<114> c<110> l<25:8> el<25:23>
+n<> u<114> t<Module_instantiation> p<115> c<98> l<23:8> el<25:24>
+n<> u<115> t<Module_or_generate_item> p<116> c<114> l<23:8> el<25:24>
+n<> u<116> t<Non_port_module_item> p<117> c<115> l<23:8> el<25:24>
+n<> u<117> t<Module_item> p<118> c<116> l<23:8> el<25:24>
+n<> u<118> t<Module_declaration> p<119> c<62> l<16:1> el<27:10>
+n<> u<119> t<Description> p<120> c<118> l<16:1> el<27:10>
+n<> u<120> t<Source_text> p<121> c<29> l<1:1> el<27:10>
+n<> u<121> t<Top_level_rule> l<1:1> el<28:1>
+[WRN:PA0205] dut.sv:1: No timescale set for "fpnew_pkg".
+
+[WRN:PA0205] dut.sv:10: No timescale set for "fpnew_top".
+
+[WRN:PA0205] dut.sv:16: No timescale set for "fpu_wrap".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0301] dut.sv:1: Compile package "fpnew_pkg".
+
+[INF:CP0303] dut.sv:10: Compile module "work@fpnew_top".
+
+[INF:CP0303] dut.sv:16: Compile module "work@fpu_wrap".
+
+[INF:EL0526] Design Elaboration...
+
+[NTE:EL0503] dut.sv:16: Top level module "work@fpu_wrap".
+
+[NTE:EL0508] Nb Top level modules: 1.
+
+[NTE:EL0509] Max instance depth: 2.
+
+[NTE:EL0510] Nb instances: 2.
+
+[NTE:EL0511] Nb leaf instances: 1.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0707] Elaborating UHDM...
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/TaggedParam/slpp_all/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/TaggedParam/slpp_all/surelog.uhdm.chk.html ...
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/TaggedParam/slpp_all/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (work@fpu_wrap)
+|vpiElaborated:1
+|vpiName:work@fpu_wrap
+|uhdmallPackages:
+\_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+  |vpiName:fpnew_pkg
+  |vpiFullName:fpnew_pkg::
+  |vpiTypedef:
+  \_struct_typespec: (fpnew_pkg::fpu_features_t), line:3:9, endln:3:15, parent:fpnew_pkg::
+    |vpiName:fpnew_pkg::fpu_features_t
+    |vpiInstance:
+    \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+    |vpiPacked:1
+    |vpiTypespecMember:
+    \_typespec_member: (Width), line:4:18, endln:4:23, parent:fpnew_pkg::fpu_features_t
+      |vpiName:Width
+      |vpiTypespec:
+      \_int_typespec: , line:4:5, endln:4:17
+        |vpiInstance:
+        \_package: (fpnew_pkg), file:
+      |vpiRefFile:dut.sv
+      |vpiRefLineNo:4
+      |vpiRefColumnNo:5
+      |vpiRefEndLineNo:4
+      |vpiRefEndColumnNo:17
+    |vpiTypespecMember:
+    \_typespec_member: (EnableNanBox), line:5:18, endln:5:30, parent:fpnew_pkg::fpu_features_t
+      |vpiName:EnableNanBox
+      |vpiTypespec:
+      \_logic_typespec: , line:5:5, endln:5:10
+        |vpiInstance:
+        \_package: (fpnew_pkg), file:
+      |vpiRefFile:dut.sv
+      |vpiRefLineNo:5
+      |vpiRefColumnNo:5
+      |vpiRefEndLineNo:5
+      |vpiRefEndColumnNo:10
+  |vpiDefName:fpnew_pkg
+|uhdmtopPackages:
+\_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+  |vpiName:fpnew_pkg
+  |vpiFullName:fpnew_pkg::
+  |vpiTypedef:
+  \_struct_typespec: (fpnew_pkg::fpu_features_t), line:3:9, endln:3:15, parent:fpnew_pkg::
+    |vpiName:fpnew_pkg::fpu_features_t
+    |vpiInstance:
+    \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+    |vpiPacked:1
+    |vpiTypespecMember:
+    \_typespec_member: (Width), line:4:18, endln:4:23, parent:fpnew_pkg::fpu_features_t
+      |vpiName:Width
+      |vpiTypespec:
+      \_int_typespec: , line:4:5, endln:4:17
+        |vpiInstance:
+        \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+      |vpiRefFile:dut.sv
+      |vpiRefLineNo:4
+      |vpiRefColumnNo:5
+      |vpiRefEndLineNo:4
+      |vpiRefEndColumnNo:17
+    |vpiTypespecMember:
+    \_typespec_member: (EnableNanBox), line:5:18, endln:5:30, parent:fpnew_pkg::fpu_features_t
+      |vpiName:EnableNanBox
+      |vpiTypespec:
+      \_logic_typespec: , line:5:5, endln:5:10
+        |vpiInstance:
+        \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+      |vpiRefFile:dut.sv
+      |vpiRefLineNo:5
+      |vpiRefColumnNo:5
+      |vpiRefEndLineNo:5
+      |vpiRefEndColumnNo:10
+  |vpiDefName:fpnew_pkg
+  |vpiTop:1
+|uhdmallModules:
+\_module: work@fpnew_top (work@fpnew_top) dut.sv:10:2: , endln:14:11, parent:work@fpu_wrap
+  |vpiFullName:work@fpnew_top
+  |vpiParameter:
+  \_parameter: (work@fpnew_top.Features), line:12:45, endln:12:53, parent:work@fpnew_top
+    |vpiTypespec:
+    \_struct_typespec: (fpnew_pkg::fpu_features_t), line:3:9, endln:3:15, parent:fpnew_pkg::
+    |vpiName:Features
+    |vpiFullName:work@fpnew_top.Features
+  |vpiParamAssign:
+  \_param_assign: , line:12:45, endln:12:84, parent:work@fpnew_top
+    |vpiRhs:
+    \_ref_obj: (fpnew_pkg::RV64D_Xsflt), line:12:62, endln:12:73
+      |vpiName:fpnew_pkg::RV64D_Xsflt
+    |vpiLhs:
+    \_parameter: (work@fpnew_top.Features), line:12:45, endln:12:53, parent:work@fpnew_top
+  |vpiDefName:work@fpnew_top
+|uhdmallModules:
+\_module: work@fpu_wrap (work@fpu_wrap) dut.sv:16:1: , endln:27:10, parent:work@fpu_wrap
+  |vpiFullName:work@fpu_wrap
+  |vpiParameter:
+  \_parameter: (work@fpu_wrap.FPU_FEATURES), line:18:38, endln:18:50, parent:work@fpu_wrap
+    |vpiTypespec:
+    \_struct_typespec: (fpnew_pkg::fpu_features_t), line:3:9, endln:3:15, parent:fpnew_pkg::
+    |vpiLocalParam:1
+    |vpiName:FPU_FEATURES
+    |vpiFullName:work@fpu_wrap.FPU_FEATURES
+  |vpiParamAssign:
+  \_param_assign: , line:18:38, endln:21:6, parent:work@fpu_wrap
+    |vpiRhs:
+    \_operation: , line:18:53, endln:21:6
+      |vpiOpType:75
+      |vpiOperand:
+      \_tagged_pattern: , line:19:22, endln:19:24
+        |vpiPattern:
+        \_constant: , line:19:22, endln:19:24
+          |vpiDecompile:64
+          |vpiSize:64
+          |UINT:64
+          |vpiConstType:9
+        |vpiTypespec:
+        \_string_typespec: (Width), line:19:7, endln:19:12
+          |vpiName:Width
+      |vpiOperand:
+      \_tagged_pattern: , line:20:22, endln:20:26
+        |vpiPattern:
+        \_constant: , line:20:22, endln:20:26
+          |vpiDecompile:1'b1
+          |vpiSize:1
+          |BIN:1
+          |vpiConstType:3
+        |vpiTypespec:
+        \_string_typespec: (EnableNanBox), line:20:7, endln:20:19
+          |vpiName:EnableNanBox
+    |vpiLhs:
+    \_parameter: (work@fpu_wrap.FPU_FEATURES), line:18:38, endln:18:50, parent:work@fpu_wrap
+  |vpiDefName:work@fpu_wrap
+|uhdmtopModules:
+\_module: work@fpu_wrap (work@fpu_wrap) dut.sv:16:1: , endln:27:10
+  |vpiName:work@fpu_wrap
+  |vpiParameter:
+  \_parameter: (work@fpu_wrap.FPU_FEATURES), line:18:38, endln:18:50, parent:work@fpu_wrap
+    |vpiTypespec:
+    \_struct_typespec: (fpnew_pkg::fpu_features_t), line:3:9, endln:3:15, parent:work@fpu_wrap.FPU_FEATURES
+      |vpiName:fpnew_pkg::fpu_features_t
+      |vpiInstance:
+      \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+      |vpiPacked:1
+      |vpiTypespecMember:
+      \_typespec_member: (Width), line:4:18, endln:4:23, parent:fpnew_pkg::fpu_features_t
+        |vpiName:Width
+        |vpiTypespec:
+        \_int_typespec: , line:4:5, endln:4:17, parent:Width
+          |vpiInstance:
+          \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+        |vpiRefFile:dut.sv
+        |vpiRefLineNo:4
+        |vpiRefColumnNo:5
+        |vpiRefEndLineNo:4
+        |vpiRefEndColumnNo:17
+      |vpiTypespecMember:
+      \_typespec_member: (EnableNanBox), line:5:18, endln:5:30, parent:fpnew_pkg::fpu_features_t
+        |vpiName:EnableNanBox
+        |vpiTypespec:
+        \_logic_typespec: , line:5:5, endln:5:10, parent:EnableNanBox
+          |vpiInstance:
+          \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+        |vpiRefFile:dut.sv
+        |vpiRefLineNo:5
+        |vpiRefColumnNo:5
+        |vpiRefEndLineNo:5
+        |vpiRefEndColumnNo:10
+    |vpiLocalParam:1
+    |vpiName:FPU_FEATURES
+    |vpiFullName:work@fpu_wrap.FPU_FEATURES
+  |vpiParamAssign:
+  \_param_assign: , line:18:38, endln:21:6, parent:work@fpu_wrap
+    |vpiRhs:
+    \_operation: , line:18:53, endln:21:6
+      |vpiTypespec:
+      \_struct_typespec: (fpnew_pkg::fpu_features_t), line:3:9, endln:3:15
+        |vpiName:fpnew_pkg::fpu_features_t
+        |vpiInstance:
+        \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+        |vpiPacked:1
+        |vpiTypespecMember:
+        \_typespec_member: (Width), line:4:18, endln:4:23, parent:fpnew_pkg::fpu_features_t
+          |vpiName:Width
+          |vpiTypespec:
+          \_int_typespec: , line:4:5, endln:4:17, parent:Width
+            |vpiInstance:
+            \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+          |vpiRefFile:dut.sv
+          |vpiRefLineNo:4
+          |vpiRefColumnNo:5
+          |vpiRefEndLineNo:4
+          |vpiRefEndColumnNo:17
+        |vpiTypespecMember:
+        \_typespec_member: (EnableNanBox), line:5:18, endln:5:30, parent:fpnew_pkg::fpu_features_t
+          |vpiName:EnableNanBox
+          |vpiTypespec:
+          \_logic_typespec: , line:5:5, endln:5:10, parent:EnableNanBox
+            |vpiInstance:
+            \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+          |vpiRefFile:dut.sv
+          |vpiRefLineNo:5
+          |vpiRefColumnNo:5
+          |vpiRefEndLineNo:5
+          |vpiRefEndColumnNo:10
+      |vpiOpType:75
+      |vpiFlattened:1
+      |vpiOperand:
+      \_constant: , line:19:22, endln:19:24
+        |vpiDecompile:64
+        |vpiSize:64
+        |UINT:64
+        |vpiConstType:9
+      |vpiOperand:
+      \_constant: , line:20:22, endln:20:26
+        |vpiDecompile:1'b1
+        |vpiSize:1
+        |BIN:1
+        |vpiConstType:3
+    |vpiLhs:
+    \_parameter: (work@fpu_wrap.FPU_FEATURES), line:18:38, endln:18:50, parent:work@fpu_wrap
+  |vpiDefName:work@fpu_wrap
+  |vpiTop:1
+  |vpiTopModule:1
+  |vpiModule:
+  \_module: work@fpnew_top (work@fpu_wrap.i_fpnew_bulk) dut.sv:23:8: , endln:25:24, parent:work@fpu_wrap
+    |vpiName:i_fpnew_bulk
+    |vpiFullName:work@fpu_wrap.i_fpnew_bulk
+    |vpiParameter:
+    \_parameter: (work@fpu_wrap.i_fpnew_bulk.Features), line:12:45, endln:12:53, parent:work@fpu_wrap.i_fpnew_bulk
+      |vpiTypespec:
+      \_struct_typespec: (fpnew_pkg::fpu_features_t), line:3:9, endln:3:15, parent:work@fpu_wrap.i_fpnew_bulk.Features
+        |vpiName:fpnew_pkg::fpu_features_t
+        |vpiInstance:
+        \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+        |vpiPacked:1
+        |vpiTypespecMember:
+        \_typespec_member: (Width), line:4:18, endln:4:23, parent:fpnew_pkg::fpu_features_t
+          |vpiName:Width
+          |vpiTypespec:
+          \_int_typespec: , line:4:5, endln:4:17, parent:Width
+            |vpiInstance:
+            \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+          |vpiRefFile:dut.sv
+          |vpiRefLineNo:4
+          |vpiRefColumnNo:5
+          |vpiRefEndLineNo:4
+          |vpiRefEndColumnNo:17
+        |vpiTypespecMember:
+        \_typespec_member: (EnableNanBox), line:5:18, endln:5:30, parent:fpnew_pkg::fpu_features_t
+          |vpiName:EnableNanBox
+          |vpiTypespec:
+          \_logic_typespec: , line:5:5, endln:5:10, parent:EnableNanBox
+            |vpiInstance:
+            \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+          |vpiRefFile:dut.sv
+          |vpiRefLineNo:5
+          |vpiRefColumnNo:5
+          |vpiRefEndLineNo:5
+          |vpiRefEndColumnNo:10
+      |vpiName:Features
+      |vpiFullName:work@fpu_wrap.i_fpnew_bulk.Features
+    |vpiParamAssign:
+    \_param_assign: , line:12:45, endln:12:84, parent:work@fpu_wrap.i_fpnew_bulk
+      |vpiOverriden:1
+      |vpiRhs:
+      \_operation: , line:24:25, endln:24:37
+        |vpiTypespec:
+        \_struct_typespec: (fpnew_pkg::fpu_features_t), line:3:9, endln:3:15
+          |vpiName:fpnew_pkg::fpu_features_t
+          |vpiInstance:
+          \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+          |vpiPacked:1
+          |vpiTypespecMember:
+          \_typespec_member: (Width), line:4:18, endln:4:23, parent:fpnew_pkg::fpu_features_t
+            |vpiName:Width
+            |vpiTypespec:
+            \_int_typespec: , line:4:5, endln:4:17, parent:Width
+              |vpiInstance:
+              \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+            |vpiRefFile:dut.sv
+            |vpiRefLineNo:4
+            |vpiRefColumnNo:5
+            |vpiRefEndLineNo:4
+            |vpiRefEndColumnNo:17
+          |vpiTypespecMember:
+          \_typespec_member: (EnableNanBox), line:5:18, endln:5:30, parent:fpnew_pkg::fpu_features_t
+            |vpiName:EnableNanBox
+            |vpiTypespec:
+            \_logic_typespec: , line:5:5, endln:5:10, parent:EnableNanBox
+              |vpiInstance:
+              \_package: fpnew_pkg (fpnew_pkg::) dut.sv:1:1: , endln:8:11, parent:work@fpu_wrap
+            |vpiRefFile:dut.sv
+            |vpiRefLineNo:5
+            |vpiRefColumnNo:5
+            |vpiRefEndLineNo:5
+            |vpiRefEndColumnNo:10
+        |vpiOpType:75
+        |vpiFlattened:1
+        |vpiOperand:
+        \_constant: , line:19:22, endln:19:24
+          |vpiDecompile:64
+          |vpiSize:64
+          |UINT:64
+          |vpiConstType:9
+        |vpiOperand:
+        \_constant: , line:20:22, endln:20:26
+          |vpiDecompile:1'b1
+          |vpiSize:1
+          |BIN:1
+          |vpiConstType:3
+      |vpiLhs:
+      \_parameter: (work@fpu_wrap.i_fpnew_bulk.Features), line:12:45, endln:12:53, parent:work@fpu_wrap.i_fpnew_bulk
+    |vpiDefName:work@fpnew_top
+    |vpiDefFile:dut.sv
+    |vpiDefLineNo:10
+    |vpiInstance:
+    \_module: work@fpu_wrap (work@fpu_wrap) dut.sv:16:1: , endln:27:10
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 3
+[   NOTE] : 5
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/TaggedParam/dut.sv | ${SURELOG_DIR}/build/regression/TaggedParam/roundtrip/dut_000.sv | 7 | 27 | 
+
