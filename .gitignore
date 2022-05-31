@@ -1,0 +1,38 @@
+*~
+*#*#
+.cache
+
+# Logfiles that are currently not yet in build/
+*.v.log
+*.sv.log
+*.interp
+*.tokens
+*.tstamp
+slpp_all/
+
+# Development environment cache folders
+/.vs
+/.vscode/extensions
+/.vscode/argv.json
+/.vscode/c_cpp_properties.json
+/.vscode/settings.json
+/.vscode/tasks.json
+# We still want to checkin the launch.json
+
+
+
+# Output folders on different platforms
+/CMakeBuilds
+/out
+/build
+/dbuild
+/coverage-build
+/publish
+/dist
+/install
+
+# Environment configuration files
+CMakeSettings.json
+
+# compile commands symlink
+/compile_commands.json

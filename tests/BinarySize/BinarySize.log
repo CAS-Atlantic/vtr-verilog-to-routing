@@ -1,0 +1,422 @@
+[INF:CM0023] Creating log file ../../build/regression/BinarySize/slpp_unit/surelog.log.
+
+[INF:CM0020] Separate compilation-unit mode is on.
+
+[WRN:PA0205] dut.sv:1: No timescale set for "top".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0303] dut.sv:1: Compile module "work@top".
+
+[INF:EL0526] Design Elaboration...
+
+[NTE:EL0503] dut.sv:1: Top level module "work@top".
+
+[NTE:EL0508] Nb Top level modules: 1.
+
+[NTE:EL0509] Max instance depth: 1.
+
+[NTE:EL0510] Nb instances: 1.
+
+[NTE:EL0511] Nb leaf instances: 1.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0707] Elaborating UHDM...
+
+[ERR:UH0717] dut.sv:3:10: Multiple continuous assignments to: first,
+             dut.sv:4:10: other assignment.
+
+[ERR:UH0717] dut.sv:3:10: Multiple continuous assignments to: first,
+             dut.sv:5:10: other assignment.
+
+[ERR:UH0717] dut.sv:3:10: Multiple continuous assignments to: first,
+             dut.sv:6:10: other assignment.
+
+[ERR:UH0717] dut.sv:3:10: Multiple continuous assignments to: first,
+             dut.sv:7:10: other assignment.
+
+[ERR:UH0717] dut.sv:3:10: Multiple continuous assignments to: first,
+             dut.sv:8:10: other assignment.
+
+[ERR:UH0717] dut.sv:3:10: Multiple continuous assignments to: first,
+             dut.sv:9:10: other assignment.
+
+[ERR:UH0717] dut.sv:3:10: Multiple continuous assignments to: first,
+             dut.sv:10:10: other assignment.
+
+[ERR:UH0717] dut.sv:3:10: Multiple continuous assignments to: first,
+             dut.sv:11:10: other assignment.
+
+[ERR:UH0717] dut.sv:4:10: Multiple continuous assignments to: first,
+             dut.sv:5:10: other assignment.
+
+[ERR:UH0717] dut.sv:4:10: Multiple continuous assignments to: first,
+             dut.sv:6:10: other assignment.
+
+[ERR:UH0717] dut.sv:4:10: Multiple continuous assignments to: first,
+             dut.sv:7:10: other assignment.
+
+[ERR:UH0717] dut.sv:4:10: Multiple continuous assignments to: first,
+             dut.sv:8:10: other assignment.
+
+[ERR:UH0717] dut.sv:4:10: Multiple continuous assignments to: first,
+             dut.sv:9:10: other assignment.
+
+[ERR:UH0717] dut.sv:4:10: Multiple continuous assignments to: first,
+             dut.sv:10:10: other assignment.
+
+[ERR:UH0717] dut.sv:4:10: Multiple continuous assignments to: first,
+             dut.sv:11:10: other assignment.
+
+[ERR:UH0717] dut.sv:5:10: Multiple continuous assignments to: first,
+             dut.sv:6:10: other assignment.
+
+[ERR:UH0717] dut.sv:5:10: Multiple continuous assignments to: first,
+             dut.sv:7:10: other assignment.
+
+[ERR:UH0717] dut.sv:5:10: Multiple continuous assignments to: first,
+             dut.sv:8:10: other assignment.
+
+[ERR:UH0717] dut.sv:5:10: Multiple continuous assignments to: first,
+             dut.sv:9:10: other assignment.
+
+[ERR:UH0717] dut.sv:5:10: Multiple continuous assignments to: first,
+             dut.sv:10:10: other assignment.
+
+[ERR:UH0717] dut.sv:5:10: Multiple continuous assignments to: first,
+             dut.sv:11:10: other assignment.
+
+[ERR:UH0717] dut.sv:6:10: Multiple continuous assignments to: first,
+             dut.sv:7:10: other assignment.
+
+[ERR:UH0717] dut.sv:6:10: Multiple continuous assignments to: first,
+             dut.sv:8:10: other assignment.
+
+[ERR:UH0717] dut.sv:6:10: Multiple continuous assignments to: first,
+             dut.sv:9:10: other assignment.
+
+[ERR:UH0717] dut.sv:6:10: Multiple continuous assignments to: first,
+             dut.sv:10:10: other assignment.
+
+[ERR:UH0717] dut.sv:6:10: Multiple continuous assignments to: first,
+             dut.sv:11:10: other assignment.
+
+[ERR:UH0717] dut.sv:7:10: Multiple continuous assignments to: first,
+             dut.sv:8:10: other assignment.
+
+[ERR:UH0717] dut.sv:7:10: Multiple continuous assignments to: first,
+             dut.sv:9:10: other assignment.
+
+[ERR:UH0717] dut.sv:7:10: Multiple continuous assignments to: first,
+             dut.sv:10:10: other assignment.
+
+[ERR:UH0717] dut.sv:7:10: Multiple continuous assignments to: first,
+             dut.sv:11:10: other assignment.
+
+[ERR:UH0717] dut.sv:8:10: Multiple continuous assignments to: first,
+             dut.sv:9:10: other assignment.
+
+[ERR:UH0717] dut.sv:8:10: Multiple continuous assignments to: first,
+             dut.sv:10:10: other assignment.
+
+[ERR:UH0717] dut.sv:8:10: Multiple continuous assignments to: first,
+             dut.sv:11:10: other assignment.
+
+[ERR:UH0717] dut.sv:9:10: Multiple continuous assignments to: first,
+             dut.sv:10:10: other assignment.
+
+[ERR:UH0717] dut.sv:9:10: Multiple continuous assignments to: first,
+             dut.sv:11:10: other assignment.
+
+[ERR:UH0717] dut.sv:10:10: Multiple continuous assignments to: first,
+             dut.sv:11:10: other assignment.
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/BinarySize/slpp_unit/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/BinarySize/slpp_unit/surelog.uhdm.chk.html ...
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/BinarySize/slpp_unit/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (work@top)
+|vpiElaborated:1
+|vpiName:work@top
+|uhdmallModules:
+\_module: work@top (work@top) dut.sv:1:1: , endln:13:10, parent:work@top
+  |vpiFullName:work@top
+  |vpiDefName:work@top
+  |vpiNet:
+  \_logic_net: (work@top.first), line:2:22, endln:2:27, parent:work@top
+    |vpiName:first
+    |vpiFullName:work@top.first
+    |vpiNetType:36
+  |vpiContAssign:
+  \_cont_assign: , line:3:10, endln:3:23, parent:work@top
+    |vpiRhs:
+    \_constant: , line:3:18, endln:3:23
+      |vpiDecompile:32'b1
+      |vpiSize:32
+      |BIN:1
+      |vpiConstType:3
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:3:10, endln:3:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+        |vpiTypespec:
+        \_logic_typespec: , line:2:3, endln:2:8
+          |vpiRange:
+          \_range: , line:2:16, endln:2:20
+            |vpiLeftRange:
+            \_constant: , line:2:16, endln:2:18
+              |vpiDecompile:31
+              |vpiSize:64
+              |UINT:31
+              |vpiConstType:9
+            |vpiRightRange:
+            \_constant: , line:2:19, endln:2:20
+              |vpiDecompile:0
+              |vpiSize:64
+              |UINT:0
+              |vpiConstType:9
+        |vpiName:first
+        |vpiFullName:work@top.first
+        |vpiVisibility:1
+        |vpiRange:
+        \_range: , line:2:16, endln:2:20
+          |vpiLeftRange:
+          \_constant: , line:2:16, endln:2:18
+            |vpiDecompile:31
+            |vpiSize:64
+            |UINT:31
+            |vpiConstType:9
+          |vpiRightRange:
+          \_constant: , line:2:19, endln:2:20
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+  |vpiContAssign:
+  \_cont_assign: , line:4:10, endln:4:22, parent:work@top
+    |vpiRhs:
+    \_constant: , line:4:18, endln:4:22
+      |vpiDecompile:1'b0
+      |vpiSize:1
+      |BIN:0
+      |vpiConstType:3
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:4:10, endln:4:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:5:10, endln:5:23, parent:work@top
+    |vpiRhs:
+    \_constant: , line:5:18, endln:5:23
+      |vpiDecompile:2'b00
+      |vpiSize:2
+      |BIN:00
+      |vpiConstType:3
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:5:10, endln:5:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:6:10, endln:6:22, parent:work@top
+    |vpiRhs:
+    \_constant: , line:6:18, endln:6:22
+      |vpiDecompile:1'b1
+      |vpiSize:1
+      |BIN:1
+      |vpiConstType:3
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:6:10, endln:6:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:7:10, endln:7:23, parent:work@top
+    |vpiRhs:
+    \_constant: , line:7:18, endln:7:23
+      |vpiDecompile:2'b01
+      |vpiSize:2
+      |BIN:01
+      |vpiConstType:3
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:7:10, endln:7:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:8:10, endln:8:22, parent:work@top
+    |vpiRhs:
+    \_constant: , line:8:18, endln:8:22
+      |vpiDecompile:1'bX
+      |vpiSize:1
+      |BIN:X
+      |vpiConstType:3
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:8:10, endln:8:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:9:10, endln:9:23, parent:work@top
+    |vpiRhs:
+    \_constant: , line:9:18, endln:9:23
+      |vpiDecompile:2'b0x
+      |vpiSize:2
+      |BIN:0x
+      |vpiConstType:3
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:9:10, endln:9:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:10:10, endln:10:22, parent:work@top
+    |vpiRhs:
+    \_constant: , line:10:18, endln:10:22
+      |vpiDecompile:1'bz
+      |vpiSize:1
+      |BIN:z
+      |vpiConstType:3
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:10:10, endln:10:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:11:10, endln:11:23, parent:work@top
+    |vpiRhs:
+    \_constant: , line:11:18, endln:11:23
+      |vpiDecompile:2'b0z
+      |vpiSize:2
+      |BIN:0z
+      |vpiConstType:3
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:11:10, endln:11:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+|uhdmtopModules:
+\_module: work@top (work@top) dut.sv:1:1: , endln:13:10
+  |vpiName:work@top
+  |vpiVariables:
+  \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiDefName:work@top
+  |vpiTop:1
+  |vpiTopModule:1
+  |vpiContAssign:
+  \_cont_assign: , line:3:10, endln:3:23, parent:work@top
+    |vpiRhs:
+    \_constant: , line:3:18, endln:3:23
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:3:10, endln:3:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:4:10, endln:4:22, parent:work@top
+    |vpiRhs:
+    \_constant: , line:4:18, endln:4:22
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:4:10, endln:4:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:5:10, endln:5:23, parent:work@top
+    |vpiRhs:
+    \_constant: , line:5:18, endln:5:23
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:5:10, endln:5:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:6:10, endln:6:22, parent:work@top
+    |vpiRhs:
+    \_constant: , line:6:18, endln:6:22
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:6:10, endln:6:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:7:10, endln:7:23, parent:work@top
+    |vpiRhs:
+    \_constant: , line:7:18, endln:7:23
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:7:10, endln:7:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:8:10, endln:8:22, parent:work@top
+    |vpiRhs:
+    \_constant: , line:8:18, endln:8:22
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:8:10, endln:8:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:9:10, endln:9:23, parent:work@top
+    |vpiRhs:
+    \_constant: , line:9:18, endln:9:23
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:9:10, endln:9:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:10:10, endln:10:22, parent:work@top
+    |vpiRhs:
+    \_constant: , line:10:18, endln:10:22
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:10:10, endln:10:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:11:10, endln:11:23, parent:work@top
+    |vpiRhs:
+    \_constant: , line:11:18, endln:11:23
+    |vpiLhs:
+    \_ref_obj: (work@top.first), line:11:10, endln:11:15
+      |vpiName:first
+      |vpiFullName:work@top.first
+      |vpiActual:
+      \_logic_var: (work@top.first), line:2:22, endln:2:27, parent:work@top
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 36
+[WARNING] : 1
+[   NOTE] : 5
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/BinarySize/dut.sv | ${SURELOG_DIR}/build/regression/BinarySize/roundtrip/dut_000.sv | 2 | 13 | 
+

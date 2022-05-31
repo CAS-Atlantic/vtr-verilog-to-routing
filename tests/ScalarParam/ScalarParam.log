@@ -1,0 +1,267 @@
+[INF:CM0023] Creating log file ../../build/regression/ScalarParam/slpp_all/surelog.log.
+
+LIB:  work
+FILE: dut.sv
+n<> u<0> t<Null_rule> p<100> s<99> l<1:1> el<1:0>
+n<> u<1> t<Module_keyword> p<5> s<2> l<1:1> el<1:7>
+n<GOOD> u<2> t<StringConst> p<5> s<4> l<1:8> el<1:12>
+n<> u<3> t<Port> p<4> l<1:14> el<1:14>
+n<> u<4> t<List_of_ports> p<5> c<3> l<1:13> el<1:15>
+n<> u<5> t<Module_nonansi_header> p<6> c<1> l<1:1> el<1:16>
+n<> u<6> t<Module_declaration> p<7> c<5> l<1:1> el<2:10>
+n<> u<7> t<Description> p<99> c<6> s<68> l<1:1> el<2:10>
+n<> u<8> t<Module_keyword> p<37> s<9> l<4:1> el<4:7>
+n<param_test> u<9> t<StringConst> p<37> s<34> l<4:8> el<4:18>
+n<> u<10> t<IntVec_TypeBit> p<21> s<20> l<5:11> el<5:14>
+n<3> u<11> t<IntConst> p<12> l<5:16> el<5:17>
+n<> u<12> t<Primary_literal> p<13> c<11> l<5:16> el<5:17>
+n<> u<13> t<Constant_primary> p<14> c<12> l<5:16> el<5:17>
+n<> u<14> t<Constant_expression> p<19> c<13> s<18> l<5:16> el<5:17>
+n<0> u<15> t<IntConst> p<16> l<5:18> el<5:19>
+n<> u<16> t<Primary_literal> p<17> c<15> l<5:18> el<5:19>
+n<> u<17> t<Constant_primary> p<18> c<16> l<5:18> el<5:19>
+n<> u<18> t<Constant_expression> p<19> c<17> l<5:18> el<5:19>
+n<> u<19> t<Constant_range> p<20> c<14> l<5:16> el<5:19>
+n<> u<20> t<Packed_dimension> p<21> c<19> l<5:15> el<5:20>
+n<> u<21> t<Data_type> p<22> c<10> l<5:11> el<5:20>
+n<> u<22> t<Data_type_or_implicit> p<32> c<21> s<31> l<5:11> el<5:20>
+n<DRspDepth> u<23> t<StringConst> p<30> s<29> l<5:25> el<5:34>
+n<4'h2> u<24> t<IntConst> p<25> l<5:37> el<5:41>
+n<> u<25> t<Primary_literal> p<26> c<24> l<5:37> el<5:41>
+n<> u<26> t<Constant_primary> p<27> c<25> l<5:37> el<5:41>
+n<> u<27> t<Constant_expression> p<28> c<26> l<5:37> el<5:41>
+n<> u<28> t<Constant_mintypmax_expression> p<29> c<27> l<5:37> el<5:41>
+n<> u<29> t<Constant_param_expression> p<30> c<28> l<5:37> el<5:41>
+n<> u<30> t<Param_assignment> p<31> c<23> l<5:25> el<5:41>
+n<> u<31> t<List_of_param_assignments> p<32> c<30> l<5:25> el<5:41>
+n<> u<32> t<Parameter_declaration> p<33> c<22> l<5:1> el<5:41>
+n<> u<33> t<Parameter_port_declaration> p<34> c<32> l<5:1> el<5:41>
+n<> u<34> t<Parameter_port_list> p<37> c<33> s<36> l<4:19> el<6:2>
+n<> u<35> t<Port> p<36> l<6:4> el<6:4>
+n<> u<36> t<List_of_ports> p<37> c<35> l<6:3> el<6:5>
+n<> u<37> t<Module_nonansi_header> p<67> c<8> s<66> l<4:1> el<6:6>
+n<DRspDepth> u<38> t<StringConst> p<39> l<7:8> el<7:17>
+n<> u<39> t<Primary_literal> p<40> c<38> l<7:8> el<7:17>
+n<> u<40> t<Constant_primary> p<41> c<39> l<7:8> el<7:17>
+n<> u<41> t<Constant_expression> p<47> c<40> s<46> l<7:8> el<7:17>
+n<0> u<42> t<IntConst> p<43> l<7:21> el<7:22>
+n<> u<43> t<Primary_literal> p<44> c<42> l<7:21> el<7:22>
+n<> u<44> t<Constant_primary> p<45> c<43> l<7:21> el<7:22>
+n<> u<45> t<Constant_expression> p<47> c<44> l<7:21> el<7:22>
+n<> u<46> t<BinOp_Equiv> p<47> s<45> l<7:18> el<7:20>
+n<> u<47> t<Constant_expression> p<61> c<41> s<59> l<7:8> el<7:22>
+n<GOOD> u<48> t<StringConst> p<54> s<53> l<8:6> el<8:10>
+n<good> u<49> t<StringConst> p<50> l<8:11> el<8:15>
+n<> u<50> t<Name_of_instance> p<53> c<49> s<52> l<8:11> el<8:15>
+n<> u<51> t<Ordered_port_connection> p<52> l<8:16> el<8:16>
+n<> u<52> t<List_of_port_connections> p<53> c<51> l<8:16> el<8:16>
+n<> u<53> t<Hierarchical_instance> p<54> c<50> l<8:11> el<8:17>
+n<> u<54> t<Module_instantiation> p<55> c<48> l<8:6> el<8:18>
+n<> u<55> t<Module_or_generate_item> p<56> c<54> l<8:6> el<8:18>
+n<> u<56> t<Generate_item> p<57> c<55> l<8:6> el<8:18>
+n<> u<57> t<Generate_block> p<59> c<56> s<58> l<8:6> el<8:18>
+n<> u<58> t<End> p<59> l<9:4> el<9:7>
+n<> u<59> t<Generate_block> p<61> c<57> l<7:24> el<9:7>
+n<> u<60> t<IF> p<61> s<47> l<7:4> el<7:6>
+n<> u<61> t<If_generate_construct> p<62> c<60> l<7:4> el<9:7>
+n<> u<62> t<Conditional_generate_construct> p<63> c<61> l<7:4> el<9:7>
+n<> u<63> t<Module_common_item> p<64> c<62> l<7:4> el<9:7>
+n<> u<64> t<Module_or_generate_item> p<65> c<63> l<7:4> el<9:7>
+n<> u<65> t<Non_port_module_item> p<66> c<64> l<7:4> el<9:7>
+n<> u<66> t<Module_item> p<67> c<65> l<7:4> el<9:7>
+n<> u<67> t<Module_declaration> p<68> c<37> l<4:1> el<10:10>
+n<> u<68> t<Description> p<99> c<67> s<71> l<4:1> el<10:10>
+n<> u<69> t<Package_or_generate_item_declaration> p<70> l<10:10> el<10:11>
+n<> u<70> t<Package_item> p<71> c<69> l<10:10> el<10:11>
+n<> u<71> t<Description> p<99> c<70> s<98> l<10:10> el<10:11>
+n<> u<72> t<Module_keyword> p<76> s<73> l<12:1> el<12:7>
+n<dut> u<73> t<StringConst> p<76> s<75> l<12:8> el<12:11>
+n<> u<74> t<Port> p<75> l<12:13> el<12:13>
+n<> u<75> t<List_of_ports> p<76> c<74> l<12:12> el<12:14>
+n<> u<76> t<Module_nonansi_header> p<97> c<72> s<96> l<12:1> el<12:15>
+n<param_test> u<77> t<StringConst> p<93> s<87> l<14:3> el<14:13>
+n<DRspDepth> u<78> t<StringConst> p<85> s<84> l<15:5> el<15:14>
+n<4'h0> u<79> t<IntConst> p<80> l<15:16> el<15:20>
+n<> u<80> t<Primary_literal> p<81> c<79> l<15:16> el<15:20>
+n<> u<81> t<Primary> p<82> c<80> l<15:16> el<15:20>
+n<> u<82> t<Expression> p<83> c<81> l<15:16> el<15:20>
+n<> u<83> t<Mintypmax_expression> p<84> c<82> l<15:16> el<15:20>
+n<> u<84> t<Param_expression> p<85> c<83> l<15:16> el<15:20>
+n<> u<85> t<Named_parameter_assignment> p<86> c<78> l<15:4> el<15:21>
+n<> u<86> t<List_of_parameter_assignments> p<87> c<85> l<15:4> el<15:21>
+n<> u<87> t<Parameter_value_assignment> p<93> c<86> s<92> l<14:14> el<16:4>
+n<t1> u<88> t<StringConst> p<89> l<16:5> el<16:7>
+n<> u<89> t<Name_of_instance> p<92> c<88> s<91> l<16:5> el<16:7>
+n<> u<90> t<Ordered_port_connection> p<91> l<16:9> el<16:9>
+n<> u<91> t<List_of_port_connections> p<92> c<90> l<16:9> el<16:9>
+n<> u<92> t<Hierarchical_instance> p<93> c<89> l<16:5> el<16:10>
+n<> u<93> t<Module_instantiation> p<94> c<77> l<14:3> el<16:11>
+n<> u<94> t<Module_or_generate_item> p<95> c<93> l<14:3> el<16:11>
+n<> u<95> t<Non_port_module_item> p<96> c<94> l<14:3> el<16:11>
+n<> u<96> t<Module_item> p<97> c<95> l<14:3> el<16:11>
+n<> u<97> t<Module_declaration> p<98> c<76> l<12:1> el<18:10>
+n<> u<98> t<Description> p<99> c<97> l<12:1> el<18:10>
+n<> u<99> t<Source_text> p<100> c<7> l<1:1> el<18:10>
+n<> u<100> t<Top_level_rule> l<1:1> el<19:1>
+[WRN:PA0205] dut.sv:1: No timescale set for "GOOD".
+
+[WRN:PA0205] dut.sv:4: No timescale set for "param_test".
+
+[WRN:PA0205] dut.sv:12: No timescale set for "dut".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0303] dut.sv:1: Compile module "work@GOOD".
+
+[INF:CP0303] dut.sv:12: Compile module "work@dut".
+
+[INF:CP0303] dut.sv:4: Compile module "work@param_test".
+
+[INF:EL0526] Design Elaboration...
+
+[INF:CP0335] dut.sv:7: Compile generate block "work@dut.t1.genblk1".
+
+[NTE:EL0503] dut.sv:12: Top level module "work@dut".
+
+[NTE:EL0508] Nb Top level modules: 1.
+
+[NTE:EL0509] Max instance depth: 4.
+
+[NTE:EL0510] Nb instances: 3.
+
+[NTE:EL0511] Nb leaf instances: 1.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0707] Elaborating UHDM...
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/ScalarParam/slpp_all/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/ScalarParam/slpp_all/surelog.uhdm.chk.html ...
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/ScalarParam/slpp_all/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (work@dut)
+|vpiElaborated:1
+|vpiName:work@dut
+|uhdmallModules:
+\_module: work@GOOD (work@GOOD) dut.sv:1:1: , endln:2:10, parent:work@dut
+  |vpiFullName:work@GOOD
+  |vpiDefName:work@GOOD
+|uhdmallModules:
+\_module: work@dut (work@dut) dut.sv:12:1: , endln:18:10, parent:work@dut
+  |vpiFullName:work@dut
+  |vpiDefName:work@dut
+|uhdmallModules:
+\_module: work@param_test (work@param_test) dut.sv:4:1: , endln:10:10, parent:work@dut
+  |vpiFullName:work@param_test
+  |vpiParameter:
+  \_parameter: (work@param_test.DRspDepth), line:5:25, endln:5:34, parent:work@param_test
+    |HEX:2
+    |vpiTypespec:
+    \_bit_typespec: , line:5:11, endln:5:14, parent:work@param_test.DRspDepth
+      |vpiRange:
+      \_range: , line:5:16, endln:5:19
+        |vpiLeftRange:
+        \_constant: , line:5:16, endln:5:17
+          |vpiDecompile:3
+          |vpiSize:64
+          |UINT:3
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:5:18, endln:5:19
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+    |vpiName:DRspDepth
+    |vpiFullName:work@param_test.DRspDepth
+  |vpiParamAssign:
+  \_param_assign: , line:5:25, endln:5:41, parent:work@param_test
+    |vpiRhs:
+    \_constant: , line:5:37, endln:5:41
+      |vpiDecompile:4'h2
+      |vpiSize:4
+      |HEX:2
+      |vpiTypespec:
+      \_bit_typespec: , line:5:11, endln:5:14, parent:work@param_test.DRspDepth
+      |vpiConstType:5
+    |vpiLhs:
+    \_parameter: (work@param_test.DRspDepth), line:5:25, endln:5:34, parent:work@param_test
+  |vpiDefName:work@param_test
+|uhdmtopModules:
+\_module: work@dut (work@dut) dut.sv:12:1: , endln:18:10
+  |vpiName:work@dut
+  |vpiDefName:work@dut
+  |vpiTop:1
+  |vpiTopModule:1
+  |vpiModule:
+  \_module: work@param_test (work@dut.t1) dut.sv:14:3: , endln:16:11, parent:work@dut
+    |vpiName:t1
+    |vpiFullName:work@dut.t1
+    |vpiParameter:
+    \_parameter: (work@dut.t1.DRspDepth), line:5:25, endln:5:34, parent:work@dut.t1
+      |HEX:2
+      |vpiTypespec:
+      \_bit_typespec: , line:5:11, endln:5:14, parent:work@dut.t1.DRspDepth
+        |vpiRange:
+        \_range: , line:5:16, endln:5:19
+          |vpiLeftRange:
+          \_constant: , line:5:16, endln:5:17
+            |vpiDecompile:3
+            |vpiSize:64
+            |UINT:3
+            |vpiConstType:9
+          |vpiRightRange:
+          \_constant: , line:5:18, endln:5:19
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+      |vpiName:DRspDepth
+      |vpiFullName:work@dut.t1.DRspDepth
+    |vpiParamAssign:
+    \_param_assign: , line:5:25, endln:5:41, parent:work@dut.t1
+      |vpiOverriden:1
+      |vpiRhs:
+      \_constant: , line:5:37, endln:5:41
+        |vpiDecompile:4'h0
+        |vpiSize:4
+        |HEX:0
+        |vpiTypespec:
+        \_bit_typespec: , line:5:11, endln:5:14, parent:work@param_test.DRspDepth
+        |vpiConstType:5
+      |vpiLhs:
+      \_parameter: (work@dut.t1.DRspDepth), line:5:25, endln:5:34, parent:work@dut.t1
+    |vpiDefName:work@param_test
+    |vpiDefFile:dut.sv
+    |vpiDefLineNo:4
+    |vpiInstance:
+    \_module: work@dut (work@dut) dut.sv:12:1: , endln:18:10
+    |vpiGenScopeArray:
+    \_gen_scope_array: (work@dut.t1.genblk1), line:7:4, endln:9:7, parent:work@dut.t1
+      |vpiName:genblk1
+      |vpiFullName:work@dut.t1.genblk1
+      |vpiGenScope:
+      \_gen_scope: (work@dut.t1.genblk1), parent:work@dut.t1.genblk1
+        |vpiFullName:work@dut.t1.genblk1
+        |vpiModule:
+        \_module: work@GOOD (work@dut.t1.genblk1.good) dut.sv:8:6: , endln:8:18, parent:work@dut.t1.genblk1
+          |vpiName:good
+          |vpiFullName:work@dut.t1.genblk1.good
+          |vpiDefName:work@GOOD
+          |vpiDefFile:dut.sv
+          |vpiDefLineNo:1
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 3
+[   NOTE] : 5
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/ScalarParam/dut.sv | ${SURELOG_DIR}/build/regression/ScalarParam/roundtrip/dut_000.sv | 8 | 18 | 
+

@@ -1,0 +1,250 @@
+[INF:CM0023] Creating log file ../../build/regression/PackageDpi/slpp_unit/surelog.log.
+
+[INF:CM0020] Separate compilation-unit mode is on.
+
+[WRN:PA0205] dut.sv:1: No timescale set for "pack".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0301] dut.sv:1: Compile package "pack".
+
+[INF:CP0302] dut.sv:20: Compile class "pack::toto".
+
+[INF:EL0526] Design Elaboration...
+
+[ERR:CP0317] dut.sv:17: Undefined type "uvm_object_wrapper".
+
+[NTE:EL0508] Nb Top level modules: 0.
+
+[NTE:EL0509] Max instance depth: 0.
+
+[NTE:EL0510] Nb instances: 0.
+
+[NTE:EL0511] Nb leaf instances: 0.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0707] Elaborating UHDM...
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/PackageDpi/slpp_unit/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/PackageDpi/slpp_unit/surelog.uhdm.chk.html ...
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/PackageDpi/slpp_unit/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (unnamed)
+|vpiElaborated:1
+|vpiName:unnamed
+|uhdmallPackages:
+\_package: pack (pack::) dut.sv:1:1: , endln:27:11, parent:unnamed
+  |vpiName:pack
+  |vpiFullName:pack::
+  |vpiVariables:
+  \_string_var: (pack::uvm_aa_string_key), line:5:8, endln:5:25, parent:pack::
+    |vpiTypespec:
+    \_string_typespec: , line:5:1, endln:5:7
+      |vpiInstance:
+      \_package: (pack), file:
+    |vpiName:uvm_aa_string_key
+    |vpiFullName:pack::uvm_aa_string_key
+    |vpiAutomatic:1
+    |vpiVisibility:1
+  |vpiVariables:
+  \_enum_var: (pack::m_uvm_core_state), line:14:16, endln:14:32, parent:pack::
+    |vpiTypespec:
+    \_enum_typespec: (pack::uvm_core_state), line:7:1, endln:12:18, parent:pack::
+      |vpiName:pack::uvm_core_state
+      |vpiInstance:
+      \_package: pack (pack::) dut.sv:1:1: , endln:27:11, parent:unnamed
+      |vpiEnumConst:
+      \_enum_const: (UVM_CORE_UNINITIALIZED), line:9:1, endln:9:23
+        |vpiName:UVM_CORE_UNINITIALIZED
+        |INT:0
+        |vpiDecompile:0
+        |vpiSize:64
+      |vpiEnumConst:
+      \_enum_const: (UVM_CORE_PRE_INIT), line:10:1, endln:10:18
+        |vpiName:UVM_CORE_PRE_INIT
+        |INT:1
+        |vpiDecompile:1
+        |vpiSize:64
+    |vpiName:m_uvm_core_state
+    |vpiFullName:pack::m_uvm_core_state
+    |vpiVisibility:1
+    |vpiExpr:
+    \_ref_obj: (UVM_CORE_UNINITIALIZED), line:14:35, endln:14:57
+      |vpiName:UVM_CORE_UNINITIALIZED
+      |vpiActual:
+      \_enum_const: (UVM_CORE_UNINITIALIZED), line:9:1, endln:9:23
+  |vpiVariables:
+  \_int_var: (pack::DO_NOT_CATCH_2), line:24:18, endln:24:40, parent:pack::
+    |vpiTypespec:
+    \_int_typespec: , line:24:14, endln:24:17
+      |vpiInstance:
+      \_package: (pack), file:
+      |vpiSigned:1
+    |vpiName:DO_NOT_CATCH_2
+    |vpiFullName:pack::DO_NOT_CATCH_2
+    |vpiConstantVariable:1
+    |vpiVisibility:1
+    |vpiExpr:
+    \_constant: , line:24:39, endln:24:40
+      |vpiDecompile:1
+      |vpiSize:32
+      |UINT:1
+      |vpiConstType:9
+  |vpiTypedef:
+  \_enum_typespec: (pack::uvm_core_state), line:7:1, endln:12:18, parent:pack::
+  |vpiDefName:pack
+  |vpiTaskFunc:
+  \_function: (pack::uvm_hdl_check_path), line:3:1, endln:3:69, parent:pack::
+    |vpiName:uvm_hdl_check_path
+    |vpiFullName:pack::uvm_hdl_check_path
+    |vpiAccessType:4
+    |vpiVisibility:1
+    |vpiDPIContext:1
+    |vpiDPICStr:2
+    |vpiReturn:
+    \_int_var: , line:3:33, endln:3:36
+      |vpiTypespec:
+      \_int_typespec: , line:3:33, endln:3:36
+        |vpiInstance:
+        \_package: (pack), file:
+        |vpiSigned:1
+    |vpiIODecl:
+    \_io_decl: (path), line:3:63, endln:3:67, parent:pack::uvm_hdl_check_path
+      |vpiDirection:1
+      |vpiName:path
+      |vpiTypedef:
+      \_string_typespec: , line:3:56, endln:3:62
+        |vpiInstance:
+        \_package: (pack), file:
+    |vpiInstance:
+    \_package: pack (pack::) dut.sv:1:1: , endln:27:11, parent:unnamed
+  |vpiNet:
+  \_logic_net: (pack::uvm_deferred_init), line:17:20, endln:17:37, parent:pack::
+    |vpiName:uvm_deferred_init
+    |vpiFullName:pack::uvm_deferred_init
+|uhdmtopPackages:
+\_package: pack (pack::) dut.sv:1:1: , endln:27:11, parent:unnamed
+  |vpiName:pack
+  |vpiFullName:pack::
+  |vpiVariables:
+  \_string_var: (pack::uvm_aa_string_key), line:5:8, endln:5:25, parent:pack::
+    |vpiTypespec:
+    \_string_typespec: , line:5:1, endln:5:7
+      |vpiInstance:
+      \_package: pack (pack::) dut.sv:1:1: , endln:27:11, parent:unnamed
+    |vpiName:uvm_aa_string_key
+    |vpiFullName:pack::uvm_aa_string_key
+    |vpiAutomatic:1
+    |vpiVisibility:1
+  |vpiVariables:
+  \_enum_var: (pack::m_uvm_core_state), line:14:16, endln:14:32, parent:pack::
+    |vpiTypespec:
+    \_enum_typespec: (pack::uvm_core_state), line:7:1, endln:12:18, parent:pack::
+      |vpiName:pack::uvm_core_state
+      |vpiInstance:
+      \_package: pack (pack::) dut.sv:1:1: , endln:27:11, parent:unnamed
+      |vpiEnumConst:
+      \_enum_const: (UVM_CORE_UNINITIALIZED), line:9:1, endln:9:23
+        |vpiName:UVM_CORE_UNINITIALIZED
+        |INT:0
+        |vpiDecompile:0
+        |vpiSize:64
+      |vpiEnumConst:
+      \_enum_const: (UVM_CORE_PRE_INIT), line:10:1, endln:10:18
+        |vpiName:UVM_CORE_PRE_INIT
+        |INT:1
+        |vpiDecompile:1
+        |vpiSize:64
+    |vpiName:m_uvm_core_state
+    |vpiFullName:pack::m_uvm_core_state
+    |vpiVisibility:1
+    |vpiExpr:
+    \_ref_obj: (UVM_CORE_UNINITIALIZED), line:14:35, endln:14:57
+      |vpiName:UVM_CORE_UNINITIALIZED
+      |vpiActual:
+      \_enum_const: (UVM_CORE_UNINITIALIZED), line:9:1, endln:9:23
+  |vpiVariables:
+  \_int_var: (pack::DO_NOT_CATCH_2), line:24:18, endln:24:40, parent:pack::
+    |vpiTypespec:
+    \_int_typespec: , line:24:14, endln:24:17
+      |vpiInstance:
+      \_package: pack (pack::) dut.sv:1:1: , endln:27:11, parent:unnamed
+      |vpiSigned:1
+    |vpiName:DO_NOT_CATCH_2
+    |vpiFullName:pack::DO_NOT_CATCH_2
+    |vpiConstantVariable:1
+    |vpiVisibility:1
+    |vpiExpr:
+    \_constant: , line:24:39, endln:24:40
+      |vpiDecompile:1
+      |vpiSize:32
+      |UINT:1
+      |vpiConstType:9
+  |vpiTypedef:
+  \_enum_typespec: (pack::uvm_core_state), line:7:1, endln:12:18, parent:pack::
+  |vpiDefName:pack
+  |vpiTop:1
+  |vpiClassDefn:
+  \_class_defn: (pack::toto) dut.sv:20:1: , endln:22:9, parent:pack::
+    |vpiName:toto
+    |vpiFullName:pack::toto
+    |vpiVariables:
+    \_int_var: (pack::toto::DO_NOT_CATCH), line:21:18, endln:21:30, parent:pack::toto
+      |vpiTypespec:
+      \_int_typespec: , line:21:14, endln:21:17
+        |vpiSigned:1
+      |vpiName:DO_NOT_CATCH
+      |vpiFullName:pack::toto::DO_NOT_CATCH
+      |vpiConstantVariable:1
+      |vpiVisibility:1
+      |vpiExpr:
+      \_constant: , line:21:38, endln:21:39
+        |vpiDecompile:1
+        |vpiSize:32
+        |UINT:1
+        |vpiConstType:9
+  |vpiTaskFunc:
+  \_function: (pack::uvm_hdl_check_path), line:3:1, endln:3:69, parent:pack::
+    |vpiName:uvm_hdl_check_path
+    |vpiFullName:pack::uvm_hdl_check_path
+    |vpiAccessType:4
+    |vpiVisibility:1
+    |vpiDPIContext:1
+    |vpiDPICStr:2
+    |vpiReturn:
+    \_int_var: , line:3:33, endln:3:36
+      |vpiTypespec:
+      \_int_typespec: , line:3:33, endln:3:36
+        |vpiInstance:
+        \_package: pack (pack::) dut.sv:1:1: , endln:27:11, parent:unnamed
+        |vpiSigned:1
+    |vpiIODecl:
+    \_io_decl: (path), line:3:63, endln:3:67, parent:pack::uvm_hdl_check_path
+      |vpiDirection:1
+      |vpiName:path
+      |vpiTypedef:
+      \_string_typespec: , line:3:56, endln:3:62
+        |vpiInstance:
+        \_package: pack (pack::) dut.sv:1:1: , endln:27:11, parent:unnamed
+    |vpiInstance:
+    \_package: pack (pack::) dut.sv:1:1: , endln:27:11, parent:unnamed
+  |vpiNet:
+  \_logic_net: (pack::uvm_deferred_init), line:17:20, endln:17:37, parent:pack::
+    |vpiName:uvm_deferred_init
+    |vpiFullName:pack::uvm_deferred_init
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 1
+[WARNING] : 1
+[   NOTE] : 4
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/PackageDpi/dut.sv | ${SURELOG_DIR}/build/regression/PackageDpi/roundtrip/dut_000.sv | 5 | 27 | 
+

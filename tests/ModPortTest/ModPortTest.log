@@ -1,0 +1,690 @@
+[INF:CM0023] Creating log file ../../build/regression/ModPortTest/slpp_unit/surelog.log.
+
+[INF:CM0020] Separate compilation-unit mode is on.
+
+PP PREPROCESS FILE: "top.v"
+PP TOKENS: 
+[@0,0:5='module',<54>,1:0]
+[@1,6:6=' ',<72>,1:6]
+[@2,7:15='dff0_test',<71>,1:7]
+[@3,16:16='(',<84>,1:16]
+[@4,17:18='n1',<71>,1:17]
+[@5,19:19=')',<85>,1:19]
+[@6,20:20=';',<93>,1:20]
+[@7,21:21='\n',<80>,1:21]
+[@8,22:23='  ',<72>,2:0]
+[@9,24:24='(',<84>,2:2]
+[@10,25:25='*',<93>,2:3]
+[@11,26:26=' ',<72>,2:4]
+[@12,27:30='init',<71>,2:5]
+[@13,31:31=' ',<72>,2:9]
+[@14,32:32='=',<87>,2:10]
+[@15,33:33=' ',<72>,2:11]
+[@16,34:39='32'd1 ',<76>,2:12]
+[@17,40:40='*',<93>,2:18]
+[@18,41:41=')',<85>,2:19]
+[@19,42:42='\n',<80>,2:20]
+[@20,43:44='  ',<72>,3:0]
+[@21,45:50='output',<71>,3:2]
+[@22,51:51=' ',<72>,3:8]
+[@23,52:53='n1',<71>,3:9]
+[@24,54:54=';',<93>,3:11]
+[@25,55:55='\n',<80>,3:12]
+[@26,56:57='  ',<72>,4:0]
+[@27,58:60='reg',<71>,4:2]
+[@28,61:61=' ',<72>,4:5]
+[@29,62:63='n1',<71>,4:6]
+[@30,64:64=' ',<72>,4:8]
+[@31,65:65='=',<87>,4:9]
+[@32,66:66=' ',<72>,4:10]
+[@33,67:71='32'd0',<76>,4:11]
+[@34,72:72=';',<93>,4:16]
+[@35,73:73='\n',<80>,4:17]
+[@36,74:82='endmodule',<55>,5:0]
+[@37,83:83='\n',<80>,5:9]
+[@38,84:84='\n',<80>,6:0]
+[@39,85:85='\n',<80>,7:0]
+[@40,86:94='interface',<56>,8:0]
+[@41,95:95=' ',<72>,8:9]
+[@42,96:102='AXI_BUS',<71>,8:10]
+[@43,103:103=' ',<72>,8:17]
+[@44,104:104='#',<93>,8:18]
+[@45,105:105='(',<84>,8:19]
+[@46,106:106='\n',<80>,8:20]
+[@47,107:107=' ',<72>,9:0]
+[@48,108:116='parameter',<71>,9:1]
+[@49,117:117=' ',<72>,9:10]
+[@50,118:129='AXI_ID_WIDTH',<71>,9:11]
+[@51,130:132='   ',<72>,9:23]
+[@52,133:133='=',<87>,9:26]
+[@53,134:134=' ',<72>,9:27]
+[@54,135:135='-',<93>,9:28]
+[@55,136:136='1',<76>,9:29]
+[@56,137:137='\n',<80>,9:30]
+[@57,138:138=')',<85>,10:0]
+[@58,139:139=';',<93>,10:1]
+[@59,140:140='\n',<80>,10:2]
+[@60,141:141='\n',<80>,11:0]
+[@61,142:143='  ',<72>,12:0]
+[@62,144:150='typedef',<71>,12:2]
+[@63,151:151=' ',<72>,12:9]
+[@64,152:156='logic',<71>,12:10]
+[@65,157:157=' ',<72>,12:15]
+[@66,158:158='[',<91>,12:16]
+[@67,159:170='AXI_ID_WIDTH',<71>,12:17]
+[@68,171:171='-',<93>,12:29]
+[@69,172:172='1',<76>,12:30]
+[@70,173:173=':',<93>,12:31]
+[@71,174:174='0',<76>,12:32]
+[@72,175:175=']',<92>,12:33]
+[@73,176:178='   ',<72>,12:34]
+[@74,179:182='id_t',<71>,12:37]
+[@75,183:183=';',<93>,12:41]
+[@76,184:184='\n',<80>,12:42]
+[@77,185:186='  ',<72>,13:0]
+[@78,187:187='\n',<80>,13:2]
+[@79,188:189='  ',<72>,14:0]
+[@80,190:194='id_t1',<71>,14:2]
+[@81,195:201='       ',<72>,14:7]
+[@82,202:206='aw_id',<71>,14:14]
+[@83,207:207=';',<93>,14:19]
+[@84,208:208='\n',<80>,14:20]
+[@85,209:211='   ',<72>,15:0]
+[@86,212:212='\n',<80>,15:3]
+[@87,213:214='  ',<72>,16:0]
+[@88,215:221='modport',<71>,16:2]
+[@89,222:222=' ',<72>,16:9]
+[@90,223:228='Master',<71>,16:10]
+[@91,229:229=' ',<72>,16:16]
+[@92,230:230='(',<84>,16:17]
+[@93,231:231='\n',<80>,16:18]
+[@94,232:235='    ',<72>,17:0]
+[@95,236:241='output',<71>,17:4]
+[@96,242:242=' ',<72>,17:10]
+[@97,243:247='aw_id',<71>,17:11]
+[@98,248:248='\n',<80>,17:16]
+[@99,249:250='  ',<72>,18:0]
+[@100,251:251=')',<85>,18:2]
+[@101,252:252=';',<93>,18:3]
+[@102,253:253='\n',<80>,18:4]
+[@103,254:254='\n',<80>,19:0]
+[@104,255:256='  ',<72>,20:0]
+[@105,257:260='id_t',<71>,20:2]
+[@106,261:267='       ',<72>,20:6]
+[@107,268:272='rw_id',<71>,20:13]
+[@108,273:273=';',<93>,20:18]
+[@109,274:274='\n',<80>,20:19]
+[@110,275:277='   ',<72>,21:0]
+[@111,278:278='\n',<80>,21:3]
+[@112,279:280='  ',<72>,22:0]
+[@113,281:287='modport',<71>,22:2]
+[@114,288:288=' ',<72>,22:9]
+[@115,289:293='Slave',<71>,22:10]
+[@116,294:294=' ',<72>,22:15]
+[@117,295:295='(',<84>,22:16]
+[@118,296:296='\n',<80>,22:17]
+[@119,297:300='    ',<72>,23:0]
+[@120,301:306='output',<71>,23:4]
+[@121,307:307=' ',<72>,23:10]
+[@122,308:312='ww_id',<71>,23:11]
+[@123,313:313='\n',<80>,23:16]
+[@124,314:315='  ',<72>,24:0]
+[@125,316:316=')',<85>,24:2]
+[@126,317:317=';',<93>,24:3]
+[@127,318:318='\n',<80>,24:4]
+[@128,319:319='\n',<80>,25:0]
+[@129,320:331='endinterface',<57>,26:0]
+[@130,332:332='\n',<80>,26:12]
+[@131,333:333='\n',<80>,27:0]
+[@132,334:334='\n',<80>,28:0]
+[@133,335:343='interface',<56>,29:0]
+[@134,344:344=' ',<72>,29:9]
+[@135,345:350='mem_if',<71>,29:10]
+[@136,351:351=' ',<72>,29:16]
+[@137,352:352='(',<84>,29:17]
+[@138,353:357='input',<71>,29:18]
+[@139,358:358=' ',<72>,29:23]
+[@140,359:362='wire',<71>,29:24]
+[@141,363:363=' ',<72>,29:28]
+[@142,364:366='clk',<71>,29:29]
+[@143,367:367=')',<85>,29:32]
+[@144,368:368=';',<93>,29:33]
+[@145,369:369='\n',<80>,29:34]
+[@146,370:370='\n',<80>,30:0]
+[@147,371:372='  ',<72>,31:0]
+[@148,373:379='modport',<71>,31:2]
+[@149,380:381='  ',<72>,31:9]
+[@150,382:387='system',<71>,31:11]
+[@151,388:388=' ',<72>,31:17]
+[@152,389:389='(',<84>,31:18]
+[@153,390:394='input',<71>,31:19]
+[@154,395:395=' ',<72>,31:24]
+[@155,396:398='clk',<71>,31:25]
+[@156,399:399=')',<85>,31:28]
+[@157,400:400=';',<93>,31:29]
+[@158,401:401='\n',<80>,31:30]
+[@159,402:403='  ',<72>,32:0]
+[@160,404:410='modport',<71>,32:2]
+[@161,411:412='  ',<72>,32:9]
+[@162,413:418='memory',<71>,32:11]
+[@163,419:419=' ',<72>,32:17]
+[@164,420:420='(',<84>,32:18]
+[@165,421:426='output',<71>,32:19]
+[@166,427:427=' ',<72>,32:25]
+[@167,428:430='clk',<71>,32:26]
+[@168,431:431=')',<85>,32:29]
+[@169,432:432=';',<93>,32:30]
+[@170,433:433='\n',<80>,32:31]
+[@171,434:434=' ',<72>,33:0]
+[@172,435:435='\n',<80>,33:1]
+[@173,436:447='endinterface',<57>,34:0]
+[@174,448:448='\n',<80>,34:12]
+[@175,449:449='\n',<80>,35:0]
+[@176,450:455='module',<54>,36:0]
+[@177,456:456=' ',<72>,36:6]
+[@178,457:468='memory_ctrl1',<71>,36:7]
+[@179,469:469=' ',<72>,36:19]
+[@180,470:470='(',<84>,36:20]
+[@181,471:476='mem_if',<71>,36:21]
+[@182,477:477='.',<93>,36:27]
+[@183,478:484='system1',<71>,36:28]
+[@184,485:485=' ',<72>,36:35]
+[@185,486:488='sif',<71>,36:36]
+[@186,489:489=')',<85>,36:39]
+[@187,490:490=';',<93>,36:40]
+[@188,491:491='\n',<80>,36:41]
+[@189,492:492='\n',<80>,37:0]
+[@190,493:499='typedef',<71>,38:0]
+[@191,500:501='  ',<72>,38:7]
+[@192,502:505='enum',<71>,38:9]
+[@193,506:506=' ',<72>,38:13]
+[@194,507:507='{',<89>,38:14]
+[@195,508:511='IDLE',<71>,38:15]
+[@196,512:512=',',<86>,38:19]
+[@197,513:517='WRITE',<71>,38:20]
+[@198,518:518=',',<86>,38:25]
+[@199,519:522='READ',<71>,38:26]
+[@200,523:523=',',<86>,38:30]
+[@201,524:527='DONE',<71>,38:31]
+[@202,528:528='}',<90>,38:35]
+[@203,529:529=' ',<72>,38:36]
+[@204,530:534='fsm_t',<71>,38:37]
+[@205,535:535=';',<93>,38:42]
+[@206,536:536='\n',<80>,38:43]
+[@207,537:537='\n',<80>,39:0]
+[@208,538:542='fsm_t',<71>,40:0]
+[@209,543:543=' ',<72>,40:5]
+[@210,544:548='state',<71>,40:6]
+[@211,549:549=';',<93>,40:11]
+[@212,550:550='\n',<80>,40:12]
+[@213,551:551='\n',<80>,41:0]
+[@214,552:552='\n',<80>,42:0]
+[@215,553:561='endmodule',<55>,43:0]
+[@216,562:562='\n',<80>,43:9]
+[@217,563:563='\n',<80>,44:0]
+[@218,564:569='module',<54>,45:0]
+[@219,570:570=' ',<72>,45:6]
+[@220,571:582='memory_ctrl2',<71>,45:7]
+[@221,583:583=' ',<72>,45:19]
+[@222,584:584='(',<84>,45:20]
+[@223,585:590='mem_if',<71>,45:21]
+[@224,591:591='.',<93>,45:27]
+[@225,592:597='system',<71>,45:28]
+[@226,598:598=' ',<72>,45:34]
+[@227,599:601='sif',<71>,45:35]
+[@228,602:602=')',<85>,45:38]
+[@229,603:603=';',<93>,45:39]
+[@230,604:604='\n',<80>,45:40]
+[@231,605:605='\n',<80>,46:0]
+[@232,606:612='typedef',<71>,47:0]
+[@233,613:614='  ',<72>,47:7]
+[@234,615:618='enum',<71>,47:9]
+[@235,619:619=' ',<72>,47:13]
+[@236,620:620='{',<89>,47:14]
+[@237,621:624='IDLE',<71>,47:15]
+[@238,625:625=',',<86>,47:19]
+[@239,626:630='WRITE',<71>,47:20]
+[@240,631:631=',',<86>,47:25]
+[@241,632:635='READ',<71>,47:26]
+[@242,636:636=',',<86>,47:30]
+[@243,637:640='DONE',<71>,47:31]
+[@244,641:641='}',<90>,47:35]
+[@245,642:642=' ',<72>,47:36]
+[@246,643:647='fsm_t',<71>,47:37]
+[@247,648:648=';',<93>,47:42]
+[@248,649:649='\n',<80>,47:43]
+[@249,650:650='\n',<80>,48:0]
+[@250,651:655='fsm_t',<71>,49:0]
+[@251,656:656=' ',<72>,49:5]
+[@252,657:661='state',<71>,49:6]
+[@253,662:662=';',<93>,49:11]
+[@254,663:663='\n',<80>,49:12]
+[@255,664:664='\n',<80>,50:0]
+[@256,665:666='DD',<71>,51:0]
+[@257,667:667=' ',<72>,51:2]
+[@258,668:668='t',<71>,51:3]
+[@259,669:669=';',<93>,51:4]
+[@260,670:670='\n',<80>,51:5]
+[@261,671:671='\n',<80>,52:0]
+[@262,672:680='endmodule',<55>,53:0]
+[@263,681:681='\n',<80>,53:9]
+[@264,682:682='\n',<80>,54:0]
+[@265,683:683='\n',<80>,55:0]
+[@266,684:683='<EOF>',<-1>,56:0]
+PP TREE: (top_level_rule null_rule (source_text (description (module module)) (description (text_blob  )) (description (text_blob dff0_test)) (description (text_blob ()) (description (text_blob n1)) (description (text_blob ))) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob   )) (description (text_blob ()) (description (text_blob *)) (description (text_blob  )) (description (text_blob init)) (description (text_blob  )) (description (text_blob =)) (description (text_blob  )) (description (number 32'd1 )) (description (text_blob *)) (description (text_blob ))) (description (text_blob \n)) (description (text_blob   )) (description (text_blob output)) (description (text_blob  )) (description (text_blob n1)) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob   )) (description (text_blob reg)) (description (text_blob  )) (description (text_blob n1)) (description (text_blob  )) (description (text_blob =)) (description (text_blob  )) (description (number 32'd0)) (description (text_blob ;)) (description (text_blob \n)) (description (endmodule endmodule)) (description (text_blob \n)) (description (text_blob \n)) (description (text_blob \n)) (description (sv_interface interface)) (description (text_blob  )) (description (text_blob AXI_BUS)) (description (text_blob  )) (description (text_blob #)) (description (text_blob ()) (description (text_blob \n)) (description (text_blob  )) (description (text_blob parameter)) (description (text_blob  )) (description (text_blob AXI_ID_WIDTH)) (description (text_blob    )) (description (text_blob =)) (description (text_blob  )) (description (text_blob -)) (description (number 1)) (description (text_blob \n)) (description (text_blob ))) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob \n)) (description (text_blob   )) (description (text_blob typedef)) (description (text_blob  )) (description (text_blob logic)) (description (text_blob  )) (description (text_blob [)) (description (text_blob AXI_ID_WIDTH)) (description (text_blob -)) (description (number 1)) (description (text_blob :)) (description (number 0)) (description (text_blob ])) (description (text_blob    )) (description (text_blob id_t)) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob   )) (description (text_blob \n)) (description (text_blob   )) (description (text_blob id_t1)) (description (text_blob        )) (description (text_blob aw_id)) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob    )) (description (text_blob \n)) (description (text_blob   )) (description (text_blob modport)) (description (text_blob  )) (description (text_blob Master)) (description (text_blob  )) (description (text_blob ()) (description (text_blob \n)) (description (text_blob     )) (description (text_blob output)) (description (text_blob  )) (description (text_blob aw_id)) (description (text_blob \n)) (description (text_blob   )) (description (text_blob ))) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob \n)) (description (text_blob   )) (description (text_blob id_t)) (description (text_blob        )) (description (text_blob rw_id)) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob    )) (description (text_blob \n)) (description (text_blob   )) (description (text_blob modport)) (description (text_blob  )) (description (text_blob Slave)) (description (text_blob  )) (description (text_blob ()) (description (text_blob \n)) (description (text_blob     )) (description (text_blob output)) (description (text_blob  )) (description (text_blob ww_id)) (description (text_blob \n)) (description (text_blob   )) (description (text_blob ))) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob \n)) (description (endinterface endinterface)) (description (text_blob \n)) (description (text_blob \n)) (description (text_blob \n)) (description (sv_interface interface)) (description (text_blob  )) (description (text_blob mem_if)) (description (text_blob  )) (description (text_blob ()) (description (text_blob input)) (description (text_blob  )) (description (text_blob wire)) (description (text_blob  )) (description (text_blob clk)) (description (text_blob ))) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob \n)) (description (text_blob   )) (description (text_blob modport)) (description (text_blob   )) (description (text_blob system)) (description (text_blob  )) (description (text_blob ()) (description (text_blob input)) (description (text_blob  )) (description (text_blob clk)) (description (text_blob ))) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob   )) (description (text_blob modport)) (description (text_blob   )) (description (text_blob memory)) (description (text_blob  )) (description (text_blob ()) (description (text_blob output)) (description (text_blob  )) (description (text_blob clk)) (description (text_blob ))) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob  )) (description (text_blob \n)) (description (endinterface endinterface)) (description (text_blob \n)) (description (text_blob \n)) (description (module module)) (description (text_blob  )) (description (text_blob memory_ctrl1)) (description (text_blob  )) (description (text_blob ()) (description (text_blob mem_if)) (description (text_blob .)) (description (text_blob system1)) (description (text_blob  )) (description (text_blob sif)) (description (text_blob ))) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob \n)) (description (text_blob typedef)) (description (text_blob   )) (description (text_blob enum)) (description (text_blob  )) (description (text_blob {)) (description (text_blob IDLE)) (description (text_blob ,)) (description (text_blob WRITE)) (description (text_blob ,)) (description (text_blob READ)) (description (text_blob ,)) (description (text_blob DONE)) (description (text_blob })) (description (text_blob  )) (description (text_blob fsm_t)) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob \n)) (description (text_blob fsm_t)) (description (text_blob  )) (description (text_blob state)) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob \n)) (description (text_blob \n)) (description (endmodule endmodule)) (description (text_blob \n)) (description (text_blob \n)) (description (module module)) (description (text_blob  )) (description (text_blob memory_ctrl2)) (description (text_blob  )) (description (text_blob ()) (description (text_blob mem_if)) (description (text_blob .)) (description (text_blob system)) (description (text_blob  )) (description (text_blob sif)) (description (text_blob ))) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob \n)) (description (text_blob typedef)) (description (text_blob   )) (description (text_blob enum)) (description (text_blob  )) (description (text_blob {)) (description (text_blob IDLE)) (description (text_blob ,)) (description (text_blob WRITE)) (description (text_blob ,)) (description (text_blob READ)) (description (text_blob ,)) (description (text_blob DONE)) (description (text_blob })) (description (text_blob  )) (description (text_blob fsm_t)) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob \n)) (description (text_blob fsm_t)) (description (text_blob  )) (description (text_blob state)) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob \n)) (description (text_blob DD)) (description (text_blob  )) (description (text_blob t)) (description (text_blob ;)) (description (text_blob \n)) (description (text_blob \n)) (description (endmodule endmodule)) (description (text_blob \n)) (description (text_blob \n)) (description (text_blob \n))) <EOF>)
+
+[WRN:PA0205] top.v:1: No timescale set for "dff0_test".
+
+[WRN:PA0205] top.v:8: No timescale set for "AXI_BUS".
+
+[WRN:PA0205] top.v:29: No timescale set for "mem_if".
+
+[WRN:PA0205] top.v:36: No timescale set for "memory_ctrl1".
+
+[WRN:PA0205] top.v:45: No timescale set for "memory_ctrl2".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0304] top.v:8: Compile interface "work@AXI_BUS".
+
+[INF:CP0303] top.v:1: Compile module "work@dff0_test".
+
+[INF:CP0304] top.v:29: Compile interface "work@mem_if".
+
+[INF:CP0303] top.v:36: Compile module "work@memory_ctrl1".
+
+[INF:CP0303] top.v:45: Compile module "work@memory_ctrl2".
+
+[ERR:CP0311] top.v:23: Undefined net used in modport: "ww_id".
+
+[INF:EL0526] Design Elaboration...
+
+[NTE:EL0531] top.v:12:18: Negative value in instance "work@AXI_BUS"
+             text:   typedef logic [AXI_ID_WIDTH-1:0]   id_t;
+             value: INT:-2.
+
+[NTE:EL0503] top.v:1: Top level module "work@dff0_test".
+
+[NTE:EL0503] top.v:36: Top level module "work@memory_ctrl1".
+
+[NTE:EL0503] top.v:45: Top level module "work@memory_ctrl2".
+
+[NTE:EL0504] Multiple top level modules in design.
+
+[ERR:CP0317] top.v:36: Undefined type "mem_if.system1".
+
+[ERR:CP0317] top.v:51: Undefined type "DD".
+
+[NTE:EL0508] Nb Top level modules: 3.
+
+[NTE:EL0509] Max instance depth: 1.
+
+[NTE:EL0510] Nb instances: 3.
+
+[NTE:EL0511] Nb leaf instances: 3.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/ModPortTest/slpp_unit/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/ModPortTest/slpp_unit/surelog.uhdm.chk.html ...
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/ModPortTest/slpp_unit/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (work@dff0_test)
+|vpiName:work@dff0_test
+|uhdmallInterfaces:
+\_interface: work@AXI_BUS (work@AXI_BUS) top.v:8:1: , endln:26:13, parent:work@dff0_test
+  |vpiFullName:work@AXI_BUS
+  |vpiParameter:
+  \_parameter: (work@AXI_BUS.AXI_ID_WIDTH), line:9:12, endln:9:24, parent:work@AXI_BUS
+    |vpiName:AXI_ID_WIDTH
+    |vpiFullName:work@AXI_BUS.AXI_ID_WIDTH
+  |vpiParamAssign:
+  \_param_assign: , line:9:12, endln:9:31, parent:work@AXI_BUS
+    |vpiRhs:
+    \_operation: , line:9:29, endln:9:31
+      |vpiOpType:1
+      |vpiOperand:
+      \_constant: , line:9:30, endln:9:31
+        |vpiDecompile:1
+        |vpiSize:64
+        |UINT:1
+        |vpiConstType:9
+    |vpiLhs:
+    \_parameter: (work@AXI_BUS.AXI_ID_WIDTH), line:9:12, endln:9:24, parent:work@AXI_BUS
+  |vpiTypedef:
+  \_logic_typespec: (id_t), line:12:11, endln:12:16, parent:work@AXI_BUS
+    |vpiName:id_t
+    |vpiInstance:
+    \_interface: work@AXI_BUS (work@AXI_BUS) top.v:8:1: , endln:26:13, parent:work@dff0_test
+    |vpiRange:
+    \_range: , line:12:18, endln:12:34
+      |vpiLeftRange:
+      \_constant: , line:12:18, endln:12:30
+        |vpiDecompile:-2
+        |vpiSize:64
+        |INT:-2
+        |vpiConstType:7
+      |vpiRightRange:
+      \_constant: , line:12:33, endln:12:34
+        |vpiDecompile:0
+        |vpiSize:64
+        |UINT:0
+        |vpiConstType:9
+  |vpiDefName:work@AXI_BUS
+  |vpiNet:
+  \_logic_net: (work@AXI_BUS.aw_id), line:14:15, endln:14:20, parent:work@AXI_BUS
+    |vpiName:aw_id
+    |vpiFullName:work@AXI_BUS.aw_id
+  |vpiNet:
+  \_logic_net: (work@AXI_BUS.rw_id), line:20:14, endln:20:19, parent:work@AXI_BUS
+    |vpiName:rw_id
+    |vpiFullName:work@AXI_BUS.rw_id
+  |vpiModport:
+  \_modport: (Master), line:16:11, endln:16:17, parent:work@AXI_BUS
+    |vpiName:Master
+    |vpiIODecl:
+    \_io_decl: (aw_id), line:17:12, endln:17:17
+      |vpiDirection:2
+      |vpiName:aw_id
+  |vpiModport:
+  \_modport: (Slave), line:22:11, endln:22:16, parent:work@AXI_BUS
+    |vpiName:Slave
+    |vpiIODecl:
+    \_io_decl: (ww_id), line:23:12, endln:23:17
+      |vpiDirection:2
+      |vpiName:ww_id
+|uhdmallInterfaces:
+\_interface: work@mem_if (work@mem_if) top.v:29:1: , endln:34:13, parent:work@dff0_test
+  |vpiFullName:work@mem_if
+  |vpiDefName:work@mem_if
+  |vpiNet:
+  \_logic_net: (work@mem_if.clk), line:29:30, endln:29:33, parent:work@mem_if
+    |vpiName:clk
+    |vpiFullName:work@mem_if.clk
+    |vpiNetType:1
+  |vpiModport:
+  \_modport: (memory), line:32:12, endln:32:18, parent:work@mem_if
+    |vpiName:memory
+    |vpiIODecl:
+    \_io_decl: (clk), line:32:27, endln:32:30
+      |vpiDirection:2
+      |vpiName:clk
+  |vpiModport:
+  \_modport: (system), line:31:12, endln:31:18, parent:work@mem_if
+    |vpiName:system
+    |vpiIODecl:
+    \_io_decl: (clk), line:31:26, endln:31:29
+      |vpiDirection:1
+      |vpiName:clk
+  |vpiPort:
+  \_port: (clk), line:29:30, endln:29:33, parent:work@mem_if
+    |vpiName:clk
+    |vpiDirection:1
+    |vpiLowConn:
+    \_ref_obj: 
+      |vpiActual:
+      \_logic_net: (work@mem_if.clk), line:29:30, endln:29:33, parent:work@mem_if
+|uhdmallModules:
+\_module: work@dff0_test (work@dff0_test) top.v:1:1: , endln:5:10, parent:work@dff0_test
+  |vpiFullName:work@dff0_test
+  |vpiDefName:work@dff0_test
+  |vpiNet:
+  \_logic_net: (work@dff0_test.n1), line:4:7, endln:4:9, parent:work@dff0_test
+    |vpiName:n1
+    |vpiFullName:work@dff0_test.n1
+    |vpiNetType:48
+  |vpiPort:
+  \_port: (n1), line:1:18, endln:1:20, parent:work@dff0_test
+    |vpiName:n1
+    |vpiDirection:2
+    |vpiLowConn:
+    \_ref_obj: 
+      |vpiActual:
+      \_logic_net: (work@dff0_test.n1), line:4:7, endln:4:9, parent:work@dff0_test
+|uhdmallModules:
+\_module: work@memory_ctrl1 (work@memory_ctrl1) top.v:36:1: , endln:43:10, parent:work@dff0_test
+  |vpiFullName:work@memory_ctrl1
+  |vpiTypedef:
+  \_enum_typespec: (fsm_t), line:38:1, endln:38:44, parent:work@memory_ctrl1
+    |vpiName:fsm_t
+    |vpiInstance:
+    \_module: work@memory_ctrl1 (work@memory_ctrl1) top.v:36:1: , endln:43:10, parent:work@dff0_test
+    |vpiEnumConst:
+    \_enum_const: (IDLE), line:38:16, endln:38:20
+      |vpiName:IDLE
+      |INT:0
+      |vpiDecompile:0
+      |vpiSize:64
+    |vpiEnumConst:
+    \_enum_const: (WRITE), line:38:21, endln:38:26
+      |vpiName:WRITE
+      |INT:1
+      |vpiDecompile:1
+      |vpiSize:64
+    |vpiEnumConst:
+    \_enum_const: (READ), line:38:27, endln:38:31
+      |vpiName:READ
+      |INT:2
+      |vpiDecompile:2
+      |vpiSize:64
+    |vpiEnumConst:
+    \_enum_const: (DONE), line:38:32, endln:38:36
+      |vpiName:DONE
+      |INT:3
+      |vpiDecompile:3
+      |vpiSize:64
+  |vpiDefName:work@memory_ctrl1
+  |vpiNet:
+  \_logic_net: (work@memory_ctrl1.state), line:40:7, endln:40:12, parent:work@memory_ctrl1
+    |vpiName:state
+    |vpiFullName:work@memory_ctrl1.state
+  |vpiNet:
+  \_logic_net: (work@memory_ctrl1.sif), line:36:37, endln:36:40, parent:work@memory_ctrl1
+    |vpiName:sif
+    |vpiFullName:work@memory_ctrl1.sif
+  |vpiPort:
+  \_port: (sif), line:36:37, endln:36:40, parent:work@memory_ctrl1
+    |vpiName:sif
+    |vpiDirection:3
+    |vpiLowConn:
+    \_ref_obj: 
+      |vpiActual:
+      \_interface: work@mem_if (work@mem_if) top.v:29:1: , endln:34:13, parent:work@dff0_test
+|uhdmallModules:
+\_module: work@memory_ctrl2 (work@memory_ctrl2) top.v:45:1: , endln:53:10, parent:work@dff0_test
+  |vpiFullName:work@memory_ctrl2
+  |vpiTypedef:
+  \_enum_typespec: (fsm_t), line:47:1, endln:47:44, parent:work@memory_ctrl2
+    |vpiName:fsm_t
+    |vpiInstance:
+    \_module: work@memory_ctrl2 (work@memory_ctrl2) top.v:45:1: , endln:53:10, parent:work@dff0_test
+    |vpiEnumConst:
+    \_enum_const: (IDLE), line:47:16, endln:47:20
+      |vpiName:IDLE
+      |INT:0
+      |vpiDecompile:0
+      |vpiSize:64
+    |vpiEnumConst:
+    \_enum_const: (WRITE), line:47:21, endln:47:26
+      |vpiName:WRITE
+      |INT:1
+      |vpiDecompile:1
+      |vpiSize:64
+    |vpiEnumConst:
+    \_enum_const: (READ), line:47:27, endln:47:31
+      |vpiName:READ
+      |INT:2
+      |vpiDecompile:2
+      |vpiSize:64
+    |vpiEnumConst:
+    \_enum_const: (DONE), line:47:32, endln:47:36
+      |vpiName:DONE
+      |INT:3
+      |vpiDecompile:3
+      |vpiSize:64
+  |vpiDefName:work@memory_ctrl2
+  |vpiNet:
+  \_logic_net: (work@memory_ctrl2.state), line:49:7, endln:49:12, parent:work@memory_ctrl2
+    |vpiName:state
+    |vpiFullName:work@memory_ctrl2.state
+  |vpiNet:
+  \_logic_net: (work@memory_ctrl2.t), line:51:4, endln:51:5, parent:work@memory_ctrl2
+    |vpiName:t
+    |vpiFullName:work@memory_ctrl2.t
+  |vpiNet:
+  \_logic_net: (work@memory_ctrl2.sif), line:45:36, endln:45:39, parent:work@memory_ctrl2
+    |vpiName:sif
+    |vpiFullName:work@memory_ctrl2.sif
+  |vpiPort:
+  \_port: (sif), line:45:36, endln:45:39, parent:work@memory_ctrl2
+    |vpiName:sif
+    |vpiDirection:3
+    |vpiLowConn:
+    \_ref_obj: 
+      |vpiActual:
+      \_modport: (system), line:31:12, endln:31:18, parent:work@mem_if
+|uhdmtopModules:
+\_module: work@dff0_test (work@dff0_test) top.v:1:1: , endln:5:10
+  |vpiName:work@dff0_test
+  |vpiDefName:work@dff0_test
+  |vpiTop:1
+  |vpiNet:
+  \_logic_net: (work@dff0_test.n1), line:4:7, endln:4:17, parent:work@dff0_test
+    |vpiTypespec:
+    \_logic_typespec: , line:4:3, endln:4:6
+    |vpiName:n1
+    |vpiFullName:work@dff0_test.n1
+    |vpiNetType:48
+  |vpiTopModule:1
+  |vpiPort:
+  \_port: (n1), line:1:18, endln:1:20, parent:work@dff0_test
+    |vpiName:n1
+    |vpiDirection:2
+    |vpiLowConn:
+    \_ref_obj: (work@dff0_test.n1), line:1:18, endln:1:20
+      |vpiName:n1
+      |vpiFullName:work@dff0_test.n1
+      |vpiActual:
+      \_logic_net: (work@dff0_test.n1), line:4:7, endln:4:17, parent:work@dff0_test
+  |vpiContAssign:
+  \_cont_assign: , line:4:7, endln:4:9, parent:work@dff0_test
+    |vpiNetDeclAssign:1
+    |vpiRhs:
+    \_constant: , line:4:12, endln:4:17
+      |vpiDecompile:32'd0
+      |vpiSize:32
+      |DEC:0
+      |vpiConstType:1
+    |vpiLhs:
+    \_logic_net: (work@dff0_test.n1), line:4:7, endln:4:17, parent:work@dff0_test
+|uhdmtopModules:
+\_module: work@memory_ctrl1 (work@memory_ctrl1) top.v:36:1: , endln:43:10
+  |vpiName:work@memory_ctrl1
+  |vpiVariables:
+  \_enum_var: (work@memory_ctrl1.state), line:40:7, endln:40:12, parent:work@memory_ctrl1
+    |vpiTypespec:
+    \_enum_typespec: (fsm_t), line:38:1, endln:38:44, parent:work@memory_ctrl1
+    |vpiName:state
+    |vpiFullName:work@memory_ctrl1.state
+    |vpiVisibility:1
+  |vpiTypedef:
+  \_enum_typespec: (fsm_t), line:38:1, endln:38:44, parent:work@memory_ctrl1
+  |vpiDefName:work@memory_ctrl1
+  |vpiTop:1
+  |vpiTopModule:1
+  |vpiPort:
+  \_port: (sif), line:36:37, endln:36:40, parent:work@memory_ctrl1
+    |vpiName:sif
+    |vpiDirection:3
+    |vpiLowConn:
+    \_ref_obj: (work@memory_ctrl1.sif), line:36:37, endln:36:40
+      |vpiFullName:work@memory_ctrl1.sif
+      |vpiActual:
+      \_interface: work@mem_if (sif) top.v:36: 
+        |vpiName:sif
+        |vpiDefName:work@mem_if
+        |vpiModport:
+        \_modport: (memory), line:32:12, endln:32:18, parent:sif
+          |vpiName:memory
+          |vpiIODecl:
+          \_io_decl: (clk), line:32:27, endln:32:30
+            |vpiDirection:2
+            |vpiName:clk
+            |vpiExpr:
+            \_logic_net: (clk), line:29:30, endln:29:33
+              |vpiTypespec:
+              \_logic_typespec: , line:29:25, endln:29:29
+              |vpiName:clk
+              |vpiNetType:1
+          |vpiInterface:
+          \_interface: work@mem_if (sif) top.v:36: 
+        |vpiModport:
+        \_modport: (system), line:31:12, endln:31:18, parent:sif
+          |vpiName:system
+          |vpiIODecl:
+          \_io_decl: (clk), line:31:26, endln:31:29
+            |vpiDirection:1
+            |vpiName:clk
+            |vpiExpr:
+            \_logic_net: (clk), line:29:30, endln:29:33
+          |vpiInterface:
+          \_interface: work@mem_if (sif) top.v:36: 
+|uhdmtopModules:
+\_module: work@memory_ctrl2 (work@memory_ctrl2) top.v:45:1: , endln:53:10
+  |vpiName:work@memory_ctrl2
+  |vpiVariables:
+  \_enum_var: (work@memory_ctrl2.state), line:49:7, endln:49:12, parent:work@memory_ctrl2
+    |vpiTypespec:
+    \_enum_typespec: (fsm_t), line:47:1, endln:47:44, parent:work@memory_ctrl2
+    |vpiName:state
+    |vpiFullName:work@memory_ctrl2.state
+    |vpiVisibility:1
+  |vpiTypedef:
+  \_enum_typespec: (fsm_t), line:47:1, endln:47:44, parent:work@memory_ctrl2
+  |vpiDefName:work@memory_ctrl2
+  |vpiTop:1
+  |vpiNet:
+  \_logic_net: (work@memory_ctrl2.t), line:51:4, endln:51:5, parent:work@memory_ctrl2
+    |vpiTypespec:
+    \_unsupported_typespec: (DD), line:51:1, endln:51:3
+      |vpiName:DD
+    |vpiName:t
+    |vpiFullName:work@memory_ctrl2.t
+  |vpiTopModule:1
+  |vpiPort:
+  \_port: (sif), line:45:36, endln:45:39, parent:work@memory_ctrl2
+    |vpiName:sif
+    |vpiDirection:3
+    |vpiLowConn:
+    \_ref_obj: (work@memory_ctrl2.sif), line:45:36, endln:45:39
+      |vpiFullName:work@memory_ctrl2.sif
+      |vpiActual:
+      \_modport: (system), line:31:12, endln:31:18, parent:sif
+        |vpiName:system
+        |vpiIODecl:
+        \_io_decl: (clk), line:31:26, endln:31:29
+          |vpiDirection:1
+          |vpiName:clk
+          |vpiExpr:
+          \_logic_net: (clk), line:29:30, endln:29:33
+            |vpiTypespec:
+            \_logic_typespec: , line:29:25, endln:29:29
+            |vpiName:clk
+            |vpiNetType:1
+        |vpiInterface:
+        \_interface: work@mem_if (sif) top.v:45: 
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 3
+[WARNING] : 5
+[   NOTE] : 9
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/ModPortTest/top.v | ${SURELOG_DIR}/build/regression/ModPortTest/roundtrip/top_000.v | 15 | 53 | 
+

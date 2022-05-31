@@ -1,0 +1,130 @@
+[INF:CM0023] Creating log file ../../build/regression/PPComment/slpp_unit/surelog.log.
+
+[INF:CM0020] Separate compilation-unit mode is on.
+
+[WRN:PA0205] dut.sv:1: No timescale set for "top".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0303] dut.sv:1: Compile module "work@top".
+
+[INF:EL0526] Design Elaboration...
+
+[NTE:EL0503] dut.sv:1: Top level module "work@top".
+
+[NTE:EL0508] Nb Top level modules: 1.
+
+[NTE:EL0509] Max instance depth: 1.
+
+[NTE:EL0510] Nb instances: 1.
+
+[NTE:EL0511] Nb leaf instances: 1.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0707] Elaborating UHDM...
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/PPComment/slpp_unit/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/PPComment/slpp_unit/surelog.uhdm.chk.html ...
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/PPComment/slpp_unit/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (work@top)
+|vpiElaborated:1
+|vpiName:work@top
+|uhdmallModules:
+\_module: work@top (work@top) dut.sv:1:1: , endln:12:10, parent:work@top
+  |vpiFullName:work@top
+  |vpiDefName:work@top
+  |vpiContAssign:
+  \_cont_assign: , line:5:14, endln:5:18, parent:work@top
+    |vpiRhs:
+    \_ref_obj: (work@top.b), line:5:17, endln:5:18
+      |vpiName:b
+      |vpiFullName:work@top.b
+      |vpiActual:
+      \_logic_net: (b)
+        |vpiName:b
+        |vpiNetType:1
+    |vpiLhs:
+    \_ref_obj: (work@top.a), line:5:14, endln:5:15
+      |vpiName:a
+      |vpiFullName:work@top.a
+      |vpiActual:
+      \_logic_net: (a)
+        |vpiName:a
+        |vpiNetType:1
+  |vpiContAssign:
+  \_cont_assign: , line:6:14, endln:6:18, parent:work@top
+    |vpiRhs:
+    \_ref_obj: (work@top.d), line:6:17, endln:6:18
+      |vpiName:d
+      |vpiFullName:work@top.d
+      |vpiActual:
+      \_logic_net: (d)
+        |vpiName:d
+        |vpiNetType:1
+    |vpiLhs:
+    \_ref_obj: (work@top.c), line:6:14, endln:6:15
+      |vpiName:c
+      |vpiFullName:work@top.c
+      |vpiActual:
+      \_logic_net: (c)
+        |vpiName:c
+        |vpiNetType:1
+|uhdmtopModules:
+\_module: work@top (work@top) dut.sv:1:1: , endln:12:10
+  |vpiName:work@top
+  |vpiDefName:work@top
+  |vpiTop:1
+  |vpiNet:
+  \_logic_net: (a)
+  |vpiNet:
+  \_logic_net: (b)
+  |vpiNet:
+  \_logic_net: (c)
+  |vpiNet:
+  \_logic_net: (d)
+  |vpiTopModule:1
+  |vpiContAssign:
+  \_cont_assign: , line:5:14, endln:5:18, parent:work@top
+    |vpiRhs:
+    \_ref_obj: (work@top.b), line:5:17, endln:5:18
+      |vpiName:b
+      |vpiFullName:work@top.b
+      |vpiActual:
+      \_logic_net: (b)
+    |vpiLhs:
+    \_ref_obj: (work@top.a), line:5:14, endln:5:15
+      |vpiName:a
+      |vpiFullName:work@top.a
+      |vpiActual:
+      \_logic_net: (a)
+  |vpiContAssign:
+  \_cont_assign: , line:6:14, endln:6:18, parent:work@top
+    |vpiRhs:
+    \_ref_obj: (work@top.d), line:6:17, endln:6:18
+      |vpiName:d
+      |vpiFullName:work@top.d
+      |vpiActual:
+      \_logic_net: (d)
+    |vpiLhs:
+    \_ref_obj: (work@top.c), line:6:14, endln:6:15
+      |vpiName:c
+      |vpiFullName:work@top.c
+      |vpiActual:
+      \_logic_net: (c)
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 1
+[   NOTE] : 5
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/PPComment/dut.sv | ${SURELOG_DIR}/build/regression/PPComment/roundtrip/dut_000.sv | 7 | 12 | 
+

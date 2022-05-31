@@ -1,0 +1,283 @@
+[INF:CM0023] Creating log file ../../../build/regression/SVSwitch/slpp_all/surelog.log.
+
+[NTE:CM0009] Command line argument "+vcs+flush+all" ignored.
+
+[NTE:CM0009] Command line argument "+warn=all" ignored.
+
+[INF:PP0122] Preprocessing source file "Globals.sv".
+
+[INF:PP0122] Preprocessing source file "rtl.sv".
+
+[INF:PP0122] Preprocessing source file "interface.sv".
+
+[INF:PP0122] Preprocessing source file "top.sv".
+
+[INF:PP0122] Preprocessing source file "Packet.sv".
+
+[INF:PP0122] Preprocessing source file "Driver.sv".
+
+[INF:PP0122] Preprocessing source file "Receiver.sv".
+
+[INF:PP0122] Preprocessing source file "Coverage.sv".
+
+[INF:PP0122] Preprocessing source file "Scoreboard.sv".
+
+[INF:PP0122] Preprocessing source file "Environemnt.sv".
+
+[INF:PP0122] Preprocessing source file "testcase.sv".
+
+[INF:PA0201] Parsing source file "Globals.sv".
+
+[INF:PA0201] Parsing source file "rtl.sv".
+
+[INF:PA0201] Parsing source file "interface.sv".
+
+[INF:PA0201] Parsing source file "top.sv".
+
+[INF:PA0201] Parsing source file "Packet.sv".
+
+[INF:PA0201] Parsing source file "Driver.sv".
+
+[INF:PA0201] Parsing source file "Receiver.sv".
+
+[INF:PA0201] Parsing source file "Coverage.sv".
+
+[INF:PA0201] Parsing source file "Scoreboard.sv".
+
+[INF:PA0201] Parsing source file "Environemnt.sv".
+
+[INF:PA0201] Parsing source file "testcase.sv".
+
+[INF:CM0029] Using global timescale: "1ns/1ns".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0304] interface.sv:38: Compile interface "work@input_interface".
+
+[INF:CP0304] interface.sv:16: Compile interface "work@mem_interface".
+
+[INF:CP0304] interface.sv:58: Compile interface "work@output_interface".
+
+[INF:CP0303] rtl.sv:1: Compile module "work@switch".
+
+[INF:CP0303] top.sv:12: Compile module "work@top".
+
+[INF:CP0306] testcase.sv:18: Compile program "work@testcase".
+
+[INF:CP0302] Compile class "work@mailbox".
+
+[INF:CP0302] Compile class "work@process".
+
+[INF:CP0302] Compile class "work@semaphore".
+
+[INF:CP0302] Driver.sv:12: Compile class "work@Driver".
+
+[INF:CP0302] Environemnt.sv:12: Compile class "work@Environment".
+
+[INF:CP0302] Receiver.sv:12: Compile class "work@Receiver".
+
+[INF:CP0302] Scoreboard.sv:12: Compile class "work@Scoreboard".
+
+[INF:CP0302] Coverage.sv:12: Compile class "work@coverage".
+
+[INF:CP0302] Packet.sv:16: Compile class "work@packet".
+
+[INF:CP0302] testcase.sv:12: Compile class "work@small_packet".
+
+[NTE:CP0309] rtl.sv:1:44: Implicit port type (wire) for "port0",
+there are 7 more instances of this message.
+
+[WRN:CP0314] testcase.sv:18: Using programs is discouraged "work@testcase", programs are obsoleted by UVM.
+
+[INF:EL0526] Design Elaboration...
+
+Instance tree:
+[TOP] work@top work@top
+[I/F] work@mem_interface work@top.mem_intf
+[I/F] work@input_interface work@top.input_intf
+[I/F] work@output_interface work@top.output_intf[0]
+[I/F] work@output_interface work@top.output_intf[1]
+[I/F] work@output_interface work@top.output_intf[2]
+[I/F] work@output_interface work@top.output_intf[3]
+[I/F] work@output_interface work@top.output_intf[4]
+[PRG] work@testcase work@top.TC
+[MOD] work@switch work@top.DUT
+[SCO] work@testcase.UNNAMED work@top.TC.UNNAMED
+[SCO] work@switch.UNNAMED work@top.DUT.UNNAMED
+[SCO] work@switch.UNNAMED work@top.DUT.UNNAMED
+[SCO] work@switch.UNNAMED work@top.DUT.UNNAMED
+[SCO] work@switch.UNNAMED work@top.DUT.UNNAMED
+[SCO] work@switch.UNNAMED work@top.DUT.UNNAMED
+[SCO] work@switch.UNNAMED work@top.DUT.UNNAMED
+[SCO] work@switch.UNNAMED work@top.DUT.UNNAMED
+[SCO] work@switch.UNNAMED work@top.DUT.UNNAMED
+[SCO] work@switch.UNNAMED work@top.DUT.UNNAMED
+[SCO] work@switch.UNNAMED work@top.DUT.UNNAMED
+[SCO] work@switch.UNNAMED work@top.DUT.UNNAMED
+[SCO] work@switch.fsm_core work@top.DUT.fsm_core
+[SCO] work@switch.UNNAMED work@top.DUT.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED work@top.DUT.fsm_core.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED work@top.DUT.fsm_core.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED work@top.DUT.fsm_core.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED work@top.DUT.fsm_core.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED work@top.DUT.fsm_core.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED.UNNAMED
+[SCO] work@switch.UNNAMED.UNNAMED.UNNAMED work@top.DUT.UNNAMED.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED.UNNAMED
+[SCO] work@switch.fsm_core.UNNAMED.UNNAMED.UNNAMED work@top.DUT.fsm_core.UNNAMED.UNNAMED.UNNAMED
+
+[NTE:EL0503] top.sv:12: Top level module "work@top".
+
+[NTE:EL0508] Nb Top level modules: 1.
+
+[NTE:EL0509] Max instance depth: 2.
+
+[NTE:EL0510] Nb instances: 3.
+
+[NTE:EL0511] Nb leaf instances: 0.
+
+[NTE:EL0523] top.sv:12: Instance "work@top".
+
+[NTE:EL0524] top.sv:26: Interface Instance "work@top.mem_intf".
+
+[NTE:EL0524] top.sv:32: Interface Instance "work@top.input_intf".
+
+[NTE:EL0524] top.sv:38: Interface Instance "work@top.output_intf[0]".
+
+[NTE:EL0524] top.sv:38: Interface Instance "work@top.output_intf[1]".
+
+[NTE:EL0524] top.sv:38: Interface Instance "work@top.output_intf[2]".
+
+[NTE:EL0524] top.sv:38: Interface Instance "work@top.output_intf[3]".
+
+[NTE:EL0524] top.sv:38: Interface Instance "work@top.output_intf[4]".
+
+[NTE:EL0525] top.sv:44: Program Instance "work@top.TC".
+
+[NTE:EL0523] top.sv:50: Instance "work@top.DUT".
+
+[NTE:EL0522] testcase.sv:24: Scope "work@top.TC.UNNAMED".
+
+[NTE:EL0522] rtl.sv:8: Scope "work@top.DUT.UNNAMED".
+
+[NTE:EL0522] rtl.sv:10: Scope "work@top.DUT.UNNAMED".
+
+[NTE:EL0522] rtl.sv:11: Scope "work@top.DUT.UNNAMED".
+
+[NTE:EL0522] rtl.sv:12: Scope "work@top.DUT.UNNAMED".
+
+[NTE:EL0522] rtl.sv:13: Scope "work@top.DUT.UNNAMED".
+
+[NTE:EL0522] rtl.sv:16: Scope "work@top.DUT.UNNAMED".
+
+[NTE:EL0522] rtl.sv:19: Scope "work@top.DUT.UNNAMED".
+
+[NTE:EL0522] rtl.sv:20: Scope "work@top.DUT.UNNAMED".
+
+[NTE:EL0522] rtl.sv:22: Scope "work@top.DUT.UNNAMED".
+
+[NTE:EL0522] rtl.sv:22: Scope "work@top.DUT.fsm_core".
+
+[NTE:EL0522] rtl.sv:30: Scope "work@top.DUT.UNNAMED".
+
+[NTE:EL0522] rtl.sv:10: Scope "work@top.DUT.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:11: Scope "work@top.DUT.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:12: Scope "work@top.DUT.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:13: Scope "work@top.DUT.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:14: Scope "work@top.DUT.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:17: Scope "work@top.DUT.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:20: Scope "work@top.DUT.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:22: Scope "work@top.DUT.fsm_core.UNNAMED".
+
+[NTE:EL0522] rtl.sv:25: Scope "work@top.DUT.fsm_core.UNNAMED".
+
+[NTE:EL0522] rtl.sv:26: Scope "work@top.DUT.fsm_core.UNNAMED".
+
+[NTE:EL0522] rtl.sv:27: Scope "work@top.DUT.fsm_core.UNNAMED".
+
+[NTE:EL0522] rtl.sv:33: Scope "work@top.DUT.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:11: Scope "work@top.DUT.UNNAMED.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:12: Scope "work@top.DUT.UNNAMED.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:13: Scope "work@top.DUT.UNNAMED.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:14: Scope "work@top.DUT.UNNAMED.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:17: Scope "work@top.DUT.UNNAMED.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:20: Scope "work@top.DUT.UNNAMED.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:21: Scope "work@top.DUT.UNNAMED.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:22: Scope "work@top.DUT.fsm_core.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:24: Scope "work@top.DUT.fsm_core.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:25: Scope "work@top.DUT.fsm_core.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:26: Scope "work@top.DUT.fsm_core.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:27: Scope "work@top.DUT.fsm_core.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:28: Scope "work@top.DUT.fsm_core.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:22: Scope "work@top.DUT.fsm_core.UNNAMED.UNNAMED.UNNAMED".
+
+[NTE:EL0522] rtl.sv:23: Scope "work@top.DUT.fsm_core.UNNAMED.UNNAMED.UNNAMED".
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0708] Writing UHDM DB: ../../../build/regression/SVSwitch/slpp_all/surelog.uhdm ...
+
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 1
+[   NOTE] : 57

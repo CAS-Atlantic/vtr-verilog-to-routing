@@ -1,0 +1,352 @@
+[INF:CM0023] Creating log file ../../build/regression/PackImport/slpp_unit/surelog.log.
+
+[INF:CM0020] Separate compilation-unit mode is on.
+
+[INF:PP0122] Preprocessing source file "dut.sv".
+
+[INF:PA0201] Parsing source file "dut.sv".
+
+[WRN:PA0205] dut.sv:3: No timescale set for "ibex_pkg".
+
+[WRN:PA0205] dut.sv:11: No timescale set for "ibex_tracer_pkg".
+
+[WRN:PA0205] dut.sv:18: No timescale set for "top".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0301] dut.sv:3: Compile package "ibex_pkg".
+
+[INF:CP0301] dut.sv:11: Compile package "ibex_tracer_pkg".
+
+[INF:CP0303] dut.sv:18: Compile module "work@top".
+
+[INF:EL0526] Design Elaboration...
+
+Instance tree:
+[TOP] work@top work@top
+
+[NTE:EL0503] dut.sv:18: Top level module "work@top".
+
+[NTE:EL0508] Nb Top level modules: 1.
+
+[NTE:EL0509] Max instance depth: 1.
+
+[NTE:EL0510] Nb instances: 1.
+
+[NTE:EL0511] Nb leaf instances: 1.
+
+[NTE:EL0523] dut.sv:18: Instance "work@top".
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/PackImport/slpp_unit/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/PackImport/slpp_unit/surelog.uhdm.chk.html ...
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/PackImport/slpp_unit/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (work@top)
+|vpiName:work@top
+|uhdmallPackages:
+\_package: ibex_pkg (ibex_pkg::) dut.sv:3:1: , endln:9:11, parent:work@top
+  |vpiName:ibex_pkg
+  |vpiFullName:ibex_pkg::
+  |vpiTypedef:
+  \_enum_typespec: (ibex_pkg::opcode_e), line:5:1, endln:8:12, parent:ibex_pkg::
+    |vpiName:ibex_pkg::opcode_e
+    |vpiInstance:
+    \_package: ibex_pkg (ibex_pkg::) dut.sv:3:1: , endln:9:11, parent:work@top
+    |vpiBaseTypespec:
+    \_logic_typespec: , line:5:14, endln:5:19
+      |vpiInstance:
+      \_package: (ibex_pkg), file:
+      |vpiRange:
+      \_range: , line:5:21, endln:5:24
+        |vpiLeftRange:
+        \_constant: , line:5:21, endln:5:22
+          |vpiDecompile:6
+          |vpiSize:64
+          |UINT:6
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:5:23, endln:5:24
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+    |vpiEnumConst:
+    \_enum_const: (OPCODE_LOAD), line:6:3, endln:6:26
+      |vpiName:OPCODE_LOAD
+      |HEX:03
+      |vpiDecompile:7'h03
+      |vpiSize:7
+    |vpiEnumConst:
+    \_enum_const: (OPCODE_LUI), line:7:3, endln:7:26
+      |vpiName:OPCODE_LUI
+      |HEX:37
+      |vpiDecompile:7'h37
+      |vpiSize:7
+  |vpiDefName:ibex_pkg
+|uhdmallPackages:
+\_package: ibex_tracer_pkg (ibex_tracer_pkg::) dut.sv:11:1: , endln:14:11, parent:work@top
+  |vpiName:ibex_tracer_pkg
+  |vpiFullName:ibex_tracer_pkg::
+  |vpiParameter:
+  \_parameter: (ibex_tracer_pkg::INSN_LUI), line:13:24, endln:13:32, parent:ibex_tracer_pkg::
+    |vpiTypespec:
+    \_logic_typespec: , line:13:11, endln:13:16, parent:ibex_tracer_pkg::INSN_LUI
+      |vpiInstance:
+      \_package: (ibex_tracer_pkg), file:
+      |vpiRange:
+      \_range: , line:13:18, endln:13:22
+        |vpiLeftRange:
+        \_constant: , line:13:18, endln:13:20
+          |vpiDecompile:31
+          |vpiSize:64
+          |UINT:31
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:13:21, endln:13:22
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+    |vpiName:INSN_LUI
+    |vpiFullName:ibex_tracer_pkg::INSN_LUI
+  |vpiParamAssign:
+  \_param_assign: , line:13:24, endln:13:59, parent:ibex_tracer_pkg::
+    |vpiRhs:
+    \_operation: , line:13:35, endln:13:59
+      |vpiOpType:33
+      |vpiOperand:
+      \_constant: , line:13:37, endln:13:42
+        |vpiDecompile:25'h?
+        |vpiSize:25
+        |HEX:?
+        |vpiConstType:5
+      |vpiOperand:
+      \_operation: , line:13:44, endln:13:58
+        |vpiOpType:33
+        |vpiOperand:
+        \_ref_obj: (OPCODE_LUI), line:13:45, endln:13:55
+          |vpiName:OPCODE_LUI
+          |vpiActual:
+          \_enum_const: (OPCODE_LUI), line:7:3, endln:7:26
+            |vpiName:OPCODE_LUI
+            |HEX:37
+            |vpiDecompile:7'h37
+            |vpiSize:7
+    |vpiLhs:
+    \_parameter: (ibex_tracer_pkg::INSN_LUI), line:13:24, endln:13:32, parent:ibex_tracer_pkg::
+  |vpiTypedef:
+  \_enum_typespec: (ibex_pkg::opcode_e), line:5:1, endln:8:12, parent:work@top
+    |vpiName:ibex_pkg::opcode_e
+    |vpiInstance:
+    \_package: ibex_tracer_pkg (ibex_tracer_pkg::) dut.sv:11:1: , endln:14:11, parent:work@top
+    |vpiBaseTypespec:
+    \_logic_typespec: , line:5:14, endln:5:19
+      |vpiInstance:
+      \_package: ibex_pkg (ibex_pkg::) dut.sv:3:1: , endln:9:11, parent:work@top
+      |vpiRange:
+      \_range: , line:5:21, endln:5:24
+        |vpiLeftRange:
+        \_constant: , line:5:21, endln:5:22
+          |vpiDecompile:6
+          |vpiSize:64
+          |UINT:6
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:5:23, endln:5:24
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+    |vpiEnumConst:
+    \_enum_const: (OPCODE_LOAD), line:6:3, endln:6:26
+      |vpiName:OPCODE_LOAD
+      |HEX:03
+      |vpiDecompile:7'h03
+      |vpiSize:7
+    |vpiEnumConst:
+    \_enum_const: (OPCODE_LUI), line:7:3, endln:7:26
+  |vpiTypedef:
+  \_import_typespec: (ibex_pkg), line:12:8, endln:12:19
+  |vpiDefName:ibex_tracer_pkg
+|uhdmtopPackages:
+\_package: ibex_pkg (ibex_pkg::) dut.sv:3:1: , endln:9:11, parent:work@top
+  |vpiName:ibex_pkg
+  |vpiFullName:ibex_pkg::
+  |vpiTypedef:
+  \_enum_typespec: (ibex_pkg::opcode_e), line:5:1, endln:8:12, parent:work@top
+  |vpiDefName:ibex_pkg
+  |vpiTop:1
+|uhdmtopPackages:
+\_package: ibex_tracer_pkg (ibex_tracer_pkg::) dut.sv:11:1: , endln:14:11, parent:work@top
+  |vpiName:ibex_tracer_pkg
+  |vpiFullName:ibex_tracer_pkg::
+  |vpiParameter:
+  \_parameter: (ibex_tracer_pkg::INSN_LUI), line:13:24, endln:13:32, parent:ibex_tracer_pkg::
+    |vpiTypespec:
+    \_logic_typespec: , line:13:11, endln:13:16, parent:ibex_tracer_pkg::INSN_LUI
+      |vpiInstance:
+      \_package: ibex_tracer_pkg (ibex_tracer_pkg::) dut.sv:11:1: , endln:14:11, parent:work@top
+      |vpiRange:
+      \_range: , line:13:18, endln:13:22
+        |vpiLeftRange:
+        \_constant: , line:13:18, endln:13:20
+          |vpiDecompile:31
+          |vpiSize:64
+          |UINT:31
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:13:21, endln:13:22
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+    |vpiName:INSN_LUI
+    |vpiFullName:ibex_tracer_pkg::INSN_LUI
+  |vpiParamAssign:
+  \_param_assign: , line:13:24, endln:13:59, parent:ibex_tracer_pkg::
+    |vpiRhs:
+    \_operation: , line:13:35, endln:13:59
+      |vpiOpType:33
+      |vpiOperand:
+      \_constant: , line:13:37, endln:13:42
+        |vpiDecompile:25'h?
+        |vpiSize:25
+        |HEX:?
+        |vpiConstType:5
+      |vpiOperand:
+      \_operation: , line:13:44, endln:13:58
+        |vpiOpType:33
+        |vpiOperand:
+        \_ref_obj: (OPCODE_LUI), line:13:45, endln:13:55
+          |vpiName:OPCODE_LUI
+          |vpiActual:
+          \_enum_const: (OPCODE_LUI), line:7:3, endln:7:26
+    |vpiLhs:
+    \_parameter: (ibex_tracer_pkg::INSN_LUI), line:13:24, endln:13:32, parent:ibex_tracer_pkg::
+  |vpiTypedef:
+  \_enum_typespec: (ibex_pkg::opcode_e), line:5:1, endln:8:12, parent:work@top
+  |vpiTypedef:
+  \_import_typespec: (ibex_pkg), line:12:8, endln:12:19
+  |vpiDefName:ibex_tracer_pkg
+  |vpiTop:1
+|uhdmallModules:
+\_module: work@top (work@top) dut.sv:18:1: , endln:20:10, parent:work@top
+  |vpiFullName:work@top
+  |vpiTypedef:
+  \_enum_typespec: (ibex_pkg::opcode_e), line:5:1, endln:8:12, parent:work@top
+  |vpiTypedef:
+  \_import_typespec: (ibex_pkg), line:19:8, endln:19:19
+  |vpiDefName:work@top
+  |vpiNet:
+  \_logic_net: (work@top.clk_i), line:18:18, endln:18:23, parent:work@top
+    |vpiName:clk_i
+    |vpiFullName:work@top.clk_i
+  |vpiNet:
+  \_logic_net: (work@top.o1), line:18:45, endln:18:47, parent:work@top
+    |vpiName:o1
+    |vpiFullName:work@top.o1
+    |vpiNetType:36
+  |vpiPort:
+  \_port: (clk_i), line:18:18, endln:18:23, parent:work@top
+    |vpiName:clk_i
+    |vpiDirection:1
+    |vpiLowConn:
+    \_ref_obj: 
+      |vpiActual:
+      \_logic_net: (work@top.clk_i), line:18:18, endln:18:23, parent:work@top
+  |vpiPort:
+  \_port: (o1), line:18:45, endln:18:47, parent:work@top
+    |vpiName:o1
+    |vpiDirection:2
+    |vpiLowConn:
+    \_ref_obj: 
+      |vpiActual:
+      \_logic_net: (work@top.o1), line:18:45, endln:18:47, parent:work@top
+|uhdmtopModules:
+\_module: work@top (work@top) dut.sv:18:1: , endln:20:10
+  |vpiName:work@top
+  |vpiTypedef:
+  \_enum_typespec: (ibex_pkg::opcode_e), line:5:1, endln:8:12, parent:work@top
+  |vpiTypedef:
+  \_import_typespec: (ibex_pkg), line:19:8, endln:19:19
+  |vpiDefName:work@top
+  |vpiTop:1
+  |vpiNet:
+  \_logic_net: (work@top.clk_i), line:18:18, endln:18:23, parent:work@top
+    |vpiName:clk_i
+    |vpiFullName:work@top.clk_i
+  |vpiNet:
+  \_logic_net: (work@top.o1), line:18:45, endln:18:47, parent:work@top
+    |vpiTypespec:
+    \_logic_typespec: , line:18:32, endln:18:37
+      |vpiRange:
+      \_range: , line:18:39, endln:18:43
+        |vpiLeftRange:
+        \_constant: , line:18:39, endln:18:41
+          |vpiDecompile:31
+          |vpiSize:64
+          |UINT:31
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:18:42, endln:18:43
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+    |vpiName:o1
+    |vpiFullName:work@top.o1
+    |vpiNetType:36
+  |vpiTopModule:1
+  |vpiPort:
+  \_port: (clk_i), line:18:18, endln:18:23, parent:work@top
+    |vpiName:clk_i
+    |vpiDirection:1
+    |vpiLowConn:
+    \_ref_obj: (work@top.clk_i), line:18:18, endln:18:23
+      |vpiName:clk_i
+      |vpiFullName:work@top.clk_i
+      |vpiActual:
+      \_logic_net: (work@top.clk_i), line:18:18, endln:18:23, parent:work@top
+  |vpiPort:
+  \_port: (o1), line:18:45, endln:18:47, parent:work@top
+    |vpiName:o1
+    |vpiDirection:2
+    |vpiLowConn:
+    \_ref_obj: (work@top.o1), line:18:45, endln:18:47
+      |vpiName:o1
+      |vpiFullName:work@top.o1
+      |vpiActual:
+      \_logic_net: (work@top.o1), line:18:45, endln:18:47, parent:work@top
+    |vpiTypedef:
+    \_logic_typespec: , line:18:32, endln:18:37
+      |vpiRange:
+      \_range: , line:18:39, endln:18:43, parent:o1
+        |vpiLeftRange:
+        \_constant: , line:18:39, endln:18:41
+          |vpiDecompile:31
+          |vpiSize:64
+          |UINT:31
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:18:42, endln:18:43
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 3
+[   NOTE] : 6
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/PackImport/dut.sv | ${SURELOG_DIR}/build/regression/PackImport/roundtrip/dut_000.sv | 2 | 20 | 
+

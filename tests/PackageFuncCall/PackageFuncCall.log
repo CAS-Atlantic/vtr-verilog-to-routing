@@ -1,0 +1,2380 @@
+[INF:CM0023] Creating log file ../../build/regression/PackageFuncCall/slpp_all/surelog.log.
+
+LIB:  work
+FILE: dut.sv
+n<> u<0> t<Null_rule> p<485> s<484> l<1:1> el<1:0>
+n<> u<1> t<Package> p<336> s<2> l<1:1> el<1:8>
+n<prim_cipher_pkg> u<2> t<StringConst> p<336> s<100> l<1:9> el<1:24>
+n<> u<3> t<IntVec_TypeLogic> p<24> s<13> l<3:13> el<3:18>
+n<15> u<4> t<IntConst> p<5> l<3:20> el<3:22>
+n<> u<5> t<Primary_literal> p<6> c<4> l<3:20> el<3:22>
+n<> u<6> t<Constant_primary> p<7> c<5> l<3:20> el<3:22>
+n<> u<7> t<Constant_expression> p<12> c<6> s<11> l<3:20> el<3:22>
+n<0> u<8> t<IntConst> p<9> l<3:23> el<3:24>
+n<> u<9> t<Primary_literal> p<10> c<8> l<3:23> el<3:24>
+n<> u<10> t<Constant_primary> p<11> c<9> l<3:23> el<3:24>
+n<> u<11> t<Constant_expression> p<12> c<10> l<3:23> el<3:24>
+n<> u<12> t<Constant_range> p<13> c<7> l<3:20> el<3:24>
+n<> u<13> t<Packed_dimension> p<24> c<12> s<23> l<3:19> el<3:25>
+n<3> u<14> t<IntConst> p<15> l<3:26> el<3:27>
+n<> u<15> t<Primary_literal> p<16> c<14> l<3:26> el<3:27>
+n<> u<16> t<Constant_primary> p<17> c<15> l<3:26> el<3:27>
+n<> u<17> t<Constant_expression> p<22> c<16> s<21> l<3:26> el<3:27>
+n<0> u<18> t<IntConst> p<19> l<3:28> el<3:29>
+n<> u<19> t<Primary_literal> p<20> c<18> l<3:28> el<3:29>
+n<> u<20> t<Constant_primary> p<21> c<19> l<3:28> el<3:29>
+n<> u<21> t<Constant_expression> p<22> c<20> l<3:28> el<3:29>
+n<> u<22> t<Constant_range> p<23> c<17> l<3:26> el<3:29>
+n<> u<23> t<Packed_dimension> p<24> c<22> l<3:25> el<3:30>
+n<> u<24> t<Data_type> p<25> c<3> l<3:13> el<3:30>
+n<> u<25> t<Data_type_or_implicit> p<98> c<24> s<97> l<3:13> el<3:30>
+n<PRESENT_SBOX4> u<26> t<StringConst> p<96> s<95> l<3:31> el<3:44>
+n<4'h2> u<27> t<IntConst> p<28> l<3:48> el<3:52>
+n<> u<28> t<Primary_literal> p<29> c<27> l<3:48> el<3:52>
+n<> u<29> t<Constant_primary> p<30> c<28> l<3:48> el<3:52>
+n<> u<30> t<Constant_expression> p<91> c<29> s<34> l<3:48> el<3:52>
+n<4'h1> u<31> t<IntConst> p<32> l<3:54> el<3:58>
+n<> u<32> t<Primary_literal> p<33> c<31> l<3:54> el<3:58>
+n<> u<33> t<Constant_primary> p<34> c<32> l<3:54> el<3:58>
+n<> u<34> t<Constant_expression> p<91> c<33> s<38> l<3:54> el<3:58>
+n<4'h7> u<35> t<IntConst> p<36> l<3:60> el<3:64>
+n<> u<36> t<Primary_literal> p<37> c<35> l<3:60> el<3:64>
+n<> u<37> t<Constant_primary> p<38> c<36> l<3:60> el<3:64>
+n<> u<38> t<Constant_expression> p<91> c<37> s<42> l<3:60> el<3:64>
+n<4'h4> u<39> t<IntConst> p<40> l<3:66> el<3:70>
+n<> u<40> t<Primary_literal> p<41> c<39> l<3:66> el<3:70>
+n<> u<41> t<Constant_primary> p<42> c<40> l<3:66> el<3:70>
+n<> u<42> t<Constant_expression> p<91> c<41> s<46> l<3:66> el<3:70>
+n<4'h8> u<43> t<IntConst> p<44> l<4:48> el<4:52>
+n<> u<44> t<Primary_literal> p<45> c<43> l<4:48> el<4:52>
+n<> u<45> t<Constant_primary> p<46> c<44> l<4:48> el<4:52>
+n<> u<46> t<Constant_expression> p<91> c<45> s<50> l<4:48> el<4:52>
+n<4'hF> u<47> t<IntConst> p<48> l<4:54> el<4:58>
+n<> u<48> t<Primary_literal> p<49> c<47> l<4:54> el<4:58>
+n<> u<49> t<Constant_primary> p<50> c<48> l<4:54> el<4:58>
+n<> u<50> t<Constant_expression> p<91> c<49> s<54> l<4:54> el<4:58>
+n<4'hE> u<51> t<IntConst> p<52> l<4:60> el<4:64>
+n<> u<52> t<Primary_literal> p<53> c<51> l<4:60> el<4:64>
+n<> u<53> t<Constant_primary> p<54> c<52> l<4:60> el<4:64>
+n<> u<54> t<Constant_expression> p<91> c<53> s<58> l<4:60> el<4:64>
+n<4'h3> u<55> t<IntConst> p<56> l<4:66> el<4:70>
+n<> u<56> t<Primary_literal> p<57> c<55> l<4:66> el<4:70>
+n<> u<57> t<Constant_primary> p<58> c<56> l<4:66> el<4:70>
+n<> u<58> t<Constant_expression> p<91> c<57> s<62> l<4:66> el<4:70>
+n<4'hD> u<59> t<IntConst> p<60> l<5:48> el<5:52>
+n<> u<60> t<Primary_literal> p<61> c<59> l<5:48> el<5:52>
+n<> u<61> t<Constant_primary> p<62> c<60> l<5:48> el<5:52>
+n<> u<62> t<Constant_expression> p<91> c<61> s<66> l<5:48> el<5:52>
+n<4'hA> u<63> t<IntConst> p<64> l<5:54> el<5:58>
+n<> u<64> t<Primary_literal> p<65> c<63> l<5:54> el<5:58>
+n<> u<65> t<Constant_primary> p<66> c<64> l<5:54> el<5:58>
+n<> u<66> t<Constant_expression> p<91> c<65> s<70> l<5:54> el<5:58>
+n<4'h0> u<67> t<IntConst> p<68> l<5:60> el<5:64>
+n<> u<68> t<Primary_literal> p<69> c<67> l<5:60> el<5:64>
+n<> u<69> t<Constant_primary> p<70> c<68> l<5:60> el<5:64>
+n<> u<70> t<Constant_expression> p<91> c<69> s<74> l<5:60> el<5:64>
+n<4'h9> u<71> t<IntConst> p<72> l<5:66> el<5:70>
+n<> u<72> t<Primary_literal> p<73> c<71> l<5:66> el<5:70>
+n<> u<73> t<Constant_primary> p<74> c<72> l<5:66> el<5:70>
+n<> u<74> t<Constant_expression> p<91> c<73> s<78> l<5:66> el<5:70>
+n<4'hB> u<75> t<IntConst> p<76> l<6:48> el<6:52>
+n<> u<76> t<Primary_literal> p<77> c<75> l<6:48> el<6:52>
+n<> u<77> t<Constant_primary> p<78> c<76> l<6:48> el<6:52>
+n<> u<78> t<Constant_expression> p<91> c<77> s<82> l<6:48> el<6:52>
+n<4'h6> u<79> t<IntConst> p<80> l<6:54> el<6:58>
+n<> u<80> t<Primary_literal> p<81> c<79> l<6:54> el<6:58>
+n<> u<81> t<Constant_primary> p<82> c<80> l<6:54> el<6:58>
+n<> u<82> t<Constant_expression> p<91> c<81> s<86> l<6:54> el<6:58>
+n<4'h5> u<83> t<IntConst> p<84> l<6:60> el<6:64>
+n<> u<84> t<Primary_literal> p<85> c<83> l<6:60> el<6:64>
+n<> u<85> t<Constant_primary> p<86> c<84> l<6:60> el<6:64>
+n<> u<86> t<Constant_expression> p<91> c<85> s<90> l<6:60> el<6:64>
+n<4'hC> u<87> t<IntConst> p<88> l<6:66> el<6:70>
+n<> u<88> t<Primary_literal> p<89> c<87> l<6:66> el<6:70>
+n<> u<89> t<Constant_primary> p<90> c<88> l<6:66> el<6:70>
+n<> u<90> t<Constant_expression> p<91> c<89> l<6:66> el<6:70>
+n<> u<91> t<Constant_concatenation> p<92> c<30> l<3:47> el<6:71>
+n<> u<92> t<Constant_primary> p<93> c<91> l<3:47> el<6:71>
+n<> u<93> t<Constant_expression> p<94> c<92> l<3:47> el<6:71>
+n<> u<94> t<Constant_mintypmax_expression> p<95> c<93> l<3:47> el<6:71>
+n<> u<95> t<Constant_param_expression> p<96> c<94> l<3:47> el<6:71>
+n<> u<96> t<Param_assignment> p<97> c<26> l<3:31> el<6:71>
+n<> u<97> t<List_of_param_assignments> p<98> c<96> l<3:31> el<6:71>
+n<> u<98> t<Parameter_declaration> p<99> c<25> l<3:3> el<6:71>
+n<> u<99> t<Package_or_generate_item_declaration> p<100> c<98> l<3:3> el<6:72>
+n<> u<100> t<Package_item> p<336> c<99> s<291> l<3:3> el<6:72>
+n<> u<101> t<Lifetime_Automatic> p<289> s<288> l<8:12> el<8:21>
+n<> u<102> t<IntVec_TypeLogic> p<113> s<112> l<8:22> el<8:27>
+n<63> u<103> t<IntConst> p<104> l<8:29> el<8:31>
+n<> u<104> t<Primary_literal> p<105> c<103> l<8:29> el<8:31>
+n<> u<105> t<Constant_primary> p<106> c<104> l<8:29> el<8:31>
+n<> u<106> t<Constant_expression> p<111> c<105> s<110> l<8:29> el<8:31>
+n<0> u<107> t<IntConst> p<108> l<8:32> el<8:33>
+n<> u<108> t<Primary_literal> p<109> c<107> l<8:32> el<8:33>
+n<> u<109> t<Constant_primary> p<110> c<108> l<8:32> el<8:33>
+n<> u<110> t<Constant_expression> p<111> c<109> l<8:32> el<8:33>
+n<> u<111> t<Constant_range> p<112> c<106> l<8:29> el<8:33>
+n<> u<112> t<Packed_dimension> p<113> c<111> l<8:28> el<8:34>
+n<> u<113> t<Data_type> p<114> c<102> l<8:22> el<8:34>
+n<> u<114> t<Function_data_type> p<115> c<113> l<8:22> el<8:34>
+n<> u<115> t<Function_data_type_or_implicit> p<288> c<114> s<116> l<8:22> el<8:34>
+n<sbox4_64bit> u<116> t<StringConst> p<288> s<157> l<8:35> el<8:46>
+n<> u<117> t<IntVec_TypeLogic> p<128> s<127> l<8:47> el<8:52>
+n<63> u<118> t<IntConst> p<119> l<8:54> el<8:56>
+n<> u<119> t<Primary_literal> p<120> c<118> l<8:54> el<8:56>
+n<> u<120> t<Constant_primary> p<121> c<119> l<8:54> el<8:56>
+n<> u<121> t<Constant_expression> p<126> c<120> s<125> l<8:54> el<8:56>
+n<0> u<122> t<IntConst> p<123> l<8:57> el<8:58>
+n<> u<123> t<Primary_literal> p<124> c<122> l<8:57> el<8:58>
+n<> u<124> t<Constant_primary> p<125> c<123> l<8:57> el<8:58>
+n<> u<125> t<Constant_expression> p<126> c<124> l<8:57> el<8:58>
+n<> u<126> t<Constant_range> p<127> c<121> l<8:54> el<8:58>
+n<> u<127> t<Packed_dimension> p<128> c<126> l<8:53> el<8:59>
+n<> u<128> t<Data_type> p<129> c<117> l<8:47> el<8:59>
+n<> u<129> t<Data_type_or_implicit> p<131> c<128> s<130> l<8:47> el<8:59>
+n<state_in> u<130> t<StringConst> p<131> l<8:60> el<8:68>
+n<> u<131> t<Tf_port_item> p<157> c<129> s<156> l<8:47> el<8:68>
+n<> u<132> t<IntVec_TypeLogic> p<153> s<142> l<8:70> el<8:75>
+n<15> u<133> t<IntConst> p<134> l<8:77> el<8:79>
+n<> u<134> t<Primary_literal> p<135> c<133> l<8:77> el<8:79>
+n<> u<135> t<Constant_primary> p<136> c<134> l<8:77> el<8:79>
+n<> u<136> t<Constant_expression> p<141> c<135> s<140> l<8:77> el<8:79>
+n<0> u<137> t<IntConst> p<138> l<8:80> el<8:81>
+n<> u<138> t<Primary_literal> p<139> c<137> l<8:80> el<8:81>
+n<> u<139> t<Constant_primary> p<140> c<138> l<8:80> el<8:81>
+n<> u<140> t<Constant_expression> p<141> c<139> l<8:80> el<8:81>
+n<> u<141> t<Constant_range> p<142> c<136> l<8:77> el<8:81>
+n<> u<142> t<Packed_dimension> p<153> c<141> s<152> l<8:76> el<8:82>
+n<3> u<143> t<IntConst> p<144> l<8:83> el<8:84>
+n<> u<144> t<Primary_literal> p<145> c<143> l<8:83> el<8:84>
+n<> u<145> t<Constant_primary> p<146> c<144> l<8:83> el<8:84>
+n<> u<146> t<Constant_expression> p<151> c<145> s<150> l<8:83> el<8:84>
+n<0> u<147> t<IntConst> p<148> l<8:85> el<8:86>
+n<> u<148> t<Primary_literal> p<149> c<147> l<8:85> el<8:86>
+n<> u<149> t<Constant_primary> p<150> c<148> l<8:85> el<8:86>
+n<> u<150> t<Constant_expression> p<151> c<149> l<8:85> el<8:86>
+n<> u<151> t<Constant_range> p<152> c<146> l<8:83> el<8:86>
+n<> u<152> t<Packed_dimension> p<153> c<151> l<8:82> el<8:87>
+n<> u<153> t<Data_type> p<154> c<132> l<8:70> el<8:87>
+n<> u<154> t<Data_type_or_implicit> p<156> c<153> s<155> l<8:70> el<8:87>
+n<sbox4> u<155> t<StringConst> p<156> l<8:88> el<8:93>
+n<> u<156> t<Tf_port_item> p<157> c<154> l<8:70> el<8:93>
+n<> u<157> t<Tf_port_list> p<288> c<131> s<175> l<8:47> el<8:93>
+n<> u<158> t<IntVec_TypeLogic> p<169> s<168> l<9:5> el<9:10>
+n<63> u<159> t<IntConst> p<160> l<9:12> el<9:14>
+n<> u<160> t<Primary_literal> p<161> c<159> l<9:12> el<9:14>
+n<> u<161> t<Constant_primary> p<162> c<160> l<9:12> el<9:14>
+n<> u<162> t<Constant_expression> p<167> c<161> s<166> l<9:12> el<9:14>
+n<0> u<163> t<IntConst> p<164> l<9:15> el<9:16>
+n<> u<164> t<Primary_literal> p<165> c<163> l<9:15> el<9:16>
+n<> u<165> t<Constant_primary> p<166> c<164> l<9:15> el<9:16>
+n<> u<166> t<Constant_expression> p<167> c<165> l<9:15> el<9:16>
+n<> u<167> t<Constant_range> p<168> c<162> l<9:12> el<9:16>
+n<> u<168> t<Packed_dimension> p<169> c<167> l<9:11> el<9:17>
+n<> u<169> t<Data_type> p<173> c<158> s<172> l<9:5> el<9:17>
+n<state_out> u<170> t<StringConst> p<171> l<9:18> el<9:27>
+n<> u<171> t<Variable_decl_assignment> p<172> c<170> l<9:18> el<9:27>
+n<> u<172> t<List_of_variable_decl_assignments> p<173> c<171> l<9:18> el<9:27>
+n<> u<173> t<Variable_declaration> p<174> c<169> l<9:5> el<9:28>
+n<> u<174> t<Data_declaration> p<175> c<173> l<9:5> el<9:28>
+n<> u<175> t<Block_item_declaration> p<288> c<174> s<276> l<9:5> el<9:28>
+n<> u<176> t<IntegerAtomType_Int> p<177> l<11:10> el<11:13>
+n<> u<177> t<Data_type> p<183> c<176> s<178> l<11:10> el<11:13>
+n<k> u<178> t<StringConst> p<183> s<182> l<11:14> el<11:15>
+n<0> u<179> t<IntConst> p<180> l<11:18> el<11:19>
+n<> u<180> t<Primary_literal> p<181> c<179> l<11:18> el<11:19>
+n<> u<181> t<Primary> p<182> c<180> l<11:18> el<11:19>
+n<> u<182> t<Expression> p<183> c<181> l<11:18> el<11:19>
+n<> u<183> t<For_variable_declaration> p<184> c<177> l<11:10> el<11:19>
+n<> u<184> t<For_initialization> p<273> c<183> s<200> l<11:10> el<11:19>
+n<k> u<185> t<StringConst> p<186> l<11:21> el<11:22>
+n<> u<186> t<Primary_literal> p<187> c<185> l<11:21> el<11:22>
+n<> u<187> t<Primary> p<188> c<186> l<11:21> el<11:22>
+n<> u<188> t<Expression> p<200> c<187> s<199> l<11:21> el<11:22>
+n<64> u<189> t<IntConst> p<190> l<11:25> el<11:27>
+n<> u<190> t<Primary_literal> p<191> c<189> l<11:25> el<11:27>
+n<> u<191> t<Primary> p<192> c<190> l<11:25> el<11:27>
+n<> u<192> t<Expression> p<198> c<191> s<197> l<11:25> el<11:27>
+n<4> u<193> t<IntConst> p<194> l<11:28> el<11:29>
+n<> u<194> t<Primary_literal> p<195> c<193> l<11:28> el<11:29>
+n<> u<195> t<Primary> p<196> c<194> l<11:28> el<11:29>
+n<> u<196> t<Expression> p<198> c<195> l<11:28> el<11:29>
+n<> u<197> t<BinOp_Div> p<198> s<196> l<11:27> el<11:28>
+n<> u<198> t<Expression> p<200> c<192> l<11:25> el<11:29>
+n<> u<199> t<BinOp_Less> p<200> s<198> l<11:23> el<11:24>
+n<> u<200> t<Expression> p<273> c<188> s<209> l<11:21> el<11:29>
+n<k> u<201> t<StringConst> p<202> l<11:31> el<11:32>
+n<> u<202> t<Ps_or_hierarchical_identifier> p<205> c<201> s<204> l<11:31> el<11:32>
+n<> u<203> t<Bit_select> p<204> l<11:32> el<11:32>
+n<> u<204> t<Select> p<205> c<203> l<11:32> el<11:32>
+n<> u<205> t<Variable_lvalue> p<207> c<202> s<206> l<11:31> el<11:32>
+n<> u<206> t<IncDec_PlusPlus> p<207> l<11:32> el<11:34>
+n<> u<207> t<Inc_or_dec_expression> p<208> c<205> l<11:31> el<11:34>
+n<> u<208> t<For_step_assignment> p<209> c<207> l<11:31> el<11:34>
+n<> u<209> t<For_step> p<273> c<208> s<271> l<11:31> el<11:34>
+n<state_out> u<210> t<StringConst> p<211> l<12:7> el<12:16>
+n<> u<211> t<Ps_or_hierarchical_identifier> p<231> c<210> s<230> l<12:7> el<12:16>
+n<> u<212> t<Bit_select> p<230> s<229> l<12:16> el<12:16>
+n<k> u<213> t<StringConst> p<214> l<12:17> el<12:18>
+n<> u<214> t<Primary_literal> p<215> c<213> l<12:17> el<12:18>
+n<> u<215> t<Primary> p<216> c<214> l<12:17> el<12:18>
+n<> u<216> t<Expression> p<222> c<215> s<221> l<12:17> el<12:18>
+n<4> u<217> t<IntConst> p<218> l<12:19> el<12:20>
+n<> u<218> t<Primary_literal> p<219> c<217> l<12:19> el<12:20>
+n<> u<219> t<Primary> p<220> c<218> l<12:19> el<12:20>
+n<> u<220> t<Expression> p<222> c<219> l<12:19> el<12:20>
+n<> u<221> t<BinOp_Mult> p<222> s<220> l<12:18> el<12:19>
+n<> u<222> t<Expression> p<228> c<216> s<223> l<12:17> el<12:20>
+n<> u<223> t<IncPartSelectOp> p<228> s<227> l<12:21> el<12:23>
+n<4> u<224> t<IntConst> p<225> l<12:24> el<12:25>
+n<> u<225> t<Primary_literal> p<226> c<224> l<12:24> el<12:25>
+n<> u<226> t<Constant_primary> p<227> c<225> l<12:24> el<12:25>
+n<> u<227> t<Constant_expression> p<228> c<226> l<12:24> el<12:25>
+n<> u<228> t<Indexed_range> p<229> c<222> l<12:17> el<12:25>
+n<> u<229> t<Part_select_range> p<230> c<228> l<12:17> el<12:25>
+n<> u<230> t<Select> p<231> c<212> l<12:16> el<12:26>
+n<> u<231> t<Variable_lvalue> p<262> c<211> s<232> l<12:7> el<12:26>
+n<> u<232> t<AssignOp_Assign> p<262> s<261> l<12:27> el<12:28>
+n<sbox4> u<233> t<StringConst> p<259> s<258> l<12:29> el<12:34>
+n<state_in> u<234> t<StringConst> p<254> s<253> l<12:35> el<12:43>
+n<> u<235> t<Bit_select> p<253> s<252> l<12:43> el<12:43>
+n<k> u<236> t<StringConst> p<237> l<12:44> el<12:45>
+n<> u<237> t<Primary_literal> p<238> c<236> l<12:44> el<12:45>
+n<> u<238> t<Primary> p<239> c<237> l<12:44> el<12:45>
+n<> u<239> t<Expression> p<245> c<238> s<244> l<12:44> el<12:45>
+n<4> u<240> t<IntConst> p<241> l<12:46> el<12:47>
+n<> u<241> t<Primary_literal> p<242> c<240> l<12:46> el<12:47>
+n<> u<242> t<Primary> p<243> c<241> l<12:46> el<12:47>
+n<> u<243> t<Expression> p<245> c<242> l<12:46> el<12:47>
+n<> u<244> t<BinOp_Mult> p<245> s<243> l<12:45> el<12:46>
+n<> u<245> t<Expression> p<251> c<239> s<246> l<12:44> el<12:47>
+n<> u<246> t<IncPartSelectOp> p<251> s<250> l<12:48> el<12:50>
+n<4> u<247> t<IntConst> p<248> l<12:51> el<12:52>
+n<> u<248> t<Primary_literal> p<249> c<247> l<12:51> el<12:52>
+n<> u<249> t<Constant_primary> p<250> c<248> l<12:51> el<12:52>
+n<> u<250> t<Constant_expression> p<251> c<249> l<12:51> el<12:52>
+n<> u<251> t<Indexed_range> p<252> c<245> l<12:44> el<12:52>
+n<> u<252> t<Part_select_range> p<253> c<251> l<12:44> el<12:52>
+n<> u<253> t<Select> p<254> c<235> l<12:43> el<12:53>
+n<> u<254> t<Complex_func_call> p<255> c<234> l<12:35> el<12:53>
+n<> u<255> t<Primary> p<256> c<254> l<12:35> el<12:53>
+n<> u<256> t<Expression> p<257> c<255> l<12:35> el<12:53>
+n<> u<257> t<Bit_select> p<258> c<256> l<12:34> el<12:54>
+n<> u<258> t<Select> p<259> c<257> l<12:34> el<12:54>
+n<> u<259> t<Complex_func_call> p<260> c<233> l<12:29> el<12:54>
+n<> u<260> t<Primary> p<261> c<259> l<12:29> el<12:54>
+n<> u<261> t<Expression> p<262> c<260> l<12:29> el<12:54>
+n<> u<262> t<Operator_assignment> p<263> c<231> l<12:7> el<12:54>
+n<> u<263> t<Blocking_assignment> p<264> c<262> l<12:7> el<12:54>
+n<> u<264> t<Statement_item> p<265> c<263> l<12:7> el<12:55>
+n<> u<265> t<Statement> p<266> c<264> l<12:7> el<12:55>
+n<> u<266> t<Statement_or_null> p<268> c<265> s<267> l<12:7> el<12:55>
+n<> u<267> t<End> p<268> l<13:5> el<13:8>
+n<> u<268> t<Seq_block> p<269> c<266> l<11:36> el<13:8>
+n<> u<269> t<Statement_item> p<270> c<268> l<11:36> el<13:8>
+n<> u<270> t<Statement> p<271> c<269> l<11:36> el<13:8>
+n<> u<271> t<Statement_or_null> p<273> c<270> l<11:36> el<13:8>
+n<> u<272> t<For> p<273> s<184> l<11:5> el<11:8>
+n<> u<273> t<Loop_statement> p<274> c<272> l<11:5> el<13:8>
+n<> u<274> t<Statement_item> p<275> c<273> l<11:5> el<13:8>
+n<> u<275> t<Statement> p<276> c<274> l<11:5> el<13:8>
+n<> u<276> t<Function_statement_or_null> p<288> c<275> s<285> l<11:5> el<13:8>
+n<state_out> u<277> t<StringConst> p<278> l<14:12> el<14:21>
+n<> u<278> t<Primary_literal> p<279> c<277> l<14:12> el<14:21>
+n<> u<279> t<Primary> p<280> c<278> l<14:12> el<14:21>
+n<> u<280> t<Expression> p<282> c<279> l<14:12> el<14:21>
+n<> u<281> t<ReturnStmt> p<282> s<280> l<14:5> el<14:11>
+n<> u<282> t<Jump_statement> p<283> c<281> l<14:5> el<14:22>
+n<> u<283> t<Statement_item> p<284> c<282> l<14:5> el<14:22>
+n<> u<284> t<Statement> p<285> c<283> l<14:5> el<14:22>
+n<> u<285> t<Function_statement_or_null> p<288> c<284> s<287> l<14:5> el<14:22>
+n<sbox4_64bit> u<286> t<StringConst> p<288> l<15:17> el<15:28>
+n<> u<287> t<Endfunction> p<288> s<286> l<15:3> el<15:14>
+n<> u<288> t<Function_body_declaration> p<289> c<115> l<8:22> el<15:28>
+n<> u<289> t<Function_declaration> p<290> c<101> l<8:3> el<15:28>
+n<> u<290> t<Package_or_generate_item_declaration> p<291> c<289> l<8:3> el<15:28>
+n<> u<291> t<Package_item> p<336> c<290> s<333> l<8:3> el<15:28>
+n<> u<292> t<IntVec_TypeLogic> p<313> s<302> l<18:13> el<18:18>
+n<11> u<293> t<IntConst> p<294> l<18:20> el<18:22>
+n<> u<294> t<Primary_literal> p<295> c<293> l<18:20> el<18:22>
+n<> u<295> t<Constant_primary> p<296> c<294> l<18:20> el<18:22>
+n<> u<296> t<Constant_expression> p<301> c<295> s<300> l<18:20> el<18:22>
+n<0> u<297> t<IntConst> p<298> l<18:23> el<18:24>
+n<> u<298> t<Primary_literal> p<299> c<297> l<18:23> el<18:24>
+n<> u<299> t<Constant_primary> p<300> c<298> l<18:23> el<18:24>
+n<> u<300> t<Constant_expression> p<301> c<299> l<18:23> el<18:24>
+n<> u<301> t<Constant_range> p<302> c<296> l<18:20> el<18:24>
+n<> u<302> t<Packed_dimension> p<313> c<301> s<312> l<18:19> el<18:25>
+n<63> u<303> t<IntConst> p<304> l<18:26> el<18:28>
+n<> u<304> t<Primary_literal> p<305> c<303> l<18:26> el<18:28>
+n<> u<305> t<Constant_primary> p<306> c<304> l<18:26> el<18:28>
+n<> u<306> t<Constant_expression> p<311> c<305> s<310> l<18:26> el<18:28>
+n<0> u<307> t<IntConst> p<308> l<18:29> el<18:30>
+n<> u<308> t<Primary_literal> p<309> c<307> l<18:29> el<18:30>
+n<> u<309> t<Constant_primary> p<310> c<308> l<18:29> el<18:30>
+n<> u<310> t<Constant_expression> p<311> c<309> l<18:29> el<18:30>
+n<> u<311> t<Constant_range> p<312> c<306> l<18:26> el<18:30>
+n<> u<312> t<Packed_dimension> p<313> c<311> l<18:25> el<18:31>
+n<> u<313> t<Data_type> p<314> c<292> l<18:13> el<18:31>
+n<> u<314> t<Data_type_or_implicit> p<331> c<313> s<330> l<18:13> el<18:31>
+n<PRINCE_ROUND_CONST> u<315> t<StringConst> p<329> s<328> l<18:32> el<18:50>
+n<64'hC0AC29B7C97C50DD> u<316> t<IntConst> p<317> l<18:54> el<18:74>
+n<> u<317> t<Primary_literal> p<318> c<316> l<18:54> el<18:74>
+n<> u<318> t<Constant_primary> p<319> c<317> l<18:54> el<18:74>
+n<> u<319> t<Constant_expression> p<324> c<318> s<323> l<18:54> el<18:74>
+n<64'hD3B5A399CA0C2399> u<320> t<IntConst> p<321> l<19:57> el<19:77>
+n<> u<321> t<Primary_literal> p<322> c<320> l<19:57> el<19:77>
+n<> u<322> t<Constant_primary> p<323> c<321> l<19:57> el<19:77>
+n<> u<323> t<Constant_expression> p<324> c<322> l<19:57> el<19:77>
+n<> u<324> t<Constant_concatenation> p<325> c<319> l<18:53> el<19:78>
+n<> u<325> t<Constant_primary> p<326> c<324> l<18:53> el<19:78>
+n<> u<326> t<Constant_expression> p<327> c<325> l<18:53> el<19:78>
+n<> u<327> t<Constant_mintypmax_expression> p<328> c<326> l<18:53> el<19:78>
+n<> u<328> t<Constant_param_expression> p<329> c<327> l<18:53> el<19:78>
+n<> u<329> t<Param_assignment> p<330> c<315> l<18:32> el<19:78>
+n<> u<330> t<List_of_param_assignments> p<331> c<329> l<18:32> el<19:78>
+n<> u<331> t<Parameter_declaration> p<332> c<314> l<18:3> el<19:78>
+n<> u<332> t<Package_or_generate_item_declaration> p<333> c<331> l<18:3> el<19:79>
+n<> u<333> t<Package_item> p<336> c<332> s<335> l<18:3> el<19:79>
+n<prim_cipher_pkg> u<334> t<StringConst> p<336> l<23:14> el<23:29>
+n<> u<335> t<Endpackage> p<336> s<334> l<23:1> el<23:11>
+n<> u<336> t<Package_declaration> p<337> c<1> l<1:1> el<23:29>
+n<> u<337> t<Description> p<484> c<336> s<483> l<1:1> el<23:29>
+n<> u<338> t<Module_keyword> p<342> s<339> l<26:1> el<26:7>
+n<top> u<339> t<StringConst> p<342> s<341> l<26:8> el<26:11>
+n<> u<340> t<Port> p<341> l<26:12> el<26:12>
+n<> u<341> t<List_of_ports> p<342> c<340> l<26:11> el<26:13>
+n<> u<342> t<Module_nonansi_header> p<482> c<338> s<376> l<26:1> el<26:14>
+n<data_state_sbox> u<343> t<StringConst> p<344> l<28:8> el<28:23>
+n<> u<344> t<Ps_or_hierarchical_identifier> p<347> c<343> s<346> l<28:8> el<28:23>
+n<> u<345> t<Constant_bit_select> p<346> l<28:24> el<28:24>
+n<> u<346> t<Constant_select> p<347> c<345> l<28:24> el<28:24>
+n<> u<347> t<Net_lvalue> p<370> c<344> s<369> l<28:8> el<28:23>
+n<prim_cipher_pkg> u<348> t<StringConst> p<349> l<28:26> el<28:41>
+n<> u<349> t<Class_type> p<350> c<348> l<28:26> el<28:41>
+n<> u<350> t<Class_scope> p<367> c<349> s<351> l<28:26> el<28:43>
+n<sbox4_64bit> u<351> t<StringConst> p<367> s<366> l<28:43> el<28:54>
+n<data_state_xor> u<352> t<StringConst> p<353> l<28:55> el<28:69>
+n<> u<353> t<Primary_literal> p<354> c<352> l<28:55> el<28:69>
+n<> u<354> t<Primary> p<355> c<353> l<28:55> el<28:69>
+n<> u<355> t<Expression> p<366> c<354> s<365> l<28:55> el<28:69>
+n<prim_cipher_pkg> u<356> t<StringConst> p<357> l<29:24> el<29:39>
+n<> u<357> t<Class_type> p<358> c<356> l<29:24> el<29:39>
+n<> u<358> t<Class_scope> p<362> c<357> s<359> l<29:24> el<29:41>
+n<PRESENT_SBOX4> u<359> t<StringConst> p<362> s<361> l<29:41> el<29:54>
+n<> u<360> t<Bit_select> p<361> l<29:54> el<29:54>
+n<> u<361> t<Select> p<362> c<360> l<29:54> el<29:54>
+n<> u<362> t<Complex_func_call> p<363> c<358> l<29:24> el<29:54>
+n<> u<363> t<Primary> p<364> c<362> l<29:24> el<29:54>
+n<> u<364> t<Expression> p<365> c<363> l<29:24> el<29:54>
+n<> u<365> t<Argument> p<366> c<364> l<29:24> el<29:54>
+n<> u<366> t<List_of_arguments> p<367> c<355> l<28:55> el<29:54>
+n<> u<367> t<Complex_func_call> p<368> c<350> l<28:26> el<29:55>
+n<> u<368> t<Primary> p<369> c<367> l<28:26> el<29:55>
+n<> u<369> t<Expression> p<370> c<368> l<28:26> el<29:55>
+n<> u<370> t<Net_assignment> p<371> c<347> l<28:8> el<29:55>
+n<> u<371> t<List_of_net_assignments> p<372> c<370> l<28:8> el<29:55>
+n<> u<372> t<Continuous_assign> p<373> c<371> l<28:1> el<29:56>
+n<> u<373> t<Module_common_item> p<374> c<372> l<28:1> el<29:56>
+n<> u<374> t<Module_or_generate_item> p<375> c<373> l<28:1> el<29:56>
+n<> u<375> t<Non_port_module_item> p<376> c<374> l<28:1> el<29:56>
+n<> u<376> t<Module_item> p<482> c<375> s<481> l<28:1> el<29:56>
+n<> u<377> t<AlwaysKeywd_Comb> p<477> s<476> l<31:2> el<31:13>
+n<p_post_round_xor> u<378> t<StringConst> p<474> s<442> l<31:22> el<31:38>
+n<data_o> u<379> t<StringConst> p<380> l<32:12> el<32:18>
+n<> u<380> t<Ps_or_hierarchical_identifier> p<383> c<379> s<382> l<32:12> el<32:18>
+n<> u<381> t<Bit_select> p<382> l<32:20> el<32:20>
+n<> u<382> t<Select> p<383> c<381> l<32:20> el<32:20>
+n<> u<383> t<Variable_lvalue> p<438> c<380> s<384> l<32:12> el<32:18>
+n<> u<384> t<AssignOp_Assign> p<438> s<437> l<32:20> el<32:21>
+n<data_state> u<385> t<StringConst> p<404> s<403> l<32:22> el<32:32>
+n<2> u<386> t<IntConst> p<387> l<32:33> el<32:34>
+n<> u<387> t<Primary_literal> p<388> c<386> l<32:33> el<32:34>
+n<> u<388> t<Primary> p<389> c<387> l<32:33> el<32:34>
+n<> u<389> t<Expression> p<395> c<388> s<394> l<32:33> el<32:34>
+n<NumRoundsHalf> u<390> t<StringConst> p<391> l<32:35> el<32:48>
+n<> u<391> t<Primary_literal> p<392> c<390> l<32:35> el<32:48>
+n<> u<392> t<Primary> p<393> c<391> l<32:35> el<32:48>
+n<> u<393> t<Expression> p<395> c<392> l<32:35> el<32:48>
+n<> u<394> t<BinOp_Mult> p<395> s<393> l<32:34> el<32:35>
+n<> u<395> t<Expression> p<401> c<389> s<400> l<32:33> el<32:48>
+n<1> u<396> t<IntConst> p<397> l<32:49> el<32:50>
+n<> u<397> t<Primary_literal> p<398> c<396> l<32:49> el<32:50>
+n<> u<398> t<Primary> p<399> c<397> l<32:49> el<32:50>
+n<> u<399> t<Expression> p<401> c<398> l<32:49> el<32:50>
+n<> u<400> t<BinOp_Plus> p<401> s<399> l<32:48> el<32:49>
+n<> u<401> t<Expression> p<402> c<395> l<32:33> el<32:50>
+n<> u<402> t<Bit_select> p<403> c<401> l<32:32> el<32:51>
+n<> u<403> t<Select> p<404> c<402> l<32:32> el<32:51>
+n<> u<404> t<Complex_func_call> p<405> c<385> l<32:22> el<32:51>
+n<> u<405> t<Primary> p<406> c<404> l<32:22> el<32:51>
+n<> u<406> t<Expression> p<437> c<405> s<436> l<32:22> el<32:51>
+n<prim_cipher_pkg> u<407> t<StringConst> p<408> l<33:22> el<33:37>
+n<> u<408> t<Class_type> p<409> c<407> l<33:22> el<33:37>
+n<> u<409> t<Class_scope> p<433> c<408> s<410> l<33:22> el<33:39>
+n<PRINCE_ROUND_CONST> u<410> t<StringConst> p<433> s<432> l<33:39> el<33:57>
+n<11> u<411> t<IntConst> p<412> l<34:23> el<34:25>
+n<> u<412> t<Primary_literal> p<413> c<411> l<34:23> el<34:25>
+n<> u<413> t<Primary> p<414> c<412> l<34:23> el<34:25>
+n<> u<414> t<Expression> p<415> c<413> l<34:23> el<34:25>
+n<> u<415> t<Bit_select> p<432> c<414> s<431> l<34:22> el<34:26>
+n<DataWidth> u<416> t<StringConst> p<417> l<35:23> el<35:32>
+n<> u<417> t<Primary_literal> p<418> c<416> l<35:23> el<35:32>
+n<> u<418> t<Constant_primary> p<419> c<417> l<35:23> el<35:32>
+n<> u<419> t<Constant_expression> p<425> c<418> s<424> l<35:23> el<35:32>
+n<1> u<420> t<IntConst> p<421> l<35:33> el<35:34>
+n<> u<421> t<Primary_literal> p<422> c<420> l<35:33> el<35:34>
+n<> u<422> t<Constant_primary> p<423> c<421> l<35:33> el<35:34>
+n<> u<423> t<Constant_expression> p<425> c<422> l<35:33> el<35:34>
+n<> u<424> t<BinOp_Minus> p<425> s<423> l<35:32> el<35:33>
+n<> u<425> t<Constant_expression> p<430> c<419> s<429> l<35:23> el<35:34>
+n<0> u<426> t<IntConst> p<427> l<35:35> el<35:36>
+n<> u<427> t<Primary_literal> p<428> c<426> l<35:35> el<35:36>
+n<> u<428> t<Constant_primary> p<429> c<427> l<35:35> el<35:36>
+n<> u<429> t<Constant_expression> p<430> c<428> l<35:35> el<35:36>
+n<> u<430> t<Constant_range> p<431> c<425> l<35:23> el<35:36>
+n<> u<431> t<Part_select_range> p<432> c<430> l<35:23> el<35:36>
+n<> u<432> t<Select> p<433> c<415> l<34:22> el<35:37>
+n<> u<433> t<Complex_func_call> p<434> c<409> l<33:22> el<35:37>
+n<> u<434> t<Primary> p<435> c<433> l<33:22> el<35:37>
+n<> u<435> t<Expression> p<437> c<434> l<33:22> el<35:37>
+n<> u<436> t<BinOp_BitwXor> p<437> s<435> l<32:52> el<32:53>
+n<> u<437> t<Expression> p<438> c<406> l<32:22> el<35:37>
+n<> u<438> t<Operator_assignment> p<439> c<383> l<32:12> el<35:37>
+n<> u<439> t<Blocking_assignment> p<440> c<438> l<32:12> el<35:37>
+n<> u<440> t<Statement_item> p<441> c<439> l<32:12> el<35:38>
+n<> u<441> t<Statement> p<442> c<440> l<32:12> el<35:38>
+n<> u<442> t<Statement_or_null> p<474> c<441> s<457> l<32:12> el<35:38>
+n<data_o> u<443> t<StringConst> p<444> l<36:11> el<36:17>
+n<> u<444> t<Ps_or_hierarchical_identifier> p<447> c<443> s<446> l<36:11> el<36:17>
+n<> u<445> t<Bit_select> p<446> l<36:18> el<36:18>
+n<> u<446> t<Select> p<447> c<445> l<36:18> el<36:18>
+n<> u<447> t<Variable_lvalue> p<453> c<444> s<448> l<36:11> el<36:17>
+n<> u<448> t<AssignOp_BitwXor> p<453> s<452> l<36:18> el<36:20>
+n<k1> u<449> t<StringConst> p<450> l<36:21> el<36:23>
+n<> u<450> t<Primary_literal> p<451> c<449> l<36:21> el<36:23>
+n<> u<451> t<Primary> p<452> c<450> l<36:21> el<36:23>
+n<> u<452> t<Expression> p<453> c<451> l<36:21> el<36:23>
+n<> u<453> t<Operator_assignment> p<454> c<447> l<36:11> el<36:23>
+n<> u<454> t<Blocking_assignment> p<455> c<453> l<36:11> el<36:23>
+n<> u<455> t<Statement_item> p<456> c<454> l<36:11> el<36:24>
+n<> u<456> t<Statement> p<457> c<455> l<36:11> el<36:24>
+n<> u<457> t<Statement_or_null> p<474> c<456> s<472> l<36:11> el<36:24>
+n<data_o> u<458> t<StringConst> p<459> l<37:12> el<37:18>
+n<> u<459> t<Ps_or_hierarchical_identifier> p<462> c<458> s<461> l<37:12> el<37:18>
+n<> u<460> t<Bit_select> p<461> l<37:19> el<37:19>
+n<> u<461> t<Select> p<462> c<460> l<37:19> el<37:19>
+n<> u<462> t<Variable_lvalue> p<468> c<459> s<463> l<37:12> el<37:18>
+n<> u<463> t<AssignOp_BitwXor> p<468> s<467> l<37:19> el<37:21>
+n<k0_prime> u<464> t<StringConst> p<465> l<37:22> el<37:30>
+n<> u<465> t<Primary_literal> p<466> c<464> l<37:22> el<37:30>
+n<> u<466> t<Primary> p<467> c<465> l<37:22> el<37:30>
+n<> u<467> t<Expression> p<468> c<466> l<37:22> el<37:30>
+n<> u<468> t<Operator_assignment> p<469> c<462> l<37:12> el<37:30>
+n<> u<469> t<Blocking_assignment> p<470> c<468> l<37:12> el<37:30>
+n<> u<470> t<Statement_item> p<471> c<469> l<37:12> el<37:31>
+n<> u<471> t<Statement> p<472> c<470> l<37:12> el<37:31>
+n<> u<472> t<Statement_or_null> p<474> c<471> s<473> l<37:12> el<37:31>
+n<> u<473> t<End> p<474> l<38:10> el<38:13>
+n<> u<474> t<Seq_block> p<475> c<378> l<31:14> el<38:13>
+n<> u<475> t<Statement_item> p<476> c<474> l<31:14> el<38:13>
+n<> u<476> t<Statement> p<477> c<475> l<31:14> el<38:13>
+n<> u<477> t<Always_construct> p<478> c<377> l<31:2> el<38:13>
+n<> u<478> t<Module_common_item> p<479> c<477> l<31:2> el<38:13>
+n<> u<479> t<Module_or_generate_item> p<480> c<478> l<31:2> el<38:13>
+n<> u<480> t<Non_port_module_item> p<481> c<479> l<31:2> el<38:13>
+n<> u<481> t<Module_item> p<482> c<480> l<31:2> el<38:13>
+n<> u<482> t<Module_declaration> p<483> c<342> l<26:1> el<42:10>
+n<> u<483> t<Description> p<484> c<482> l<26:1> el<42:10>
+n<> u<484> t<Source_text> p<485> c<337> l<1:1> el<42:10>
+n<> u<485> t<Top_level_rule> l<1:1> el<43:1>
+[WRN:PA0205] dut.sv:1: No timescale set for "prim_cipher_pkg".
+
+[WRN:PA0205] dut.sv:26: No timescale set for "top".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0301] dut.sv:1: Compile package "prim_cipher_pkg".
+
+[INF:CP0303] dut.sv:26: Compile module "work@top".
+
+LIB:  work
+FILE: builtin.sv
+n<> u<0> t<Null_rule> p<248> s<247> f<0> l<0:11>
+n<mailbox> u<1> t<StringConst> p<101> s<15> f<0> l<0:17>
+n<> u<2> t<IntegerAtomType_Int> p<3> f<0> l<0:19>
+n<> u<3> t<Data_type> p<4> c<2> f<0> l<0:19>
+n<> u<4> t<Data_type_or_implicit> p<10> c<3> s<5> f<0> l<0:19>
+n<bound> u<5> t<StringConst> p<10> s<9> f<0> l<0:23>
+n<0> u<6> t<IntConst> p<7> f<0> l<0:31>
+n<> u<7> t<Primary_literal> p<8> c<6> f<0> l<0:31>
+n<> u<8> t<Primary> p<9> c<7> f<0> l<0:31>
+n<> u<9> t<Expression> p<10> c<8> f<0> l<0:31>
+n<> u<10> t<Tf_port_item> p<11> c<4> f<0> l<0:19>
+n<> u<11> t<Tf_port_list> p<13> c<10> s<12> f<0> l<0:19>
+n<> u<12> t<Endfunction> p<13> f<0> l<0:5>
+n<> u<13> t<Class_constructor_declaration> p<14> c<11> f<0> l<0:5>
+n<> u<14> t<Class_method> p<15> c<13> f<0> l<0:5>
+n<> u<15> t<Class_item> p<101> c<14> s<25> f<0> l<0:5>
+n<> u<16> t<IntegerAtomType_Int> p<17> f<0> l<0:14>
+n<> u<17> t<Data_type> p<18> c<16> f<0> l<0:14>
+n<> u<18> t<Function_data_type> p<19> c<17> f<0> l<0:14>
+n<> u<19> t<Function_data_type_or_implicit> p<22> c<18> s<20> f<0> l<0:14>
+n<num> u<20> t<StringConst> p<22> s<21> f<0> l<0:18>
+n<> u<21> t<Endfunction> p<22> f<0> l<0:5>
+n<> u<22> t<Function_body_declaration> p<23> c<19> f<0> l<0:14>
+n<> u<23> t<Function_declaration> p<24> c<22> f<0> l<0:5>
+n<> u<24> t<Class_method> p<25> c<23> f<0> l<0:5>
+n<> u<25> t<Class_item> p<101> c<24> s<35> f<0> l<0:5>
+n<put> u<26> t<StringConst> p<32> s<30> f<0> l<0:10>
+n<> u<27> t<Data_type_or_implicit> p<29> s<28> f<0> l<0:15>
+n<message> u<28> t<StringConst> p<29> f<0> l<0:15>
+n<> u<29> t<Tf_port_item> p<30> c<27> f<0> l<0:15>
+n<> u<30> t<Tf_port_list> p<32> c<29> s<31> f<0> l<0:15>
+n<> u<31> t<Endtask> p<32> f<0> l<0:5>
+n<> u<32> t<Task_body_declaration> p<33> c<26> f<0> l<0:10>
+n<> u<33> t<Task_declaration> p<34> c<32> f<0> l<0:5>
+n<> u<34> t<Class_method> p<35> c<33> f<0> l<0:5>
+n<> u<35> t<Class_item> p<101> c<34> s<46> f<0> l<0:5>
+n<> u<36> t<Function_data_type_or_implicit> p<43> s<37> f<0> l<0:14>
+n<try_put> u<37> t<StringConst> p<43> s<41> f<0> l<0:14>
+n<> u<38> t<Data_type_or_implicit> p<40> s<39> f<0> l<0:23>
+n<message> u<39> t<StringConst> p<40> f<0> l<0:23>
+n<> u<40> t<Tf_port_item> p<41> c<38> f<0> l<0:23>
+n<> u<41> t<Tf_port_list> p<43> c<40> s<42> f<0> l<0:23>
+n<> u<42> t<Endfunction> p<43> f<0> l<0:5>
+n<> u<43> t<Function_body_declaration> p<44> c<36> f<0> l<0:14>
+n<> u<44> t<Function_declaration> p<45> c<43> f<0> l<0:5>
+n<> u<45> t<Class_method> p<46> c<44> f<0> l<0:5>
+n<> u<46> t<Class_item> p<101> c<45> s<57> f<0> l<0:5>
+n<get> u<47> t<StringConst> p<54> s<52> f<0> l<0:10>
+n<> u<48> t<TfPortDir_Ref> p<51> s<49> f<0> l<0:15>
+n<> u<49> t<Data_type_or_implicit> p<51> s<50> f<0> l<0:19>
+n<message> u<50> t<StringConst> p<51> f<0> l<0:19>
+n<> u<51> t<Tf_port_item> p<52> c<48> f<0> l<0:15>
+n<> u<52> t<Tf_port_list> p<54> c<51> s<53> f<0> l<0:15>
+n<> u<53> t<Endtask> p<54> f<0> l<0:5>
+n<> u<54> t<Task_body_declaration> p<55> c<47> f<0> l<0:10>
+n<> u<55> t<Task_declaration> p<56> c<54> f<0> l<0:5>
+n<> u<56> t<Class_method> p<57> c<55> f<0> l<0:5>
+n<> u<57> t<Class_item> p<101> c<56> s<72> f<0> l<0:5>
+n<> u<58> t<IntegerAtomType_Int> p<59> f<0> l<0:14>
+n<> u<59> t<Data_type> p<60> c<58> f<0> l<0:14>
+n<> u<60> t<Function_data_type> p<61> c<59> f<0> l<0:14>
+n<> u<61> t<Function_data_type_or_implicit> p<69> c<60> s<62> f<0> l<0:14>
+n<try_get> u<62> t<StringConst> p<69> s<67> f<0> l<0:18>
+n<> u<63> t<TfPortDir_Ref> p<66> s<64> f<0> l<0:27>
+n<> u<64> t<Data_type_or_implicit> p<66> s<65> f<0> l<0:31>
+n<message> u<65> t<StringConst> p<66> f<0> l<0:31>
+n<> u<66> t<Tf_port_item> p<67> c<63> f<0> l<0:27>
+n<> u<67> t<Tf_port_list> p<69> c<66> s<68> f<0> l<0:27>
+n<> u<68> t<Endfunction> p<69> f<0> l<0:5>
+n<> u<69> t<Function_body_declaration> p<70> c<61> f<0> l<0:14>
+n<> u<70> t<Function_declaration> p<71> c<69> f<0> l<0:5>
+n<> u<71> t<Class_method> p<72> c<70> f<0> l<0:5>
+n<> u<72> t<Class_item> p<101> c<71> s<83> f<0> l<0:5>
+n<peek> u<73> t<StringConst> p<80> s<78> f<0> l<0:10>
+n<> u<74> t<TfPortDir_Ref> p<77> s<75> f<0> l<0:16>
+n<> u<75> t<Data_type_or_implicit> p<77> s<76> f<0> l<0:20>
+n<message> u<76> t<StringConst> p<77> f<0> l<0:20>
+n<> u<77> t<Tf_port_item> p<78> c<74> f<0> l<0:16>
+n<> u<78> t<Tf_port_list> p<80> c<77> s<79> f<0> l<0:16>
+n<> u<79> t<Endtask> p<80> f<0> l<0:5>
+n<> u<80> t<Task_body_declaration> p<81> c<73> f<0> l<0:10>
+n<> u<81> t<Task_declaration> p<82> c<80> f<0> l<0:5>
+n<> u<82> t<Class_method> p<83> c<81> f<0> l<0:5>
+n<> u<83> t<Class_item> p<101> c<82> s<98> f<0> l<0:5>
+n<> u<84> t<IntegerAtomType_Int> p<85> f<0> l<0:14>
+n<> u<85> t<Data_type> p<86> c<84> f<0> l<0:14>
+n<> u<86> t<Function_data_type> p<87> c<85> f<0> l<0:14>
+n<> u<87> t<Function_data_type_or_implicit> p<95> c<86> s<88> f<0> l<0:14>
+n<try_peek> u<88> t<StringConst> p<95> s<93> f<0> l<0:18>
+n<> u<89> t<TfPortDir_Ref> p<92> s<90> f<0> l<0:27>
+n<> u<90> t<Data_type_or_implicit> p<92> s<91> f<0> l<0:31>
+n<message> u<91> t<StringConst> p<92> f<0> l<0:31>
+n<> u<92> t<Tf_port_item> p<93> c<89> f<0> l<0:27>
+n<> u<93> t<Tf_port_list> p<95> c<92> s<94> f<0> l<0:27>
+n<> u<94> t<Endfunction> p<95> f<0> l<0:5>
+n<> u<95> t<Function_body_declaration> p<96> c<87> f<0> l<0:14>
+n<> u<96> t<Function_declaration> p<97> c<95> f<0> l<0:5>
+n<> u<97> t<Class_method> p<98> c<96> f<0> l<0:5>
+n<> u<98> t<Class_item> p<101> c<97> s<100> f<0> l<0:5>
+n<> u<99> t<Class> p<101> s<1> f<0> l<0:11>
+n<> u<100> t<Endclass> p<101> f<0> l<0:3>
+n<> u<101> t<Class_declaration> p<102> c<99> f<0> l<0:11>
+n<> u<102> t<Package_or_generate_item_declaration> p<103> c<101> f<0> l<0:11>
+n<> u<103> t<Package_item> p<104> c<102> f<0> l<0:11>
+n<> u<104> t<Description> p<247> c<103> s<173> f<0> l<0:11>
+n<process> u<105> t<StringConst> p<170> s<121> f<0> l<0:9>
+n<FINISHED> u<106> t<StringConst> p<107> f<0> l<0:20>
+n<> u<107> t<Enum_name_declaration> p<116> c<106> s<109> f<0> l<0:20>
+n<RUNNING> u<108> t<StringConst> p<109> f<0> l<0:30>
+n<> u<109> t<Enum_name_declaration> p<116> c<108> s<111> f<0> l<0:30>
+n<WAITING> u<110> t<StringConst> p<111> f<0> l<0:39>
+n<> u<111> t<Enum_name_declaration> p<116> c<110> s<113> f<0> l<0:39>
+n<SUSPENDED> u<112> t<StringConst> p<113> f<0> l<0:48>
+n<> u<113> t<Enum_name_declaration> p<116> c<112> s<115> f<0> l<0:48>
+n<KILLED> u<114> t<StringConst> p<115> f<0> l<0:59>
+n<> u<115> t<Enum_name_declaration> p<116> c<114> f<0> l<0:59>
+n<> u<116> t<Data_type> p<118> c<107> s<117> f<0> l<0:13>
+n<state> u<117> t<StringConst> p<118> f<0> l<0:68>
+n<> u<118> t<Type_declaration> p<119> c<116> f<0> l<0:5>
+n<> u<119> t<Data_declaration> p<120> c<118> f<0> l<0:5>
+n<> u<120> t<Class_property> p<121> c<119> f<0> l<0:5>
+n<> u<121> t<Class_item> p<170> c<120> s<133> f<0> l<0:5>
+n<> u<122> t<ClassItemQualifier_Static> p<123> f<0> l<0:5>
+n<> u<123> t<MethodQualifier_ClassItem> p<132> c<122> s<131> f<0> l<0:5>
+n<process> u<124> t<StringConst> p<125> f<0> l<0:21>
+n<> u<125> t<Data_type> p<126> c<124> f<0> l<0:21>
+n<> u<126> t<Function_data_type> p<127> c<125> f<0> l<0:21>
+n<> u<127> t<Function_data_type_or_implicit> p<130> c<126> s<128> f<0> l<0:21>
+n<self> u<128> t<StringConst> p<130> s<129> f<0> l<0:29>
+n<> u<129> t<Endfunction> p<130> f<0> l<0:5>
+n<> u<130> t<Function_body_declaration> p<131> c<127> f<0> l<0:21>
+n<> u<131> t<Function_declaration> p<132> c<130> f<0> l<0:12>
+n<> u<132> t<Class_method> p<133> c<123> f<0> l<0:5>
+n<> u<133> t<Class_item> p<170> c<132> s<143> f<0> l<0:5>
+n<state> u<134> t<StringConst> p<135> f<0> l<0:14>
+n<> u<135> t<Data_type> p<136> c<134> f<0> l<0:14>
+n<> u<136> t<Function_data_type> p<137> c<135> f<0> l<0:14>
+n<> u<137> t<Function_data_type_or_implicit> p<140> c<136> s<138> f<0> l<0:14>
+n<status> u<138> t<StringConst> p<140> s<139> f<0> l<0:20>
+n<> u<139> t<Endfunction> p<140> f<0> l<0:5>
+n<> u<140> t<Function_body_declaration> p<141> c<137> f<0> l<0:14>
+n<> u<141> t<Function_declaration> p<142> c<140> f<0> l<0:5>
+n<> u<142> t<Class_method> p<143> c<141> f<0> l<0:5>
+n<> u<143> t<Class_item> p<170> c<142> s<149> f<0> l<0:5>
+n<kill> u<144> t<StringConst> p<146> s<145> f<0> l<0:10>
+n<> u<145> t<Endtask> p<146> f<0> l<0:5>
+n<> u<146> t<Task_body_declaration> p<147> c<144> f<0> l<0:10>
+n<> u<147> t<Task_declaration> p<148> c<146> f<0> l<0:5>
+n<> u<148> t<Class_method> p<149> c<147> f<0> l<0:5>
+n<> u<149> t<Class_item> p<170> c<148> s<155> f<0> l<0:5>
+n<await> u<150> t<StringConst> p<152> s<151> f<0> l<0:10>
+n<> u<151> t<Endtask> p<152> f<0> l<0:5>
+n<> u<152> t<Task_body_declaration> p<153> c<150> f<0> l<0:10>
+n<> u<153> t<Task_declaration> p<154> c<152> f<0> l<0:5>
+n<> u<154> t<Class_method> p<155> c<153> f<0> l<0:5>
+n<> u<155> t<Class_item> p<170> c<154> s<161> f<0> l<0:5>
+n<suspend> u<156> t<StringConst> p<158> s<157> f<0> l<0:10>
+n<> u<157> t<Endtask> p<158> f<0> l<0:5>
+n<> u<158> t<Task_body_declaration> p<159> c<156> f<0> l<0:10>
+n<> u<159> t<Task_declaration> p<160> c<158> f<0> l<0:5>
+n<> u<160> t<Class_method> p<161> c<159> f<0> l<0:5>
+n<> u<161> t<Class_item> p<170> c<160> s<167> f<0> l<0:5>
+n<resume> u<162> t<StringConst> p<164> s<163> f<0> l<0:10>
+n<> u<163> t<Endtask> p<164> f<0> l<0:5>
+n<> u<164> t<Task_body_declaration> p<165> c<162> f<0> l<0:10>
+n<> u<165> t<Task_declaration> p<166> c<164> f<0> l<0:5>
+n<> u<166> t<Class_method> p<167> c<165> f<0> l<0:5>
+n<> u<167> t<Class_item> p<170> c<166> s<169> f<0> l<0:5>
+n<> u<168> t<Class> p<170> s<105> f<0> l<0:3>
+n<> u<169> t<Endclass> p<170> f<0> l<0:3>
+n<> u<170> t<Class_declaration> p<171> c<168> f<0> l<0:3>
+n<> u<171> t<Package_or_generate_item_declaration> p<172> c<170> f<0> l<0:3>
+n<> u<172> t<Package_item> p<173> c<171> f<0> l<0:3>
+n<> u<173> t<Description> p<247> c<172> s<246> f<0> l<0:3>
+n<semaphore> u<174> t<StringConst> p<243> s<188> f<0> l<0:9>
+n<> u<175> t<IntegerAtomType_Int> p<176> f<0> l<0:18>
+n<> u<176> t<Data_type> p<177> c<175> f<0> l<0:18>
+n<> u<177> t<Data_type_or_implicit> p<183> c<176> s<178> f<0> l<0:18>
+n<keyCount> u<178> t<StringConst> p<183> s<182> f<0> l<0:22>
+n<0> u<179> t<IntConst> p<180> f<0> l<0:33>
+n<> u<180> t<Primary_literal> p<181> c<179> f<0> l<0:33>
+n<> u<181> t<Primary> p<182> c<180> f<0> l<0:33>
+n<> u<182> t<Expression> p<183> c<181> f<0> l<0:33>
+n<> u<183> t<Tf_port_item> p<184> c<177> f<0> l<0:18>
+n<> u<184> t<Tf_port_list> p<186> c<183> s<185> f<0> l<0:18>
+n<> u<185> t<Endfunction> p<186> f<0> l<0:5>
+n<> u<186> t<Class_constructor_declaration> p<187> c<184> f<0> l<0:5>
+n<> u<187> t<Class_method> p<188> c<186> f<0> l<0:5>
+n<> u<188> t<Class_item> p<243> c<187> s<204> f<0> l<0:5>
+n<put> u<189> t<StringConst> p<201> s<199> f<0> l<0:10>
+n<> u<190> t<IntegerAtomType_Int> p<191> f<0> l<0:14>
+n<> u<191> t<Data_type> p<192> c<190> f<0> l<0:14>
+n<> u<192> t<Data_type_or_implicit> p<198> c<191> s<193> f<0> l<0:14>
+n<keyCount> u<193> t<StringConst> p<198> s<197> f<0> l<0:18>
+n<1> u<194> t<IntConst> p<195> f<0> l<0:29>
+n<> u<195> t<Primary_literal> p<196> c<194> f<0> l<0:29>
+n<> u<196> t<Primary> p<197> c<195> f<0> l<0:29>
+n<> u<197> t<Expression> p<198> c<196> f<0> l<0:29>
+n<> u<198> t<Tf_port_item> p<199> c<192> f<0> l<0:14>
+n<> u<199> t<Tf_port_list> p<201> c<198> s<200> f<0> l<0:14>
+n<> u<200> t<Endtask> p<201> f<0> l<0:5>
+n<> u<201> t<Task_body_declaration> p<202> c<189> f<0> l<0:10>
+n<> u<202> t<Task_declaration> p<203> c<201> f<0> l<0:5>
+n<> u<203> t<Class_method> p<204> c<202> f<0> l<0:5>
+n<> u<204> t<Class_item> p<243> c<203> s<220> f<0> l<0:5>
+n<get> u<205> t<StringConst> p<217> s<215> f<0> l<0:10>
+n<> u<206> t<IntegerAtomType_Int> p<207> f<0> l<0:14>
+n<> u<207> t<Data_type> p<208> c<206> f<0> l<0:14>
+n<> u<208> t<Data_type_or_implicit> p<214> c<207> s<209> f<0> l<0:14>
+n<keyCount> u<209> t<StringConst> p<214> s<213> f<0> l<0:18>
+n<1> u<210> t<IntConst> p<211> f<0> l<0:29>
+n<> u<211> t<Primary_literal> p<212> c<210> f<0> l<0:29>
+n<> u<212> t<Primary> p<213> c<211> f<0> l<0:29>
+n<> u<213> t<Expression> p<214> c<212> f<0> l<0:29>
+n<> u<214> t<Tf_port_item> p<215> c<208> f<0> l<0:14>
+n<> u<215> t<Tf_port_list> p<217> c<214> s<216> f<0> l<0:14>
+n<> u<216> t<Endtask> p<217> f<0> l<0:5>
+n<> u<217> t<Task_body_declaration> p<218> c<205> f<0> l<0:10>
+n<> u<218> t<Task_declaration> p<219> c<217> f<0> l<0:5>
+n<> u<219> t<Class_method> p<220> c<218> f<0> l<0:5>
+n<> u<220> t<Class_item> p<243> c<219> s<240> f<0> l<0:5>
+n<> u<221> t<IntegerAtomType_Int> p<222> f<0> l<0:14>
+n<> u<222> t<Data_type> p<223> c<221> f<0> l<0:14>
+n<> u<223> t<Function_data_type> p<224> c<222> f<0> l<0:14>
+n<> u<224> t<Function_data_type_or_implicit> p<237> c<223> s<225> f<0> l<0:14>
+n<try_get> u<225> t<StringConst> p<237> s<235> f<0> l<0:18>
+n<> u<226> t<IntegerAtomType_Int> p<227> f<0> l<0:26>
+n<> u<227> t<Data_type> p<228> c<226> f<0> l<0:26>
+n<> u<228> t<Data_type_or_implicit> p<234> c<227> s<229> f<0> l<0:26>
+n<keyCount> u<229> t<StringConst> p<234> s<233> f<0> l<0:30>
+n<1> u<230> t<IntConst> p<231> f<0> l<0:41>
+n<> u<231> t<Primary_literal> p<232> c<230> f<0> l<0:41>
+n<> u<232> t<Primary> p<233> c<231> f<0> l<0:41>
+n<> u<233> t<Expression> p<234> c<232> f<0> l<0:41>
+n<> u<234> t<Tf_port_item> p<235> c<228> f<0> l<0:26>
+n<> u<235> t<Tf_port_list> p<237> c<234> s<236> f<0> l<0:26>
+n<> u<236> t<Endfunction> p<237> f<0> l<0:5>
+n<> u<237> t<Function_body_declaration> p<238> c<224> f<0> l<0:14>
+n<> u<238> t<Function_declaration> p<239> c<237> f<0> l<0:5>
+n<> u<239> t<Class_method> p<240> c<238> f<0> l<0:5>
+n<> u<240> t<Class_item> p<243> c<239> s<242> f<0> l<0:5>
+n<> u<241> t<Class> p<243> s<174> f<0> l<0:3>
+n<> u<242> t<Endclass> p<243> f<0> l<0:3>
+n<> u<243> t<Class_declaration> p<244> c<241> f<0> l<0:3>
+n<> u<244> t<Package_or_generate_item_declaration> p<245> c<243> f<0> l<0:3>
+n<> u<245> t<Package_item> p<246> c<244> f<0> l<0:3>
+n<> u<246> t<Description> p<247> c<245> f<0> l<0:3>
+n<> u<247> t<Source_text> p<248> c<104> f<0> l<0:11>
+n<> u<248> t<Top_level_rule> f<0> l<0:11>
+[INF:CP0302] Compile class "work@mailbox".
+
+[INF:CP0302] Compile class "work@process".
+
+[INF:CP0302] Compile class "work@semaphore".
+
+[INF:EL0526] Design Elaboration...
+
+[NTE:EL0503] dut.sv:26: Top level module "work@top".
+
+[NTE:EL0508] Nb Top level modules: 1.
+
+[NTE:EL0509] Max instance depth: 1.
+
+[NTE:EL0510] Nb instances: 1.
+
+[NTE:EL0511] Nb leaf instances: 0.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0707] Elaborating UHDM...
+
+[ERR:UH0718] dut.sv:32:12: Illegal lhs of type wire "data_o".
+
+[ERR:UH0718] dut.sv:36:11: Illegal lhs of type wire "data_o".
+
+[ERR:UH0718] dut.sv:37:12: Illegal lhs of type wire "data_o".
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/PackageFuncCall/slpp_all/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/PackageFuncCall/slpp_all/surelog.uhdm.chk.html ...
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/PackageFuncCall/slpp_all/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (work@top)
+|vpiElaborated:1
+|vpiName:work@top
+|uhdmallPackages:
+\_package: builtin (builtin::), file:, parent:work@top
+  |vpiName:builtin
+  |vpiFullName:builtin::
+  |vpiDefName:builtin
+|uhdmallPackages:
+\_package: prim_cipher_pkg (prim_cipher_pkg::) dut.sv:1:1: , endln:23:29, parent:work@top
+  |vpiName:prim_cipher_pkg
+  |vpiFullName:prim_cipher_pkg::
+  |vpiParameter:
+  \_parameter: (prim_cipher_pkg::PRESENT_SBOX4), line:3:31, endln:3:44, parent:prim_cipher_pkg::
+    |vpiTypespec:
+    \_logic_typespec: , line:3:13, endln:3:18, parent:prim_cipher_pkg::PRESENT_SBOX4
+      |vpiInstance:
+      \_package: (prim_cipher_pkg), file:
+      |vpiRange:
+      \_range: , line:3:20, endln:3:24
+        |vpiLeftRange:
+        \_constant: , line:3:20, endln:3:22
+          |vpiDecompile:15
+          |vpiSize:64
+          |UINT:15
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:3:23, endln:3:24
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+      |vpiRange:
+      \_range: , line:3:26, endln:3:29
+        |vpiLeftRange:
+        \_constant: , line:3:26, endln:3:27
+          |vpiDecompile:3
+          |vpiSize:64
+          |UINT:3
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:3:28, endln:3:29
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+    |vpiName:PRESENT_SBOX4
+    |vpiFullName:prim_cipher_pkg::PRESENT_SBOX4
+  |vpiParameter:
+  \_parameter: (prim_cipher_pkg::PRINCE_ROUND_CONST), line:18:32, endln:18:50, parent:prim_cipher_pkg::
+    |vpiTypespec:
+    \_logic_typespec: , line:18:13, endln:18:18, parent:prim_cipher_pkg::PRINCE_ROUND_CONST
+      |vpiInstance:
+      \_package: (prim_cipher_pkg), file:
+      |vpiRange:
+      \_range: , line:18:20, endln:18:24
+        |vpiLeftRange:
+        \_constant: , line:18:20, endln:18:22
+          |vpiDecompile:11
+          |vpiSize:64
+          |UINT:11
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:18:23, endln:18:24
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+      |vpiRange:
+      \_range: , line:18:26, endln:18:30
+        |vpiLeftRange:
+        \_constant: , line:18:26, endln:18:28
+          |vpiDecompile:63
+          |vpiSize:64
+          |UINT:63
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:18:29, endln:18:30
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+    |vpiName:PRINCE_ROUND_CONST
+    |vpiFullName:prim_cipher_pkg::PRINCE_ROUND_CONST
+  |vpiParamAssign:
+  \_param_assign: , line:3:31, endln:6:71, parent:prim_cipher_pkg::
+    |vpiRhs:
+    \_operation: , line:3:47, endln:6:71
+      |vpiOpType:33
+      |vpiOperand:
+      \_constant: , line:3:48, endln:3:52
+        |vpiDecompile:4'h2
+        |vpiSize:4
+        |HEX:2
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:3:54, endln:3:58
+        |vpiDecompile:4'h1
+        |vpiSize:4
+        |HEX:1
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:3:60, endln:3:64
+        |vpiDecompile:4'h7
+        |vpiSize:4
+        |HEX:7
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:3:66, endln:3:70
+        |vpiDecompile:4'h4
+        |vpiSize:4
+        |HEX:4
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:4:48, endln:4:52
+        |vpiDecompile:4'h8
+        |vpiSize:4
+        |HEX:8
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:4:54, endln:4:58
+        |vpiDecompile:4'hF
+        |vpiSize:4
+        |HEX:F
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:4:60, endln:4:64
+        |vpiDecompile:4'hE
+        |vpiSize:4
+        |HEX:E
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:4:66, endln:4:70
+        |vpiDecompile:4'h3
+        |vpiSize:4
+        |HEX:3
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:5:48, endln:5:52
+        |vpiDecompile:4'hD
+        |vpiSize:4
+        |HEX:D
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:5:54, endln:5:58
+        |vpiDecompile:4'hA
+        |vpiSize:4
+        |HEX:A
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:5:60, endln:5:64
+        |vpiDecompile:4'h0
+        |vpiSize:4
+        |HEX:0
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:5:66, endln:5:70
+        |vpiDecompile:4'h9
+        |vpiSize:4
+        |HEX:9
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:6:48, endln:6:52
+        |vpiDecompile:4'hB
+        |vpiSize:4
+        |HEX:B
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:6:54, endln:6:58
+        |vpiDecompile:4'h6
+        |vpiSize:4
+        |HEX:6
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:6:60, endln:6:64
+        |vpiDecompile:4'h5
+        |vpiSize:4
+        |HEX:5
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:6:66, endln:6:70
+        |vpiDecompile:4'hC
+        |vpiSize:4
+        |HEX:C
+        |vpiConstType:5
+    |vpiLhs:
+    \_parameter: (prim_cipher_pkg::PRESENT_SBOX4), line:3:31, endln:3:44, parent:prim_cipher_pkg::
+  |vpiParamAssign:
+  \_param_assign: , line:18:32, endln:19:78, parent:prim_cipher_pkg::
+    |vpiRhs:
+    \_operation: , line:18:53, endln:19:78
+      |vpiOpType:33
+      |vpiOperand:
+      \_constant: , line:18:54, endln:18:74
+        |vpiDecompile:64'hC0AC29B7C97C50DD
+        |vpiSize:64
+        |HEX:C0AC29B7C97C50DD
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:19:57, endln:19:77
+        |vpiDecompile:64'hD3B5A399CA0C2399
+        |vpiSize:64
+        |HEX:D3B5A399CA0C2399
+        |vpiConstType:5
+    |vpiLhs:
+    \_parameter: (prim_cipher_pkg::PRINCE_ROUND_CONST), line:18:32, endln:18:50, parent:prim_cipher_pkg::
+  |vpiDefName:prim_cipher_pkg
+  |vpiTaskFunc:
+  \_function: (prim_cipher_pkg::sbox4_64bit), line:8:3, endln:15:28, parent:prim_cipher_pkg::
+    |vpiName:sbox4_64bit
+    |vpiFullName:prim_cipher_pkg::sbox4_64bit
+    |vpiVariables:
+    \_logic_var: (prim_cipher_pkg::sbox4_64bit::state_out), line:9:18, endln:9:27, parent:prim_cipher_pkg::sbox4_64bit
+      |vpiTypespec:
+      \_logic_typespec: , line:9:5, endln:9:10
+        |vpiInstance:
+        \_package: (prim_cipher_pkg), file:
+        |vpiRange:
+        \_range: , line:9:12, endln:9:16, parent:prim_cipher_pkg::sbox4_64bit
+          |vpiLeftRange:
+          \_constant: , line:9:12, endln:9:14
+            |vpiDecompile:63
+            |vpiSize:64
+            |UINT:63
+            |vpiConstType:9
+          |vpiRightRange:
+          \_constant: , line:9:15, endln:9:16
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+      |vpiName:state_out
+      |vpiFullName:prim_cipher_pkg::sbox4_64bit::state_out
+    |vpiVisibility:1
+    |vpiAutomatic:1
+    |vpiReturn:
+    \_logic_var: , line:8:22, endln:8:34
+      |vpiTypespec:
+      \_logic_typespec: , line:8:22, endln:8:27
+        |vpiInstance:
+        \_package: (prim_cipher_pkg), file:
+        |vpiRange:
+        \_range: , line:8:29, endln:8:33
+          |vpiLeftRange:
+          \_constant: , line:8:29, endln:8:31
+            |vpiDecompile:63
+            |vpiSize:64
+            |UINT:63
+            |vpiConstType:9
+          |vpiRightRange:
+          \_constant: , line:8:32, endln:8:33
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+    |vpiIODecl:
+    \_io_decl: (state_in), line:8:60, endln:8:68, parent:prim_cipher_pkg::sbox4_64bit
+      |vpiDirection:1
+      |vpiName:state_in
+      |vpiTypedef:
+      \_logic_typespec: , line:8:47, endln:8:52
+        |vpiInstance:
+        \_package: (prim_cipher_pkg), file:
+        |vpiRange:
+        \_range: , line:8:54, endln:8:58
+          |vpiLeftRange:
+          \_constant: , line:8:54, endln:8:56
+            |vpiDecompile:63
+            |vpiSize:64
+            |UINT:63
+            |vpiConstType:9
+          |vpiRightRange:
+          \_constant: , line:8:57, endln:8:58
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+    |vpiIODecl:
+    \_io_decl: (sbox4), line:8:88, endln:8:93, parent:prim_cipher_pkg::sbox4_64bit
+      |vpiDirection:1
+      |vpiName:sbox4
+      |vpiTypedef:
+      \_logic_typespec: , line:8:70, endln:8:75
+        |vpiInstance:
+        \_package: (prim_cipher_pkg), file:
+        |vpiRange:
+        \_range: , line:8:77, endln:8:81
+          |vpiLeftRange:
+          \_constant: , line:8:77, endln:8:79
+            |vpiDecompile:15
+            |vpiSize:64
+            |UINT:15
+            |vpiConstType:9
+          |vpiRightRange:
+          \_constant: , line:8:80, endln:8:81
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+        |vpiRange:
+        \_range: , line:8:83, endln:8:86
+          |vpiLeftRange:
+          \_constant: , line:8:83, endln:8:84
+            |vpiDecompile:3
+            |vpiSize:64
+            |UINT:3
+            |vpiConstType:9
+          |vpiRightRange:
+          \_constant: , line:8:85, endln:8:86
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+    |vpiStmt:
+    \_begin: (prim_cipher_pkg::sbox4_64bit), parent:prim_cipher_pkg::sbox4_64bit
+      |vpiFullName:prim_cipher_pkg::sbox4_64bit
+      |vpiVariables:
+      \_logic_var: (prim_cipher_pkg::sbox4_64bit::state_out), line:9:18, endln:9:27, parent:prim_cipher_pkg::sbox4_64bit
+        |vpiTypespec:
+        \_logic_typespec: , line:9:5, endln:9:10
+        |vpiName:state_out
+        |vpiFullName:prim_cipher_pkg::sbox4_64bit::state_out
+      |vpiStmt:
+      \_for_stmt: (prim_cipher_pkg::sbox4_64bit), line:11:5, endln:11:8, parent:prim_cipher_pkg::sbox4_64bit
+        |vpiFullName:prim_cipher_pkg::sbox4_64bit
+        |vpiForInitStmt:
+        \_assign_stmt: , line:11:10, endln:11:19, parent:prim_cipher_pkg::sbox4_64bit
+          |vpiRhs:
+          \_constant: , line:11:18, endln:11:19
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+          |vpiLhs:
+          \_int_var: (prim_cipher_pkg::sbox4_64bit::k), line:11:10, endln:11:13
+            |vpiTypespec:
+            \_int_typespec: , line:11:10, endln:11:13
+              |vpiInstance:
+              \_package: (prim_cipher_pkg), file:
+              |vpiSigned:1
+            |vpiName:k
+            |vpiFullName:prim_cipher_pkg::sbox4_64bit::k
+        |vpiForIncStmt:
+        \_operation: , line:11:31, endln:11:34, parent:prim_cipher_pkg::sbox4_64bit
+          |vpiOpType:62
+          |vpiOperand:
+          \_ref_obj: (prim_cipher_pkg::sbox4_64bit::k), line:11:31, endln:11:32
+            |vpiName:k
+            |vpiFullName:prim_cipher_pkg::sbox4_64bit::k
+            |vpiActual:
+            \_int_var: (prim_cipher_pkg::sbox4_64bit::k), line:11:10, endln:11:13
+              |vpiTypespec:
+              \_int_typespec: , line:11:10, endln:11:13
+              |vpiName:k
+              |vpiFullName:prim_cipher_pkg::sbox4_64bit::k
+        |vpiCondition:
+        \_operation: , line:11:21, endln:11:29, parent:prim_cipher_pkg::sbox4_64bit
+          |vpiOpType:20
+          |vpiOperand:
+          \_ref_obj: (prim_cipher_pkg::sbox4_64bit::k), line:11:21, endln:11:22
+            |vpiName:k
+            |vpiFullName:prim_cipher_pkg::sbox4_64bit::k
+            |vpiActual:
+            \_int_var: (prim_cipher_pkg::sbox4_64bit::k), line:11:10, endln:11:13
+          |vpiOperand:
+          \_operation: , line:11:25, endln:11:29
+            |vpiOpType:12
+            |vpiOperand:
+            \_constant: , line:11:25, endln:11:27
+              |vpiDecompile:64
+              |vpiSize:64
+              |UINT:64
+              |vpiConstType:9
+            |vpiOperand:
+            \_constant: , line:11:28, endln:11:29
+              |vpiDecompile:4
+              |vpiSize:64
+              |UINT:4
+              |vpiConstType:9
+        |vpiStmt:
+        \_begin: (prim_cipher_pkg::sbox4_64bit), line:11:36, endln:13:8, parent:prim_cipher_pkg::sbox4_64bit
+          |vpiFullName:prim_cipher_pkg::sbox4_64bit
+          |vpiStmt:
+          \_assignment: , line:12:7, endln:12:54, parent:prim_cipher_pkg::sbox4_64bit
+            |vpiOpType:82
+            |vpiBlocking:1
+            |vpiRhs:
+            \_bit_select: (prim_cipher_pkg::sbox4_64bit::sbox4), line:12:29, endln:12:54, parent:prim_cipher_pkg::sbox4_64bit::sbox4
+              |vpiParent:
+              \_ref_obj: (prim_cipher_pkg::sbox4_64bit::sbox4), parent:prim_cipher_pkg::sbox4_64bit::sbox4
+                |vpiName:sbox4
+                |vpiFullName:prim_cipher_pkg::sbox4_64bit::sbox4
+                |vpiActual:
+                \_io_decl: (sbox4), line:8:88, endln:8:93, parent:prim_cipher_pkg::sbox4_64bit
+              |vpiName:sbox4
+              |vpiFullName:prim_cipher_pkg::sbox4_64bit::sbox4
+              |vpiIndex:
+              \_indexed_part_select: , line:12:44, endln:12:52, parent:state_in
+                |vpiParent:
+                \_ref_obj: (state_in), parent:state_in
+                  |vpiName:state_in
+                  |vpiActual:
+                  \_io_decl: (state_in), line:8:60, endln:8:68, parent:prim_cipher_pkg::sbox4_64bit
+                |vpiConstantSelect:1
+                |vpiIndexedPartSelectType:1
+                |vpiBaseExpr:
+                \_operation: , line:12:44, endln:12:47
+                  |vpiOpType:25
+                  |vpiOperand:
+                  \_ref_obj: (state_in.k), line:12:44, endln:12:45
+                    |vpiName:k
+                    |vpiFullName:state_in.k
+                    |vpiActual:
+                    \_int_var: (prim_cipher_pkg::sbox4_64bit::k), line:11:10, endln:11:13
+                  |vpiOperand:
+                  \_constant: , line:12:46, endln:12:47
+                    |vpiDecompile:4
+                    |vpiSize:64
+                    |UINT:4
+                    |vpiConstType:9
+                |vpiWidthExpr:
+                \_constant: , line:12:51, endln:12:52
+                  |vpiDecompile:4
+                  |vpiSize:64
+                  |UINT:4
+                  |vpiConstType:9
+            |vpiLhs:
+            \_indexed_part_select: , line:12:7, endln:12:26, parent:prim_cipher_pkg::sbox4_64bit::state_out
+              |vpiParent:
+              \_ref_obj: (prim_cipher_pkg::sbox4_64bit::state_out), parent:prim_cipher_pkg::sbox4_64bit::state_out
+                |vpiName:state_out
+                |vpiFullName:prim_cipher_pkg::sbox4_64bit::state_out
+                |vpiActual:
+                \_logic_var: (prim_cipher_pkg::sbox4_64bit::state_out), line:9:18, endln:9:27
+                  |vpiTypespec:
+                  \_logic_typespec: , line:9:5, endln:9:10
+                  |vpiName:state_out
+                  |vpiFullName:prim_cipher_pkg::sbox4_64bit::state_out
+              |vpiConstantSelect:1
+              |vpiIndexedPartSelectType:1
+              |vpiBaseExpr:
+              \_operation: , line:12:17, endln:12:20
+                |vpiOpType:25
+                |vpiOperand:
+                \_ref_obj: (prim_cipher_pkg::sbox4_64bit::state_out::k), line:12:17, endln:12:18
+                  |vpiName:k
+                  |vpiFullName:prim_cipher_pkg::sbox4_64bit::state_out::k
+                  |vpiActual:
+                  \_int_var: (prim_cipher_pkg::sbox4_64bit::k), line:11:10, endln:11:13
+                |vpiOperand:
+                \_constant: , line:12:19, endln:12:20
+                  |vpiDecompile:4
+                  |vpiSize:64
+                  |UINT:4
+                  |vpiConstType:9
+              |vpiWidthExpr:
+              \_constant: , line:12:24, endln:12:25
+                |vpiDecompile:4
+                |vpiSize:64
+                |UINT:4
+                |vpiConstType:9
+      |vpiStmt:
+      \_return_stmt: , line:14:5, endln:14:11, parent:prim_cipher_pkg::sbox4_64bit
+        |vpiCondition:
+        \_ref_obj: (prim_cipher_pkg::sbox4_64bit::state_out), line:14:12, endln:14:21
+          |vpiName:state_out
+          |vpiFullName:prim_cipher_pkg::sbox4_64bit::state_out
+          |vpiActual:
+          \_logic_var: (prim_cipher_pkg::sbox4_64bit::state_out), line:9:18, endln:9:27
+    |vpiInstance:
+    \_package: prim_cipher_pkg (prim_cipher_pkg::) dut.sv:1:1: , endln:23:29, parent:work@top
+|uhdmtopPackages:
+\_package: builtin (builtin::), file:, parent:work@top
+  |vpiName:builtin
+  |vpiFullName:builtin::
+  |vpiDefName:builtin
+  |vpiTop:1
+  |vpiClassDefn:
+  \_class_defn: (builtin::any_sverilog_class), file:, parent:builtin::
+    |vpiName:any_sverilog_class
+    |vpiFullName:builtin::any_sverilog_class
+  |vpiClassDefn:
+  \_class_defn: (builtin::array), file:, parent:builtin::
+    |vpiName:array
+    |vpiFullName:builtin::array
+  |vpiClassDefn:
+  \_class_defn: (builtin::queue), file:, parent:builtin::
+    |vpiName:queue
+    |vpiFullName:builtin::queue
+  |vpiClassDefn:
+  \_class_defn: (builtin::string), file:, parent:builtin::
+    |vpiName:string
+    |vpiFullName:builtin::string
+  |vpiClassDefn:
+  \_class_defn: (builtin::system), file:, parent:builtin::
+    |vpiName:system
+    |vpiFullName:builtin::system
+|uhdmtopPackages:
+\_package: prim_cipher_pkg (prim_cipher_pkg::) dut.sv:1:1: , endln:23:29, parent:work@top
+  |vpiName:prim_cipher_pkg
+  |vpiFullName:prim_cipher_pkg::
+  |vpiParameter:
+  \_parameter: (prim_cipher_pkg::PRESENT_SBOX4), line:3:31, endln:3:44, parent:prim_cipher_pkg::
+    |vpiTypespec:
+    \_logic_typespec: , line:3:13, endln:3:18, parent:prim_cipher_pkg::PRESENT_SBOX4
+      |vpiInstance:
+      \_package: prim_cipher_pkg (prim_cipher_pkg::) dut.sv:1:1: , endln:23:29, parent:work@top
+      |vpiRange:
+      \_range: , line:3:20, endln:3:24
+        |vpiLeftRange:
+        \_constant: , line:3:20, endln:3:22
+          |vpiDecompile:15
+          |vpiSize:64
+          |UINT:15
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:3:23, endln:3:24
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+      |vpiRange:
+      \_range: , line:3:26, endln:3:29
+        |vpiLeftRange:
+        \_constant: , line:3:26, endln:3:27
+          |vpiDecompile:3
+          |vpiSize:64
+          |UINT:3
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:3:28, endln:3:29
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+    |vpiName:PRESENT_SBOX4
+    |vpiFullName:prim_cipher_pkg::PRESENT_SBOX4
+  |vpiParameter:
+  \_parameter: (prim_cipher_pkg::PRINCE_ROUND_CONST), line:18:32, endln:18:50, parent:prim_cipher_pkg::
+    |vpiTypespec:
+    \_logic_typespec: , line:18:13, endln:18:18, parent:prim_cipher_pkg::PRINCE_ROUND_CONST
+      |vpiInstance:
+      \_package: prim_cipher_pkg (prim_cipher_pkg::) dut.sv:1:1: , endln:23:29, parent:work@top
+      |vpiRange:
+      \_range: , line:18:20, endln:18:24
+        |vpiLeftRange:
+        \_constant: , line:18:20, endln:18:22
+          |vpiDecompile:11
+          |vpiSize:64
+          |UINT:11
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:18:23, endln:18:24
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+      |vpiRange:
+      \_range: , line:18:26, endln:18:30
+        |vpiLeftRange:
+        \_constant: , line:18:26, endln:18:28
+          |vpiDecompile:63
+          |vpiSize:64
+          |UINT:63
+          |vpiConstType:9
+        |vpiRightRange:
+        \_constant: , line:18:29, endln:18:30
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+    |vpiName:PRINCE_ROUND_CONST
+    |vpiFullName:prim_cipher_pkg::PRINCE_ROUND_CONST
+  |vpiParamAssign:
+  \_param_assign: , line:3:31, endln:6:71, parent:prim_cipher_pkg::
+    |vpiRhs:
+    \_operation: , line:3:47, endln:6:71
+      |vpiOpType:33
+      |vpiOperand:
+      \_constant: , line:3:48, endln:3:52
+        |vpiDecompile:4'h2
+        |vpiSize:4
+        |HEX:2
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:3:54, endln:3:58
+        |vpiDecompile:4'h1
+        |vpiSize:4
+        |HEX:1
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:3:60, endln:3:64
+        |vpiDecompile:4'h7
+        |vpiSize:4
+        |HEX:7
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:3:66, endln:3:70
+        |vpiDecompile:4'h4
+        |vpiSize:4
+        |HEX:4
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:4:48, endln:4:52
+        |vpiDecompile:4'h8
+        |vpiSize:4
+        |HEX:8
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:4:54, endln:4:58
+        |vpiDecompile:4'hF
+        |vpiSize:4
+        |HEX:F
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:4:60, endln:4:64
+        |vpiDecompile:4'hE
+        |vpiSize:4
+        |HEX:E
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:4:66, endln:4:70
+        |vpiDecompile:4'h3
+        |vpiSize:4
+        |HEX:3
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:5:48, endln:5:52
+        |vpiDecompile:4'hD
+        |vpiSize:4
+        |HEX:D
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:5:54, endln:5:58
+        |vpiDecompile:4'hA
+        |vpiSize:4
+        |HEX:A
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:5:60, endln:5:64
+        |vpiDecompile:4'h0
+        |vpiSize:4
+        |HEX:0
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:5:66, endln:5:70
+        |vpiDecompile:4'h9
+        |vpiSize:4
+        |HEX:9
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:6:48, endln:6:52
+        |vpiDecompile:4'hB
+        |vpiSize:4
+        |HEX:B
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:6:54, endln:6:58
+        |vpiDecompile:4'h6
+        |vpiSize:4
+        |HEX:6
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:6:60, endln:6:64
+        |vpiDecompile:4'h5
+        |vpiSize:4
+        |HEX:5
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:6:66, endln:6:70
+        |vpiDecompile:4'hC
+        |vpiSize:4
+        |HEX:C
+        |vpiConstType:5
+    |vpiLhs:
+    \_parameter: (prim_cipher_pkg::PRESENT_SBOX4), line:3:31, endln:3:44, parent:prim_cipher_pkg::
+  |vpiParamAssign:
+  \_param_assign: , line:18:32, endln:19:78, parent:prim_cipher_pkg::
+    |vpiRhs:
+    \_operation: , line:18:53, endln:19:78
+      |vpiOpType:33
+      |vpiOperand:
+      \_constant: , line:18:54, endln:18:74
+        |vpiDecompile:64'hC0AC29B7C97C50DD
+        |vpiSize:64
+        |HEX:C0AC29B7C97C50DD
+        |vpiConstType:5
+      |vpiOperand:
+      \_constant: , line:19:57, endln:19:77
+        |vpiDecompile:64'hD3B5A399CA0C2399
+        |vpiSize:64
+        |HEX:D3B5A399CA0C2399
+        |vpiConstType:5
+    |vpiLhs:
+    \_parameter: (prim_cipher_pkg::PRINCE_ROUND_CONST), line:18:32, endln:18:50, parent:prim_cipher_pkg::
+  |vpiDefName:prim_cipher_pkg
+  |vpiTop:1
+  |vpiTaskFunc:
+  \_function: (prim_cipher_pkg::sbox4_64bit), line:8:3, endln:15:28, parent:prim_cipher_pkg::
+    |vpiName:sbox4_64bit
+    |vpiFullName:prim_cipher_pkg::sbox4_64bit
+    |vpiVariables:
+    \_logic_var: (prim_cipher_pkg::sbox4_64bit::state_out), line:9:18, endln:9:27, parent:prim_cipher_pkg::sbox4_64bit
+      |vpiTypespec:
+      \_logic_typespec: , line:9:5, endln:9:10
+        |vpiInstance:
+        \_package: prim_cipher_pkg (prim_cipher_pkg::) dut.sv:1:1: , endln:23:29, parent:work@top
+        |vpiRange:
+        \_range: , line:9:12, endln:9:16, parent:prim_cipher_pkg::sbox4_64bit
+          |vpiLeftRange:
+          \_constant: , line:9:12, endln:9:14
+            |vpiDecompile:63
+            |vpiSize:64
+            |UINT:63
+            |vpiConstType:9
+          |vpiRightRange:
+          \_constant: , line:9:15, endln:9:16
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+      |vpiName:state_out
+      |vpiFullName:prim_cipher_pkg::sbox4_64bit::state_out
+    |vpiVisibility:1
+    |vpiAutomatic:1
+    |vpiReturn:
+    \_logic_var: , line:8:22, endln:8:34
+      |vpiTypespec:
+      \_logic_typespec: , line:8:22, endln:8:27
+        |vpiInstance:
+        \_package: prim_cipher_pkg (prim_cipher_pkg::) dut.sv:1:1: , endln:23:29, parent:work@top
+        |vpiRange:
+        \_range: , line:8:29, endln:8:33
+          |vpiLeftRange:
+          \_constant: , line:8:29, endln:8:31
+            |vpiDecompile:63
+            |vpiSize:64
+            |UINT:63
+            |vpiConstType:9
+          |vpiRightRange:
+          \_constant: , line:8:32, endln:8:33
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+    |vpiIODecl:
+    \_io_decl: (state_in), line:8:60, endln:8:68, parent:prim_cipher_pkg::sbox4_64bit
+      |vpiDirection:1
+      |vpiName:state_in
+      |vpiTypedef:
+      \_logic_typespec: , line:8:47, endln:8:52
+        |vpiInstance:
+        \_package: prim_cipher_pkg (prim_cipher_pkg::) dut.sv:1:1: , endln:23:29, parent:work@top
+        |vpiRange:
+        \_range: , line:8:54, endln:8:58
+          |vpiLeftRange:
+          \_constant: , line:8:54, endln:8:56
+            |vpiDecompile:63
+            |vpiSize:64
+            |UINT:63
+            |vpiConstType:9
+          |vpiRightRange:
+          \_constant: , line:8:57, endln:8:58
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+    |vpiIODecl:
+    \_io_decl: (sbox4), line:8:88, endln:8:93, parent:prim_cipher_pkg::sbox4_64bit
+      |vpiDirection:1
+      |vpiName:sbox4
+      |vpiTypedef:
+      \_logic_typespec: , line:8:70, endln:8:75
+        |vpiInstance:
+        \_package: prim_cipher_pkg (prim_cipher_pkg::) dut.sv:1:1: , endln:23:29, parent:work@top
+        |vpiRange:
+        \_range: , line:8:77, endln:8:81
+          |vpiLeftRange:
+          \_constant: , line:8:77, endln:8:79
+            |vpiDecompile:15
+            |vpiSize:64
+            |UINT:15
+            |vpiConstType:9
+          |vpiRightRange:
+          \_constant: , line:8:80, endln:8:81
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+        |vpiRange:
+        \_range: , line:8:83, endln:8:86
+          |vpiLeftRange:
+          \_constant: , line:8:83, endln:8:84
+            |vpiDecompile:3
+            |vpiSize:64
+            |UINT:3
+            |vpiConstType:9
+          |vpiRightRange:
+          \_constant: , line:8:85, endln:8:86
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+    |vpiStmt:
+    \_begin: (prim_cipher_pkg::sbox4_64bit), parent:prim_cipher_pkg::sbox4_64bit
+      |vpiFullName:prim_cipher_pkg::sbox4_64bit
+      |vpiVariables:
+      \_logic_var: (prim_cipher_pkg::sbox4_64bit::state_out), line:9:18, endln:9:27, parent:prim_cipher_pkg::sbox4_64bit
+        |vpiTypespec:
+        \_logic_typespec: , line:9:5, endln:9:10
+        |vpiName:state_out
+        |vpiFullName:prim_cipher_pkg::sbox4_64bit::state_out
+      |vpiStmt:
+      \_for_stmt: (prim_cipher_pkg::sbox4_64bit), line:11:5, endln:11:8, parent:prim_cipher_pkg::sbox4_64bit
+        |vpiFullName:prim_cipher_pkg::sbox4_64bit
+        |vpiForInitStmt:
+        \_assign_stmt: , line:11:10, endln:11:19, parent:prim_cipher_pkg::sbox4_64bit
+          |vpiRhs:
+          \_constant: , line:11:18, endln:11:19
+            |vpiDecompile:0
+            |vpiSize:64
+            |UINT:0
+            |vpiConstType:9
+          |vpiLhs:
+          \_int_var: (prim_cipher_pkg::sbox4_64bit::k), line:11:10, endln:11:13
+            |vpiTypespec:
+            \_int_typespec: , line:11:10, endln:11:13
+              |vpiInstance:
+              \_package: prim_cipher_pkg (prim_cipher_pkg::) dut.sv:1:1: , endln:23:29, parent:work@top
+              |vpiSigned:1
+            |vpiName:k
+            |vpiFullName:prim_cipher_pkg::sbox4_64bit::k
+        |vpiForIncStmt:
+        \_operation: , line:11:31, endln:11:34, parent:prim_cipher_pkg::sbox4_64bit
+          |vpiOpType:62
+          |vpiOperand:
+          \_ref_obj: (prim_cipher_pkg::sbox4_64bit::k), line:11:31, endln:11:32
+            |vpiName:k
+            |vpiFullName:prim_cipher_pkg::sbox4_64bit::k
+            |vpiActual:
+            \_int_var: (prim_cipher_pkg::sbox4_64bit::k), line:11:10, endln:11:13
+              |vpiTypespec:
+              \_int_typespec: , line:11:10, endln:11:13
+              |vpiName:k
+              |vpiFullName:prim_cipher_pkg::sbox4_64bit::k
+        |vpiCondition:
+        \_operation: , line:11:21, endln:11:29, parent:prim_cipher_pkg::sbox4_64bit
+          |vpiOpType:20
+          |vpiOperand:
+          \_ref_obj: (prim_cipher_pkg::sbox4_64bit::k), line:11:21, endln:11:22
+            |vpiName:k
+            |vpiFullName:prim_cipher_pkg::sbox4_64bit::k
+            |vpiActual:
+            \_int_var: (prim_cipher_pkg::sbox4_64bit::k), line:11:10, endln:11:13
+          |vpiOperand:
+          \_operation: , line:11:25, endln:11:29
+            |vpiOpType:12
+            |vpiOperand:
+            \_constant: , line:11:25, endln:11:27
+              |vpiDecompile:64
+              |vpiSize:64
+              |UINT:64
+              |vpiConstType:9
+            |vpiOperand:
+            \_constant: , line:11:28, endln:11:29
+              |vpiDecompile:4
+              |vpiSize:64
+              |UINT:4
+              |vpiConstType:9
+        |vpiStmt:
+        \_begin: (prim_cipher_pkg::sbox4_64bit), line:11:36, endln:13:8, parent:prim_cipher_pkg::sbox4_64bit
+          |vpiFullName:prim_cipher_pkg::sbox4_64bit
+          |vpiStmt:
+          \_assignment: , line:12:7, endln:12:54, parent:prim_cipher_pkg::sbox4_64bit
+            |vpiOpType:82
+            |vpiBlocking:1
+            |vpiRhs:
+            \_bit_select: (prim_cipher_pkg::sbox4_64bit::sbox4), line:12:29, endln:12:54, parent:prim_cipher_pkg::sbox4_64bit::sbox4
+              |vpiParent:
+              \_ref_obj: (prim_cipher_pkg::sbox4_64bit::sbox4), parent:prim_cipher_pkg::sbox4_64bit::sbox4
+                |vpiName:sbox4
+                |vpiFullName:prim_cipher_pkg::sbox4_64bit::sbox4
+                |vpiActual:
+                \_io_decl: (sbox4), line:8:88, endln:8:93, parent:prim_cipher_pkg::sbox4_64bit
+              |vpiName:sbox4
+              |vpiFullName:prim_cipher_pkg::sbox4_64bit::sbox4
+              |vpiIndex:
+              \_indexed_part_select: , line:12:44, endln:12:52, parent:state_in
+                |vpiParent:
+                \_ref_obj: (state_in), parent:state_in
+                  |vpiName:state_in
+                  |vpiActual:
+                  \_io_decl: (state_in), line:8:60, endln:8:68, parent:prim_cipher_pkg::sbox4_64bit
+                |vpiConstantSelect:1
+                |vpiIndexedPartSelectType:1
+                |vpiBaseExpr:
+                \_operation: , line:12:44, endln:12:47
+                  |vpiOpType:25
+                  |vpiOperand:
+                  \_ref_obj: (state_in.k), line:12:44, endln:12:45
+                    |vpiName:k
+                    |vpiFullName:state_in.k
+                    |vpiActual:
+                    \_int_var: (prim_cipher_pkg::sbox4_64bit::k), line:11:10, endln:11:13
+                  |vpiOperand:
+                  \_constant: , line:12:46, endln:12:47
+                    |vpiDecompile:4
+                    |vpiSize:64
+                    |UINT:4
+                    |vpiConstType:9
+                |vpiWidthExpr:
+                \_constant: , line:12:51, endln:12:52
+                  |vpiDecompile:4
+                  |vpiSize:64
+                  |UINT:4
+                  |vpiConstType:9
+            |vpiLhs:
+            \_indexed_part_select: , line:12:7, endln:12:26, parent:prim_cipher_pkg::sbox4_64bit::state_out
+              |vpiParent:
+              \_ref_obj: (prim_cipher_pkg::sbox4_64bit::state_out), parent:prim_cipher_pkg::sbox4_64bit::state_out
+                |vpiName:state_out
+                |vpiFullName:prim_cipher_pkg::sbox4_64bit::state_out
+                |vpiActual:
+                \_logic_var: (prim_cipher_pkg::sbox4_64bit::state_out), line:9:18, endln:9:27
+                  |vpiTypespec:
+                  \_logic_typespec: , line:9:5, endln:9:10
+                  |vpiName:state_out
+                  |vpiFullName:prim_cipher_pkg::sbox4_64bit::state_out
+              |vpiConstantSelect:1
+              |vpiIndexedPartSelectType:1
+              |vpiBaseExpr:
+              \_operation: , line:12:17, endln:12:20
+                |vpiOpType:25
+                |vpiOperand:
+                \_ref_obj: (prim_cipher_pkg::sbox4_64bit::state_out::k), line:12:17, endln:12:18
+                  |vpiName:k
+                  |vpiFullName:prim_cipher_pkg::sbox4_64bit::state_out::k
+                  |vpiActual:
+                  \_int_var: (prim_cipher_pkg::sbox4_64bit::k), line:11:10, endln:11:13
+                |vpiOperand:
+                \_constant: , line:12:19, endln:12:20
+                  |vpiDecompile:4
+                  |vpiSize:64
+                  |UINT:4
+                  |vpiConstType:9
+              |vpiWidthExpr:
+              \_constant: , line:12:24, endln:12:25
+                |vpiDecompile:4
+                |vpiSize:64
+                |UINT:4
+                |vpiConstType:9
+      |vpiStmt:
+      \_return_stmt: , line:14:5, endln:14:11, parent:prim_cipher_pkg::sbox4_64bit
+        |vpiCondition:
+        \_ref_obj: (prim_cipher_pkg::sbox4_64bit::state_out), line:14:12, endln:14:21
+          |vpiName:state_out
+          |vpiFullName:prim_cipher_pkg::sbox4_64bit::state_out
+          |vpiActual:
+          \_logic_var: (prim_cipher_pkg::sbox4_64bit::state_out), line:9:18, endln:9:27
+    |vpiInstance:
+    \_package: prim_cipher_pkg (prim_cipher_pkg::) dut.sv:1:1: , endln:23:29, parent:work@top
+|uhdmallClasses:
+\_class_defn: (work@mailbox), file:builtin.sv, parent:work@top
+  |vpiName:work@mailbox
+  |vpiMethod:
+  \_function: (work@mailbox::new), parent:work@mailbox
+    |vpiName:new
+    |vpiFullName:work@mailbox::new
+    |vpiMethod:1
+    |vpiReturn:
+    \_class_var: 
+      |vpiTypespec:
+      \_class_typespec: 
+        |vpiClassDefn:
+        \_class_defn: (work@mailbox), file:builtin.sv, parent:work@top
+    |vpiIODecl:
+    \_io_decl: (bound), parent:work@mailbox::new
+      |vpiDirection:1
+      |vpiName:bound
+      |vpiExpr:
+      \_constant: 
+        |vpiDecompile:0
+        |vpiSize:64
+        |UINT:0
+        |vpiConstType:9
+      |vpiTypedef:
+      \_int_typespec: 
+        |vpiSigned:1
+  |vpiMethod:
+  \_function: (work@mailbox::num), parent:work@mailbox
+    |vpiName:num
+    |vpiFullName:work@mailbox::num
+    |vpiMethod:1
+    |vpiVisibility:1
+    |vpiReturn:
+    \_int_var: 
+      |vpiTypespec:
+      \_int_typespec: 
+        |vpiSigned:1
+  |vpiMethod:
+  \_task: (work@mailbox::put), parent:work@mailbox
+    |vpiName:put
+    |vpiFullName:work@mailbox::put
+    |vpiMethod:1
+    |vpiVisibility:1
+    |vpiIODecl:
+    \_io_decl: (message), parent:work@mailbox::put
+      |vpiDirection:1
+      |vpiName:message
+  |vpiMethod:
+  \_function: (work@mailbox::try_put), parent:work@mailbox
+    |vpiName:try_put
+    |vpiFullName:work@mailbox::try_put
+    |vpiMethod:1
+    |vpiVisibility:1
+    |vpiReturn:
+    \_logic_var: 
+    |vpiIODecl:
+    \_io_decl: (message), parent:work@mailbox::try_put
+      |vpiDirection:1
+      |vpiName:message
+  |vpiMethod:
+  \_task: (work@mailbox::get), parent:work@mailbox
+    |vpiName:get
+    |vpiFullName:work@mailbox::get
+    |vpiMethod:1
+    |vpiVisibility:1
+    |vpiIODecl:
+    \_io_decl: (message), parent:work@mailbox::get
+      |vpiDirection:6
+      |vpiName:message
+  |vpiMethod:
+  \_function: (work@mailbox::try_get), parent:work@mailbox
+    |vpiName:try_get
+    |vpiFullName:work@mailbox::try_get
+    |vpiMethod:1
+    |vpiVisibility:1
+    |vpiReturn:
+    \_int_var: 
+      |vpiTypespec:
+      \_int_typespec: 
+        |vpiSigned:1
+    |vpiIODecl:
+    \_io_decl: (message), parent:work@mailbox::try_get
+      |vpiDirection:6
+      |vpiName:message
+  |vpiMethod:
+  \_task: (work@mailbox::peek), parent:work@mailbox
+    |vpiName:peek
+    |vpiFullName:work@mailbox::peek
+    |vpiMethod:1
+    |vpiVisibility:1
+    |vpiIODecl:
+    \_io_decl: (message), parent:work@mailbox::peek
+      |vpiDirection:6
+      |vpiName:message
+  |vpiMethod:
+  \_function: (work@mailbox::try_peek), parent:work@mailbox
+    |vpiName:try_peek
+    |vpiFullName:work@mailbox::try_peek
+    |vpiMethod:1
+    |vpiVisibility:1
+    |vpiReturn:
+    \_int_var: 
+      |vpiTypespec:
+      \_int_typespec: 
+        |vpiSigned:1
+    |vpiIODecl:
+    \_io_decl: (message), parent:work@mailbox::try_peek
+      |vpiDirection:6
+      |vpiName:message
+|uhdmallClasses:
+\_class_defn: (work@process), file:builtin.sv, parent:work@top
+  |vpiName:work@process
+  |vpiTypedef:
+  \_enum_typespec: (state), parent:work@process
+    |vpiName:state
+    |vpiEnumConst:
+    \_enum_const: (FINISHED), parent:state
+      |vpiName:FINISHED
+      |INT:0
+      |vpiDecompile:0
+      |vpiSize:64
+    |vpiEnumConst:
+    \_enum_const: (RUNNING), parent:state
+      |vpiName:RUNNING
+      |INT:1
+      |vpiDecompile:1
+      |vpiSize:64
+    |vpiEnumConst:
+    \_enum_const: (WAITING), parent:state
+      |vpiName:WAITING
+      |INT:2
+      |vpiDecompile:2
+      |vpiSize:64
+    |vpiEnumConst:
+    \_enum_const: (SUSPENDED), parent:state
+      |vpiName:SUSPENDED
+      |INT:3
+      |vpiDecompile:3
+      |vpiSize:64
+    |vpiEnumConst:
+    \_enum_const: (KILLED), parent:state
+      |vpiName:KILLED
+      |INT:4
+      |vpiDecompile:4
+      |vpiSize:64
+  |vpiMethod:
+  \_function: (work@process::self), parent:work@process
+    |vpiName:self
+    |vpiFullName:work@process::self
+    |vpiMethod:1
+    |vpiVisibility:1
+    |vpiReturn:
+    \_class_var: 
+      |vpiTypespec:
+      \_class_typespec: 
+        |vpiClassDefn:
+        \_class_defn: (work@process), file:builtin.sv, parent:work@top
+  |vpiMethod:
+  \_function: (work@process::status), parent:work@process
+    |vpiName:status
+    |vpiFullName:work@process::status
+    |vpiMethod:1
+    |vpiVisibility:1
+    |vpiReturn:
+    \_enum_var: 
+      |vpiTypespec:
+      \_enum_typespec: (state), parent:work@process
+        |vpiName:state
+        |vpiEnumConst:
+        \_enum_const: (FINISHED)
+          |vpiName:FINISHED
+          |INT:0
+          |vpiDecompile:0
+          |vpiSize:64
+        |vpiEnumConst:
+        \_enum_const: (RUNNING)
+          |vpiName:RUNNING
+          |INT:1
+          |vpiDecompile:1
+          |vpiSize:64
+        |vpiEnumConst:
+        \_enum_const: (WAITING)
+          |vpiName:WAITING
+          |INT:2
+          |vpiDecompile:2
+          |vpiSize:64
+        |vpiEnumConst:
+        \_enum_const: (SUSPENDED)
+          |vpiName:SUSPENDED
+          |INT:3
+          |vpiDecompile:3
+          |vpiSize:64
+        |vpiEnumConst:
+        \_enum_const: (KILLED)
+          |vpiName:KILLED
+          |INT:4
+          |vpiDecompile:4
+          |vpiSize:64
+  |vpiMethod:
+  \_task: (work@process::kill), parent:work@process
+    |vpiName:kill
+    |vpiFullName:work@process::kill
+    |vpiMethod:1
+    |vpiVisibility:1
+  |vpiMethod:
+  \_task: (work@process::await), parent:work@process
+    |vpiName:await
+    |vpiFullName:work@process::await
+    |vpiMethod:1
+    |vpiVisibility:1
+  |vpiMethod:
+  \_task: (work@process::suspend), parent:work@process
+    |vpiName:suspend
+    |vpiFullName:work@process::suspend
+    |vpiMethod:1
+    |vpiVisibility:1
+  |vpiMethod:
+  \_task: (work@process::resume), parent:work@process
+    |vpiName:resume
+    |vpiFullName:work@process::resume
+    |vpiMethod:1
+    |vpiVisibility:1
+|uhdmallClasses:
+\_class_defn: (work@semaphore), file:builtin.sv, parent:work@top
+  |vpiName:work@semaphore
+  |vpiMethod:
+  \_function: (work@semaphore::new), parent:work@semaphore
+    |vpiName:new
+    |vpiFullName:work@semaphore::new
+    |vpiMethod:1
+    |vpiReturn:
+    \_class_var: 
+      |vpiTypespec:
+      \_class_typespec: 
+        |vpiClassDefn:
+        \_class_defn: (work@semaphore), file:builtin.sv, parent:work@top
+    |vpiIODecl:
+    \_io_decl: (keyCount), parent:work@semaphore::new
+      |vpiDirection:1
+      |vpiName:keyCount
+      |vpiExpr:
+      \_constant: 
+        |vpiDecompile:0
+        |vpiSize:64
+        |UINT:0
+        |vpiConstType:9
+      |vpiTypedef:
+      \_int_typespec: 
+        |vpiSigned:1
+  |vpiMethod:
+  \_task: (work@semaphore::put), parent:work@semaphore
+    |vpiName:put
+    |vpiFullName:work@semaphore::put
+    |vpiMethod:1
+    |vpiVisibility:1
+    |vpiIODecl:
+    \_io_decl: (keyCount), parent:work@semaphore::put
+      |vpiDirection:1
+      |vpiName:keyCount
+      |vpiExpr:
+      \_constant: 
+        |vpiDecompile:1
+        |vpiSize:64
+        |UINT:1
+        |vpiConstType:9
+      |vpiTypedef:
+      \_int_typespec: 
+        |vpiSigned:1
+  |vpiMethod:
+  \_task: (work@semaphore::get), parent:work@semaphore
+    |vpiName:get
+    |vpiFullName:work@semaphore::get
+    |vpiMethod:1
+    |vpiVisibility:1
+    |vpiIODecl:
+    \_io_decl: (keyCount), parent:work@semaphore::get
+      |vpiDirection:1
+      |vpiName:keyCount
+      |vpiExpr:
+      \_constant: 
+        |vpiDecompile:1
+        |vpiSize:64
+        |UINT:1
+        |vpiConstType:9
+      |vpiTypedef:
+      \_int_typespec: 
+        |vpiSigned:1
+  |vpiMethod:
+  \_function: (work@semaphore::try_get), parent:work@semaphore
+    |vpiName:try_get
+    |vpiFullName:work@semaphore::try_get
+    |vpiMethod:1
+    |vpiVisibility:1
+    |vpiReturn:
+    \_int_var: 
+      |vpiTypespec:
+      \_int_typespec: 
+        |vpiSigned:1
+    |vpiIODecl:
+    \_io_decl: (keyCount), parent:work@semaphore::try_get
+      |vpiDirection:1
+      |vpiName:keyCount
+      |vpiExpr:
+      \_constant: 
+        |vpiDecompile:1
+        |vpiSize:64
+        |UINT:1
+        |vpiConstType:9
+      |vpiTypedef:
+      \_int_typespec: 
+        |vpiSigned:1
+|uhdmallModules:
+\_module: work@top (work@top) dut.sv:26:1: , endln:42:10, parent:work@top
+  |vpiFullName:work@top
+  |vpiDefName:work@top
+  |vpiProcess:
+  \_always: , line:31:2, endln:38:13, parent:work@top
+    |vpiStmt:
+    \_named_begin: (work@top.p_post_round_xor), line:31:14, endln:38:13
+      |vpiName:p_post_round_xor
+      |vpiFullName:work@top.p_post_round_xor
+      |vpiStmt:
+      \_assignment: , line:32:12, endln:35:37, parent:work@top.p_post_round_xor
+        |vpiOpType:82
+        |vpiBlocking:1
+        |vpiRhs:
+        \_operation: , line:32:22, endln:35:37, parent:work@top.p_post_round_xor
+          |vpiOpType:30
+          |vpiOperand:
+          \_bit_select: (work@top.p_post_round_xor.data_state), line:32:22, endln:32:51, parent:work@top.p_post_round_xor.data_state
+            |vpiParent:
+            \_ref_obj: (work@top.p_post_round_xor.data_state)
+              |vpiName:data_state
+              |vpiFullName:work@top.p_post_round_xor.data_state
+            |vpiName:data_state
+            |vpiFullName:work@top.p_post_round_xor.data_state
+            |vpiIndex:
+            \_operation: , line:32:33, endln:32:50, parent:work@top.p_post_round_xor
+              |vpiOpType:24
+              |vpiOperand:
+              \_operation: , line:32:33, endln:32:48, parent:work@top.p_post_round_xor
+                |vpiOpType:25
+                |vpiOperand:
+                \_constant: , line:32:33, endln:32:34
+                  |vpiDecompile:2
+                  |vpiSize:64
+                  |UINT:2
+                  |vpiConstType:9
+                |vpiOperand:
+                \_ref_obj: (work@top.p_post_round_xor.NumRoundsHalf), line:32:35, endln:32:48
+                  |vpiName:NumRoundsHalf
+                  |vpiFullName:work@top.p_post_round_xor.NumRoundsHalf
+                  |vpiActual:
+                  \_logic_net: (NumRoundsHalf)
+                    |vpiName:NumRoundsHalf
+                    |vpiNetType:1
+              |vpiOperand:
+              \_constant: , line:32:49, endln:32:50
+                |vpiDecompile:1
+                |vpiSize:64
+                |UINT:1
+                |vpiConstType:9
+          |vpiOperand:
+          \_var_select: (prim_cipher_pkg::PRINCE_ROUND_CONST), line:33:22, endln:35:37, parent:prim_cipher_pkg::PRINCE_ROUND_CONST
+            |vpiParent:
+            \_parameter: (prim_cipher_pkg::PRINCE_ROUND_CONST), line:18:32, endln:18:50, parent:prim_cipher_pkg::
+            |vpiFullName:prim_cipher_pkg::PRINCE_ROUND_CONST
+            |vpiIndex:
+            \_constant: , line:34:23, endln:34:25, parent:prim_cipher_pkg::PRINCE_ROUND_CONST
+              |vpiDecompile:11
+              |vpiSize:64
+              |UINT:11
+              |vpiConstType:9
+            |vpiIndex:
+            \_part_select: , line:35:23, endln:35:36, parent:prim_cipher_pkg::PRINCE_ROUND_CONST
+              |vpiParent:
+              \_var_select: (prim_cipher_pkg::PRINCE_ROUND_CONST), line:33:22, endln:35:37, parent:prim_cipher_pkg::PRINCE_ROUND_CONST
+              |vpiConstantSelect:1
+              |vpiLeftRange:
+              \_operation: , line:35:23, endln:35:34
+                |vpiOpType:11
+                |vpiOperand:
+                \_ref_obj: (work@top.p_post_round_xor.DataWidth), line:35:23, endln:35:32
+                  |vpiName:DataWidth
+                  |vpiFullName:work@top.p_post_round_xor.DataWidth
+                  |vpiActual:
+                  \_logic_net: (DataWidth)
+                    |vpiName:DataWidth
+                    |vpiNetType:1
+                |vpiOperand:
+                \_constant: , line:35:33, endln:35:34
+                  |vpiDecompile:1
+                  |vpiSize:64
+                  |UINT:1
+                  |vpiConstType:9
+              |vpiRightRange:
+              \_constant: , line:35:35, endln:35:36
+                |vpiDecompile:0
+                |vpiSize:64
+                |UINT:0
+                |vpiConstType:9
+        |vpiLhs:
+        \_ref_obj: (work@top.p_post_round_xor.data_o), line:32:12, endln:32:18, parent:work@top.p_post_round_xor
+          |vpiName:data_o
+          |vpiFullName:work@top.p_post_round_xor.data_o
+          |vpiActual:
+          \_logic_net: (data_o)
+            |vpiName:data_o
+            |vpiNetType:1
+      |vpiStmt:
+      \_assignment: , line:36:11, endln:36:23, parent:work@top.p_post_round_xor
+        |vpiOpType:30
+        |vpiBlocking:1
+        |vpiRhs:
+        \_ref_obj: (work@top.p_post_round_xor.k1), line:36:21, endln:36:23, parent:work@top.p_post_round_xor
+          |vpiName:k1
+          |vpiFullName:work@top.p_post_round_xor.k1
+          |vpiActual:
+          \_logic_net: (k1)
+            |vpiName:k1
+            |vpiNetType:1
+        |vpiLhs:
+        \_ref_obj: (work@top.p_post_round_xor.data_o), line:36:11, endln:36:17, parent:work@top.p_post_round_xor
+          |vpiName:data_o
+          |vpiFullName:work@top.p_post_round_xor.data_o
+          |vpiActual:
+          \_logic_net: (data_o)
+      |vpiStmt:
+      \_assignment: , line:37:12, endln:37:30, parent:work@top.p_post_round_xor
+        |vpiOpType:30
+        |vpiBlocking:1
+        |vpiRhs:
+        \_ref_obj: (work@top.p_post_round_xor.k0_prime), line:37:22, endln:37:30, parent:work@top.p_post_round_xor
+          |vpiName:k0_prime
+          |vpiFullName:work@top.p_post_round_xor.k0_prime
+          |vpiActual:
+          \_logic_net: (k0_prime)
+            |vpiName:k0_prime
+            |vpiNetType:1
+        |vpiLhs:
+        \_ref_obj: (work@top.p_post_round_xor.data_o), line:37:12, endln:37:18, parent:work@top.p_post_round_xor
+          |vpiName:data_o
+          |vpiFullName:work@top.p_post_round_xor.data_o
+          |vpiActual:
+          \_logic_net: (data_o)
+    |vpiAlwaysType:2
+  |vpiContAssign:
+  \_cont_assign: , line:28:8, endln:29:55, parent:work@top
+    |vpiRhs:
+    \_func_call: (prim_cipher_pkg::sbox4_64bit), line:28:26, endln:28:41
+      |vpiArgument:
+      \_ref_obj: (work@top.data_state_xor), line:28:55, endln:28:69, parent:prim_cipher_pkg::sbox4_64bit
+        |vpiName:data_state_xor
+        |vpiFullName:work@top.data_state_xor
+        |vpiActual:
+        \_logic_net: (data_state_xor)
+          |vpiName:data_state_xor
+          |vpiNetType:1
+      |vpiArgument:
+      \_ref_obj: (prim_cipher_pkg::PRESENT_SBOX4), line:29:24, endln:29:41, parent:prim_cipher_pkg::sbox4_64bit
+        |vpiName:prim_cipher_pkg::PRESENT_SBOX4
+        |vpiActual:
+        \_parameter: (prim_cipher_pkg::PRESENT_SBOX4), line:3:31, endln:3:44, parent:prim_cipher_pkg::
+      |vpiName:prim_cipher_pkg::sbox4_64bit
+      |vpiFunction:
+      \_function: (prim_cipher_pkg::sbox4_64bit), line:8:3, endln:15:28, parent:prim_cipher_pkg::
+    |vpiLhs:
+    \_ref_obj: (work@top.data_state_sbox), line:28:8, endln:28:23
+      |vpiName:data_state_sbox
+      |vpiFullName:work@top.data_state_sbox
+      |vpiActual:
+      \_logic_net: (data_state_sbox)
+        |vpiName:data_state_sbox
+        |vpiNetType:1
+|uhdmtopModules:
+\_module: work@top (work@top) dut.sv:26:1: , endln:42:10
+  |vpiName:work@top
+  |vpiDefName:work@top
+  |vpiTop:1
+  |vpiNet:
+  \_logic_net: (data_state_sbox)
+  |vpiNet:
+  \_logic_net: (data_state_xor)
+  |vpiNet:
+  \_logic_net: (data_o)
+  |vpiNet:
+  \_logic_net: (NumRoundsHalf)
+  |vpiNet:
+  \_logic_net: (DataWidth)
+  |vpiNet:
+  \_logic_net: (k1)
+  |vpiNet:
+  \_logic_net: (k0_prime)
+  |vpiTopModule:1
+  |vpiProcess:
+  \_always: , line:31:2, endln:38:13, parent:work@top
+    |vpiStmt:
+    \_named_begin: (work@top.p_post_round_xor), line:31:14, endln:38:13
+      |vpiName:p_post_round_xor
+      |vpiFullName:work@top.p_post_round_xor
+      |vpiStmt:
+      \_assignment: , line:32:12, endln:35:37, parent:work@top.p_post_round_xor
+        |vpiOpType:82
+        |vpiBlocking:1
+        |vpiRhs:
+        \_operation: , line:32:22, endln:35:37
+          |vpiOpType:30
+          |vpiOperand:
+          \_bit_select: (work@top.p_post_round_xor.data_state), line:32:22, endln:32:51, parent:work@top.p_post_round_xor.data_state
+            |vpiParent:
+            \_ref_obj: (work@top.p_post_round_xor.data_state), parent:work@top.p_post_round_xor.data_state
+              |vpiName:data_state
+              |vpiFullName:work@top.p_post_round_xor.data_state
+            |vpiName:data_state
+            |vpiFullName:work@top.p_post_round_xor.data_state
+            |vpiIndex:
+            \_operation: , line:32:33, endln:32:50, parent:work@top.p_post_round_xor.data_state
+              |vpiOpType:24
+              |vpiOperand:
+              \_operation: , line:32:33, endln:32:48
+                |vpiOpType:25
+                |vpiOperand:
+                \_constant: , line:32:33, endln:32:34
+                |vpiOperand:
+                \_ref_obj: (work@top.p_post_round_xor.data_state.NumRoundsHalf), line:32:35, endln:32:48
+                  |vpiName:NumRoundsHalf
+                  |vpiFullName:work@top.p_post_round_xor.data_state.NumRoundsHalf
+                  |vpiActual:
+                  \_logic_net: (NumRoundsHalf)
+              |vpiOperand:
+              \_constant: , line:32:49, endln:32:50
+          |vpiOperand:
+          \_var_select: (work@top.p_post_round_xor), line:33:22, endln:35:37
+            |vpiParent:
+            \_operation: , line:32:22, endln:35:37
+            |vpiFullName:work@top.p_post_round_xor
+            |vpiIndex:
+            \_constant: , line:34:23, endln:34:25, parent:prim_cipher_pkg::PRINCE_ROUND_CONST
+            |vpiIndex:
+            \_part_select: , line:35:23, endln:35:36, parent:prim_cipher_pkg::PRINCE_ROUND_CONST
+              |vpiParent:
+              \_ref_obj: (prim_cipher_pkg::PRINCE_ROUND_CONST), parent:prim_cipher_pkg::PRINCE_ROUND_CONST
+                |vpiFullName:prim_cipher_pkg::PRINCE_ROUND_CONST
+              |vpiConstantSelect:1
+              |vpiLeftRange:
+              \_operation: , line:35:23, endln:35:34
+                |vpiOpType:11
+                |vpiOperand:
+                \_ref_obj: (prim_cipher_pkg::PRINCE_ROUND_CONST::DataWidth), line:35:23, endln:35:32
+                  |vpiName:DataWidth
+                  |vpiFullName:prim_cipher_pkg::PRINCE_ROUND_CONST::DataWidth
+                  |vpiActual:
+                  \_logic_net: (DataWidth)
+                |vpiOperand:
+                \_constant: , line:35:33, endln:35:34
+              |vpiRightRange:
+              \_constant: , line:35:35, endln:35:36
+        |vpiLhs:
+        \_ref_obj: (work@top.p_post_round_xor.data_o), line:32:12, endln:32:18
+          |vpiName:data_o
+          |vpiFullName:work@top.p_post_round_xor.data_o
+          |vpiActual:
+          \_logic_net: (data_o)
+      |vpiStmt:
+      \_assignment: , line:36:11, endln:36:23, parent:work@top.p_post_round_xor
+        |vpiOpType:30
+        |vpiBlocking:1
+        |vpiRhs:
+        \_ref_obj: (work@top.p_post_round_xor.k1), line:36:21, endln:36:23
+          |vpiName:k1
+          |vpiFullName:work@top.p_post_round_xor.k1
+          |vpiActual:
+          \_logic_net: (k1)
+        |vpiLhs:
+        \_ref_obj: (work@top.p_post_round_xor.data_o), line:36:11, endln:36:17
+          |vpiName:data_o
+          |vpiFullName:work@top.p_post_round_xor.data_o
+          |vpiActual:
+          \_logic_net: (data_o)
+      |vpiStmt:
+      \_assignment: , line:37:12, endln:37:30, parent:work@top.p_post_round_xor
+        |vpiOpType:30
+        |vpiBlocking:1
+        |vpiRhs:
+        \_ref_obj: (work@top.p_post_round_xor.k0_prime), line:37:22, endln:37:30
+          |vpiName:k0_prime
+          |vpiFullName:work@top.p_post_round_xor.k0_prime
+          |vpiActual:
+          \_logic_net: (k0_prime)
+        |vpiLhs:
+        \_ref_obj: (work@top.p_post_round_xor.data_o), line:37:12, endln:37:18
+          |vpiName:data_o
+          |vpiFullName:work@top.p_post_round_xor.data_o
+          |vpiActual:
+          \_logic_net: (data_o)
+    |vpiAlwaysType:2
+  |vpiContAssign:
+  \_cont_assign: , line:28:8, endln:29:55, parent:work@top
+    |vpiRhs:
+    \_func_call: (prim_cipher_pkg::sbox4_64bit), line:28:26, endln:28:41
+      |vpiArgument:
+      \_ref_obj: (work@top.data_state_xor), line:28:55, endln:28:69, parent:prim_cipher_pkg::sbox4_64bit
+        |vpiName:data_state_xor
+        |vpiFullName:work@top.data_state_xor
+        |vpiActual:
+        \_logic_net: (data_state_xor)
+      |vpiArgument:
+      \_ref_obj: (prim_cipher_pkg::PRESENT_SBOX4), line:29:24, endln:29:41, parent:prim_cipher_pkg::sbox4_64bit
+        |vpiName:prim_cipher_pkg::PRESENT_SBOX4
+        |vpiActual:
+        \_parameter: (prim_cipher_pkg::PRESENT_SBOX4), line:3:31, endln:3:44, parent:prim_cipher_pkg::
+      |vpiName:prim_cipher_pkg::sbox4_64bit
+      |vpiFunction:
+      \_function: (prim_cipher_pkg::sbox4_64bit), line:8:3, endln:15:28, parent:prim_cipher_pkg::
+    |vpiLhs:
+    \_ref_obj: (work@top.data_state_sbox), line:28:8, endln:28:23
+      |vpiName:data_state_sbox
+      |vpiFullName:work@top.data_state_sbox
+      |vpiActual:
+      \_logic_net: (data_state_sbox)
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 3
+[WARNING] : 2
+[   NOTE] : 5
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/PackageFuncCall/dut.sv | ${SURELOG_DIR}/build/regression/PackageFuncCall/roundtrip/dut_000.sv | 16 | 42 | 
+

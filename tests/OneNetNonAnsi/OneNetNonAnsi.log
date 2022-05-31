@@ -1,0 +1,358 @@
+[INF:CM0023] Creating log file ../../build/regression/OneNetNonAnsi/slpp_unit/surelog.log.
+
+[INF:CM0020] Separate compilation-unit mode is on.
+
+[WRN:PA0205] dut.v:1: No timescale set for "dut".
+
+[WRN:PA0205] tb.v:1: No timescale set for "tb".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0303] dut.v:1: Compile module "work@dut".
+
+[INF:CP0303] tb.v:1: Compile module "work@tb".
+
+[INF:EL0526] Design Elaboration...
+
+[NTE:EL0503] tb.v:1: Top level module "work@tb".
+
+[NTE:EL0508] Nb Top level modules: 1.
+
+[NTE:EL0509] Max instance depth: 2.
+
+[NTE:EL0510] Nb instances: 2.
+
+[NTE:EL0511] Nb leaf instances: 1.
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/OneNetNonAnsi/slpp_unit/surelog.uhdm ...
+
+[INF:UH0709] Writing UHDM Html Coverage: ../../build/regression/OneNetNonAnsi/slpp_unit/surelog.uhdm.chk.html ...
+
+[INF:UH0710] Loading UHDM DB: ../../build/regression/OneNetNonAnsi/slpp_unit/surelog.uhdm ...
+
+[INF:UH0711] Decompiling UHDM...
+
+====== UHDM =======
+design: (work@tb)
+|vpiName:work@tb
+|uhdmallModules:
+\_module: work@dut (work@dut) dut.v:1:1: , endln:7:10, parent:work@tb
+  |vpiFullName:work@dut
+  |vpiDefName:work@dut
+  |vpiNet:
+  \_logic_net: (work@dut.i), line:4:8, endln:4:9, parent:work@dut
+    |vpiName:i
+    |vpiFullName:work@dut.i
+    |vpiNetType:1
+  |vpiNet:
+  \_logic_net: (work@dut.o), line:5:7, endln:5:8, parent:work@dut
+    |vpiName:o
+    |vpiFullName:work@dut.o
+    |vpiNetType:48
+  |vpiPort:
+  \_port: (i), line:1:13, endln:1:14, parent:work@dut
+    |vpiName:i
+    |vpiDirection:1
+    |vpiLowConn:
+    \_ref_obj: 
+      |vpiActual:
+      \_logic_net: (work@dut.i), line:4:8, endln:4:9, parent:work@dut
+  |vpiPort:
+  \_port: (o), line:1:16, endln:1:17, parent:work@dut
+    |vpiName:o
+    |vpiDirection:2
+    |vpiLowConn:
+    \_ref_obj: 
+      |vpiActual:
+      \_logic_net: (work@dut.o), line:5:7, endln:5:8, parent:work@dut
+  |vpiContAssign:
+  \_cont_assign: , line:6:10, endln:6:15, parent:work@dut
+    |vpiRhs:
+    \_ref_obj: (work@dut.i), line:6:14, endln:6:15
+      |vpiName:i
+      |vpiFullName:work@dut.i
+      |vpiActual:
+      \_logic_net: (work@tb.dut1.i), line:4:8, endln:4:9, parent:work@tb.dut1
+        |vpiTypespec:
+        \_logic_typespec: , line:4:3, endln:4:7
+        |vpiName:i
+        |vpiFullName:work@tb.dut1.i
+        |vpiNetType:1
+    |vpiLhs:
+    \_ref_obj: (work@dut.o), line:6:10, endln:6:11
+      |vpiName:o
+      |vpiFullName:work@dut.o
+      |vpiActual:
+      \_logic_net: (work@tb.dut1.o), line:5:7, endln:5:8, parent:work@tb.dut1
+        |vpiTypespec:
+        \_logic_typespec: , line:5:3, endln:5:6
+        |vpiName:o
+        |vpiFullName:work@tb.dut1.o
+        |vpiNetType:48
+|uhdmallModules:
+\_module: work@tb (work@tb) tb.v:1:1: , endln:21:10, parent:work@tb
+  |vpiFullName:work@tb
+  |vpiDefName:work@tb
+  |vpiNet:
+  \_logic_net: (work@tb.i), line:2:9, endln:2:10, parent:work@tb
+    |vpiName:i
+    |vpiFullName:work@tb.i
+    |vpiNetType:36
+  |vpiNet:
+  \_logic_net: (work@tb.o), line:2:12, endln:2:13, parent:work@tb
+    |vpiName:o
+    |vpiFullName:work@tb.o
+    |vpiNetType:36
+  |vpiProcess:
+  \_initial: , line:4:3, endln:9:6, parent:work@tb
+    |vpiStmt:
+    \_begin: (work@tb), line:4:11, endln:9:6
+      |vpiFullName:work@tb
+      |vpiStmt:
+      \_sys_func_call: ($dumpfile), line:5:5, endln:5:26, parent:work@tb
+        |vpiArgument:
+        \_constant: , line:5:15, endln:5:25, parent:$dumpfile
+          |vpiDecompile:test.vcd
+          |vpiSize:8
+          |STRING:test.vcd
+          |vpiConstType:6
+        |vpiName:$dumpfile
+      |vpiStmt:
+      \_sys_func_call: ($dumpvars), line:6:5, endln:6:14, parent:work@tb
+        |vpiName:$dumpvars
+      |vpiStmt:
+      \_sys_func_call: ($monitor), line:7:5, endln:7:51, parent:work@tb
+        |vpiArgument:
+        \_constant: , line:7:14, endln:7:39, parent:$monitor
+          |vpiDecompile:@%0dns i = %0d, o = %0d
+          |vpiSize:23
+          |STRING:@%0dns i = %0d, o = %0d
+          |vpiConstType:6
+        |vpiArgument:
+        \_sys_func_call: ($time), line:7:40, endln:7:45, parent:$monitor
+          |vpiName:$time
+        |vpiArgument:
+        \_ref_obj: (work@tb.i), line:7:46, endln:7:47, parent:$monitor
+          |vpiName:i
+          |vpiFullName:work@tb.i
+          |vpiActual:
+          \_logic_var: (work@tb.i), line:2:9, endln:2:10, parent:work@tb
+            |vpiTypespec:
+            \_logic_typespec: , line:2:3, endln:2:8
+            |vpiName:i
+            |vpiFullName:work@tb.i
+            |vpiVisibility:1
+        |vpiArgument:
+        \_ref_obj: (work@tb.o), line:7:49, endln:7:50, parent:$monitor
+          |vpiName:o
+          |vpiFullName:work@tb.o
+          |vpiActual:
+          \_logic_var: (work@tb.o), line:2:12, endln:2:13, parent:work@tb
+            |vpiTypespec:
+            \_logic_typespec: , line:2:3, endln:2:8
+            |vpiName:o
+            |vpiFullName:work@tb.o
+            |vpiVisibility:1
+        |vpiName:$monitor
+      |vpiStmt:
+      \_delay_control: , line:8:5, endln:8:9, parent:work@tb
+        |#100
+        |vpiStmt:
+        \_sys_func_call: ($finish), line:8:10, endln:8:19
+          |vpiName:$finish
+  |vpiProcess:
+  \_initial: , line:11:3, endln:17:6, parent:work@tb
+    |vpiStmt:
+    \_begin: (work@tb), line:12:3, endln:17:6
+      |vpiFullName:work@tb
+      |vpiStmt:
+      \_assignment: , line:13:5, endln:13:10, parent:work@tb
+        |vpiOpType:82
+        |vpiBlocking:1
+        |vpiRhs:
+        \_constant: , line:13:9, endln:13:10
+          |vpiDecompile:0
+          |vpiSize:64
+          |UINT:0
+          |vpiConstType:9
+        |vpiLhs:
+        \_ref_obj: (work@tb.i), line:13:5, endln:13:6, parent:work@tb
+          |vpiName:i
+          |vpiFullName:work@tb.i
+          |vpiActual:
+          \_logic_var: (work@tb.i), line:2:9, endln:2:10, parent:work@tb
+      |vpiStmt:
+      \_delay_control: , line:14:5, endln:14:7, parent:work@tb
+        |#1
+        |vpiStmt:
+        \_immediate_assert: , line:14:8, endln:14:66
+          |vpiExpr:
+          \_operation: , line:14:15, endln:14:21
+            |vpiOpType:14
+            |vpiOperand:
+            \_ref_obj: (work@tb.i), line:14:15, endln:14:16
+              |vpiName:i
+              |vpiFullName:work@tb.i
+              |vpiActual:
+              \_logic_var: (work@tb.i), line:2:9, endln:2:10, parent:work@tb
+            |vpiOperand:
+            \_ref_obj: (work@tb.o), line:14:20, endln:14:21
+              |vpiName:o
+              |vpiFullName:work@tb.o
+              |vpiActual:
+              \_logic_var: (work@tb.o), line:2:12, endln:2:13, parent:work@tb
+          |vpiStmt:
+          \_sys_func_call: ($display), line:14:23, endln:14:38
+            |vpiArgument:
+            \_constant: , line:14:32, endln:14:37, parent:$display
+              |vpiDecompile:OK!
+              |vpiSize:3
+              |STRING:OK!
+              |vpiConstType:6
+            |vpiName:$display
+          |vpiElseStmt:
+          \_sys_func_call: ($fatal), line:14:45, endln:14:65
+            |vpiArgument:
+            \_constant: , line:14:52, endln:14:53, parent:$fatal
+              |vpiDecompile:1
+              |vpiSize:64
+              |UINT:1
+              |vpiConstType:9
+            |vpiArgument:
+            \_constant: , line:14:55, endln:14:64, parent:$fatal
+              |vpiDecompile:i != o!
+              |vpiSize:7
+              |STRING:i != o!
+              |vpiConstType:6
+            |vpiName:$fatal
+      |vpiStmt:
+      \_delay_control: , line:15:5, endln:15:7, parent:work@tb
+        |#5
+        |vpiStmt:
+        \_assignment: , line:15:8, endln:15:13
+          |vpiOpType:82
+          |vpiBlocking:1
+          |vpiRhs:
+          \_constant: , line:15:12, endln:15:13
+            |vpiDecompile:1
+            |vpiSize:64
+            |UINT:1
+            |vpiConstType:9
+          |vpiLhs:
+          \_ref_obj: (work@tb.i), line:15:8, endln:15:9
+            |vpiName:i
+            |vpiFullName:work@tb.i
+            |vpiActual:
+            \_logic_var: (work@tb.i), line:2:9, endln:2:10, parent:work@tb
+      |vpiStmt:
+      \_delay_control: , line:16:5, endln:16:7, parent:work@tb
+        |#1
+        |vpiStmt:
+        \_immediate_assert: , line:16:8, endln:16:66
+          |vpiExpr:
+          \_operation: , line:16:15, endln:16:21
+            |vpiOpType:14
+            |vpiOperand:
+            \_ref_obj: (work@tb.i), line:16:15, endln:16:16
+              |vpiName:i
+              |vpiFullName:work@tb.i
+              |vpiActual:
+              \_logic_var: (work@tb.i), line:2:9, endln:2:10, parent:work@tb
+            |vpiOperand:
+            \_ref_obj: (work@tb.o), line:16:20, endln:16:21
+              |vpiName:o
+              |vpiFullName:work@tb.o
+              |vpiActual:
+              \_logic_var: (work@tb.o), line:2:12, endln:2:13, parent:work@tb
+          |vpiStmt:
+          \_sys_func_call: ($display), line:16:23, endln:16:38
+            |vpiArgument:
+            \_constant: , line:16:32, endln:16:37, parent:$display
+              |vpiDecompile:OK!
+              |vpiSize:3
+              |STRING:OK!
+              |vpiConstType:6
+            |vpiName:$display
+          |vpiElseStmt:
+          \_sys_func_call: ($fatal), line:16:45, endln:16:65
+            |vpiArgument:
+            \_constant: , line:16:52, endln:16:53, parent:$fatal
+              |vpiDecompile:1
+              |vpiSize:64
+              |UINT:1
+              |vpiConstType:9
+            |vpiArgument:
+            \_constant: , line:16:55, endln:16:64, parent:$fatal
+              |vpiDecompile:i != o!
+              |vpiSize:7
+              |STRING:i != o!
+              |vpiConstType:6
+            |vpiName:$fatal
+|uhdmtopModules:
+\_module: work@tb (work@tb) tb.v:1:1: , endln:21:10
+  |vpiName:work@tb
+  |vpiVariables:
+  \_logic_var: (work@tb.i), line:2:9, endln:2:10, parent:work@tb
+  |vpiVariables:
+  \_logic_var: (work@tb.o), line:2:12, endln:2:13, parent:work@tb
+  |vpiDefName:work@tb
+  |vpiTop:1
+  |vpiTopModule:1
+  |vpiModule:
+  \_module: work@dut (work@tb.dut1) tb.v:19:3: , endln:19:17, parent:work@tb
+    |vpiName:dut1
+    |vpiFullName:work@tb.dut1
+    |vpiDefName:work@dut
+    |vpiDefFile:dut.v
+    |vpiDefLineNo:1
+    |vpiNet:
+    \_logic_net: (work@tb.dut1.i), line:4:8, endln:4:9, parent:work@tb.dut1
+    |vpiNet:
+    \_logic_net: (work@tb.dut1.o), line:5:7, endln:5:8, parent:work@tb.dut1
+    |vpiInstance:
+    \_module: work@tb (work@tb) tb.v:1:1: , endln:21:10
+    |vpiPort:
+    \_port: (i), line:1:13, endln:1:14, parent:work@tb.dut1
+      |vpiName:i
+      |vpiDirection:1
+      |vpiHighConn:
+      \_ref_obj: (work@tb.i), line:19:12, endln:19:13
+        |vpiName:i
+        |vpiFullName:work@tb.i
+        |vpiActual:
+        \_logic_var: (work@tb.i), line:2:9, endln:2:10, parent:work@tb
+      |vpiLowConn:
+      \_ref_obj: (work@tb.dut1.i), line:1:13, endln:1:14
+        |vpiName:i
+        |vpiFullName:work@tb.dut1.i
+        |vpiActual:
+        \_logic_net: (work@tb.dut1.i), line:4:8, endln:4:9, parent:work@tb.dut1
+    |vpiPort:
+    \_port: (o), line:1:16, endln:1:17, parent:work@tb.dut1
+      |vpiName:o
+      |vpiDirection:2
+      |vpiHighConn:
+      \_ref_obj: (work@tb.o), line:19:14, endln:19:15
+        |vpiName:o
+        |vpiFullName:work@tb.o
+        |vpiActual:
+        \_logic_var: (work@tb.o), line:2:12, endln:2:13, parent:work@tb
+      |vpiLowConn:
+      \_ref_obj: (work@tb.dut1.o), line:1:16, endln:1:17
+        |vpiName:o
+        |vpiFullName:work@tb.dut1.o
+        |vpiActual:
+        \_logic_net: (work@tb.dut1.o), line:5:7, endln:5:8, parent:work@tb.dut1
+===================
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 2
+[   NOTE] : 5
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/OneNetNonAnsi/dut.v | ${SURELOG_DIR}/build/regression/OneNetNonAnsi/roundtrip/dut_000.v | 4 | 7 | 
+[roundtrip]: ${SURELOG_DIR}/tests/OneNetNonAnsi/tb.v  | ${SURELOG_DIR}/build/regression/OneNetNonAnsi/roundtrip/tb_000.v  | 5 | 21 | 
+

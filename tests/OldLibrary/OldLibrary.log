@@ -1,0 +1,81 @@
+[INF:CM0023] Creating log file ../../build/regression/OldLibrary/slpp_all/surelog.log.
+
+[INF:PP0122] Preprocessing source file "top.v".
+
+[INF:PP0122] Preprocessing source file "${SURELOG_DIR}/tests/OldLibrary/lib/CELL2.v".
+
+[INF:PP0122] Preprocessing source file "${SURELOG_DIR}/tests/OldLibrary/lib/CELL1.v".
+
+[INF:PP0122] Preprocessing source file "${SURELOG_DIR}/tests/OldLibrary/lib/CELL3.v".
+
+[INF:PA0201] Parsing source file "top.v".
+
+[INF:PA0201] Parsing source file "${SURELOG_DIR}/tests/OldLibrary/lib/CELL2.v".
+
+[INF:PA0201] Parsing source file "${SURELOG_DIR}/tests/OldLibrary/lib/CELL1.v".
+
+[INF:PA0201] Parsing source file "${SURELOG_DIR}/tests/OldLibrary/lib/CELL3.v".
+
+[WRN:PA0205] top.v:1: No timescale set for "top".
+
+[WRN:PA0205] ${SURELOG_DIR}/tests/OldLibrary/lib/CELL2.v:1: No timescale set for "CELL2".
+
+[WRN:PA0205] ${SURELOG_DIR}/tests/OldLibrary/lib/CELL1.v:1: No timescale set for "CELL1".
+
+[WRN:PA0205] ${SURELOG_DIR}/tests/OldLibrary/lib/CELL3.v:1: No timescale set for "CELL3".
+
+[INF:CP0300] Compilation...
+
+[INF:CP0303] ${SURELOG_DIR}/tests/OldLibrary/lib/CELL1.v:1: Compile module "work@CELL1".
+
+[INF:CP0305] ${SURELOG_DIR}/tests/OldLibrary/lib/CELL2.v:1: Compile udp "work@CELL2".
+
+[INF:CP0305] ${SURELOG_DIR}/tests/OldLibrary/lib/CELL3.v:1: Compile udp "work@CELL3".
+
+[INF:CP0303] top.v:1: Compile module "work@top".
+
+[INF:CP0302] Compile class "work@mailbox".
+
+[INF:CP0302] Compile class "work@process".
+
+[INF:CP0302] Compile class "work@semaphore".
+
+[INF:EL0526] Design Elaboration...
+
+Instance tree:
+[TOP] work@top work@top
+[MOD] work@CELL1 work@top.cell1
+[UDP] work@CELL2 work@top.cell2
+
+[NTE:EL0503] top.v:1: Top level module "work@top".
+
+[NTE:EL0508] Nb Top level modules: 1.
+
+[NTE:EL0509] Max instance depth: 2.
+
+[NTE:EL0510] Nb instances: 3.
+
+[NTE:EL0511] Nb leaf instances: 2.
+
+[NTE:EL0523] top.v:1: Instance "work@top".
+
+[NTE:EL0523] top.v:3: Instance "work@top.cell1".
+
+[NTE:EL0523] top.v:5: Instance "work@top.cell2".
+
+[INF:UH0706] Creating UHDM Model...
+
+[INF:UH0708] Writing UHDM DB: ../../build/regression/OldLibrary/slpp_all/surelog.uhdm ...
+
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 4
+[   NOTE] : 8
+
+
+[roundtrip]: ${SURELOG_DIR}/tests/OldLibrary/top.v       | ${SURELOG_DIR}/build/regression/OldLibrary/roundtrip/top_000.v   | 1 | 7 | 
+[roundtrip]: ${SURELOG_DIR}/tests/OldLibrary/lib/CELL1.v | ${SURELOG_DIR}/build/regression/OldLibrary/roundtrip/CELL1_000.v | 0 | 2 | 
+[roundtrip]: ${SURELOG_DIR}/tests/OldLibrary/lib/CELL2.v | ${SURELOG_DIR}/build/regression/OldLibrary/roundtrip/CELL2_000.v | 8 | 17 | 
+[roundtrip]: ${SURELOG_DIR}/tests/OldLibrary/lib/CELL3.v | ${SURELOG_DIR}/build/regression/OldLibrary/roundtrip/CELL3_000.v | 8 | 17 | 
+
