@@ -1,0 +1,109 @@
+name: Main
+on:
+  push:
+    branches:
+      - '*'
+    tags-ignore:
+      - v*
+  pull_request:
+  release:
+    types:
+      - created
+jobs:
+
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-20.04
+          - macOS-10.15
+          - windows-2019
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build
+        run: make
+      - name: Prepare Artifact
+        shell: bash
+        run: cp LICENSE NOTICE README.md CHANGELOG.md bin
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: ${{ runner.os }}
+          path: bin
+
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-20.04
+          - macOS-10.15
+    needs: build
+    env:
+      IVERILOG_REF: 7c5694e5163e905b7ba85096ae67e5f28862db48
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install Dependencies (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          brew install shunit2 bison autoconf
+          echo "$(brew --prefix bison)/bin" >> $GITHUB_PATH
+      - name: Install Dependencies (Linux)
+        if: runner.os == 'Linux'
+        run: sudo apt-get install -y shunit2 flex bison autoconf gperf
+      - name: Cache iverilog
+        uses: actions/cache@v2
+        with:
+          path: ~/.local
+          key: ${{ runner.OS }}-${{ env.IVERILOG_REF }}
+          restore-keys: ${{ runner.OS }}-${{ env.IVERILOG_REF }}
+      - name: Install iverilog
+        run: |
+          if [ ! -e "$HOME/.local/bin/iverilog" ]; then
+            git clone https://github.com/steveicarus/iverilog.git
+            cd iverilog
+            git checkout ${{ env.IVERILOG_REF }}
+            autoconf
+            ./configure --prefix=$HOME/.local
+            make -j2
+            make install
+            cd ..
+          fi
+      - name: Download Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: ${{ runner.os }}
+          path: bin
+      - name: Test
+        run: |
+          chmod +x bin/sv2v
+          export PATH="$PATH:$HOME/.local/bin"
+          make test
+
+  release:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        name: [macOS, Linux, Windows]
+    needs: build
+    if: github.event_name == 'release'
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: ${{ matrix.name }}
+          path: sv2v-${{ matrix.name }}
+      - name: Mark Binary Executable
+        run: chmod +x */sv2v*
+      - name: Create ZIP
+        run: zip -r sv2v-${{ matrix.name }} ./sv2v-${{ matrix.name }}
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./sv2v-${{ matrix.name }}.zip
+          asset_name: sv2v-${{ matrix.name }}.zip
+          asset_content_type: application/zip
