@@ -35,6 +35,9 @@
 #include "netlist_visualizer.h"
 #include "vtr_memory.h"
 
+#include <iostream>
+#include <fstream>
+
 void levelize_backwards(netlist_t* netlist);
 void levelize_backwards_clean_checking_for_liveness(netlist_t* netlist);
 void levelize_forwards(netlist_t* netlist);
@@ -46,11 +49,16 @@ void depth_first_traverse_check_if_forward_leveled(nnode_t* node, uintptr_t trav
 void sequential_levelized_dfs(short marker_value, netlist_t* netlist);
 void depth_first_traverse_until_next_ff_or_output(nnode_t* node, nnode_t* calling_node, uintptr_t traverse_mark_number, int seq_level, netlist_t* netlist);
 
+void check_discontinuity(netlist_t* netlist);
+void discontinuity_check_forward_traverse(nnode_t* node, operation_list op, long long &num_of_forward_elements, long long &num_of_common_elements, unsigned short mark, std::ofstream& file);
+void discontinuity_check_backward_traverse(nnode_t* node, operation_list op, long long &num_of_backward_elements, long long &num_of_common_elements, unsigned short mark, std::ofstream& file);
 /*---------------------------------------------------------------------------------------------
  * (function: check_netlist)
  * Note: netlist passed in needs to be initialized by allocate_netlist() to make sure correctly initialized.
  *-------------------------------------------------------------------------------------------*/
 void check_netlist(netlist_t* netlist) {
+
+     check_discontinuity(netlist);
     /* create a graph output of this netlist */
     if (configuration.output_netlist_graphs) {
         /* Path is where we are */
@@ -717,3 +725,163 @@ nnode_t* find_node_at_top_of_combo_loop(nnode_t* start_node) {
         }
     }
 }
+/**
+   * @brief This function travseres the netlist both forwards and backwards and keeps the record of nodes with same type in each traverse.
+   * In case that there is a mismatch between the number of nodes counted in both traverses, It will throw a warning to
+   * indicate a discontinuity in the netlist.
+   */
+  void check_discontinuity(netlist_t* netlist)
+  {
+      //Declare variables that hold number of elements
+      long long num_of_forward_elements{0}, num_of_backward_elements{0}, num_of_common_elements{0};
+     //Declare type of the node
+      operation_list op{MULTIPLY};
+      std::ofstream dbg;
+      dbg.open("/homes/x2d45/Desktop/discontinuity.csv");
+      dbg << "Error Code" << ","
+      << "Reason" << "," 
+      << "Node Type" << ","
+      << "Node Name" << ','
+      << "Num of net fanouts" << ","
+      << "Pin Index" << ","
+      << std::endl;
+      //Backward traverse statring from top output nodes
+      for (int i = 0; i < netlist->num_top_output_nodes; i++)
+      {
+          discontinuity_check_backward_traverse(netlist->top_output_nodes[i], op, num_of_backward_elements, num_of_common_elements, NETLIST_DISCONTINUITY_TRAVERSE_VALUE+1, dbg);
+      }
+      //Forward traverse starting from top input nodes
+      for(int i = 0; i < netlist->num_top_input_nodes; i++)
+      {
+          discontinuity_check_forward_traverse(netlist->top_input_nodes[i], op, num_of_forward_elements, num_of_common_elements, NETLIST_DISCONTINUITY_TRAVERSE_VALUE, dbg);
+      }
+      dbg.close();
+      //Detect discontinuity
+      if (num_of_forward_elements != num_of_backward_elements)
+      {
+         printf("\n\x1B[33mWARNING! discontinuity detected within the netlist.\n");
+          printf("# of %s node(s) found in forward traverse: %lld\n", operation_list_STR[op][ODIN_LONG_STRING], num_of_forward_elements);
+          printf("# of %s node(s) found in backward traverse: %lld\n", operation_list_STR[op][ODIN_LONG_STRING], num_of_backward_elements);
+          printf("# of common %s node(s) : %lld\n", operation_list_STR[op][ODIN_LONG_STRING], num_of_common_elements);
+          printf("\033[0m\n");
+      }
+  }
+ 
+  /**
+   * @brief Recursive function that will mark the nodes present in the netlist by traversing forward starting from a top input node.
+   * This function will be called within the check_discontinuity(...) function.
+   * 
+   * @param node starting top input node
+   * @param num_of_forward_elements number of marked nodes of a same type found in forward search
+   * @param mark traverse mark value
+   */
+  void discontinuity_check_forward_traverse(nnode_t* node, operation_list op, long long& num_of_forward_elements, long long& num_of_common_elements, unsigned short mark, std::ofstream& dbg)
+  {
+      if (node->traverse_visited == mark) return;
+      if (node->type == op)
+      {
+          if (node->traverse_visited == mark + 1)
+          {
+              num_of_common_elements++;
+          }
+      }
+      node->traverse_visited = mark;
+      if (node->type == op) num_of_forward_elements++;
+      if (node->num_output_pins)
+      {
+          for (int i = 0; i < node->num_output_pins; i++)
+          {
+              if (node->output_pins[i] && node->output_pins[i]->net)
+              {
+                  nnet_t* next_net = node->output_pins[i]->net;
+                  if (next_net->num_fanout_pins)
+                  {
+                      for (int j = 0; j < next_net->num_fanout_pins; j++)
+                      {
+                          if (next_net->fanout_pins[j] && next_net->fanout_pins[j]->node)
+                          {
+                              /* recursive call point */
+                              discontinuity_check_forward_traverse(next_net->fanout_pins[j]->node, op, num_of_forward_elements, num_of_common_elements, mark, dbg);
+                          }
+                          else
+                          {
+                              dbg << "(3)" << ",";
+                              dbg << "Fanout Not Connected to Any Node" << ",";
+                              dbg << operation_list_STR[node->type][ODIN_LONG_STRING] << ",";
+                              dbg << node->name << ",";
+                              dbg << next_net->num_fanout_pins << ",";
+                              dbg << j << ",";
+                              dbg << std::endl;
+
+                          }
+                      }
+                  }
+                  else
+                  {
+                    dbg << "(2)" << ",";
+                    dbg << "Net Without Fanouts" << ",";
+                    dbg << operation_list_STR[node->type][ODIN_LONG_STRING] << ",";
+                    dbg << node->name << ",";
+                    dbg << next_net->num_fanout_pins << ",";
+                    dbg << "N/A" << ",";
+                    dbg << std::endl;
+                  }
+              }
+              else
+              {
+                  dbg << "(1)" << ",";
+                  dbg << "No Nets Connected to The Output of The Node" << ",";
+                  dbg << operation_list_STR[node->type][ODIN_LONG_STRING] << ",";
+                  dbg << node->name << ",";
+                  dbg << ",";
+                  dbg << "N/A" << ",";
+                  dbg << std::endl;
+              }
+         }
+      }
+  }
+ 
+  /**
+   * @brief Recursive function that will mark the nodes present in the netlist by traversing backward starting from a top output node.
+   * This function will be called within the check_discontinuity(...) function.
+   * 
+   * @param node starting top output node
+   * @param num_of_backward_elements number of marked nodes of a same type found in backward search
+   * @param mark traverse mark value
+   */
+  void discontinuity_check_backward_traverse(nnode_t* node, operation_list op, long long& num_of_backward_elements, long long& num_of_common_elements, unsigned short mark, std::ofstream& dbg)
+  {
+      if (node->traverse_visited == mark) return;
+      if (node->type == op)
+      {
+          if (node->traverse_visited == mark-1)
+          {
+              num_of_common_elements++;
+          }
+      }
+      node->traverse_visited = mark;
+      if (node->type == op)
+      {
+          num_of_backward_elements++;
+      }
+      if (node->num_input_pins)
+      {
+          for (int i = 0; i < node->num_input_pins; i++)
+          {
+              if (node->input_pins[i] && node->input_pins[i]->net)
+              {
+                  nnet_t* previous_net = node->input_pins[i]->net;
+                  if (previous_net->num_driver_pins)
+                  {
+                      for (int j = 0; j < previous_net->num_driver_pins; j++)
+                      {
+                          if (previous_net->driver_pins[j] && previous_net->driver_pins[j]->node)
+                          {
+                              discontinuity_check_backward_traverse(node->input_pins[i]->net->driver_pins[j]->node, op, num_of_backward_elements, num_of_common_elements, mark, dbg);
+                          }
+                      }
+                  }
+              }
+          }
+      }
+ } 
