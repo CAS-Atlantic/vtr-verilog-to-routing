@@ -18,9 +18,25 @@ endif()
 # Yosys is compiled only if the user ask for it
 if(${ODIN_USE_YOSYS} OR ${WITH_YOSYS})
     add_subdirectory(libyosys)
+
+    # Override default policy for flatbuffers (CMake policy version 3.1)
+    # Enable new IPO variables
+    set(CMAKE_POLICY_DEFAULT_CMP0069 NEW)
+
+    # Since flatbuffers, antlr4, and googletest are externally developed libraries/tools, we suppress all compiler warnings
+    CHECK_CXX_COMPILER_FLAG("-w" CXX_COMPILER_SUPPORTS_-w)
+    if(CXX_COMPILER_SUPPORTS_-w)
+        add_compile_options("-w")
+    endif()
+    
+    add_subdirectory(libflatbuffers)
+
+    # add_subdirectory(libantlr4)
+    add_subdirectory(libgoogletest)
+    
 endif()
 
-if(${VTR_ENABLE_CAPNPROTO})
+if(${VTR_ENABLE_CAPNPROTO} AND NOT TARGET capnpc)
     # Override default policy for capnproto (CMake policy version 3.1)
     # Enable new IPO variables
     set(CMAKE_POLICY_DEFAULT_CMP0069 NEW)
