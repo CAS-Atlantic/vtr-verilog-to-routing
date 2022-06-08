@@ -1,0 +1,65 @@
+# Copyright 2019 Alain Dargelas
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Universal Hardware Data Model (UHDM) "clocking_block" formal description
+ 
+- obj_def: clocking_block
+  - extends: scope
+  - property: input_edge
+    name: input edge
+    vpi: vpiInputEdge
+    type: int
+    card: 1
+  - property: output_edge
+    name: output edge
+    vpi: vpiOutputEdge
+    type: int
+    card: 1
+  - obj_ref: input_skew
+    name: input skew
+    vpi: vpiInputSkew
+    type: delay_control
+    card: 1
+  - obj_ref: output_skew
+    name: output skew
+    vpi: vpiOutputSkew
+    type: delay_control
+    card: 1
+  - obj_ref: clocking_event
+    name: clocking event
+    vpi: vpiClockingEvent
+    type: event_control
+    card: 1    
+  - class_ref: instance
+    name: instance
+    vpi: vpiInstance
+    type: instance
+    card: 1
+  - obj_ref: clocking_io_decl
+    name: clocking io decl
+    vpi: vpiClockingIODecl
+    type: clocking_io_decl
+    card: any
+  - obj_ref: prefix
+    name: prefix
+    vpi: vpiPrefix
+    type: virtual_interface_var
+    card: 1  
+  - obj_ref: actual
+    name: actual
+    vpi: vpiActual
+    type: clocking_block
+    card: 1
+
+

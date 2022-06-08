@@ -1,0 +1,53 @@
+# Copyright 2019 Alain Dargelas
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Universal Hardware Data Model (UHDM) "class defn" formal description
+ 
+- obj_def: class_defn
+  - extends: scope
+  - property: virtual
+    name: virtual
+    vpi: vpiVirtual
+    type: bool
+    card: 1
+  - property: declared_lifetime
+    name: declared lifetime
+    vpi: vpiAutomatic
+    type: bool
+    card: 1   
+  - obj_ref: extends
+    name: extends
+    vpi: vpiExtends
+    type: extends
+    card: 1
+  - class_ref: task_func
+    name: task func
+    vpi: vpiMethod
+    type: task_func
+    card: any
+  - obj_ref: constraint
+    name: constraint
+    vpi: vpiConstraint
+    type: constraint
+    card: any
+  - obj_ref: derived
+    name: derived
+    vpi: vpiDerivedClasses
+    type: class_defn
+    card: any
+  - obj_ref: class_typespecs
+    name: class typespecs
+    vpi: vpiClassTypespec
+    type: class_typespec
+    card: any

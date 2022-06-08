@@ -1,0 +1,39 @@
+# Copyright 2019 Alain Dargelas
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Universal Hardware Data Model (UHDM) "actual group" formal description
+# Parameters, enum_const, io_decl are not in the actual group in the Standard, we add them to the group for binding convenience
+ 
+- group_def: actual_group
+  - obj_ref: interface
+  - obj_ref: interface_array
+  - obj_ref: modport
+  - class_ref: nets
+  - class_ref: variables
+  - obj_ref: named_event
+  - obj_ref: named_event_array
+  - obj_ref: part_select
+  - obj_ref: parameter
+  - obj_ref: enum_const
+  - obj_ref: io_decl
+  - class_ref: expr
+ # bit select, indexed_part_select and ref_obj added for hier_path
+  - obj_ref: bit_select
+  - obj_ref: ref_obj
+  - obj_ref: indexed_part_select
+  - obj_ref: typespec_member
+  - class_ref: task_func
+  - class_ref: scope
+
+
