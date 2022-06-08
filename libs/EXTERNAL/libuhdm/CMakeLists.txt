@@ -39,7 +39,15 @@ if (NOT ${EXIT_CODE} EQUAL 0)
 endif()
 
 set(BUILD_TESTING OFF CACHE BOOL "Don't build capnproto tests")
-add_subdirectory(third_party/capnproto EXCLUDE_FROM_ALL)
+if (NOT TARGET capnp)
+  add_subdirectory(third_party/capnproto EXCLUDE_FROM_ALL)
+else()
+  message("Using an external capnproto library for Surelog")
+  set(EXTERNAL_CAPNPROTO_LIBRARY ON)
+  find_program(CAPNPC_EXEC capnpc HINTS "${CAPNPROTO_BINARY_DIRECTORY}")
+  find_program(CAPNPC_TOOL capnpc_tool HINTS "${CAPNPROTO_BINARY_DIRECTORY}")
+  find_program(CAPNPC_CPP_EXEC capnpc-c++ HINTS "${CAPNPROTO_BINARY_DIRECTORY}")
+endif()
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -118,7 +126,11 @@ foreach(header_file ${model-GENERATED_SRC})
   set_source_files_properties(${header_file} PROPERTIES GENERATED TRUE)
 endforeach(header_file ${model-GENERATED_SRC})
 
-set(CAPNP_DIR ${CMAKE_CURRENT_BINARY_DIR}/third_party/capnproto/c++/src/capnp)
+if(${EXTERNAL_CAPNPROTO_LIBRARY})
+  set(CAPNP_DIR ${Cap\'n\ Proto_BINARY_DIR})
+else()
+  set(CAPNP_DIR ${CMAKE_CURRENT_BINARY_DIR}/third_party/capnproto/c++/src/capnp>)
+endif()
 
 add_custom_command(
   OUTPUT ${model-GENERATED_SRC}
@@ -168,7 +180,7 @@ target_include_directories(uhdm SYSTEM PUBLIC
   $<BUILD_INTERFACE:${GENDIR}>
   $<INSTALL_INTERFACE:include>)
 target_include_directories(uhdm PRIVATE
-  ${PROJECT_SOURCE_DIR}/third_party/capnproto/c++/src
+  $<IF:$<BOOL:${EXTERNAL_CAPNPROTO_LIBRARY}>, ${Cap\'n\ Proto_SOURCE_DIR}/c++/src, ${PROJECT_SOURCE_DIR}/third_party/capnproto/c++/src>,
   ${PROJECT_SOURCE_DIR}/third_party/UHDM/src)
 target_compile_definitions(uhdm
   PUBLIC PLI_DLLISPEC=
@@ -277,3 +289,4 @@ install(DIRECTORY ${GENDIR}/uhdm/
         DESTINATION ${CMAKE_INSTALL_PREFIX}/include/uhdm/)
 install(FILES ${GENDIR}/src/UHDM.capnp
         DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/uhdm)
+        

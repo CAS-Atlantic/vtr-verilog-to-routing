@@ -34,15 +34,37 @@ if(WITH_LIBCXX)
 endif()
 
 set(FLATBUFFERS_BUILD_TESTS OFF CACHE BOOL "Skip flatbuffers' tests")
-add_subdirectory(third_party/flatbuffers EXCLUDE_FROM_ALL)
+if(NOT TARGET flatc)
+  add_subdirectory(third_party/flatbuffers EXCLUDE_FROM_ALL)
+else()
+  message("-- Using an external flatbuffers library for Surelog")
+  set(EXTERNAL_FLATBUFFERS_LIBRARY ON)
+endif()
 
 set(WITH_STATIC_CRT ON CACHE BOOL "Use Static CRT")
 set(ANTLR_BUILD_CPP_TESTS OFF CACHE BOOL "Skip ANTLR tests")
-add_subdirectory(third_party/antlr4/runtime/Cpp EXCLUDE_FROM_ALL)
+if(NOT TARGET antlr4_static)
+  add_subdirectory(third_party/antlr4/runtime/Cpp EXCLUDE_FROM_ALL)
+else()
+  message("-- Using an external antlr4 library for Surelog")
+  set(EXTERNAL_ANTLR4_LIBRARY ON)
+endif()
 
 set(UHDM_BUILD_TESTS OFF CACHE BOOL "Skip UHDM tests")
-add_subdirectory(third_party/UHDM)
-add_subdirectory(third_party/googletest EXCLUDE_FROM_ALL)
+if(NOT TARGET uhdm)
+  add_subdirectory(third_party/UHDM)
+else()
+  message("-- Using an external UHDM library for Surelog")
+  set(EXTERNAL_UHDM_LIBRARY ON)
+endif()
+
+if(NOT TARGET gtest)
+  add_subdirectory(third_party/googletest EXCLUDE_FROM_ALL)
+else()
+  message("-- Using an external GoogleTest/GoogleMock library for Surelog")
+  set(EXTERNAL_GOOGLETEST_LIBRARY ON)
+  set(EXTERNAL_GOOGLEMOCK_LIBRARY ON)
+endif()
 
 # NOTE: Set the global output directories after the subprojects have had their go at it
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
@@ -139,8 +161,13 @@ add_custom_command(
 # Java
 find_package(Java 11 REQUIRED COMPONENTS Runtime)
 message(STATUS "Java_JAVA_EXECUTABLE = ${Java_JAVA_EXECUTABLE}")
-set(ANTLR_JAR_LOCATION
-    ${PROJECT_SOURCE_DIR}/third_party/antlr4_bin/antlr-4.10-complete.jar)
+if(${EXTERNAL_ANTLR4_LIBRARY})
+  set(ANTLR_JAR_LOCATION
+      ${PROJECT_SOURCE_DIR}/third_party/antlr4_bin/antlr-4.10-complete.jar)
+else()
+  set(ANTLR_JAR_LOCATION
+      ${EXTERNAL_ANTLR4_BIN_DIRECTORY}/antlr-4.10-complete.jar)
+endif()
 
 add_custom_target(GenerateParser DEPENDS
   ${GENDIR}/src/parser/generated-parsers.tstamp
@@ -385,10 +412,10 @@ endforeach()
 add_library(surelog STATIC ${surelog_SRC} ${surelog_generated_SRC})
 set_target_properties(surelog PROPERTIES PUBLIC_HEADER include/Surelog/surelog.h)
 target_include_directories(surelog PRIVATE
-  third_party/antlr4/runtime/Cpp/runtime/src
-  third_party/flatbuffers/include
-  third_party/googletest/googletest/include
-  third_party/googletest/googlemock/include)
+  $<IF:$<BOOL:${EXTERNAL_ANTLR4_LIBRARY}>, ${LIBANTLR4_SOURCE_DIR}/runtime/src, third_party/antlr4/runtime/Cpp/runtime/src>,
+  $<IF:$<BOOL:${EXTERNAL_FLATBUFFERS_LIBRARY}>, ${FlatBuffers_SOURCE_DIR}/include, third_party/flatbuffers/include>,
+  $<IF:$<BOOL:${EXTERNAL_GOOGLETEST_LIBRARY}>,  ${gtest_SOURCE_DIRECTORY}/include, third_party/googletest/googletest/include>,
+  $<IF:$<BOOL:${EXTERNAL_GOOGLEMOCK_LIBRARY}>,  ${gmock_SOURCE_DIRECTORY}/include, third_party/googletest/googlemock/include>)
 target_include_directories(surelog PUBLIC $<INSTALL_INTERFACE:include>)
 if (SURELOG_WITH_PYTHON)
   target_include_directories(surelog PUBLIC ${Python3_INCLUDE_DIRS}) # Keep this at the end
@@ -500,8 +527,8 @@ function(register_gtests)
     add_executable(${test_bin} EXCLUDE_FROM_ALL ${gtest_cc_file})
 
     target_include_directories(${test_bin} PRIVATE
-      ${PROJECT_SOURCE_DIR}/third_party/antlr4/runtime/Cpp/runtime/src
-      ${PROJECT_SOURCE_DIR}/third_party/flatbuffers/include)
+      $<IF:$<BOOL:${EXTERNAL_ANTLR4_LIBRARY}>, ${LIBANTLR4_SOURCE_DIR}/runtime/src, third_party/antlr4/runtime/Cpp/runtime/src>
+      $<IF:$<BOOL:${EXTERNAL_FLATBUFFERS_LIBRARY}>, ${FlatBuffers_SOURCE_DIR}/include, ${PROJECT_SOURCE_DIR}/third_party/flatbuffers/include>)
     # For simplicity, we link the test with libsurelog, but there is of
     # course a lot unnecessary churn if headers are modified.
     # Often it is sufficient to just have a few depeendencies.
@@ -675,6 +702,7 @@ install(
 install(
   FILES ${PROJECT_SOURCE_DIR}/include/Surelog/Common/ClockingBlockHolder.h
         ${PROJECT_SOURCE_DIR}/include/Surelog/Common/Containers.h
+        ${PROJECT_SOURCE_DIR}/include/Surelog/Common/NodeId.h
         ${PROJECT_SOURCE_DIR}/include/Surelog/Common/PortNetHolder.h
         ${PROJECT_SOURCE_DIR}/include/Surelog/Common/RTTI.h
         ${PROJECT_SOURCE_DIR}/include/Surelog/Common/SymbolId.h
@@ -793,3 +821,4 @@ ADD_CUSTOM_TARGET(
   link_target ALL
   COMMAND ${CMAKE_COMMAND} -E create_symlink
   build/compile_commands.json ${PROJECT_SOURCE_DIR}/compile_commands.json)
+  
