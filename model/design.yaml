@@ -1,0 +1,100 @@
+# Copyright 2019 Alain Dargelas
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Universal Hardware Data Model (UHDM) "design" formal description
+
+- obj_def: design
+  - property: elaborated
+    name: elaborated
+    vpi: vpiElaborated
+    type: bool
+    card: 1
+  - property: name
+    name: name
+    vpi: vpiName
+    type: string
+    card: 1
+  - property: type
+    name: vpiDesign
+    vpi: vpiType
+    type: unsigned int
+    card: 1
+  - obj_ref: include_file_infos
+    vpi: vpiIncludeFileInfo
+    type: include_file_info
+    card: any
+  - class: allPackages
+    type: package
+    vpi_obj: vpiPackage
+    vpi: uhdmallPackages
+    card: any
+  - class: topPackages
+    type: package
+    vpi_obj: vpiPackage
+    vpi: uhdmtopPackages
+    card: any
+  - class: allClasses
+    type: class_defn
+    vpi_obj: vpiClassDefn
+    vpi: uhdmallClasses
+    card: any
+  - class: allInterfaces
+    type: interface
+    vpi_obj: vpiInterface
+    vpi: uhdmallInterfaces
+    card: any
+  - class: allUdps
+    type: udp_defn
+    vpi_obj: vpiUdpDefn
+    vpi: uhdmallUdps
+    card: any
+  - class: allPrograms
+    type: program
+    vpi_obj: vpiProgram
+    vpi: uhdmallPrograms
+    card: any
+  - class: allModules
+    type: module
+    vpi_obj: vpiModule
+    vpi: uhdmallModules
+    card: any
+  - class_ref: typespecs
+    name: typespecs
+    vpi: vpiTypedef
+    type: typespec
+    card: any
+  - obj_ref: let_decls
+    name: let decls
+    vpi: vpiLetDecl
+    type: let_decl
+    card: any
+  - class_ref: task_func
+    name: task func
+    vpi: vpiTaskFunc
+    type: task_func
+    card: any
+  - group_ref: parameters
+    name: parameters
+    vpi: vpiParameter
+    type: parameters
+    card: any
+  - obj_ref: param_assigns
+    vpi: vpiParamAssign
+    type: param_assign
+    card: any
+  - class: topModules
+    type: module
+    vpi_obj: vpiModule
+    vpi: uhdmtopModules
+    card: any

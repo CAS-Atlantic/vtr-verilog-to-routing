@@ -1,0 +1,58 @@
+# Copyright 2019 Alain Dargelas
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Universal Hardware Data Model (UHDM) "cont_assign_bit" formal description
+ 
+- obj_def: cont_assign_bit
+  - property: offset_from_lsb
+    name: offset from LSB
+    vpi: vpiOffset
+    type: int
+    card: 1
+  - property: net_decl_assign
+    name: net decl assign
+    vpi: vpiNetDeclAssign
+    type: bool
+    card: 1
+  - property: strength0
+    name: strength 0
+    vpi: vpiStrength0
+    type: int
+    card: 1
+  - property: strength1
+    name: strength 1
+    vpi: vpiStrength1
+    type: int
+    card: 1
+  - property: vpi_get_value
+    name: vpi_get_value
+    vpi: vpiValue
+    type: value
+    card: 1
+  - class_ref: delay
+    name: delay
+    vpi: vpiDelay
+    type: expr
+    card: 1
+  - class_ref: rhs
+    name: rhs
+    vpi: vpiRhs
+    type: expr
+    card: 1
+  - class_ref: lhs
+    name: lhs
+    vpi: vpiLhs
+    type: expr
+    card: 1
+

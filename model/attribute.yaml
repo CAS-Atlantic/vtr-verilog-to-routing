@@ -1,0 +1,42 @@
+# Copyright 2019 Alain Dargelas
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Universal Hardware Data Model (UHDM) "attribute" formal description
+
+- obj_def: attribute
+  - property: name
+    name: name
+    vpi: vpiName
+    type: string
+    card: 1
+  - property: on_definition
+    name: on definition
+    vpi: vpiDefAttribute
+    type: bool
+    card: 1
+  - property: vpi_get_value
+    name: vpi_get_value
+    vpi: vpiValue
+    type: value
+    card: 1
+  - property: definition_location_file
+    name: definition location file
+    vpi: vpiDefFile
+    type: string
+    card: 1
+  - property: definition_location_line
+    name: definition location line
+    vpi: vpiDefLineNo
+    type: int
+    card: 1 

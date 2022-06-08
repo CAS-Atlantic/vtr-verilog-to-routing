@@ -1,0 +1,215 @@
+name: 'main'
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  linux-gcc:
+    name: ubuntu-gcc
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: Install dependencies
+      run: |
+        sudo apt-get update -qq
+        sudo apt install -y g++-9 build-essential cmake \
+                            python3 python3-orderedmultidict
+
+    - name: Git pull
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        fetch-depth: 0
+
+    - name: Use ccache
+      uses: hendrikmuhs/ccache-action@v1
+      with:
+        key: linux-gcc-cache
+
+    - name: Configure shell
+      run: |
+        echo 'CC=gcc-9' >> $GITHUB_ENV
+        echo 'CXX=g++-9' >> $GITHUB_ENV
+        echo 'PREFIX=/tmp/uhdm-install' >> $GITHUB_ENV
+        echo 'ADDITIONAL_CMAKE_OPTIONS=-DPython3_ROOT_DIR=$pythonLocation' >> $GITHUB_ENV
+        echo 'PATH=/usr/lib/ccache:'"$pythonLocation""$PATH" >> $GITHUB_ENV
+
+    - name: Build & Test
+      run: |
+        env
+        which cmake && cmake --version
+        which make && make --version
+        which python && python --version
+        which $CC && $CC --version
+        which $CXX && $CXX --version
+
+        make release
+        make test
+        make install
+        make test_install
+
+  macos:
+    name: macos-gcc
+    runs-on: macos-latest
+
+    steps:
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        architecture: x64
+
+    - name: Install dependencies
+      run: |
+       brew update
+       brew install cmake capnp
+
+       pip3 install orderedmultidict
+
+    - name: Git pull
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        fetch-depth: 0
+
+    - name: Use ccache
+      uses: hendrikmuhs/ccache-action@v1
+      with:
+        key: macos-cache
+
+    - name: Configure shell
+      run: |
+        echo "PATH=$(brew --prefix)/opt/ccache/libexec:$PATH" >> $GITHUB_ENV
+        echo 'ADDITIONAL_CMAKE_OPTIONS=-DPython3_ROOT_DIR=${pythonLocation}' >> $GITHUB_ENV
+
+    - name: Build & Test
+      run: |
+        env
+        which cmake && cmake --version
+        which make && make --version
+        which python && python --version
+        which $CC && $CC --version
+        which $CXX && $CXX --version
+
+        make release
+        make test
+
+  msys2-gcc:
+    name: msys2-gcc
+    runs-on: windows-2022
+    defaults:
+      run:
+        shell: msys2 {0}
+
+    steps:
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        architecture: x64
+
+    - name: Setup Python Packages
+      shell: cmd
+      run: pip3 install orderedmultidict
+
+    - name: Setup Msys2
+      uses: msys2/setup-msys2@v2
+      with:
+        msystem: MSYS
+        update: true
+        install: make cmake ninja gcc python
+      env:
+        MSYS2_PATH_TYPE: inherit
+
+    - name: Git pull
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        fetch-depth: 0
+
+    - name: Configure shell
+      run: |
+        export Py3_ROOT_DIR=`cygpath -u $pythonLocation`
+
+        echo 'CC=gcc' >> $GITHUB_ENV
+        echo 'CXX=g++' >> $GITHUB_ENV
+        echo 'PREFIX=$PWD/install' >> $GITHUB_ENV
+        echo 'CMAKE_GENERATOR=Ninja' >> $GITHUB_ENV
+        echo 'NO_TCMALLOC=On' >> $GITHUB_ENV
+        echo 'TEST_TMPDIR=C:\temp' >> $GITHUB_ENV
+        echo "Py3_ROOT_DIR=$Py3_ROOT_DIR" >> $GITHUB_ENV
+        echo "ADDITIONAL_CMAKE_OPTIONS=-DPython3_ROOT_DIR=$Py3_ROOT_DIR" >> $GITHUB_ENV
+
+        echo "$Py3_ROOT_DIR" >> $GITHUB_PATH
+
+    - name: Build & Test
+      run: |
+        export PATH=$Py3_ROOT_DIR:$PATH
+
+        env
+        where cmake && cmake --version
+        where make && make --version
+        where ninja && ninja --version
+        where python && python --version
+        where $CC && $CC --version
+        where $CXX && $CXX --version
+
+        make release
+        make test
+        make install
+        make test_install
+
+  windows-msvc:
+    name: windows-cl
+    runs-on: windows-2022
+    defaults:
+      run:
+        shell: cmd
+
+    steps:
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        architecture: x64
+
+    - name: Install Core Dependencies
+      run: |
+        choco install -y make
+        python -m pip install orderedmultidict
+
+    - run: git config --global core.autocrlf input
+      shell: bash
+
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        fetch-depth: 0
+
+    - name: Build & Test
+      run: |
+        call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+
+        set CC=cl
+        set CXX=cl
+        set PREFIX=%GITHUB_WORKSPACE%\install
+        set CMAKE_GENERATOR=Ninja
+        set NO_TCMALLOC=On
+        set CPU_CORES=%NUMBER_OF_PROCESSORS%
+
+        set MAKE_DIR=C:\make\bin
+        set TEST_TMPDIR=C:\temp
+        set ADDITIONAL_CMAKE_OPTIONS=-DPython3_ROOT_DIR=%pythonLocation%
+        set PATH=%pythonLocation%;%MAKE_DIR%;%PATH%
+
+        set
+        where cmake && cmake --version
+        where make && make --version
+        where ninja && ninja --version
+        where python && python --version
+
+        make release
+        make test
+        make install
+        make test_install
