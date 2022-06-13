@@ -20,6 +20,9 @@ sudo apt-get install -y \
 sudo apt-get install -y \
     clang \
     tcl-dev \
+    uuid-dev \
+    uuid-runtime \
+    openjdk-11-jdk \
     libreadline-dev
 
 # Required to build the documentation
