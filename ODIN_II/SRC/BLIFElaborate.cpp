@@ -67,8 +67,11 @@
 #include "vtr_memory.h"
 #include "vtr_util.h"
 
+#include <iostream>
+#include <fstream>
+
 void depth_first_traversal_to_blif_elaborate(short marker_value, netlist_t* netlist);
-void depth_first_traverse_blif_elaborate(nnode_t* node, uintptr_t traverse_mark_number, netlist_t* netlist);
+void depth_first_traverse_blif_elaborate(nnode_t* node, uintptr_t traverse_mark_number, netlist_t* netlist, std::ofstream& file);
 
 void blif_elaborate_node(nnode_t* node, short traverse_mark_number, netlist_t* netlist);
 
@@ -132,17 +135,20 @@ void blif_elaborate_top(netlist_t* netlist) {
  *-------------------------------------------------------------------------------------------*/
 void depth_first_traversal_to_blif_elaborate(short marker_value, netlist_t* netlist) {
     int i;
-
+    std::ofstream file;
+    file.open("/homes/x2d45/Desktop/dbg.csv");
+    file << "Depth" <<","<< "Node Name" << "," << "Net Name" << "," << "# Fanouts" << "# Drivers" << std::endl;
     /* start with the primary input list */
     for (i = 0; i < netlist->num_top_input_nodes; i++) {
         if (netlist->top_input_nodes[i] != NULL) {
-            depth_first_traverse_blif_elaborate(netlist->top_input_nodes[i], marker_value, netlist);
+            depth_first_traverse_blif_elaborate(netlist->top_input_nodes[i], marker_value, netlist, file);
         }
     }
+    file.close();
     /* now traverse the ground and vcc pins  */
-    depth_first_traverse_blif_elaborate(netlist->gnd_node, marker_value, netlist);
-    depth_first_traverse_blif_elaborate(netlist->vcc_node, marker_value, netlist);
-    depth_first_traverse_blif_elaborate(netlist->pad_node, marker_value, netlist);
+    depth_first_traverse_blif_elaborate(netlist->gnd_node, marker_value, netlist, file);
+    depth_first_traverse_blif_elaborate(netlist->vcc_node, marker_value, netlist, file);
+    depth_first_traverse_blif_elaborate(netlist->pad_node, marker_value, netlist, file);
 
     /* look for clock nodes */
     look_for_clocks(netlist);
@@ -158,7 +164,9 @@ void depth_first_traversal_to_blif_elaborate(short marker_value, netlist_t* netl
  * @param traverse_mark_number unique traversal mark for blif elaboration pass
  * @param netlist pointer to the current netlist file
  *-------------------------------------------------------------------------------------------*/
-void depth_first_traverse_blif_elaborate(nnode_t* node, uintptr_t traverse_mark_number, netlist_t* netlist) {
+
+
+void depth_first_traverse_blif_elaborate(nnode_t* node, uintptr_t traverse_mark_number, netlist_t* netlist, std::ofstream& file) {
     int i, j;
 
     if (node->traverse_visited != traverse_mark_number) {
@@ -166,7 +174,21 @@ void depth_first_traverse_blif_elaborate(nnode_t* node, uintptr_t traverse_mark_
 
         /* mark that we have visitied this node now */
         node->traverse_visited = traverse_mark_number;
-
+        if (node->type == MULTIPLY)
+        {
+            nnode_t* tmp = node;
+            for (int z = 0; z < 10; z++)
+            {
+                file<<z<<","<<tmp->name<<","<<tmp->output_pins[0]->net->name<<","<<tmp->output_pins[0]->net->num_fanout_pins<<","<<tmp->output_pins[0]->net->num_driver_pins<<std::endl;
+                if (tmp->output_pins[0]->net->num_fanout_pins == 0)
+                {
+                    file<<"****"<<","<<"****"<<","<<"****"<<","<<"****"<<","<<"****"<<","<<"****"<<std::endl;
+                    break;
+                }
+                tmp = tmp->output_pins[0]->net->fanout_pins[0]->node;
+            }
+            file<<"****"<<","<<"****"<<","<<"****"<<","<<"****"<<","<<"****"<<","<<"****"<<std::endl;
+        }
         for (i = 0; i < node->num_output_pins; i++) {
             if (node->output_pins[i]->net) {
                 nnet_t* next_net = node->output_pins[i]->net;
@@ -175,7 +197,7 @@ void depth_first_traverse_blif_elaborate(nnode_t* node, uintptr_t traverse_mark_
                         if (next_net->fanout_pins[j]) {
                             if (next_net->fanout_pins[j]->node) {
                                 /* recursive call point */
-                                depth_first_traverse_blif_elaborate(next_net->fanout_pins[j]->node, traverse_mark_number, netlist);
+                                depth_first_traverse_blif_elaborate(next_net->fanout_pins[j]->node, traverse_mark_number, netlist, file);
                             }
                         }
                     }
