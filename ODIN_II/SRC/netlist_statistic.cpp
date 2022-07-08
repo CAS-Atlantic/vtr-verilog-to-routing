@@ -495,7 +495,7 @@ void compute_statistics(netlist_t* netlist, bool display) {
                     printf("%-42s%lld\n\n", hdr.c_str(), netlist->num_top_input_nodes - netlist->num_of_type[op]);
 
                 }
-                
+
                 else if (netlist->num_of_type[op] > UNUSED_NODE_TYPE) {
                     std::string hdr = std::string("Number of <")
                                       + operation_list_STR[op][ODIN_LONG_STRING]
@@ -505,8 +505,8 @@ void compute_statistics(netlist_t* netlist, bool display) {
 
                 }
             }
-            printf("%-42s%lld\n", "Total estimated number of lut: ", netlist->num_logic_element);
-            printf("%-42s%lld\n", "Total number of node: ", netlist->num_of_node);
+            printf("%-42s%lld\n", "Total estimated number of lut(s): ", netlist->num_logic_element);
+            printf("%-42s%lld\n", "Total number of node(s): ", netlist->num_of_node);
             printf("%-42s%0.0f\n", "Longest path: ", netlist->output_node_stat.max_depth);
             printf("%-42s%0.0f\n", "Average path: ", netlist->output_node_stat.avg_depth);
             printf("\n");
