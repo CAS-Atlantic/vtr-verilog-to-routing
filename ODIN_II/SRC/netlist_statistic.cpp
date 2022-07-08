@@ -481,6 +481,7 @@ void compute_statistics(netlist_t* netlist, bool display) {
             printf("\n\t==== Stats ====\n");
             for (long long op = 0; op < operation_list_END; op += 1) {
                 if(op == INPUT_NODE) {
+                    // For top input nodes generate detailed info since the design might have unconnected input nodes
                     std::string hdr = std::string("\nTotal number of <")
                             + operation_list_STR[op][ODIN_LONG_STRING]
                             + "> node(s): ";
