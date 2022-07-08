@@ -497,7 +497,7 @@ void compute_statistics(netlist_t* netlist, bool display) {
                         hdr = std::string("Number of unused <")
                               + operation_list_STR[op][ODIN_LONG_STRING]
                               + "> node(s): ";
-                        printf("%-42s%lld\n", hdr.c_str(), netlist->num_top_input_nodes - netlist->num_of_type[op]);
+                        printf("%-42s%lld\n", hdr.c_str(), netlist->num_top_input_nodes - netlist->num_of_type[op] - netlist->num_of_type[CLOCK_NODE]);
                         break;
                     }
                     case OUTPUT_NODE: {
