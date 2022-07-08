@@ -481,42 +481,42 @@ void compute_statistics(netlist_t* netlist, bool display) {
             printf("\n\t==== Stats ====\n");
             for (long long op = 0; op < operation_list_END; op += 1) {
                 switch (op) {
-                // For top IO nodes generate detailed info since the design might have unconnected input nodes
-                case CLOCK_NODE: {
-                    std::string hdr = std::string("Number of <")
-                        + operation_list_STR[op][ODIN_LONG_STRING]
-                        + "> node(s): ";
-                    printf("%-42s%lld\n", hdr.c_str(), netlist->num_of_type[op]);
-                break;
-                }
-                case INPUT_NODE: {
-                    std::string hdr = std::string("Number of used <")
-                        + operation_list_STR[op][ODIN_LONG_STRING]
-                        + "> node(s): ";
-                    printf("%-42s%lld\n", hdr.c_str(), netlist->num_of_type[op]);
-                    hdr = std::string("Number of unused <")
-                        + operation_list_STR[op][ODIN_LONG_STRING]
-                        + "> node(s): ";
-                    printf("%-42s%lld\n", hdr.c_str(), netlist->num_top_input_nodes - netlist->num_of_type[op]);
-                break;
-                }
-                case OUTPUT_NODE: {
-                    std::string hdr = std::string("Number of used <")
-                        + operation_list_STR[op][ODIN_LONG_STRING]
-                        + "> node(s): ";
-                    printf("%-42s%lld\n", hdr.c_str(), netlist->num_of_type[op]);
-                    hdr = std::string("Number of unused <")
-                        + operation_list_STR[op][ODIN_LONG_STRING]
-                        + "> node(s): ";
-                    printf("%-42s%lld\n\n", hdr.c_str(), netlist->num_top_output_nodes - netlist->num_of_type[op]);
-                break;
-                }
-                default: {
-                    if (netlist->num_of_type[op] > UNUSED_NODE_TYPE) {
+                    // For top IO nodes generate detailed info since the design might have unconnected input nodes
+                    case CLOCK_NODE: {
                         std::string hdr = std::string("Number of <")
-                            + operation_list_STR[op][ODIN_LONG_STRING]
-                            + "> node(s): ";
+                                          + operation_list_STR[op][ODIN_LONG_STRING]
+                                          + "> node(s): ";
                         printf("%-42s%lld\n", hdr.c_str(), netlist->num_of_type[op]);
+                        break;
+                    }
+                    case INPUT_NODE: {
+                        std::string hdr = std::string("Number of used <")
+                                          + operation_list_STR[op][ODIN_LONG_STRING]
+                                          + "> node(s): ";
+                        printf("%-42s%lld\n", hdr.c_str(), netlist->num_of_type[op]);
+                        hdr = std::string("Number of unused <")
+                              + operation_list_STR[op][ODIN_LONG_STRING]
+                              + "> node(s): ";
+                        printf("%-42s%lld\n", hdr.c_str(), netlist->num_top_input_nodes - netlist->num_of_type[op]);
+                        break;
+                    }
+                    case OUTPUT_NODE: {
+                        std::string hdr = std::string("Number of used <")
+                                          + operation_list_STR[op][ODIN_LONG_STRING]
+                                          + "> node(s): ";
+                        printf("%-42s%lld\n", hdr.c_str(), netlist->num_of_type[op]);
+                        hdr = std::string("Number of unused <")
+                              + operation_list_STR[op][ODIN_LONG_STRING]
+                              + "> node(s): ";
+                        printf("%-42s%lld\n\n", hdr.c_str(), netlist->num_top_output_nodes - netlist->num_of_type[op]);
+                        break;
+                    }
+                    default: {
+                        if (netlist->num_of_type[op] > UNUSED_NODE_TYPE) {
+                            std::string hdr = std::string("Number of <")
+                                              + operation_list_STR[op][ODIN_LONG_STRING]
+                                              + "> node(s): ";
+                            printf("%-42s%lld\n", hdr.c_str(), netlist->num_of_type[op]);
                         }
                     }
                 }
