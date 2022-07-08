@@ -480,12 +480,29 @@ void compute_statistics(netlist_t* netlist, bool display) {
         if (display) {
             printf("\n\t==== Stats ====\n");
             for (long long op = 0; op < operation_list_END; op += 1) {
-                if (netlist->num_of_type[op] > UNUSED_NODE_TYPE) {
+                if(op == INPUT_NODE) {
+                    std::string hdr = std::string("\nTotal number of <")
+                            + operation_list_STR[op][ODIN_LONG_STRING]
+                            + "> node(s): ";
+                    printf("%-43s%lld\n", hdr.c_str(), (long long)netlist->num_top_input_nodes);
+                    hdr = std::string("Number of used <")
+                            + operation_list_STR[op][ODIN_LONG_STRING]
+                            + "> node(s): ";
+                    printf("%-42s%lld\n", hdr.c_str(), netlist->num_of_type[op]);
+                    hdr = std::string("Number of unused <")
+                            + operation_list_STR[op][ODIN_LONG_STRING]
+                            + "> node(s): ";
+                    printf("%-42s%lld\n\n", hdr.c_str(), netlist->num_top_input_nodes - netlist->num_of_type[op]);
+
+                }
+                
+                else if (netlist->num_of_type[op] > UNUSED_NODE_TYPE) {
                     std::string hdr = std::string("Number of <")
                                       + operation_list_STR[op][ODIN_LONG_STRING]
-                                      + "> node: ";
+                                      + "> node(s): ";
 
                     printf("%-42s%lld\n", hdr.c_str(), netlist->num_of_type[op]);
+
                 }
             }
             printf("%-42s%lld\n", "Total estimated number of lut: ", netlist->num_logic_element);
