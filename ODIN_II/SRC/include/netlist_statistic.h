@@ -16,6 +16,7 @@ stat_t* delete_stat(stat_t* stat);
 
 void init_stat(netlist_t* netlist);
 void compute_statistics(netlist_t* netlist, bool display);
+void file_statistics(netlist_t* netlist, bool write);
 
 /**
  * @brief This function will calculate and assign weights related

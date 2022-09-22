@@ -27,7 +27,7 @@
 	<!-- required-->
 	<optimizations>
 		<!-- optional-->
-		<mix_soft_hard_blocks mults_ratio="0.0"></mix_soft_hard_blocks>+
+		<mix_soft_hard_blocks mults_ratio="0.95"></mix_soft_hard_blocks>+
 		<!-- required-->
 		<multiply size="MMM" fixed="1" fracture="0" padding="-1"/> 
 		<!-- required-->

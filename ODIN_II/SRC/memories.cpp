@@ -35,6 +35,9 @@
 #include "partial_map.h"
 #include "vtr_util.h"
 #include "vtr_memory.h"
+#include <iostream>
+#include <fstream>
+using namespace std;
 
 using vtr::t_linked_vptr;
 
@@ -283,9 +286,11 @@ void add_output_port_to_memory(nnode_t* node, signal_list_t* signals, const char
  * Reports the memory distribution as well.
  */
 void check_memories_and_report_distribution() {
+    ofstream statsfile;
+    statsfile.open ("stats.txt");
     if ((sp_memory_list == NULL) && (dp_memory_list == NULL))
         return;
-
+    
     printf("\nHard Logical Memory Distribution\n");
     printf("============================\n");
 
@@ -348,7 +353,10 @@ void check_memories_and_report_distribution() {
     printf("Max Memory Width = %ld \n", memory_max_width);
     printf("Max Memory Depth = %ld \n", memory_max_depth);
     printf("\n");
-
+    statsfile << "Total Logical Memory Blocks: ";
+    statsfile << total_memory_block_counter;
+    statsfile << "\n";
+    statsfile.close();
     return;
 }
 

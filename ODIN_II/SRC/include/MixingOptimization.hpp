@@ -103,7 +103,7 @@ class MixingOpt {
      *
      * @param count 
      */
-    virtual void set_blocks_needed(int count);
+    virtual void set_blocks_needed(int count, float pred_ratio);
 
     operation_list get_kind() {
         return _kind;
@@ -132,7 +132,7 @@ class MixingOpt {
      * @brief a routine that will multiply
      * required blocks by the ratio
      */
-    virtual void scale_counts();
+    virtual void scale_counts(float pred_ratio);
 
     /**
      * @brief this variable allows to cache traverse value
@@ -216,7 +216,7 @@ class MultsOpt : public MixingOpt {
      *
      * @param count 
      */
-    virtual void set_blocks_needed(int);
+    virtual void set_blocks_needed(int, float);
 
     /**
      * @brief based on criteria for hardening given kind of operation, return

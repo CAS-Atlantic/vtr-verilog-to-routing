@@ -53,7 +53,7 @@ class HardSoftLogicMixer {
      * Parameters: netlist_t *
      *---------------------------------------------------------------------
      */
-    void perform_optimizations(netlist_t* netlist);
+    void perform_optimizations(netlist_t* netlist, float pred_ratio);
 
     /*----------------------------------------------------------------------
      * Function: partial_map_node
