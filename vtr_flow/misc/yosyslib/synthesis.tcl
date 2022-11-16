@@ -69,6 +69,8 @@ opt -full
 # Transform all async FFs into synchronous ones
 techmap -map +/adff2dff.v
 techmap -map TTT/../../../ODIN_II/techlib/adffe2dff.v
+techmap -map TTT/../../../ODIN_II/techlib/aldff2dff.v
+techmap -map TTT/../../../ODIN_II/techlib/aldffe2dff.v
 
 # Map multipliers, DSPs, and add/subtracts according to yosys_models.v
 techmap -map YYY */t:\$mul */t:\$mem */t:\$sub */t:\$add
