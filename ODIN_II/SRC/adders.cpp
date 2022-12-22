@@ -821,7 +821,7 @@ void split_instantiate_hard_adder(nnode_t* node, uintptr_t mark, netlist_t* netl
     sizea = hard_adders->inputs->next->size;
 
     oassert(sizecin == 1);
-     oassert(node != NULL);
+    oassert(node != NULL);
 
     if (node->type == HARD_IP)
         node->type = ADD;

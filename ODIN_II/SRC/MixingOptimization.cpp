@@ -36,7 +36,6 @@
 
 using vtr::t_linked_vptr;
 
-
 void MixingOpt::scale_counts() {
     if (this->_blocks_count < 0 || this->_blocks_count == INT_MAX || this->_ratio < 0.0 || this->_ratio > 1.0) {
         error_message(NETLIST, unknown_location, "The parameters for optimization kind:%i are configured incorrectly : count %i, ratio %f\n", this->_kind, this->_blocks_count, this->_ratio);
