@@ -31,6 +31,8 @@ HardSoftLogicMixer::HardSoftLogicMixer() {
     for (int i = 0; i < operation_list_END; i++) {
         if (i == MULTIPLY) {
             this->_opts[i] = new MultsOpt();
+        } else if (i == ADD) {
+            this->_opts[i] = new AddersOpt();
         } else {
             this->_opts[i] = new MixingOpt();
         }

@@ -89,7 +89,7 @@ class MixingOpt {
      */
     virtual void instantiate_soft_logic(netlist_t* netlist, std::vector<nnode_t*> nodes);
 
-     /**
+    /**
      * @brief Instantiates an alternative (not on hard blocks)
      * implementation for the operation
      *
@@ -337,6 +337,5 @@ class AddersOpt : public MixingOpt {
      */
     virtual void scale_counts();
 };
-
 
 #endif
