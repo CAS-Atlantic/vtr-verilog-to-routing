@@ -1,0 +1,30 @@
+.model bm_add_lpm
+.inputs bm_add_lpm^clock bm_add_lpm^reset_n bm_add_lpm^a_in~0 bm_add_lpm^a_in~1 bm_add_lpm^b_in~0 bm_add_lpm^b_in~1
+.outputs bm_add_lpm^out~0 bm_add_lpm^out~1
+
+.names gnd
+.names unconn
+.names vcc
+1
+
+.names bm_add_lpm^a_in~0 bm_add_lpm^b_in~0 bm_add_lpm^ADD~0^lXOR~3
+01 1
+10 1
+
+.names bm_add_lpm^a_in~0 bm_add_lpm^b_in~0 bm_add_lpm^ADD~0^lAND~4
+11 1
+
+.names bm_add_lpm^ADD~0^lAND~4 bm_add_lpm^a_in~1 bm_add_lpm^b_in~1 bm_add_lpm^ADD~0^ADDER~5
+001 1
+010 1
+100 1
+111 1
+
+.names bm_add_lpm^ADD~0^lXOR~3 bm_add_lpm^out~0
+1 1
+
+.names bm_add_lpm^ADD~0^ADDER~5 bm_add_lpm^out~1
+1 1
+
+.end
+
