@@ -8,6 +8,7 @@ file(GLOB_RECURSE LIB_SOURCES parmys-plugin/*.cc)
 file(GLOB_RECURSE LIB_HEADERS parmys-plugin/*.hpp)
 file(GLOB_RECURSE LIB_SOURCES_O parmys-plugin/src/*.cc)
 file(GLOB_RECURSE LIB_HEADERS_O parmys-plugin/src/include/*.h)
+file(GLOB_RECURSE LIB_VERILOGS parmys-plugin/techlibs/*2dff.v)
 
 files_to_dirs(LIB_HEADERS LIB_INCLUDE_DIRS)
 files_to_dirs(LIB_HEADERS_O LIB_INCLUDE_DIRS)
@@ -36,4 +37,20 @@ target_link_libraries(parmys
 
 set_target_properties(parmys PROPERTIES PREFIX "") # Avoid extra 'lib' prefix
 
-install(TARGETS parmys DESTINATION bin)
+add_custom_target(parmys-plugin ALL
+		DEPENDS parmys
+		COMMAND ${CMAKE_COMMAND}
+		--install ${CMAKE_BINARY_DIR}/libs
+		WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
+
+#install(TARGETS parmys DESTINATION bin)
+
+
+#install(DIRECTORY DESTINATION "${VTR_SOURCE_DIR}/Yosys/share/yosys/plugins")
+
+file(MAKE_DIRECTORY ${VTR_SOURCE_DIR}/Yosys/share/yosys/plugins)
+install(TARGETS parmys DESTINATION ${VTR_SOURCE_DIR}/Yosys/share/yosys/plugins)
+
+file(MAKE_DIRECTORY ${VTR_SOURCE_DIR}/Yosys/share/yosys/parmys)
+install(FILES ${LIB_VERILOGS} DESTINATION ${VTR_SOURCE_DIR}/Yosys/share/yosys/parmys)
+install(FILES "third_party/vtr_flow/primitives.v" DESTINATION ${VTR_SOURCE_DIR}/Yosys/share/yosys/parmys RENAME vtr_primitives.v)
