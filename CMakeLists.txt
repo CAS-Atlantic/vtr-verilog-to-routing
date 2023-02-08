@@ -414,6 +414,12 @@ if(${WITH_ODIN})
     endif()
 endif()
 
+set(MAKE_PROGRAM "$(MAKE)")
+if(${CMAKE_GENERATOR} STREQUAL "Ninja")
+    set(MAKE_PROGRAM "make")
+endif()
+add_subdirectory(yosys)
+
 # handle cmake params to compile Yosys SystemVerilog/UHDM plugins
 if(${YOSYS_SV_UHDM_PLUGIN})
     # avoid compiling plugins in case the Yosys frontend is not active
