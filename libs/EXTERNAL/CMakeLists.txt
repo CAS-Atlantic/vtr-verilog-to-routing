@@ -67,7 +67,7 @@ if (${WITH_YOSYS})
     # building Surelog and UHDM in a custom target to avoid any target conflict with VTR targets
     if (${YOSYS_SV_UHDM_PLUGIN})
         # keep record of the yosys DAT dir
-        set(YOSYS_DATDIR ${yosys_SOURCE_DIR}/share)
+        # set(YOSYS_DATDIR ${CMAKE_BINARY_DIR}/share)
         # keep record of the yosys-uhdm-plugin-integration path
         set(SURELOG_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Surelog)
         set(SURELOG_BINARY_DIR ${SURELOG_SOURCE_DIR}/build)
