@@ -67,7 +67,7 @@ if (${WITH_YOSYS})
     # building Surelog and UHDM in a custom target to avoid any target conflict with VTR targets
     if (${YOSYS_SV_UHDM_PLUGIN})
         # keep record of the yosys DAT dir
-        set(YOSYS_DATDIR ${yosys_BINARY_DIR}/share/yosys)
+        set(YOSYS_DATDIR ${yosys_SOURCE_DIR}/share)
         # keep record of the yosys-uhdm-plugin-integration path
         set(SURELOG_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Surelog)
         set(SURELOG_BINARY_DIR ${SURELOG_SOURCE_DIR}/build)
@@ -90,7 +90,7 @@ if (${WITH_YOSYS})
                 # define Surelog cache values
                 CMAKE_CACHE_ARGS
                 "-DCMAKE_BUILD_TYPE:STRING=Release"
-                "-DCMAKE_INSTALL_PREFIX:PATH=${VTR_SOURCE_DIR}/yosys"
+                "-DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_BINARY_DIR}"
                 "-DCMAKE_POSITION_INDEPENDENT_CODE:BOOL=ON"
                 "-DCMAKE_WARN_DEPRECATED:BOOL=OFF"
 
@@ -121,12 +121,12 @@ if (${WITH_YOSYS})
                 INSTALL_COMMAND ""
                 CONFIGURE_COMMAND ""
                 BUILD_COMMAND ${MAKE_PROGRAM} -C ${YOSYS_F4PGA_PLUGINS_SOURCE_DIR}
-                PATH=${yosys_BINARY_DIR}/bin/:$ENV{PATH}
-                UHDM_INSTALL_DIR=${VTR_SOURCE_DIR}/yosys
+                PATH=${CMAKE_BINARY_DIR}/bin/:$ENV{PATH}
+                UHDM_INSTALL_DIR=${CMAKE_BINARY_DIR}
                 BUILD_DIR=${CMAKE_CURRENT_BINARY_DIR}/f4pga-plugins/$(NAME) # NAME will be resolved by yosys-f4pga-plugins Make
-                YOSYS_PATH=${VTR_SOURCE_DIR}/Yosys
+                YOSYS_PATH=${CMAKE_BINARY_DIR}
                 PLUGIN_LIST=systemverilog #fasm xdc params sdc ql-iob design_introspection integrateinv ql-qlf systemverilog uhdm dsp-ff
-                install -j${CMAKE_BUILD_PARALLEL_LEVEL}
+                install -j${CUSTOM_BUILD_PARALLEL_LEVEL}
 
                 # redirect logs to a logfile
                 LOG_BUILD ON
