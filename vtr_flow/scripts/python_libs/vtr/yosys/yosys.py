@@ -48,10 +48,10 @@ def create_circuits_list(main_circuit, include_files):
 
 # pylint: disable=too-many-arguments, too-many-locals
 def init_script_file(
-        yosys_script_full_path,
-        circuit_list,
-        output_netlist,
-        architecture_file_path,
+    yosys_script_full_path,
+    circuit_list,
+    output_netlist,
+    architecture_file_path,
 ):
     """initializing the raw yosys script file"""
     # specify the input files type
@@ -74,13 +74,13 @@ def init_script_file(
 
 # pylint: disable=too-many-arguments, too-many-locals
 def init_config_file(
-        odin_config_full_path,
-        circuit_list,
-        architecture_file,
-        output_netlist,
-        memory_addr_width,
-        min_hard_mult_size,
-        min_hard_adder_size,
+    odin_config_full_path,
+    circuit_list,
+    architecture_file,
+    output_netlist,
+    memory_addr_width,
+    min_hard_mult_size,
+    min_hard_adder_size,
 ):
     """initializing the raw odin config file"""
     # specify the input files type
@@ -121,18 +121,18 @@ def init_config_file(
 
 # pylint: disable=too-many-arguments, too-many-locals, too-many-statements, too-many-branches
 def run(
-        architecture_file,
-        circuit_file,
-        include_files,
-        output_netlist,
-        command_runner=vtr.CommandRunner(),
-        temp_dir=Path("."),
-        yosys_args="",
-        log_filename="yosys.out",
-        yosys_exec=None,
-        yosys_script=None,
-        min_hard_mult_size=3,
-        min_hard_adder_size=1,
+    architecture_file,
+    circuit_file,
+    include_files,
+    output_netlist,
+    command_runner=vtr.CommandRunner(),
+    temp_dir=Path("."),
+    yosys_args="",
+    log_filename="yosys.out",
+    yosys_exec=None,
+    yosys_script=None,
+    min_hard_mult_size=3,
+    min_hard_adder_size=1,
 ):
     """
     Runs YOSYS on the specified architecture file and circuit file
@@ -257,5 +257,6 @@ def run(
     command_runner.run_system_command(
         cmd, temp_dir=temp_dir, log_filename=log_filename, indent_depth=1
     )
+
 
 # pylint: enable=too-many-arguments, too-many-locals, too-many-statements, too-many-branches
