@@ -1,7 +1,7 @@
-.. _Yosys:
+.. _Parmys:
 
 #####
-Yosys
+Parmys
 #####
 
 Yosys is a framework for Verilog RTL synthesis, used as one of three VTR front-ends to perform logic synthesis, elaboration,

@@ -21,18 +21,7 @@ FILE_TYPES = {
     ".ys": "RTLIL",
 }
 
-YOSYS_LIB_FILES = {
-    "YSMDL": "yosys_models.v",
-    "SPRAM": "single_port_ram.v",
-    "DPRAM": "dual_port_ram.v",
-    "SPRAMR": "spram_rename.v",
-    "DPRAMR": "dpram_rename.v",
-    "DSPBB": "arch_dsps.v",
-}
-
 YOSYS_PARSERS = ["yosys", "surelog", "yosys-plugin"]
-
-YOSYS_MAPPERS = ["parmys", "yosys"]
 
 
 def create_circuits_list(main_circuit, include_files):
@@ -59,19 +48,10 @@ def create_circuits_list(main_circuit, include_files):
 
 # pylint: disable=too-many-arguments, too-many-locals
 def init_script_file(
-    yosys_script_full_path,
-    yosys_models_full_path,
-    yosys_spram_full_path,
-    yosys_dpram_full_path,
-    yosys_spram_rename_full_path,
-    yosys_dpram_rename_full_path,
-    architecture_dsp_full_path,
-    circuit_list,
-    output_netlist,
-    memory_addr_width,
-    min_hard_mult_size,
-    min_hard_adder_size,
-    architecture_file_path,
+        yosys_script_full_path,
+        circuit_list,
+        output_netlist,
+        architecture_file_path,
 ):
     """initializing the raw yosys script file"""
     # specify the input files type
@@ -85,41 +65,22 @@ def init_script_file(
         yosys_script_full_path,
         {
             "XXX": "{}".format(" ".join(str(s) for s in circuit_list)),
-            "YYY": yosys_models_full_path,
-            "SSS": yosys_spram_full_path,
-            "DDD": yosys_dpram_full_path,
-            "SSR": yosys_spram_rename_full_path,
-            "DDR": yosys_dpram_rename_full_path,
-            "CCC": architecture_dsp_full_path,
-            "TTT": str(vtr.paths.yosys_lib_path),
+            "TTT": str(vtr.paths.yosys_tcl_path),
             "ZZZ": output_netlist,
             "QQQ": architecture_file_path,
         },
     )
 
-    # Update the config file
-    vtr.file_replace(
-        yosys_models_full_path,
-        {"PPP": memory_addr_width, "MMM": min_hard_mult_size, "AAA": min_hard_adder_size},
-    )
-
-    # Update the config file files
-    vtr.file_replace(yosys_spram_full_path, {"PPP": memory_addr_width})
-    vtr.file_replace(yosys_dpram_full_path, {"PPP": memory_addr_width})
-    vtr.file_replace(yosys_spram_rename_full_path, {"PPP": memory_addr_width})
-    vtr.file_replace(yosys_dpram_rename_full_path, {"PPP": memory_addr_width})
-
 
 # pylint: disable=too-many-arguments, too-many-locals
 def init_config_file(
-    odin_config_full_path,
-    circuit_list,
-    architecture_file,
-    output_netlist,
-    odin_parser_arg,
-    memory_addr_width,
-    min_hard_mult_size,
-    min_hard_adder_size,
+        odin_config_full_path,
+        circuit_list,
+        architecture_file,
+        output_netlist,
+        memory_addr_width,
+        min_hard_mult_size,
+        min_hard_adder_size,
 ):
     """initializing the raw odin config file"""
     # specify the input files type
@@ -127,10 +88,6 @@ def init_config_file(
     if file_extension not in FILE_TYPES:
         raise vtr.VtrError("Inavlid input file type '{}'".format(file_extension))
     input_file_type = FILE_TYPES[file_extension]
-
-    # Check if the user specifically requested for the UHDM parser
-    if odin_parser_arg == "-u":
-        input_file_type = "uhdm"
 
     # Update the config file
     vtr.file_replace(
@@ -164,18 +121,18 @@ def init_config_file(
 
 # pylint: disable=too-many-arguments, too-many-locals, too-many-statements, too-many-branches
 def run(
-    architecture_file,
-    circuit_file,
-    include_files,
-    output_netlist,
-    command_runner=vtr.CommandRunner(),
-    temp_dir=Path("."),
-    yosys_args="",
-    log_filename="yosys.out",
-    yosys_exec=None,
-    yosys_script=None,
-    min_hard_mult_size=3,
-    min_hard_adder_size=1,
+        architecture_file,
+        circuit_file,
+        include_files,
+        output_netlist,
+        command_runner=vtr.CommandRunner(),
+        temp_dir=Path("."),
+        yosys_args="",
+        log_filename="yosys.out",
+        yosys_exec=None,
+        yosys_script=None,
+        min_hard_mult_size=3,
+        min_hard_adder_size=1,
 ):
     """
     Runs YOSYS on the specified architecture file and circuit file
@@ -232,10 +189,7 @@ def run(
         yosys_exec = str(vtr.paths.yosys_exe_path)
 
     if yosys_script is None:
-        if yosys_args["mapper"] == "parmys":
-            yosys_base_script = str(vtr.paths.yosys_parmys_script_path)
-        else:
-            yosys_base_script = str(vtr.paths.yosys_script_path)
+        yosys_base_script = str(vtr.paths.yosys_script_path)
     else:
         yosys_base_script = str(Path(yosys_script).resolve())
 
@@ -245,62 +199,18 @@ def run(
     shutil.copyfile(yosys_base_script, yosys_script_full_path)
 
     # Copy the yosys models file
-    yosys_models = YOSYS_LIB_FILES["YSMDL"]
-    yosys_base_models = str(vtr.paths.yosys_lib_path / YOSYS_LIB_FILES["YSMDL"])
-    yosys_models_full_path = str(vtr.paths.scripts_path / temp_dir / yosys_models)
-    shutil.copyfile(yosys_base_models, yosys_models_full_path)
 
     # Copy the VTR memory blocks file
-    yosys_spram = YOSYS_LIB_FILES["SPRAM"]
-    yosys_dpram = YOSYS_LIB_FILES["DPRAM"]
-    yosys_spram_rename = YOSYS_LIB_FILES["SPRAMR"]
-    yosys_dpram_rename = YOSYS_LIB_FILES["DPRAMR"]
-    yosys_base_spram = str(vtr.paths.yosys_lib_path / YOSYS_LIB_FILES["SPRAM"])
-    yosys_base_dpram = str(vtr.paths.yosys_lib_path / YOSYS_LIB_FILES["DPRAM"])
-    yosys_base_spram_rename = str(vtr.paths.yosys_lib_path / YOSYS_LIB_FILES["SPRAMR"])
-    yosys_base_dpram_rename = str(vtr.paths.yosys_lib_path / YOSYS_LIB_FILES["DPRAMR"])
-    yosys_spram_full_path = str(vtr.paths.scripts_path / temp_dir / yosys_spram)
-    yosys_dpram_full_path = str(vtr.paths.scripts_path / temp_dir / yosys_dpram)
-    yosys_spram_rename_full_path = str(vtr.paths.scripts_path / temp_dir / yosys_spram_rename)
-    yosys_dpram_rename_full_path = str(vtr.paths.scripts_path / temp_dir / yosys_dpram_rename)
-    shutil.copyfile(yosys_base_spram, yosys_spram_full_path)
-    shutil.copyfile(yosys_base_dpram, yosys_dpram_full_path)
-    shutil.copyfile(yosys_base_spram_rename, yosys_spram_rename_full_path)
-    shutil.copyfile(yosys_base_dpram_rename, yosys_dpram_rename_full_path)
 
-    write_arch_bb_exec = str(vtr.paths.write_arch_bb_exe_path)
-    architecture_dsp_full_path = str(vtr.paths.scripts_path / temp_dir / YOSYS_LIB_FILES["DSPBB"])
     architecture_file_path = str(vtr.paths.scripts_path / architecture_file)
-
-    if yosys_args["mapper"] == "yosys":
-        # executing write_arch_bb to extract the black box definitions of the given arch file
-        command_runner.run_system_command(
-            [
-                write_arch_bb_exec,
-                str(vtr.paths.scripts_path / architecture_file),
-                architecture_dsp_full_path,
-            ],
-            temp_dir=temp_dir,
-            log_filename="write_arch_bb.log",
-            indent_depth=1,
-        )
 
     # Create a list showing all (.v) and (.vh) files
     circuit_list = create_circuits_list(circuit_file, include_files)
 
     init_script_file(
         yosys_script_full_path,
-        yosys_models_full_path,
-        yosys_spram_full_path,
-        yosys_dpram_full_path,
-        yosys_spram_rename_full_path,
-        yosys_dpram_rename_full_path,
-        architecture_dsp_full_path,
         circuit_list,
         output_netlist.name,
-        vtr.determine_memory_addr_width(str(architecture_file)),
-        min_hard_mult_size,
-        min_hard_adder_size,
         architecture_file_path,
     )
 
@@ -316,7 +226,6 @@ def run(
         circuit_list,
         architecture_file.name,
         output_netlist.name,
-        None,
         vtr.determine_memory_addr_width(str(architecture_file)),
         min_hard_mult_size,
         min_hard_adder_size,
@@ -330,17 +239,6 @@ def run(
         raise vtr.VtrError(
             "Invalid parser is specified for Yosys, available parsers are [{}]".format(
                 " ".join(str(x) for x in YOSYS_PARSERS)
-            )
-        )
-
-    # set the partial mapper
-    if yosys_args["mapper"] in YOSYS_MAPPERS:
-        os.environ["MAPPER"] = yosys_args["mapper"]
-        del yosys_args["mapper"]
-    else:
-        raise vtr.VtrError(
-            "Invalid partial mapper is specified for Yosys, available parsers are [{}]".format(
-                " ".join(str(x) for x in YOSYS_MAPPERS)
             )
         )
 
@@ -359,6 +257,5 @@ def run(
     command_runner.run_system_command(
         cmd, temp_dir=temp_dir, log_filename=log_filename, indent_depth=1
     )
-
 
 # pylint: enable=too-many-arguments, too-many-locals, too-many-statements, too-many-branches

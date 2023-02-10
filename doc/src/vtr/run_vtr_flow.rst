@@ -86,7 +86,7 @@ It is worth mentioning that utilizing Yosys plugins requires passing the ``-DYOS
 .. code-block:: bash
 
     # Using the Parmys (Partial Mapper for Yosys) plugin as partial mapper
-    ./run_vtr_flow <path/to/Verilog/File> <path/to/arch/file> -start yosys -mapper parmys
+    ./run_vtr_flow <path/to/Verilog/File> <path/to/arch/file> -start yosys
 
 Will run the VTR flow (default configuration) with Yosys frontend using Parmys plugin as partial mapper. To utilize the Parmys plugin, the ``-DYOSYS_PARMYS_PLUGIN=ON`` compile flag should be passed while building the VTR project with Yosys as a frontend.
 

@@ -75,7 +75,7 @@ make CMAKE_PARAMS="-DWITH_YOSYS=on -DYOSYS_PARMYS_PLUGIN=on"
 cd vtr_flow/scripts/
 
 # this command runs the vtr flow [yosys+parmys, abc, vpr]
-./run_vtr_flow.py my_verilog.v fpga_architecture.xml -start yosys -end vpr -mapper parmys
+./run_vtr_flow.py my_verilog.v fpga_architecture.xml -start yosys -end vpr
 ```
 
 For detailed information please refer to the [VTR documentation](https://docs.verilogtorouting.org/en/latest/).
