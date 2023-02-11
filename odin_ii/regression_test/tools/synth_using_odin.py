@@ -16,7 +16,7 @@ slog = open(path + "ODIN_success.lst", "w")
 filelist = filter(odin.isXML, os.listdir(path))
 
 for file in filelist:
-    cmd = "../../odin_II.exe -c " + path + file
+    cmd = "../../odin_ii.exe -c " + path + file
     process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
     (out, err) = process.communicate()
 

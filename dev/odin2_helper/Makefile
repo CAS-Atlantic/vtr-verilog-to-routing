@@ -1,4 +1,4 @@
-ODIN=~/Code/vtr-repo/svn/odin_ii/odin_II.exe
+ODIN=~/Code/vtr-repo/svn/odin_ii/odin_ii.exe
 
 EXE=verilog_preprocessor
 

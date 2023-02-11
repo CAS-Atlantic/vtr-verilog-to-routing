@@ -24,7 +24,7 @@ INPUT="$*"
 exec 0<&-
 
 WRAPPER_EXEC="${THIS_DIR}/exec_wrapper.sh"
-ODIN_EXEC="${THIS_DIR}/odin_II"
+ODIN_EXEC="${THIS_DIR}/odin_ii"
 
 
 BENCHMARK_DIR="${REGRESSION_DIR}/benchmark"

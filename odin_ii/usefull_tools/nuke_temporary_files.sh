@@ -14,7 +14,7 @@ EXCLUDES="\
 -e vpr/libvpr.a \
 -e ace2/ace \
 -e abc/libabc.a \
--e odin_ii/odin_II \
+-e odin_ii/odin_ii \
 -e odin_ii/libodin_ii.a \
 "
 

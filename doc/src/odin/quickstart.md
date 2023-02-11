@@ -26,7 +26,7 @@ To build you may use the Makefile wrapper in the $VTR_ROOT/odin_ii ``make build`
 
 ## Basic Usage
 
-./odin_II [arguments]
+./odin_ii [arguments]
 
 *Requires one and only one of `-c`, `-v`, or `-b`
 
@@ -45,20 +45,20 @@ The following are simple command-line arguments and a description of what they d
 It is assumed that they are being performed in the odin_ii directory.
 
 ```bash
-   ./odin_II -v <path/to/verilog/File>
+   ./odin_ii -v <path/to/verilog/File>
 ```
 
 Passes a verilog HDL file to Odin II where it is synthesized. 
 Warnings and errors may appear regarding the HDL code.
 
 ```bash
-   ./odin_II -b <path/to/blif/file>
+   ./odin_ii -b <path/to/blif/file>
 ```
 
 Passes a blif file to Odin II where it is synthesized.
 
 ```bash
-   ./odin_II -v <path/to/verilog/File> -a <path/to/arch/file> -o myModel.blif
+   ./odin_ii -v <path/to/verilog/File> -a <path/to/arch/file> -o myModel.blif
 ```
 
 Passes a verilog HDL file and and architecture to Odin II where it is synthesized. 

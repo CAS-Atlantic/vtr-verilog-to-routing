@@ -24,7 +24,7 @@
 ##############################################################################
 
 # Directory Locations for all the CAD programs
-$VERILOG_SYNTH="../odin_II.exe ";
+$VERILOG_SYNTH="../odin_ii.exe ";
 
 use Cwd;
 #-----------------------------------------------------------------------------

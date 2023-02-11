@@ -102,8 +102,8 @@ find_package(BISON REQUIRED)
 find_package(FLEX REQUIRED)
 
 #Find the flex and bison input files
-file(GLOB_RECURSE LEXER_SOURCES SRC/*.l)
-file(GLOB_RECURSE PARSER_SOURCES SRC/*.y)
+file(GLOB_RECURSE LEXER_SOURCES src/verilog/*.l)
+file(GLOB_RECURSE PARSER_SOURCES src/verilog/*.y)
 
 #Make the flex and bison targets
 flex_target(VerilogLexer ${LEXER_SOURCES} ${CMAKE_CURRENT_BINARY_DIR}/verilog_flex.c)
@@ -115,13 +115,12 @@ files_to_dirs(BISON_VerilogParser_OUTPUT_HEADER PARSER_INCLUDE_DIRS)
 
 include(CheckCXXSymbolExists)
 
-set(LIB_INCLUDE_DIRS "SRC/include")
-
 #Collect the source files
-file(GLOB_RECURSE EXEC_SOURCES main.cpp)
-file(GLOB_RECURSE LIB_SOURCES SRC/*.cpp)
-file(GLOB_RECURSE LIB_HEADERS_H ${LIB_INCLUDE_DIRS}/*.h)
-file(GLOB_RECURSE LIB_HEADERS_HPP ${LIB_INCLUDE_DIRS}/*.hpp)
+file(GLOB_RECURSE EXEC_SOURCES src/main.cpp)
+file(GLOB_RECURSE LIB_SOURCES src/*/*.cpp)
+file(GLOB_RECURSE LIB_HEADERS src/*/*.h)
+
+files_to_dirs(LIB_HEADERS LIB_INCLUDE_DIRS)
 
 #Treat .c as CXX
 set_source_files_properties(${FLEX_VerilogLexer_OUTPUTS} ${BISON_VerilogParser_OUTPUT_SOURCE} PROPERTIES LANGUAGE CXX)
@@ -137,8 +136,7 @@ include_directories(${LIB_INCLUDE_DIRS} ${PARSER_INCLUDE_DIRS})
 
 #Create the library
 add_library(libodin_ii STATIC
-             ${LIB_HEADERS_H}
-             ${LIB_HEADERS_HPP}
+             ${LIB_HEADERS}
              ${LIB_SOURCES}
              ${FLEX_VerilogLexer_OUTPUTS}
              ${BISON_VerilogParser_OUTPUT_SOURCE})
@@ -155,9 +153,9 @@ target_link_libraries(libodin_ii
                         ${CMAKE_DL_LIBS})
 
 #Create the executable
-add_executable(odin_II ${EXEC_SOURCES})
+add_executable(odin_ii ${EXEC_SOURCES})
 
-target_link_libraries(odin_II
+target_link_libraries(odin_ii
                         libodin_ii)
 
 #################################
@@ -173,7 +171,7 @@ foreach(ODIN_FLAG ${ODIN_EXTRA_FLAGS})
     if(FLAG_TEST)
         message("-- Performing Test CXX_SUPPORT_FLAG${ODIN_FLAG} - Success")
         target_compile_options(libodin_ii PRIVATE ${ODIN_FLAG})
-        target_compile_options(odin_II PRIVATE ${ODIN_FLAG})
+        target_compile_options(odin_ii PRIVATE ${ODIN_FLAG})
     else()
         message("-- Performing Test CXX_SUPPORT_FLAG${ODIN_FLAG} - Failure")
     endif()
@@ -183,13 +181,13 @@ endforeach()
 #add extra link flags for odin
 foreach(ODIN_LINK_FLAG ${ODIN_EXTRA_LINK_FLAGS})
         target_link_libraries(libodin_ii ${ODIN_LINK_FLAG})
-        target_link_libraries(odin_II ${ODIN_LINK_FLAG})
+        target_link_libraries(odin_ii ${ODIN_LINK_FLAG})
 endforeach()
 
 #Supress IPO link warnings if IPO is enabled
-get_target_property(ODIN_USES_IPO odin_II INTERPROCEDURAL_OPTIMIZATION)
+get_target_property(ODIN_USES_IPO odin_ii INTERPROCEDURAL_OPTIMIZATION)
 if (ODIN_USES_IPO)
-    set_property(TARGET odin_II APPEND PROPERTY LINK_FLAGS ${IPO_LINK_WARN_SUPRESS_FLAGS})
+    set_property(TARGET odin_ii APPEND PROPERTY LINK_FLAGS ${IPO_LINK_WARN_SUPRESS_FLAGS})
 endif()
 
 #add strict odin compiler flags, if set
@@ -204,10 +202,10 @@ if(VTR_ENABLE_STRICT_COMPILE)
     foreach(flag ${ODIN_STRICT_COMPILE_FLAGS_TO_CHECK})
         message(STATUS "\tAdding CXX flag: ${flag}")
         target_compile_options(libodin_ii PRIVATE ${flag})
-        target_compile_options(odin_II PRIVATE ${flag})
-        target_link_libraries(odin_II ${flag})
+        target_compile_options(odin_ii PRIVATE ${flag})
+        target_link_libraries(odin_ii ${flag})
     endforeach()
 endif()
 
-install(TARGETS odin_II libodin_ii DESTINATION bin)
-install(FILES ${LIB_HEADERS_H} ${LIB_HEADERS_HPP} DESTINATION include/libodin_ii)
+install(TARGETS odin_ii libodin_ii DESTINATION bin)
+install(FILES ${LIB_HEADERS} DESTINATION include/libodin_ii)
