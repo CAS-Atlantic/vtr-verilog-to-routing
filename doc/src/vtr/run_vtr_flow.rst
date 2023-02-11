@@ -186,7 +186,7 @@ Detailed Command-line Options
 
 .. option:: -min_hard_mult_size <int>
 
-    Tells ODIN II the minimum multiplier size that should be implemented
+    Tells Parmys/ODIN II the minimum multiplier size that should be implemented
     using hard multiplier (if available). Smaller multipliers will be
     implemented using soft logic.
 
@@ -194,7 +194,7 @@ Detailed Command-line Options
 
 .. option:: -min_hard_adder_size <int>
 
-    Tells ODIN II the minimum adder size that should be implemented
+    Tells Parmys/ODIN II the minimum adder size that should be implemented
     using hard adders (if available). Smaller adders will be
     implemented using soft logic.
 
@@ -202,7 +202,7 @@ Detailed Command-line Options
 
 .. option:: -adder_cin_global
 
-    Tells ODIN II to connect the first cin in an adder/subtractor chain
+    Tells Parmys/ODIN II to connect the first cin in an adder/subtractor chain
     to a global gnd/vdd net. Instead of creating a dummy adder to generate
     the input signal of the first cin port of the chain.
 
@@ -222,13 +222,13 @@ Detailed Command-line Options
 
 .. option:: -min_hard_mult_size <min_hard_mult_size>
     
-    Tells ODIN II the minimum multiplier size (in bits) to be implemented using hard multiplier.
+    Tells Parmys/ODIN II the minimum multiplier size (in bits) to be implemented using hard multiplier.
     
     **Default:** 3
 
 .. option:: -min_hard_adder_size <MIN_HARD_ADDER_SIZE>
     
-    Tells ODIN II the minimum adder size (in bits) that should be implemented using hard adder.
+    Tells Parmys/ODIN II the minimum adder size (in bits) that should be implemented using hard adder.
     
     **Default:** 1
 
@@ -238,7 +238,7 @@ Detailed Command-line Options
 
 .. option:: -yosys_script <YOSYS_SCRIPT>
     
-    Supplies Yosys with a .ys script file (similar to Tcl script), including the synthesis steps.
+    Supplies Parmys(Yosys) with a .ys script file (similar to Tcl script), including the synthesis steps.
     
     **Default:** None
 
