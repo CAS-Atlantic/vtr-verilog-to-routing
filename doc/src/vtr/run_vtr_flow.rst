@@ -74,7 +74,7 @@ The parser for these runs is considered the Yosys conventional Verilog/SystemVer
 .. code-block:: bash
 
     # Using the Yosys-SystemVerilog plugin if installed, otherwise the Yosys conventional Verilog parser
-    ./run_vtr_flow <path/to/SystemVerilog/File> <path/to/arch/file> -start yosys -parser yosys-plugin
+    ./run_vtr_flow <path/to/SystemVerilog/File> <path/to/arch/file> -parser system-verilog
 
     # Using the Surelog plugin if installed, otherwise failure on the unsupported file type
     ./run_vtr_flow <path/to/UHDM/File> <path/to/arch/file> -start yosys -parser surelog
