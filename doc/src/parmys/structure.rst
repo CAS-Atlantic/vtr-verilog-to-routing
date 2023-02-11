@@ -3,34 +3,35 @@
 Structure
 =========
 
-Structure of Yosys Synthesis Files and the Yosys External Library Library 
+Structure of Parmys Frontend (Yosys + Parmys Plugin)
 -------------------------------------------------------------------------
 
 .. code-block:: bash
 
     └── $VTR_ROOT
-    	├── vtr_flow
-    	│	└── misc
-    	│		└── yosyslib
-    	│			├── adder.v
-    	│			├── dpram_rename.v
-    	│			├── dual_port_ram.v
-    	│			├── multiply.v
-    	│			├── single_port_ram.v
-    	│			├── spram_rename.v
-    	│			├── synthesis.tcl
-    	│			└── yosys_models.v
-    	└── libs
-    	    └── EXTERNAL
-    	        └── libyosys
-                    ├── backends
-                    ├── examples
-                    ├── frontends
-                    ├── guidelines
-                    ├── kernel
-                    ├── libs
-                    ├── manual
-                    ├── misc
-                    ├── passes
-                    ├── techlibs
-                    └── tests
+        ├── vtr_flow
+        │	└── misc
+        │		└── parmys
+        │			└── synthesis.tcl
+        ├── parmys
+        │   ├── parmys-plugin
+        │   │   ├── core
+        │   │   ├── mapping
+        │   │   ├── netlist
+        │   │   ├── techlibs
+        │   │   ├── tests
+        │   │   └──utils
+        │   ├── test-utils
+        │   └── third_party
+        └── yosys
+            ├── backends
+            ├── examples
+            ├── frontends
+            ├── guidelines
+            ├── kernel
+            ├── libs
+            ├── manual
+            ├── misc
+            ├── passes
+            ├── techlibs
+            └── tests

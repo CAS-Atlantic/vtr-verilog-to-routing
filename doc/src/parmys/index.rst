@@ -4,8 +4,7 @@
 Parmys
 #####
 
-Yosys is a framework for Verilog RTL synthesis, used as one of three VTR front-ends to perform logic synthesis, elaboration,
-and converting a subset of the Verilog Hardware Description Language (HDL) into a BLIF netlist.
+Parmys utilizes Yosys which is a framework for Verilog RTL synthesis and Parmys plugin as partial mapper.
 
 .. toctree::
    :glob:

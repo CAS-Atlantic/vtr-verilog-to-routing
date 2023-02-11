@@ -79,9 +79,9 @@ The parser for these runs is considered the Yosys conventional Verilog/SystemVer
     # Using the Surelog plugin if installed, otherwise failure on the unsupported file type
     ./run_vtr_flow <path/to/UHDM/File> <path/to/arch/file> -start yosys -parser surelog
 
-Running the default VTR flow using the Yosys standalone front-end.
+Running the default VTR flow using the Parmys standalone front-end.
 The Yosys HDL parser is considered as Yosys-SystemVerilog plugin (i.e., ``read_systemverilog``) and Yosys UHDM plugin (i.e., ``read_uhdm``), respectively.
-It is worth mentioning that utilizing Yosys plugins requires passing the ``-DYOSYS_SV_UHDM_PLUGIN=ON`` compile flag to build and install the plugins for the Yosys front-end.
+Utilizing Yosys plugins requires passing the ``-DYOSYS_SV_UHDM_PLUGIN=ON`` compile flag to build and install the plugins for the Parmys front-end.
 
 .. code-block:: bash
 
@@ -102,12 +102,12 @@ Detailed Command-line Options
     Accepted values:
 
       * ``odin``
-      * ``yosys``
+      * ``parmys``
       * ``abc``
       * ``scripts``
       * ``vpr``
 
-    **Default:** ``yosys``
+    **Default:** ``parmys``
 
 .. option:: -ending_stage <stage>
 
@@ -117,7 +117,7 @@ Detailed Command-line Options
     Accepted values:
 
       * ``odin``
-      * ``yosys``
+      * ``parmys``
       * ``abc``
       * ``scripts``
       * ``vpr``
@@ -244,25 +244,18 @@ Detailed Command-line Options
 
 .. option:: -parser <PARSER>
 
-    Specify a parser for the Yosys synthesizer [yosys (Verilog-2005), surelog (UHDM), yosys-plugin (SystemVerilog)].
-    The script uses the Yosys conventional Verilog parser if this argument is not used.
+    Specify a parser for the Yosys synthesizer [default (Verilog-2005), surelog (UHDM), system-verilog].
+    The script uses the default conventional Verilog parser if this argument is not used.
     
-    **Default:** yosys
+    **Default:** default
 
 .. note::
 
     Universal Hardware Data Model (UHDM) is a complete modeling of the IEEE SystemVerilog Object Model with VPI Interface, Elaborator, Serialization, Visitor and Listener.
     UHDM is used as a compiled interchange format in between SystemVerilog tools. Typical inputs to the UHDM flow are files with ``.v`` or ``.sv`` extensions.
-    The ``yosys-plugins`` parser, which represents the ``read_systemverilog`` command, reads SystemVerilog files directly in Yosys.
+    The ``system-verilog`` parser, which represents the ``read_systemverilog`` command, reads SystemVerilog files directly in Yosys.
     It executes Surelog with provided filenames and converts them (in memory) into UHDM file. Then, this UHDM file is converted into Yosys AST. `[Yosys-SystemVerilog] <https://github.com/antmicro/yosys-systemverilog#usage>`_
     On the other hand, the ``surelog`` parser, which uses the ``read_uhdm`` Yosys command, walks the design tree and converts its nodes into Yosys AST nodes using Surelog. `[UHDM-Yosys <https://github.com/chipsalliance/UHDM-integration-tests#uhdm-yosys>`_, `Surelog] <https://github.com/chipsalliance/Surelog#surelog>`_
-
-.. option:: -mapper <MAPPER>
-
-    Choose a partial mapper for the Yosys synthesizer [yosys (default), parmys (Partial Mapper for Yosys plugin)].
-    The Yosys default partial mapper will be used if no mapper is specified.
-
-    **Default:** yosys
 
 .. note::
 

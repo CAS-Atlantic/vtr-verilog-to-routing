@@ -29,19 +29,12 @@ Prerequisites
 Building
 --------
 
-To build the VTR flow with the Yosys front-end you may use the VTR Makefile wrapper, by calling the ``make CMAKE_PARAMS="-DWITH_YOSYS=ON"`` command in the `$VTR_ROOT` directory.
-The compile flag ``-DWITH_YOSYS=ON`` should be passed to the CMake parameters to enable the Yosys compilation process.
+To build the VTR flow with the Yosys front-end you may use the VTR Makefile wrapper, by calling the ``make CMAKE_PARAMS="-DWITH_PARMYS=ON"`` command in the `$VTR_ROOT` directory.
 
 .. note::
 
     Compiling the VTR flow with the ``-DYOSYS_SV_UHDM_PLUGIN=ON`` flag is required to build and install Yosys SystemVerilog and UHDM plugins.
     Using this compile flag, the `Yosys-F4PGA-Plugins <https://github.com/chipsalliance/yosys-f4pga-plugins>`_ and `Surelog <https://github.com/chipsalliance/Surelog>`_ repositories are cloned in the ``$VTR_ROOT/libs/EXTERNAL`` directory and then will be compiled and added as external plugins to the Yosys front-end.
-
- 
-.. note::
-
-	Yosys uses Makefile as its build system. Since CMake provides portable, cross-platform build systems with many useful features, we provide a CMake wrapper to successfully embeds the Yosys library into the VTR flow.
-
 
 Basic Usage
 -----------
