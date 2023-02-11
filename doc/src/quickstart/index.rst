@@ -241,7 +241,7 @@ The resulting command is:
 
 .. code-block:: bash
 
-    > $VTR_ROOT/ODIN_II/odin_II \
+    > $VTR_ROOT/odin_ii/odin_II \
         -a $VTR_ROOT/vtr_flow/arch/timing/EArch.xml \
         -V $VTR_ROOT/doc/src/quickstart/blink.v \
         -o blink.odin.blif

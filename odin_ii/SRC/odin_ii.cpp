@@ -330,7 +330,7 @@ netlist_t* start_odin_ii(int argc, char** argv) {
         if (configuration.input_file_type != file_type_e::BLIF) {
             try {
                 error_code = synthesize();
-                printf("Odin_II synthesis has finished with code: %d\n", error_code);
+                printf("odin_ii synthesis has finished with code: %d\n", error_code);
             } catch (vtr::VtrError& vtr_error) {
                 printf("Odin Failed to Synthesis for the file: %s with exit code:%d \n", vtr_error.what(), ERROR_SYNTHESIS);
                 exit(ERROR_SYNTHESIS);

@@ -176,27 +176,27 @@ def configOptParse():
     )
     input.add_option(
         "-a",
-        help="The ODIN_II architecture file to use",
+        help="The odin_ii architecture file to use",
         action="store",
         dest="arch",
         metavar="ARCH_FILE",
     )
     input.add_option(
         "-i",
-        help="Treat each verilog file in the given directory as a seperate ODIN_II project. The -i and -d options cannot be used together.",
+        help="Treat each verilog file in the given directory as a seperate odin_ii project. The -i and -d options cannot be used together.",
         action="store",
         dest="individual",
         metavar="DIRECTORY",
     )
     input.add_option(
         "-d",
-        help="Treat the given directory as a single ODIN_II project and include all verilog files within it. The -i and -d options cannot be used together.",
+        help="Treat the given directory as a single odin_ii project and include all verilog files within it. The -i and -d options cannot be used together.",
         action="store",
         dest="directory",
     )
     input.add_option(
         "-v",
-        help="Add the given file to an ODIN_II project. This option can be used to create a project with files in different locations or in conjunction with -i and -d",
+        help="Add the given file to an odin_ii project. This option can be used to create a project with files in different locations or in conjunction with -i and -d",
         action="append",
         dest="files",
         metavar="FILE",
@@ -276,8 +276,8 @@ def configOptParse():
     # Debug Options
     debug = OptionGroup(
         parser,
-        "ODIN_II Debug Options",
-        "Configure what type of bebug information ODIN_II will produce and where to put it.",
+        "odin_ii Debug Options",
+        "Configure what type of bebug information odin_ii will produce and where to put it.",
     )
     debug.add_option(
         "--debug_path", help="Set the path where debug info will be put.", action="store"

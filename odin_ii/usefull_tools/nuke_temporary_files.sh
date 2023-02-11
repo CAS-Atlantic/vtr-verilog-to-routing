@@ -14,8 +14,8 @@ EXCLUDES="\
 -e vpr/libvpr.a \
 -e ace2/ace \
 -e abc/libabc.a \
--e ODIN_II/odin_II \
--e ODIN_II/libodin_ii.a \
+-e odin_ii/odin_II \
+-e odin_ii/libodin_ii.a \
 "
 
 while [[ 1 ]]

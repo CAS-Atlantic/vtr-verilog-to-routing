@@ -1,4 +1,4 @@
-Odin_II
+odin_ii
 =======
 
 Odin II is used for logic synthesis and elaboration, converting a subset of the Verilog Hardware Description Language (HDL) into a BLIF netlist.

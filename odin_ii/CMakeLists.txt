@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.9)
 
-project("ODIN_II")
+project("odin_ii")
 
 if(ODIN_DEBUG)
 
@@ -194,7 +194,7 @@ endif()
 
 #add strict odin compiler flags, if set
 if(VTR_ENABLE_STRICT_COMPILE)
-    message(STATUS "ODIN_II: building with strict flags")
+    message(STATUS "odin_ii: building with strict flags")
 
     set(ODIN_STRICT_COMPILE_FLAGS_TO_CHECK
         #GCC-like

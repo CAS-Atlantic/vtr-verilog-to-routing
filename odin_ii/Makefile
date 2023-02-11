@@ -21,7 +21,7 @@ MAKEFLAGS := -s
 CMAKE_ARGS = -DVTR_IPO_BUILD=off $(CMAKE_PARAMS)
 
 BUILD_DIR=../build
-ODIN_BUILD_DIR=$(BUILD_DIR)/ODIN_II
+ODIN_BUILD_DIR=$(BUILD_DIR)/odin_ii
 
 .PHONY: help build debug test large_test
 
@@ -41,7 +41,7 @@ _init: clean
 clean:
 	$(RM) -f $(ODIN_BUILD_DIR)/.*.build
 	$(RM) -Rf $(BUILD_DIR)/CMakeCache.txt
-	$(RM) -Rf $(BUILD_DIR)/ODIN_II
+	$(RM) -Rf $(BUILD_DIR)/odin_ii
 
 define _build_it_gen
 _build_it_$(1): _set_$(1)
@@ -87,7 +87,7 @@ scrub:
 	./verify_odin.sh --clean
 
 gcovr:
-	find $(BUILD_DIR)/ODIN_II/CMakeFiles/libodin_ii.dir -type f \( -iname \*.gcno -or -iname \*.gcda -or -iname \*.gcov \) -exec cp {} SRC/ \; 
+	find $(BUILD_DIR)/odin_ii/CMakeFiles/libodin_ii.dir -type f \( -iname \*.gcno -or -iname \*.gcda -or -iname \*.gcov \) -exec cp {} SRC/ \;
 	gcovr --html -s -o coverage_report.html -r .;
 	find SRC/ -type f \( -iname \*.gcno -or -iname \*.gcda -or -iname \*.gcov \) -exec rm -f {} \; 
 

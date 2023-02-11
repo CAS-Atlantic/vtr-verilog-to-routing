@@ -1,6 +1,6 @@
 # Parmys (Partial Mapper for Yosys) Plugin
 
-This repository contains intellignet partial mapper plugin from [Odin-II](https://github.com/verilog-to-routing/vtr-verilog-to-routing/tree/master/ODIN_II) for [Yosys](https://github.com/YosysHQ/yosys.git).
+This repository contains intellignet partial mapper plugin from [Odin-II](https://github.com/verilog-to-routing/vtr-verilog-to-routing/tree/master/odin_ii) for [Yosys](https://github.com/YosysHQ/yosys.git).
 
 The project build skeleton is based on [Yosys F4PGA Plugins](https://github.com/chipsalliance/yosys-f4pga-plugins.git) project.
 

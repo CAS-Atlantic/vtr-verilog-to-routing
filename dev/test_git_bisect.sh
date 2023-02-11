@@ -33,7 +33,7 @@ fi
 pushd test >& /dev/null
 
 #Run the tool
-../ODIN_II/odin_II -c odin_config.xml >& odin.log
+../odin_ii/odin_II -c odin_config.xml >& odin.log
 
 #Check for the error
 diff ref.blif LU8PEEng.odin.blif >& /dev/null

@@ -12,7 +12,7 @@
 
 ## Building
 
-To build you may use the Makefile wrapper in the $VTR_ROOT/ODIN_II ``make build`` To build with debug symbols you may use the Makefile wrapper in $VTR_ROOT/ODIN_II ``make debug``
+To build you may use the Makefile wrapper in the $VTR_ROOT/odin_ii ``make build`` To build with debug symbols you may use the Makefile wrapper in $VTR_ROOT/odin_ii ``make debug``
 
 > *NOTE*
 >
@@ -21,7 +21,7 @@ To build you may use the Makefile wrapper in the $VTR_ROOT/ODIN_II ``make build`
 
 > *WARNING*
 >
-> After you build Odin, please run from the $VTR_ROOT/ODIN_II ``make test``.
+> After you build Odin, please run from the $VTR_ROOT/odin_ii ``make test``.
 > This will simulate and verify all of the included microbenchmark circuits to ensure that Odin is working correctly on your system.
 
 ## Basic Usage
@@ -42,7 +42,7 @@ To build you may use the Makefile wrapper in the $VTR_ROOT/ODIN_II ``make build`
 ## Example Usage
 
 The following are simple command-line arguments and a description of what they do. 
-It is assumed that they are being performed in the Odin_II directory.
+It is assumed that they are being performed in the odin_ii directory.
 
 ```bash
    ./odin_II -v <path/to/verilog/File>

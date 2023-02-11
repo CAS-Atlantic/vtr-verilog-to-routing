@@ -99,11 +99,11 @@ void report_frontend_elaborator() {
     switch (configuration.input_file_type) {
         case (file_type_e::VERILOG): // fallthrough
         case (file_type_e::VERILOG_HEADER): {
-            printf("Using the ODIN_II parser for elaboration\n");
+            printf("Using the odin_ii parser for elaboration\n");
             break;
         }
         case (file_type_e::BLIF): {
-            printf("Using the ODIN_II BLIF parser\n");
+            printf("Using the odin_ii BLIF parser\n");
             break;
         }
         case (file_type_e::EBLIF): //fallthrough

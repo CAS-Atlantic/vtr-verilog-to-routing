@@ -1,5 +1,5 @@
 #! /usr/bin/python
-# Iterate through a directory listing and synthesize each  project using ODIN_II
+# Iterate through a directory listing and synthesize each  project using odin_ii
 
 import os
 import subprocess
@@ -24,8 +24,8 @@ for file in filelist:
     if process.returncode != 0:
         flog = open(path + file + ".log", "w")
         flog.write("CONFIG File: " + file + "\n")
-        flog.write("ODIN_II Command: " + cmd + "\n")
-        flog.write("ODIN_II Output:\n" + out + "\n\n")
+        flog.write("odin_ii Command: " + cmd + "\n")
+        flog.write("odin_ii Output:\n" + out + "\n\n")
         flog.close()
     else:
         slog.write(file + "\n")
