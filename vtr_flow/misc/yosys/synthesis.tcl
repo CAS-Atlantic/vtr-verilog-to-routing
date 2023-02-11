@@ -16,12 +16,12 @@ if {$env(PARSER) == "surelog" } {
 	plugin -i systemverilog
 	yosys -import
 	read_uhdm -debug XXX
-} elseif {$env(PARSER) == "yosys-plugin" } {
+} elseif {$env(PARSER) == "system-verilog" } {
 	puts "Using Yosys read_systemverilog command"
 	plugin -i systemverilog
 	yosys -import
 	read_systemverilog -debug XXX
-} elseif {$env(PARSER) == "yosys" } {
+} elseif {$env(PARSER) == "default" } {
 	puts "Using Yosys read_verilog command"
 	read_verilog -sv -nolatches XXX
 } else {

@@ -54,9 +54,8 @@ option(ODIN_TIDY "Enable building odin with clang tidy" OFF)
 option(ODIN_SANITIZE "Enable building odin with sanitize flags" OFF)
 
 # Allow the user to enable building Yosys
-option(WITH_YOSYS "Enable building Yosys" ON)
+option(WITH_PARMYS "Enable Yosys as elaborator and parmys-plugin as partial mapper" ON)
 option(YOSYS_SV_UHDM_PLUGIN "Enable building and installing Yosys SystemVerilog and UHDM plugins" OFF)
-option(YOSYS_PARMYS_PLUGIN "Enable building and installing Parmys (Partial Mapper for Yosys) plugin" ON)
 
 set(VTR_VERSION_MAJOR 8)
 set(VTR_VERSION_MINOR 1)
@@ -392,7 +391,7 @@ if(${WITH_ABC})
     add_subdirectory(abc)
 endif()
 
-if(${WITH_YOSYS}) # define cmake params to compile Yosys
+if(${WITH_PARMYS}) # define cmake params to compile Yosys
     add_definitions("-D_YOSYS_")
 
     set(MAKE_PROGRAM "$(MAKE)")
@@ -410,14 +409,8 @@ endif()
 
 add_subdirectory(libs) #libs/CMakeLists.txt handles adding warnings flags to non-external libraries
 
-# check YOSYS_PARMYS_PLUGIN flag
-if(${YOSYS_PARMYS_PLUGIN})
-    if(NOT ${WITH_YOSYS})
-        message(SEND_ERROR "Using YOSYS_PARMYS_PLUGIN requires activating Yosys frontend. Please set WITH_YOSYS.")
-    endif()
-    # if (${YOSYS_PARMYS_PLUGIN})
+if(${WITH_PARMYS})
     add_subdirectory(parmys)
-    # endif ()
 endif()
 
 #Add the various tools
@@ -440,9 +433,9 @@ endif()
 
 # handle cmake params to compile Yosys SystemVerilog/UHDM plugins
 if(${YOSYS_SV_UHDM_PLUGIN})
-    # avoid compiling plugins in case the Yosys frontend is not active
-    if(NOT ${WITH_YOSYS})
-        message(SEND_ERROR "Utilizing SystemVerilog/UHDM plugins requires activating Yosys frontend. Please set WITH_YOSYS.")
+    # avoid compiling plugins in case the Parmys frontend is not active
+    if(NOT ${WITH_PARMYS})
+        message(SEND_ERROR "Utilizing SystemVerilog/UHDM plugins requires activating Parmys frontend. Please set WITH_PARMYS.")
     endif()
 endif()
 

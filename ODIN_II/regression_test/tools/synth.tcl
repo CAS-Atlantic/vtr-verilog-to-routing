@@ -14,15 +14,16 @@ if {$env(PARSER) == "surelog" } {
     plugin -i systemverilog;
     yosys -import
 	read_uhdm -debug $env(TCL_CIRCUIT);
-} elseif {$env(PARSER) == "yosys-plugin" } {
+} elseif {$env(PARSER) == "system-verilog" } {
 	puts "Using Yosys read_systemverilog command"
     plugin -i systemverilog;
     yosys -import
 	read_systemverilog -debug $env(TCL_CIRCUIT)
-} elseif {$env(PARSER) == "yosys" } {
+} elseif {$env(PARSER) == "default" } {
 	puts "Using Yosys read_verilog command"
 	read_verilog -sv -nomem2reg -nolatches $env(TCL_CIRCUIT);
 } else {
+    put "$env(PARSER)"
 	error "Invalid PARSER"
 }
 

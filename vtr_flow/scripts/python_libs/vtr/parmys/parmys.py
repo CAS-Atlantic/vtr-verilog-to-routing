@@ -21,7 +21,7 @@ FILE_TYPES = {
     ".ys": "RTLIL",
 }
 
-YOSYS_PARSERS = ["yosys", "surelog", "yosys-plugin"]
+YOSYS_PARSERS = ["default", "surelog", "system-verilog"]
 
 
 def create_circuits_list(main_circuit, include_files):
@@ -127,8 +127,8 @@ def run(
     output_netlist,
     command_runner=vtr.CommandRunner(),
     temp_dir=Path("."),
-    yosys_args="",
-    log_filename="yosys.out",
+    parmys_args="",
+    log_filename="parmys.out",
     yosys_exec=None,
     yosys_script=None,
     min_hard_mult_size=3,
@@ -137,7 +137,7 @@ def run(
     """
     Runs YOSYS on the specified architecture file and circuit file
 
-    .. note :: Usage: vtr.yosys.run(<architecture_file>,<circuit_file>,<output_netlist>,[OPTIONS])
+    .. note :: Usage: vtr.parmys.run(<architecture_file>,<circuit_file>,<output_netlist>,[OPTIONS])
 
     Arguments
     =========
@@ -161,8 +161,8 @@ def run(
         temp_dir :
             Directory to run in (created if non-existent)
 
-        yosys_args:
-            A dictionary of keyword arguments to pass on to YOSYS
+        parmys_args:
+            A dictionary of keyword arguments to pass on to PARMYS
 
         log_filename :
             File to log result to
@@ -177,8 +177,8 @@ def run(
     temp_dir = Path(temp_dir) if not isinstance(temp_dir, Path) else temp_dir
     temp_dir.mkdir(parents=True, exist_ok=True)
 
-    if yosys_args is None:
-        yosys_args = OrderedDict()
+    if parmys_args is None:
+        parmys_args = OrderedDict()
 
     # Verify that files are Paths or convert them to Paths and check that they exist
     architecture_file = vtr.verify_file(architecture_file, "Architecture")
@@ -197,8 +197,6 @@ def run(
     yosys_script = "synthesis.tcl"
     yosys_script_full_path = str(temp_dir / yosys_script)
     shutil.copyfile(yosys_base_script, yosys_script_full_path)
-
-    # Copy the yosys models file
 
     # Copy the VTR memory blocks file
 
@@ -232,9 +230,9 @@ def run(
     )
 
     # set the parser
-    if yosys_args["parser"] in YOSYS_PARSERS:
-        os.environ["PARSER"] = yosys_args["parser"]
-        del yosys_args["parser"]
+    if parmys_args["parser"] in YOSYS_PARSERS:
+        os.environ["PARSER"] = parmys_args["parser"]
+        del parmys_args["parser"]
     else:
         raise vtr.VtrError(
             "Invalid parser is specified for Yosys, available parsers are [{}]".format(
@@ -244,7 +242,7 @@ def run(
 
     cmd = [yosys_exec]
 
-    for arg, value in yosys_args.items():
+    for arg, value in parmys_args.items():
         if isinstance(value, bool) and value:
             cmd += ["--" + arg]
         elif isinstance(value, (str, int, float)):
