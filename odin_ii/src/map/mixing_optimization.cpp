@@ -24,6 +24,7 @@
  */
 
 #include <vector>
+#include <math.h> // ceil
 
 #include "mixing_optimization.h"
 #include "netlist_statistic.h"     // mixing_optimization_stats
