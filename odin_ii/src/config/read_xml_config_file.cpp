@@ -322,3 +322,5 @@ void read_optimizations(pugi::xml_node a_node, config_t* config, const pugiutil:
 
     return;
 }
+    return;
+}

@@ -324,3 +324,11 @@ void remove_unused_logic(netlist_t* netlist) {
     if (global_args.all_warnings) report_removed_nodes(num_removed_nodes);
     calculate_addsub_statistics(&addsub_nodes);
 }
+/* Perform the backwards and forward sweeps and remove the unused nodes */
+void remove_unused_logic(netlist_t* netlist) {
+    mark_output_dependencies(netlist);
+    identify_unused_nodes(netlist);
+    remove_unused_nodes(&useless_nodes);
+    if (global_args.all_warnings) report_removed_nodes(num_removed_nodes);
+    calculate_addsub_statistics(&addsub_nodes);
+}
