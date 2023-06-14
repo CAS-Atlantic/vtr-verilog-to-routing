@@ -51,22 +51,14 @@
 #include "parmys_update.h"
 #include "parmys_utils.h"
 
-
 #include <iostream>
+#include <cstdlib>
 #include <string>
-#include <experimental/filesystem>
+#include <filesystem>
 #include <unistd.h>
 #include <fstream>
 #include <iomanip>
 #include <sstream>
-
-#ifdef WINDOWS
-#include <direct.h>
-#define GetCurrentDirectory _getcwd
-#else
-#include <unistd.h>
-#define GetCurrentDirectory getcwd
-#endif
 
 USING_YOSYS_NAMESPACE
 PRIVATE_NAMESPACE_BEGIN
@@ -815,17 +807,6 @@ struct ParMYSPass : public Pass {
         log_time(optimization_time);
         log("\n--------------------------------------------------------------------\n");
     }
-    /*---------------------------------------------------------------------------
-    (function: get_current_dir) returns current working directory
-    -------------------------------------------------------------------------*/
-    static string get_current_dir() {
-        char path_buffer[FILENAME_MAX];
-        //create string buffer for path
-        GetCurrentDirectory( path_buffer,
-        FILENAME_MAX );
-        string curr_working_dir(path_buffer);
-        return curr_working_dir;
-        }
 
     /*---------------------------------------------------------------------------
     (function: predict_optimal_ratio) returns optimal ratio for the current combination of circuit and architecture file
@@ -834,29 +815,26 @@ struct ParMYSPass : public Pass {
         float pred_ratio;
         file_statistics(odin_netlist, true);
         std::string vtr_path = "/home/ritwik/MAS/RnD/Hard_Soft_Logic/vtr-verilog-to-routing"; //Path of "vtr-verilog-to-routing" folder from the home directory
-        std::string current_path = get_current_dir();
-        std::string execute_py_code = "cd ~\ncd "+ vtr_path+"\ncd parmys\npython3 dt.py\ncd "+ current_path+ "\n";
-        system(execute_py_code.c_str());
-        std::ifstream inputFile("../../../parmys/optimal_ratio.txt");
-        float file_ratio;
-        if (inputFile.is_open()) {
-            std::string line;
-            if (std::getline(inputFile, line)) {
-                try {
-                    file_ratio = std::stof(line);
-                    pred_ratio = file_ratio;
-                    std::cout << "Optimal ratio read from file: " << file_ratio << std::endl;
-                } catch (const std::exception& e) {
-                    std::cout << "Error: Invalid number format in the file." << std::endl;
-                }
-            } else {
-                std::cout << "Error: Empty file." << std::endl;
-            }
-            inputFile.close();
+        std::filesystem::path currentPath = std::filesystem::current_path();
+        std::string execute_py_code = "cd ~\ncd "+ vtr_path+"\ncd parmys\npython3 dt.py\ncd "+ currentPath.string()+ "\n";
+
+        FILE* pipe = popen(execute_py_code.c_str(), "r");
+        if (!pipe) {
+            std::cerr << "Error executing Python script." << std::endl;
         }
-        else {
-            std::cout << "Error: Failed to open the file." << std::endl;
+
+        // Read the output of the Python script
+        char buffer[128];
+        std::string result;
+        while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
+            result += buffer;
         }
+
+        // Close the pipe
+        pclose(pipe);
+        std::cout << "Optimal ratio : " << result << std::endl;
+        pred_ratio = std::stof(result);
+
         return pred_ratio;
     }
 
