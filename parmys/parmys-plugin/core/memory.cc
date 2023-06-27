@@ -21,7 +21,7 @@
 #include "odin_util.h"
 #include <math.h>
 #include <string.h>
-#include <fstream>
+#include "fileio.h"
 #include "hard_block.h"
 #include "memory.h"
 #include "netlist_utils.h"
@@ -231,7 +231,7 @@ void add_output_port_to_memory(nnode_t *node, signal_list_t *signals, const char
 void check_memories_and_report_distribution()
 {
     std::ofstream statsfile;
-    statsfile.open ("netstats.txt");
+    openFile(statsfile, "netstats.txt");
     if ((sp_memory_list == NULL) && (dp_memory_list == NULL))
         return;
 

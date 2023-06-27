@@ -16,8 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 #include <algorithm>
-#include <iostream>
-#include <fstream>
+#include "fileio.h"
 /* for hb */
 #include "multiplier.h"
 
@@ -398,7 +397,7 @@ void file_statistics(netlist_t* netlist, bool write) {
 
         if (write) {
             std::ofstream statsfile;
-            statsfile.open ("netstats.txt", std::ios_base::app);
+            openFile(statsfile, "netstats.txt");
             std::string hdr = "";
             for (auto op = 0; op < operation_list_END; op += 1) {
                 switch (op) {
