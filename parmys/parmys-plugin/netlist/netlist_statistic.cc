@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 #include <algorithm>
-#include "fileio.h"
+#include <stdio.h>
 /* for hb */
 #include "multiplier.h"
 
@@ -349,7 +349,7 @@ static metric_t *get_upward_stat(metric_t *destination, nnode_t **node_list, lon
 }
 
 stat_t *get_stats(nnode_t *node, netlist_t *netlist, uintptr_t traverse_mark_number)
-{
+{   
     stat_t *stat = (stat_t *)vtr::malloc(sizeof(stat_t));
     copy(&stat->downward, get_downward_stat(node, netlist, traverse_mark_number));
     copy(&stat->upward, get_upward_stat(node, netlist, traverse_mark_number));
@@ -366,7 +366,7 @@ void compute_statistics(netlist_t *netlist, bool display)
 {
     if (netlist) {
         // reinit the node count
-        //init_stat(netlist);
+        // init_stat(netlist);
 
         get_upward_stat(&netlist->output_node_stat, netlist->top_output_nodes, netlist->num_top_output_nodes, netlist, travelsal_id + 1);
 
@@ -396,8 +396,7 @@ void file_statistics(netlist_t* netlist, bool write) {
         get_upward_stat(&netlist->output_node_stat, netlist->top_output_nodes, netlist->num_top_output_nodes, netlist, travelsal_id + 1);
 
         if (write) {
-            std::ofstream statsfile;
-            openFile(statsfile, "netstats.txt");
+            FILE* statsfile = fopen("netstats.txt", "w");
             std::string hdr = "";
             for (auto op = 0; op < operation_list_END; op += 1) {
                 switch (op) {
@@ -425,20 +424,19 @@ void file_statistics(netlist_t* netlist, bool write) {
                             hdr = std::string("Number of <")
                                   + operation_list_STR[op][ODIN_LONG_STRING]
                                   + "> node: ";
-                            statsfile <<  hdr.c_str();
-                            statsfile << netlist->num_of_type[op];
-                            statsfile <<"\n";
+                            fprintf(statsfile, "%s", hdr.c_str());
+                            fprintf(statsfile, "%lld", netlist->num_of_type[op]);
+                            fprintf(statsfile, "\n");
                         }
                     }
                 }
             }
-            statsfile <<  "Total estimated number of lut: ";
-            statsfile << netlist->num_logic_element;
-            statsfile <<"\n";
-            statsfile <<  "Longest path: ";
-            statsfile << netlist->output_node_stat.max_depth;
-            statsfile <<"\n";
-            statsfile.close();
+            fprintf(statsfile, "Total estimated number of lut: ");
+            fprintf(statsfile, "%lld", netlist->num_logic_element);
+            fprintf(statsfile, "\n");
+            fprintf(statsfile, "Longest path: ");
+            fprintf(statsfile, "%lf", netlist->output_node_stat.max_depth);
+            fclose(statsfile);
         }
     }
 }

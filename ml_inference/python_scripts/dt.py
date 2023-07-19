@@ -10,16 +10,16 @@ def get_optimal_ratio():
 		for i in s:
 			if "Memory" in i:
 				j = i.split(": ")
-				x[0]=(int(j[-1]))
+				x[0]=(int(float(j[-1])))
 			if "MULTIPLY" in i:
 				j = i.split(": ")
-				x[1]=(int(j[-1]))
+				x[1]=(int(float(j[-1])))
 			if "lut" in i:
 				j = i.split(": ")
-				x[2]=(int(j[-1]))
+				x[2]=(int(float(j[-1])))
 			if "Longest" in i:
 				j = i.split(": ")
-				x[3]=(int(j[-1]))
+				x[3]=(int(float(j[-1])))
 	X_test = np.array([x])
 	Y_pred_gnb = clf_dt.predict(X_test)
 	optimal_ratio = ratio_dict[Y_pred_gnb[0]]

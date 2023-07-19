@@ -812,7 +812,7 @@ struct ParMYSPass : public Pass {
     (function: predict_optimal_ratio) returns optimal ratio for the current combination of circuit and architecture file
     -------------------------------------------------------------------------*/
     static float predict_optimal_ratio(netlist_t *odin_netlist){
-        float pred_ratio ;
+        float pred_ratio;
         file_statistics(odin_netlist, true);
         std::string vtr_path = "/home/ritwik/MAS/RnD/Hard_Soft_Logic/vtr-verilog-to-routing"; //Path of "vtr-verilog-to-routing" folder from the home directory
         std::filesystem::path currentPath = std::filesystem::current_path();
