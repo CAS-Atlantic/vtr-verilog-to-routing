@@ -51,6 +51,15 @@
 #include "parmys_update.h"
 #include "parmys_utils.h"
 
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include <filesystem>
+#include <unistd.h>
+#include <fstream>
+#include <iomanip>
+#include <sstream>
+
 USING_YOSYS_NAMESPACE
 PRIVATE_NAMESPACE_BEGIN
 
@@ -799,15 +808,46 @@ struct ParMYSPass : public Pass {
         log("\n--------------------------------------------------------------------\n");
     }
 
+    /*---------------------------------------------------------------------------
+    (function: predict_optimal_ratio) returns optimal ratio for the current combination of circuit and architecture file
+    -------------------------------------------------------------------------*/
+    static float predict_optimal_ratio(netlist_t *odin_netlist){
+        float pred_ratio;
+        file_statistics(odin_netlist, true);
+        std::string vtr_path = "/home/ritwik/MAS/RnD/Hard_Soft_Logic/vtr-verilog-to-routing"; //Path of "vtr-verilog-to-routing" folder from the home directory
+        std::filesystem::path currentPath = std::filesystem::current_path();
+        std::string execute_py_code = "cd ~\ncd "+ vtr_path+"\ncd ml_inference/python_scripts\npython3 dt.py\ncd "+ currentPath.string()+ "\n";
+
+        FILE* pipe = popen(execute_py_code.c_str(), "r");
+        if (!pipe) {
+            std::cerr << "Error executing Python script." << std::endl;
+        }
+
+        // Read the output of the Python script
+        char buffer[128];
+        std::string result;
+        while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
+            result += buffer;
+        }
+
+        // Close the pipe
+        pclose(pipe);
+        std::cout << "Optimal ratio : " << result << std::endl;
+        pred_ratio = std::stof(result);
+
+        return pred_ratio;
+    }
+
     static void techmap(netlist_t *odin_netlist)
     {
         double techmap_time = wall_time();
 
         if (odin_netlist) {
             /* point where we convert netlist to FPGA or other hardware target compatible format */
+            float pred_ratio = predict_optimal_ratio(odin_netlist);
             log("Performing Partial Technology Mapping to the target device\n");
             partial_map_top(odin_netlist);
-            mixer->perform_optimizations(odin_netlist);
+            mixer->perform_optimizations(odin_netlist, pred_ratio);
 
             /* Find any unused logic in the netlist and remove it */
             remove_unused_logic(odin_netlist);

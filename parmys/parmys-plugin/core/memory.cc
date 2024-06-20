@@ -21,7 +21,7 @@
 #include "odin_util.h"
 #include <math.h>
 #include <string.h>
-
+#include <stdio.h>
 #include "hard_block.h"
 #include "memory.h"
 #include "netlist_utils.h"
@@ -230,6 +230,10 @@ void add_output_port_to_memory(nnode_t *node, signal_list_t *signals, const char
  */
 void check_memories_and_report_distribution()
 {
+    FILE* statsfile = fopen("netstats.txt", "w");
+    // ofstream statsfile("netstats.txt");
+    // std::ofstream statsfile;
+    // openFile(statsfile, "netstats.txt");
     if ((sp_memory_list == NULL) && (dp_memory_list == NULL))
         return;
 
@@ -295,7 +299,10 @@ void check_memories_and_report_distribution()
     log("Max Memory Width = %ld \n", memory_max_width);
     log("Max Memory Depth = %ld \n", memory_max_depth);
     log("\n");
-
+    fprintf(statsfile, "Total Logical Memory Blocks: ");
+    fprintf(statsfile, "%d", total_memory_block_counter);
+    fprintf(statsfile, "\n");
+    fclose(statsfile);
     return;
 }
 

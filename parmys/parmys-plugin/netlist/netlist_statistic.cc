@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 #include <algorithm>
-
+#include <stdio.h>
 /* for hb */
 #include "multiplier.h"
 
@@ -24,7 +24,6 @@
 #include "odin_globals.h"
 #include "odin_types.h"
 #include "vtr_memory.h"
-
 USING_YOSYS_NAMESPACE
 
 static void init(metric_t *m);
@@ -350,7 +349,7 @@ static metric_t *get_upward_stat(metric_t *destination, nnode_t **node_list, lon
 }
 
 stat_t *get_stats(nnode_t *node, netlist_t *netlist, uintptr_t traverse_mark_number)
-{
+{   
     stat_t *stat = (stat_t *)vtr::malloc(sizeof(stat_t));
     copy(&stat->downward, get_downward_stat(node, netlist, traverse_mark_number));
     copy(&stat->upward, get_upward_stat(node, netlist, traverse_mark_number));
@@ -367,7 +366,7 @@ void compute_statistics(netlist_t *netlist, bool display)
 {
     if (netlist) {
         // reinit the node count
-        init_stat(netlist);
+        // init_stat(netlist);
 
         get_upward_stat(&netlist->output_node_stat, netlist->top_output_nodes, netlist->num_top_output_nodes, netlist, travelsal_id + 1);
 
@@ -388,3 +387,57 @@ void compute_statistics(netlist_t *netlist, bool display)
         }
     }
 }
+
+void file_statistics(netlist_t* netlist, bool write) {
+    if (netlist) {
+        // reinit the node count
+        init_stat(netlist);
+
+        get_upward_stat(&netlist->output_node_stat, netlist->top_output_nodes, netlist->num_top_output_nodes, netlist, travelsal_id + 1);
+
+        if (write) {
+            FILE* statsfile = fopen("netstats.txt", "w");
+            std::string hdr = "";
+            for (auto op = 0; op < operation_list_END; op += 1) {
+                switch (op) {
+                    // For top IO nodes generate detailed info since the design might have unconnected input nodes
+                    case INPUT_NODE: {
+                        auto unused_pi = netlist->num_top_input_nodes - netlist->num_of_type[op] - netlist->num_of_type[CLOCK_NODE];
+                        if (unused_pi > 0) {
+                            hdr = std::string("Number of unused <")
+                                  + operation_list_STR[op][ODIN_LONG_STRING]
+                                  + "> node: ";
+                        }
+                        [[fallthrough]];
+                    }
+                    case OUTPUT_NODE: {
+                        auto unused_po = netlist->num_top_output_nodes - netlist->num_of_type[op];
+                        if (unused_po > 0) {
+                            hdr = std::string("Number of unused <")
+                                  + operation_list_STR[op][ODIN_LONG_STRING]
+                                  + "> node: ";
+                        }
+                        [[fallthrough]];
+                    }
+                    default: {
+                        if (netlist->num_of_type[op] > UNUSED_NODE_TYPE) {
+                            hdr = std::string("Number of <")
+                                  + operation_list_STR[op][ODIN_LONG_STRING]
+                                  + "> node: ";
+                            fprintf(statsfile, "%s", hdr.c_str());
+                            fprintf(statsfile, "%lld", netlist->num_of_type[op]);
+                            fprintf(statsfile, "\n");
+                        }
+                    }
+                }
+            }
+            fprintf(statsfile, "Total estimated number of lut: ");
+            fprintf(statsfile, "%lld", netlist->num_logic_element);
+            fprintf(statsfile, "\n");
+            fprintf(statsfile, "Longest path: ");
+            fprintf(statsfile, "%lf", netlist->output_node_stat.max_depth);
+            fclose(statsfile);
+        }
+    }
+}
+    
